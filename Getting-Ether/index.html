@@ -1,0 +1,586 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>Getting Ether - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                Getting Ether
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="概述" class="md-tabs__link">
+        概述
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Ethereum-introduction/" title="基础" class="md-tabs__link md-tabs__link--active">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Ethereum-introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Getting Ether" class="md-nav__link md-nav__link--active">
+      Getting Ether
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Decentralized-apps-(dapps)/" title="Uses / decentralized apps / dapps" class="md-nav__link">
+      Uses / decentralized apps / dapps
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>Note that you should only buy Ether (or any cryptocurrency except for stable ones like DAI or USDT) with risk capital, i.e. money that you can afford to lose, because of the volatile nature of Ether.</p>
+<p>In order to obtain Ether, you need to either:</p>
+<ul>
+<li>trade other currencies for ether using centralised or trustless services</li>
+<li>use the user friendly <code>Mist Ethereum GUI Wallet &lt;https://github.com/ethereum/mist/releases&gt;</code>_ that as of Beta 6 introduced the ability to purchase ether using the http://shapeshift.io/ API.</li>
+<li>become an Ethereum miner (see <code>here &lt;https://forum.ethereum.org/discussion/8886/quick-start-guide-to-mine-ethereum/p1&gt;</code><em>. Note that <code>this &lt;https://ethereum-homestead.readthedocs.io/en/latest/mining.html&gt;</code></em> Homestead guide is outdated, which is the same as <code>this &lt;https://github.com/ethereum/wiki/wiki/Mining&gt;</code>_ mining wiki). However, this is not recommended as Ethereum is going to transition to proof-of-stake, making mining obsolescent. Becoming a miner would involve investing in a mining rig (several GPUs, plus maybe other hardware if needed, like a compatible computer), which is unlikely to get a return on investment before PoS is implemented.</li>
+</ul>
+<h2 id="trustless-services">Trustless services<a class="headerlink" href="#trustless-services" title="Permanent link">&para;</a></h2>
+<p>Note that the Ethereum platform is special in that the smart contracts enable trustless services that obviate the need for trusted third parties in a currency exchange transaction, ie. disintermediate currency exchange businesses.</p>
+<p>Projects that have launched includes:</p>
+<ul>
+<li><code>EtherDelta &lt;https://etherdelta.com&gt;</code><em>. I found that the charts on the site weren't very good on January 1, 2017, so I sent a <code>tweet giving feedback &lt;https://twitter.com/JamesCRay01/status/953101168669999104&gt;</code></em>. This is good for trading tokens. Unfortunately I tried to make a deposit with a small amount, so that I could then buy a token but nothing happened.</li>
+<li><code>Decentrex &lt;https://decentrex.com/&gt;</code>_. This is now closed, but you can still access the site if you get a certificate error by clicking on advanced settings: "decentrex open source beta project was closed with no further support because of very low volume and very low users attention compared with its “mother” etherdelta (decentrex was a fork of etherdelta like many other etherdelta forks you can find on github) and due to high Ethereum network fees and the fact that Ethereum network is unstable."</li>
+</ul>
+<p>Projects that have not been released yet (as of Dec 14 2017) includes:</p>
+<ul>
+<li><code>BTCrelay &lt;http://btcrelay.org/&gt;</code>_</li>
+<li><code>More information &lt;https://medium.com/@ConsenSys/taking-stock-bitcoin-and-ethereum-4382f0a2f17&gt;</code>_ (about ETH/BTC 2-way peg without modifying bitcoin code).</li>
+<li><code>BTCrelay audit &lt;http://martin.swende.se/blog/BTCRelay-Auditing.html&gt;</code>_</li>
+<li><code>EtherEx decentralised exchange &lt;https://etherex.org&gt;</code><em>. (This link no longer works. <code>Etherex is not active on Github &lt;https://github.com/etherex/etherex&gt;</code></em>.)</li>
+</ul>
+<p>Additionally there is also <code>LocalEthereum &lt;https://localethereum.com/&gt;</code><em>, which allows exchanging Ether for fiat currencies, like <code>Localbitcoin &lt;https://Localbitcoin.com/&gt;</code></em>. "The smart contract allows users to safely exchange ether with one another, and to name a trusted third-party to mediate a trade if a dispute arises. Currently, the trusted mediator is always localethereum.com, but the contract will be adapted in the future to switch over to a reputation-based distributed arbitrator pool." The source of this quote is <code>here &lt;https://blog.localethereum.com/how-our-escrow-smart-contract-works/&gt;</code>_.</p>
+<h2 id="list-of-centralised-exchange-marketplaces">List of centralised exchange marketplaces<a class="headerlink" href="#list-of-centralised-exchange-marketplaces" title="Permanent link">&para;</a></h2>
+<p>========================== ============================
+Exchange                   Currencies
+========================== ============================
+Poloniex                   BTC
+Kraken                     BTC, USD, EUR, CAD, GBP
+Gatecoin                   BTC, EUR
+Bitfinex                   BTC, USD
+Bittrex                    BTC
+Bluetrade                  BTC, LTC, DOGE
+HitBTC                     BTC
+Livecoin                   BTC
+Coinsquare                 BTC
+Bittylicious               GBP
+BTER                       CNY
+Yunbi                      CNY
+Metaexchange               BTC
+========================== ============================</p>
+<p>You can also search for "<insert your country> Ether exchange".</p>
+<p>There's also this: https://myetherwallet.github.io/knowledge-base/faq/buying-selling-exchanging-eth-tokens-fiat.html and see the link at the bottom of the article.</p>
+<h2 id="centralised-fixed-rate-exchanges">Centralised fixed rate exchanges<a class="headerlink" href="#centralised-fixed-rate-exchanges" title="Permanent link">&para;</a></h2>
+<p>========================== ============================
+Exchange                   Currencies
+========================== ============================
+<code>Shapeshift</code><em>              BTC, LTC, DOGE, Other
+<code>Bity</code></em>                    BTC, USD, EUR, CHF
+========================== ============================</p>
+<p>.. _Bity: https://bity.com
+.. _Shapeshift: shapeshift.io</p>
+<h2 id="trading-and-price-analytics">Trading and price analytics<a class="headerlink" href="#trading-and-price-analytics" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>ETH markets exhaustive listing by volume on coinmarketcap &lt;https://coinmarketcap.com/currencies/ethereum/#markets&gt;</code>_</li>
+<li>
+<p>Aggregating realtime stats of major ETH markets:</p>
+</li>
+<li>
+<p><code>Tradeblock &lt;https://tradeblock.com/ethereum&gt;</code>_</p>
+</li>
+<li><code>EthereumWisdom &lt;http://ethereumwisdom.com&gt;</code>_</li>
+<li><code>Cryptocompare &lt;https://www.cryptocompare.com/coins/eth/overview&gt;</code>_</li>
+<li><code>Coinmarketcap &lt;https://coinmarketcap.com/currencies/ethereum/&gt;</code>_</li>
+<li><code>EthGasStation &lt;https://ethgasstation.info&gt;</code><em> is useful for checking the gas price to set before making a transaction lists, as well as checking <code>Gas Guzzlers, or the 'Top 10 ETH Contracts By Transaction Count Over the Last 1,500 Blocks' &lt;https://ethgasstation.info/gasguzzlers.php&gt;</code></em></li>
+</ul>
+<p>.. _online-wallets-and-storage-solutions:</p>
+<h1 id="online-wallets-paper-wallets-and-cold-storage">Online wallets, paper wallets, and cold storage<a class="headerlink" href="#online-wallets-paper-wallets-and-cold-storage" title="Permanent link">&para;</a></h1>
+<p>.. todo::
+  This is here just a dumping ground of links and notes
+  Please move this over in a listing form to ecosystem</p>
+<p>Keep examples here, maybe explain paranoid practices, list dangers</p>
+<ul>
+<li>Mist Ethereum Wallet<ul>
+<li><code>Releases to download &lt;https://github.com/ethereum/mist/releases&gt;</code>_</li>
+<li><code>Mist Ethereum Wallet developer preview &lt;https://blog.ethereum.org/2015/09/16/ethereum-wallet-developer-preview/&gt;</code>_ - foundation blog post</li>
+<li><code>How to easily set up the Ethereum Mist wallet! &lt;https://www.youtube.com/watch?v=Z6lE0Ctaeqs&gt;</code>_ - Tutorial by Tommy Economics</li>
+</ul>
+</li>
+<li>Kryptokit Jaxx<ul>
+<li><code>Jaxx main site &lt;http://jaxx.io/&gt;</code>_</li>
+<li><code>Mobile release &lt;http://favs.pw/first-ethereum-mobile-app-released/#.VsHn_PGPL5c&gt;</code>_</li>
+</ul>
+</li>
+<li>Etherwall<ul>
+<li><code>Etherwall website &lt;http://www.etherwall.com/&gt;</code>_</li>
+<li><code>Etherwall source &lt;https://github.com/almindor/etherwall&gt;</code>_</li>
+</ul>
+</li>
+<li>MyEtherWallet<ul>
+<li><code>MyEtherWallet website &lt;https://www.myetherwallet.com/&gt;</code>_</li>
+<li><code>MyEtherWallet source &lt;https://github.com/kvhnuke/etherwallet/&gt;</code>_</li>
+<li><code>Chrome extension &lt;http://sebfor.com/myetherwallet-chrome-extension-release/&gt;</code>_</li>
+</ul>
+</li>
+<li>Cold storage<ul>
+<li><code>Icebox &lt;https://github.com/ConsenSys/icebox&gt;</code><em> by <code>ConsenSys &lt;https://consensys.net/&gt;</code></em> - Cold storage based on lightwallet with HD wallet library integrated.</li>
+<li><code>Reddit discussion 1 &lt;https://www.reddit.com/r/ethereum/comments/45uvmy/offline_cold_storage_question/offline_cold_storage_question&gt;</code>_</li>
+<li><code>How to setup a cold storage wallet &lt;https://www.reddit.com/r/ethereum/comments/48wfbv/eli5_how_to_setup_a_cold_storage_wallet_as/&gt;</code>_</li>
+</ul>
+</li>
+<li>Hardware wallet<ul>
+<li><code>reddit discussion 2 &lt;https://www.reddit.com/r/ethereum/comments/45siaq/hardware_wallet/&gt;</code>_</li>
+<li><code>reddit discussion 3 &lt;https://www.reddit.com/r/ethereum/comments/4521o4/crowdfunding_ethereum_hardware_cold_storage_wallet/&gt;</code>_</li>
+</ul>
+</li>
+<li>Brain wallet<ul>
+<li>brain wallets are not safe, do not use them. https://www.reddit.com/r/ethereum/comments/45y8m7/brain_wallets_are_now_generally_shunned_by/</li>
+<li>Extreme caution with brain wallets. Read the recent controversy: https://reddit.com/r/ethereum/comments/43fhb5/brainwallets vs http://blog.ether.camp/post/138376049438/why-brain-wallet-is-the-best</li>
+</ul>
+</li>
+<li>Misc<ul>
+<li><code>Kraken Wallet Sweeper Tool &lt;https://www.kraken.com/ether&gt;</code>_ - Pre-sale wallet import</li>
+<li><code>Recommended ways to safely store ether &lt;http://ethereum.stackexchange.com/questions/1239/what-is-the-recommended-way-to-safely-store-ether&gt;</code>_</li>
+<li><code>How to buy and store ether &lt;http://sebfor.com/how-to-buy-and-store-ether/&gt;</code>_</li>
+<li><code>A laymen's intro into brute forcing and why not to use brain wallets &lt;http://www.fastcompany.com/3056651/researchers-find-a-crack-that-drains-supposedly-secure-bitcoin-wallets&gt;</code>_</li>
+<li><code>Pyethsaletool &lt;https://github.com/ethereum/pyethsaletool/blob/master/README.md&gt;</code>_</li>
+<li><code>Account vs wallet &lt;https://www.reddit.com/r/ethereum/comments/47j3r5/eli5_accounts_vs_wallet_contracts_on_mist/&gt;</code>_</li>
+</ul>
+</li>
+</ul>
+<p>For further info (which lists more exchanges), see <code>here &lt;https://github.com/ethereum/wiki/wiki/Getting-Ether:-further-info&gt;</code>_.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Ethereum-introduction/" title="介绍" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                介绍
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Decentralized-apps-(dapps)/" title="Uses / decentralized apps / dapps" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                Uses / decentralized apps / dapps
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
