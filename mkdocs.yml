@@ -1,0 +1,131 @@
+site_name: 以太坊文档
+site_description: 以太坊中文文档
+site_author: Nosy
+copyright: '版权 &copy; 2018 -  wohugb.github.io'
+
+repo_name: wohugb/ethereum-docs
+repo_url: https://github.com/wohugb/ethereum-docs
+edit_uri: ""
+
+theme:
+  name: material
+
+  include_search_page: false
+  search_index_only: true
+
+  language: zh
+  feature:
+    tabs: true
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo:
+    icon: "\uE80C"
+  extra_css: [assets/stylesheets/extra.css]
+extra:
+  social:
+    - type: globe
+      link: http://wohugb.github.io
+    - type: github-alt
+      link: https://github.com/wohugb
+    - type: twitter
+      link: https://twitter.com/wohugb
+    - type: linkedin
+      link: https://linkedin.com/in/wohugb
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+pages:
+  - 概述: index.md
+  - 基础:
+    - 介绍: Ethereum-introduction.md
+    - Getting Ether: Getting-Ether.md
+    - Uses / decentralized apps / dapps: Decentralized-apps-(dapps).md
+
+  #   - Ethereum Whitepaper: Ethereum-White-Paper.md
+  #   - Design Rationale: Design-Rationale.md
+  #   - Ethereum Yellow Paper: paper.md
+  #   - FAQ: FAQ.md
+  #   - Releases: Releases.md
+  # - Ethereum Clients:
+  #   - cpp-ethereum (C++.md: cpp-ethereum.md
+  #   - ethereumj (Java.md: ethereumj.md
+  #   - Geth (Go.md: go-ethereum.md
+  #   - Parity (Rust.md: parity.md
+  #   - pyethapp (Python.md: pyethapp.md
+  # - ÐApp Development:
+  #   - Safety: Safety.md
+  #   - ÐApp Developer Resources: Dapp-Developer-Resources.md
+  #   - JavaScript API: JavaScript-API.md
+  #   - JSON RPC API: JSON-RPC.md
+  #   - Solidity: solidity.md
+  #   - Solidity Features: Solidity-Features.md
+  #   - Solidity Collections: Solidity-Collections.md
+  #   - Solidity Cheat-sheet: solidity-cheatsheet.md
+  #   - Useful Ðapp Patterns: Useful-Ðapp-Patterns.md
+  #   - Standardized Contract APIs: Standardized_Contract_APIs.md
+  #   - ÐApp using Meteor: Dapp-using-Meteor.md
+  #   - Ethereum development tutorial: Ethereum-Development-Tutorial.md
+  #   - Mix Tutorial: Mix:-The-DApp-IDE.md
+  #   - Mix Features: Mix-Features.md
+  #   - Viper: viper.md
+  #   - Serpent: Serpent.md
+  #   - LLL: cpp-ethereum/LLL.md
+  #   - Mutan: mutan.md
+  # - Infrastructure:
+  #   - Chain Spec Format: Ethereum-Chain-Spec-Format.md
+  #   - Inter-exchange Client Address Protocol: ICAP:-Inter-exchange-Client-Address-Protocol.md
+  #   - URL Hint Protocol: URL-Hint-Protocol.md
+  #   - NatSpec Determination: NatSpec-Determination.md
+  #   - Network Status: Network-Status.md
+  #   - Raspberry Pi: Raspberry-Pi-instructions.md
+  #   - Exchange Integration: Exchange-Integration.md
+  #   - Mining: Mining.md
+  #   - Licensing: Licensing.md
+  #   - Consortium Chain Development: Consortium-Chain-Development.md
+  # - Research:
+  #   - Proof of Stake FAQ: Proof-of-Stake-FAQ.md
+  #   - Sharding FAQ: Sharding-FAQ.md
+  # - ÐΞV Technologies:
+  #   - RLP Encoding: RLP.md
+  #   - Node Discovery Protocol: Node-discovery-protocol.md
+  #   - ÐΞVp2p Wire Protocol: Wire-Protocol.md
+  #   - ÐΞVp2p Whitepaper: libp2p-Whitepaper.md (WiP.md
+  #   - Web3 Secret Storage: Web3-Secret-Storage-Definition.md
+  # - Ethereum Technologies:
+  #   - Patricia Tree: Patricia-Tree.md
+  #   - Wire protocol: Ethereum-Wire-Protocol.md
+  #   - Light client protocol: Light-client-protocol.md
+  #   - Subtleties: Subtleties.md
+  #   - Solidity Documentation: Solidity.md
+  #   - NatSpec Format: Ethereum-Natural-Specification-Format.md
+  #   - Contract ABI: Ethereum-Contract-ABI.md
+  #   - Bad Block Reporting: Bad-Block-Reporting.md
+  #   - Bad Chain Canary: Bad-Chain-Canary.md
+  # - Ethash/Dashimoto:
+  #   - Ethash: Ethash.md
+  #   - Ethash C API: Ethash-C-API.md
+  #   - Ethash DAG: Ethash-DAG.md
+  # - Whisper:
+  #   - Whisper Proposal: Whisper.md
+  #   - Whisper Overview: Whisper-Overview.md
+  #   - PoC-1 Wire protocol: Whisper-Wire-Protocol.md
+  #   - PoC-2 Wire protocol: Whisper-PoC-2-Wire-Protocol.md
+  #   - PoC-2 Whitepaper: Whisper-PoC-2-Protocol-Spec.md
+  # - Misc:
+  #   - Hard Problems of Cryptocurrency: Problems.md
+  #   - Chain Fibers: Chain-Fibers-Redux.md
+  #   - Glossary: Glossary.md
