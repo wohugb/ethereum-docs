@@ -1,0 +1,2037 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>权益证明 - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                权益证明
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="研究" class="md-tabs__link md-tabs__link--active">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        权益证明
+      </label>
+    
+    <a href="./" title="权益证明" class="md-nav__link md-nav__link--active">
+      权益证明
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-proof-of-stake" title="What is Proof of Stake" class="md-nav__link">
+    What is Proof of Stake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-benefits-of-proof-of-stake-as-opposed-to-proof-of-work" title="What are the benefits of proof of stake as opposed to proof of work?" class="md-nav__link">
+    What are the benefits of proof of stake as opposed to proof of work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-proof-of-stake-fit-into-traditional-byzantine-fault-tolerance-research" title="How does proof of stake fit into traditional Byzantine fault tolerance research?" class="md-nav__link">
+    How does proof of stake fit into traditional Byzantine fault tolerance research?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed" title="What is the "nothing at stake" problem and how can it be fixed?" class="md-nav__link">
+    What is the "nothing at stake" problem and how can it be fixed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#that-shows-how-chain-based-algorithms-solve-nothing-at-stake-now-how-do-bft-style-proof-of-stake-algorithms-work" title="That shows how chain-based algorithms solve nothing-at-stake. Now how do BFT-style proof of stake algorithms work?" class="md-nav__link">
+    That shows how chain-based algorithms solve nothing-at-stake. Now how do BFT-style proof of stake algorithms work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-economic-finality-in-general" title="What is "economic finality" in general?" class="md-nav__link">
+    What is "economic finality" in general?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-how-does-this-relate-to-byzantine-fault-tolerance-theory" title="So how does this relate to Byzantine fault tolerance theory?" class="md-nav__link">
+    So how does this relate to Byzantine fault tolerance theory?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-weak-subjectivity" title="What is "weak subjectivity"?" class="md-nav__link">
+    What is "weak subjectivity"?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-weak-subjectivity-mean-that-a-proof-of-stake-chain-must-be-anchored-into-a-proof-of-work-chain-to-be-secure" title="Does weak subjectivity mean that a proof of stake chain must be "anchored" into a proof of work chain to be secure?" class="md-nav__link">
+    Does weak subjectivity mean that a proof of stake chain must be "anchored" into a proof of work chain to be secure?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaborate" title="Elaborate?" class="md-nav__link">
+    Elaborate?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-one-economically-penalize-censorship-in-proof-of-stake" title="Can one economically penalize censorship in proof of stake?" class="md-nav__link">
+    Can one economically penalize censorship in proof of stake?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-validator-selection-work-and-what-is-stake-grinding" title="How does validator selection work, and what is stake grinding?" class="md-nav__link">
+    How does validator selection work, and what is stake grinding?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-would-the-equivalent-of-a-51-attack-against-casper-look-like" title="What would the equivalent of a 51% attack against Casper look like?" class="md-nav__link">
+    What would the equivalent of a 51% attack against Casper look like?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#that-sounds-like-a-lot-of-reliance-on-out-of-band-social-coordination-is-that-not-dangerous" title="That sounds like a lot of reliance on out-of-band social coordination; is that not dangerous?" class="md-nav__link">
+    That sounds like a lot of reliance on out-of-band social coordination; is that not dangerous?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doesnt-mc-mr-mean-that-all-consensus-algorithms-with-a-given-security-level-are-equally-efficient-or-in-other-words-equally-wasteful" title="Doesn't MC =&gt; MR mean that all consensus algorithms with a given security level are equally efficient (or in other words, equally wasteful)?" class="md-nav__link">
+    Doesn't MC =&gt; MR mean that all consensus algorithms with a given security level are equally efficient (or in other words, equally wasteful)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-capital-lockup-costs" title="What about capital lockup costs?" class="md-nav__link">
+    What about capital lockup costs?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#will-exchanges-in-proof-of-stake-pose-a-similar-centralization-risk-to-pools-in-proof-of-work" title="Will exchanges in proof of stake pose a similar centralization risk to pools in proof of work?" class="md-nav__link">
+    Will exchanges in proof of stake pose a similar centralization risk to pools in proof of work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-proof-of-stake-be-used-in-privateconsortium-chains" title="Can proof of stake be used in private/consortium chains?" class="md-nav__link">
+    Can proof of stake be used in private/consortium chains?
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-proof-of-stake" title="What is Proof of Stake" class="md-nav__link">
+    What is Proof of Stake
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-benefits-of-proof-of-stake-as-opposed-to-proof-of-work" title="What are the benefits of proof of stake as opposed to proof of work?" class="md-nav__link">
+    What are the benefits of proof of stake as opposed to proof of work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-proof-of-stake-fit-into-traditional-byzantine-fault-tolerance-research" title="How does proof of stake fit into traditional Byzantine fault tolerance research?" class="md-nav__link">
+    How does proof of stake fit into traditional Byzantine fault tolerance research?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed" title="What is the "nothing at stake" problem and how can it be fixed?" class="md-nav__link">
+    What is the "nothing at stake" problem and how can it be fixed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#that-shows-how-chain-based-algorithms-solve-nothing-at-stake-now-how-do-bft-style-proof-of-stake-algorithms-work" title="That shows how chain-based algorithms solve nothing-at-stake. Now how do BFT-style proof of stake algorithms work?" class="md-nav__link">
+    That shows how chain-based algorithms solve nothing-at-stake. Now how do BFT-style proof of stake algorithms work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-economic-finality-in-general" title="What is "economic finality" in general?" class="md-nav__link">
+    What is "economic finality" in general?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-how-does-this-relate-to-byzantine-fault-tolerance-theory" title="So how does this relate to Byzantine fault tolerance theory?" class="md-nav__link">
+    So how does this relate to Byzantine fault tolerance theory?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-weak-subjectivity" title="What is "weak subjectivity"?" class="md-nav__link">
+    What is "weak subjectivity"?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-weak-subjectivity-mean-that-a-proof-of-stake-chain-must-be-anchored-into-a-proof-of-work-chain-to-be-secure" title="Does weak subjectivity mean that a proof of stake chain must be "anchored" into a proof of work chain to be secure?" class="md-nav__link">
+    Does weak subjectivity mean that a proof of stake chain must be "anchored" into a proof of work chain to be secure?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elaborate" title="Elaborate?" class="md-nav__link">
+    Elaborate?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-one-economically-penalize-censorship-in-proof-of-stake" title="Can one economically penalize censorship in proof of stake?" class="md-nav__link">
+    Can one economically penalize censorship in proof of stake?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-validator-selection-work-and-what-is-stake-grinding" title="How does validator selection work, and what is stake grinding?" class="md-nav__link">
+    How does validator selection work, and what is stake grinding?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-would-the-equivalent-of-a-51-attack-against-casper-look-like" title="What would the equivalent of a 51% attack against Casper look like?" class="md-nav__link">
+    What would the equivalent of a 51% attack against Casper look like?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#that-sounds-like-a-lot-of-reliance-on-out-of-band-social-coordination-is-that-not-dangerous" title="That sounds like a lot of reliance on out-of-band social coordination; is that not dangerous?" class="md-nav__link">
+    That sounds like a lot of reliance on out-of-band social coordination; is that not dangerous?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doesnt-mc-mr-mean-that-all-consensus-algorithms-with-a-given-security-level-are-equally-efficient-or-in-other-words-equally-wasteful" title="Doesn't MC =&gt; MR mean that all consensus algorithms with a given security level are equally efficient (or in other words, equally wasteful)?" class="md-nav__link">
+    Doesn't MC =&gt; MR mean that all consensus algorithms with a given security level are equally efficient (or in other words, equally wasteful)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-capital-lockup-costs" title="What about capital lockup costs?" class="md-nav__link">
+    What about capital lockup costs?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#will-exchanges-in-proof-of-stake-pose-a-similar-centralization-risk-to-pools-in-proof-of-work" title="Will exchanges in proof of stake pose a similar centralization risk to pools in proof of work?" class="md-nav__link">
+    Will exchanges in proof of stake pose a similar centralization risk to pools in proof of work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-proof-of-stake-be-used-in-privateconsortium-chains" title="Can proof of stake be used in private/consortium chains?" class="md-nav__link">
+    Can proof of stake be used in private/consortium chains?
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>权益证明</h1>
+                
+                <h3 id="what-is-proof-of-stake">What is Proof of Stake<a class="headerlink" href="#what-is-proof-of-stake" title="Permanent link">&para;</a></h3>
+<p><strong>Proof of Stake (PoS) is a category of consensus algorithms for public blockchains that depend on a validator's economic stake in the network</strong>. In proof of work (PoW) based public blockchains (e.g. Bitcoin and the current implementation of Ethereum), the algorithm rewards participants who solve cryptographic puzzles in order to validate transactions and create new blocks (i.e. mining). In PoS-based public blockchains (e.g. Ethereum's upcoming Casper implementation), a set of validators take turns proposing and voting on the next block, and the weight of each validator's vote depends on the size of its deposit (i.e. stake). Significant advantages of PoS include <strong>security, reduced risk of centralization, and energy efficiency</strong>.</p>
+<p>In general, a proof of stake algorithm looks as follows. The blockchain keeps track of a set of validators, and anyone who holds the blockchain's base cryptocurrency (in Ethereum's case, ether) can become a validator by sending a special type of transaction that <strong>locks up their ether into a deposit</strong>. The process of creating and agreeing to new blocks is then done through a consensus algorithm that all current validators can participate in.</p>
+<p>There are many kinds of consensus algorithms, and many ways to assign rewards to validators who participate in the consensus algorithm, so there are many "flavors" of proof of stake. From an algorithmic perspective, there are two major types: chain-based proof of stake and <a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance">BFT</a>-style proof of stake.</p>
+<p>In <strong>chain-based proof of stake</strong>, the algorithm pseudo-randomly selects a validator during each time slot (eg. every period of 10 seconds might be a time slot), and assigns that validator the right to create a single block, and this block must point to some previous block (normally the block at the end of the previously longest chain), and so over time most blocks converge into a single constantly growing chain.</p>
+<p>In <strong>BFT-style proof of stake</strong>, validators are <strong>randomly</strong> assigned the right to <em>propose</em> blocks, but <em>agreeing on which block is canonical</em> is done through a multi-round process where every validator sends a "vote" for some specific block during each round, and at the end of the process all (honest and online) validators permanently agree on whether or not any given block is part of the chain. Note that blocks may still be <em>chained together</em>; the key difference is that consensus on a block can come within one block, and does not depend on the length or size of the chain after it.</p>
+<h3 id="what-are-the-benefits-of-proof-of-stake-as-opposed-to-proof-of-work">What are the benefits of proof of stake as opposed to proof of work?<a class="headerlink" href="#what-are-the-benefits-of-proof-of-stake-as-opposed-to-proof-of-work" title="Permanent link">&para;</a></h3>
+<p>See <a href="https://medium.com/@VitalikButerin/a-proof-of-stake-design-philosophy-506585978d51">A Proof of Stake Design Philosophy</a> for a more long-form argument.</p>
+<p>In short:</p>
+<ul>
+<li><strong>No need to consume large quantities of electricity</strong> in order to secure a blockchain (eg. it's estimated that both Bitcoin and Ethereum burn over $1 million worth of electricity and hardware costs per day as part of their consensus mechanism).</li>
+<li>Because of the lack of high electricity consumption, there is <strong>not as much need to issue as many new coins</strong> in order to motivate participants to keep participating in the network. It may theoretically even be possible to have <em>negative</em> net issuance, where a portion of transaction fees is "burned" and so the supply goes down over time.</li>
+<li>Proof of stake opens the door to a wider array of techniques that use game-theoretic mechanism design in order to better <strong>discourage centralized cartels</strong> from forming and, if they do form, from acting in ways that are harmful to the network (eg. like <a href="https://www.cs.cornell.edu/~ie53/publications/btcProcFC.pdf">selfish mining</a> in proof of work).</li>
+<li><strong>Reduced centralization risks</strong>, as economies of scale are much less of an issue. $10 million of coins will get you exactly 10 times higher returns than $1 million of coins, without any additional disproportionate gains because at the higher level you can afford better mass-production equipment.</li>
+<li>Ability to use economic penalties to <strong>make various forms of 51% attacks vastly more expensive</strong> to carry out than proof of work - to paraphrase Vlad Zamfir, "it's as though your ASIC farm burned down if you participated in a 51% attack".</li>
+</ul>
+<h3 id="how-does-proof-of-stake-fit-into-traditional-byzantine-fault-tolerance-research">How does proof of stake fit into traditional Byzantine fault tolerance research?<a class="headerlink" href="#how-does-proof-of-stake-fit-into-traditional-byzantine-fault-tolerance-research" title="Permanent link">&para;</a></h3>
+<p>There are several fundamental results from Byzantine fault tolerance research that apply to all consensus algorithms, including traditional consensus algorithms like PBFT but also any proof of stake algorithm and, with the appropriate mathematical modeling, proof of work.</p>
+<p>The key results include:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/CAP_theorem"><strong>CAP theorem</strong></a> - "in the cases that a network partition takes place, you have to choose either consistency or availability, you cannot have both". The intuitive argument is simple: if the network splits in half, and in one half I send a transaction "send my 10 coins to A" and in the other I send a transaction "send my 10 coins to B", then either the system is unavailable, as one or both transactions will not be processed, or it becomes inconsistent, as one half of the network will see the first transaction completed and the other half will see the second transaction completed. Note that the CAP theorem has nothing to do with scalability; it applies to sharded and non-sharded systems equally.</li>
+<li><a href="http://the-paper-trail.org/blog/a-brief-tour-of-flp-impossibility/"><strong>FLP impossibility</strong></a> - in an asynchronous setting (ie. there are no guaranteed bounds on network latency even between correctly functioning nodes), it is not possible to create an algorithm which is guaranteed to reach consensus in any specific finite amount of time if even a single faulty/dishonest node is present. Note that this does NOT rule out <a href="https://en.wikipedia.org/wiki/Las_Vegas_algorithm">"Las Vegas" algorithms</a> that have some probability each round of achieving consensus and thus will achieve consensus within T seconds with probability exponentially approaching 1 as T grows; this is in fact the "escape hatch" that many successful consensus algorithms use.</li>
+<li><strong>Bounds on fault tolerance</strong> - from <a href="http://groups.csail.mit.edu/tds/papers/Lynch/jacm88.pdf">the DLS paper</a> we have: (i) protocols running in a partially synchronous network model (ie. there is a bound on network latency but we do not know ahead of time what it is) can tolerate up to 1/3 arbitrary (ie. "Byzantine") faults, (ii) deterministic protocols in an asynchronous model (ie. no bounds on network latency) cannot tolerate faults (although their paper fails to mention that <a href="http://link.springer.com/chapter/10.1007%2F978-3-540-77444-0_7">randomized algorithms can</a> with up to 1/3 fault tolerance), (iii) protocols in a synchronous model (ie. network latency is guaranteed to be less than a known <code>d</code>) can, surprisingly, tolerate up to 100% fault tolerance, although there are restrictions on what can happen when more than or equal to 1/2 of nodes are faulty. Note that the "authenticated Byzantine" model is the one worth considering, not the "Byzantine" one; the "authenticated" part essentially means that we can use public key cryptography in our algorithms, which is in modern times very well-researched and very cheap.</li>
+</ul>
+<p>Proof of work has been <a href="https://socrates1024.s3.amazonaws.com/consensus.pdf">rigorously analyzed by Andrew Miller and others</a> and fits into the picture as an algorithm reliant on a synchronous network model. We can model the network as being made up of a near-infinite number of nodes, with each node representing a very small unit of computing power and having a very small probability of being able to create a block in a given period. In this model, the protocol has 50% fault tolerance assuming zero network latency, ~46% (Ethereum) and ~49.5% (Bitcoin) fault tolerance under actually observed conditions, but goes down to 33% if network latency is equal to the block time, and reduces to zero as network latency approaches infinity.</p>
+<p>Proof of stake consensus fits more directly into the Byzantine fault tolerant consensus mould, as all validators have known identities (stable Ethereum addresses) and the network keeps track of the total size of the validator set. There are two general lines of proof of stake research, one looking at synchronous network models and one looking at partially asynchronous network models. "Chain-based" proof of stake algorithms almost always rely on synchronous network models, and their security can be formally proven within these models similarly to how security of <a href="http://nakamotoinstitute.org/static/docs/anonymous-byzantine-consensus.pdf">proof of work algorithms</a> can be proven. A line of research connecting traditional Byzantine fault tolerant consensus in partially synchronous networks to proof of stake also exists, but is more complex to explain; it will be covered in more detail in later sections.</p>
+<p>Proof of work algorithms and chain-based proof of stake algorithms choose availability over consistency, but BFT-style consensus algorithms lean more toward consistency; <a href="https://github.com/tendermint/tendermint">Tendermint</a> chooses consistency explicitly, and Casper uses a hybrid model that prefers availability but provides as much consistency as possible and makes both on-chain applications and clients aware of how strong the consistency guarantee is at any given time.</p>
+<p>Note that Ittay Eyal and Emin Gun Sirer's <a href="https://bitcoinmagazine.com/articles/selfish-mining-a-25-attack-against-the-bitcoin-network-1383578440">selfish mining</a> discovery, which places 25% and 33% bounds on the incentive compatibility of Bitcoin mining depending on the network model (ie. mining is only incentive compatible if collusions larger than 25% or 33% are impossible) has NOTHING to do with results from traditional consensus algorithm research, which does not touch incentive compatibility.</p>
+<h3 id="what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed">What is the "nothing at stake" problem and how can it be fixed?<a class="headerlink" href="#what-is-the-nothing-at-stake-problem-and-how-can-it-be-fixed" title="Permanent link">&para;</a></h3>
+<p>In many early (all chain-based) proof of stake algorithms, including Peercoin, there are only rewards for producing blocks, and no penalties. This has the unfortunate consequence that, in the case that there are multiple competing chains, it is in a validator's incentive to try to make blocks on top of every chain at once, just to be sure:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/vbuterin/diagrams/master/possec.png" /></p>
+<p>In proof of work, doing so would require splitting one's computing power in half, and so would not be lucrative:</p>
+<p><img alt="" src="https://github.com/vbuterin/diagrams/blob/master/powsec.png?raw=true" /></p>
+<p>The result is that if all actors are narrowly economically rational, then even if there are no attackers, a blockchain may never reach consensus. If there is an attacker, then the attacker need only overpower altruistic nodes (who would exclusively stake on the original chain), and not rational nodes (who would stake on both the original chain and the attacker's chain), in contrast to proof of work, where the attacker must overpower both altruists and rational nodes (or at least credibly threaten to: see <a href="https://blog.ethereum.org/2015/01/28/p-epsilon-attack/">P + epsilon attacks</a>).</p>
+<p>Some argue that stakeholders have an incentive to act correctly and only stake on the longest chain in order to "preserve the value of their investment", however this ignores that this incentive suffers from <a href="https://en.wikipedia.org/wiki/Tragedy_of_the_commons">tragedy of the commons</a> problems: each individual stakeholder might only have a 1% chance of being "pivotal" (ie. being in a situation where if they participate in an attack then it succeeds and if they do not participate it fails), and so the bribe needed to convince them personally to join an attack would be only 1% of the size of their deposit; hence, the required combined bribe would be only 0.5-1% of the total sum of all deposits. Additionally, this argument implies that any zero-chance-of-failure situation is not a stable equilibrium, as if the chance of failure is zero then everyone has a 0% chance of being pivotal.</p>
+<p>This can be solved via two strategies. The first, described in broad terms under the name "Slasher" <a href="https://blog.ethereum.org/2014/01/15/slasher-a-punitive-proof-of-stake-algorithm/">here</a> and developed further by Iddo Bentov <a href="https://arxiv.org/pdf/1406.5694.pdf">here</a>, involves penalizing validators if they simultaneously create blocks on multiple chains, by means of including proof of misbehavior (ie. two conflicting signed block headers) into the blockchain as a later point in time at which point the malfeasant validator's deposit is deducted appropriately. This changes the incentive structure thus:</p>
+<p><img alt="" src="https://github.com/vbuterin/diagrams/blob/master/slasher1sec.png?raw=true" /></p>
+<p>Note that for this algorithm to work, the validator set needs to be determined well ahead of time. Otherwise, if a validator has 1% of the stake, then if there are two branches A and B then 0.99% of the time the validator will be eligible to stake only on A and not on B, 0.99% of the time the validator will be eligible to stake on B and not on A, and only 0.01% of the time will the validator will be eligible to stake on both. Hence, the validator can with 99% efficiency probabilistically double-stake: stake on A if possible, stake on B if possible, and only if the choice between both is open stake on the longer chain. This can only be avoided if the validator selection is the same for every block on both branches, which requires the validators to be selected at a time before the fork takes place.</p>
+<p>This has its own flaws, including requiring nodes to be frequently online to get a secure view of the blockchain, and opening up medium-range validator collusion risks (ie. situations where, for example, 25 out of 30 consecutive validators get together and agree ahead of time to implement a 51% attack on the previous 19 blocks), but if these risks are deemed acceptable then it works well.</p>
+<p>The second strategy is to simply punish validators for creating blocks on the <em>wrong</em> chain. That is, if there are two competing chains, A and B, then if a validator creates a block on B, they get a reward of +R on B, but the block header can be included into A (in Casper this is called a "dunkle") and on A the validator suffers a penalty of -F (possibly F = R). This changes the economic calculation thus:</p>
+<p><img alt="" src="https://github.com/vbuterin/diagrams/blob/master/slasher2sec.png?raw=true" /></p>
+<p>The intuition here is that we can replicate the economics of proof of work inside of proof of stake. In proof of work, there is also a penalty for creating a block on the wrong chain, but this penalty is implicit in the external environment: miners have to spend extra electricity and obtain or rent extra hardware. Here, we simply make the penalties explicit. This mechanism has the disadvantage that it imposes slightly more risk on validators (although the effect should be smoothed out over time), but has the advantage that it does not require validators to be known ahead of time.</p>
+<h3 id="that-shows-how-chain-based-algorithms-solve-nothing-at-stake-now-how-do-bft-style-proof-of-stake-algorithms-work">That shows how chain-based algorithms solve nothing-at-stake. Now how do BFT-style proof of stake algorithms work?<a class="headerlink" href="#that-shows-how-chain-based-algorithms-solve-nothing-at-stake-now-how-do-bft-style-proof-of-stake-algorithms-work" title="Permanent link">&para;</a></h3>
+<p>BFT-style (partially synchronous) proof of stake algorithms allow validators to "vote" on blocks by sending one or more types of signed messages, and specify two kinds of rules:</p>
+<ul>
+<li><strong>Finality conditions</strong> - rules that determine when a given hash can be considered finalized.</li>
+<li><strong>Slashing conditions</strong> - rules that determine when a given validator can be deemed beyond reasonable doubt to have misbehaved (eg. voting for multiple conflicting blocks at the same time). If a validator triggers one of these rules, their entire deposit gets deleted.</li>
+</ul>
+<p>To illustrate the different forms that slashing conditions can take, we will give two examples of slashing conditions (hereinafter, "2/3 of all validators" is shorthand for "2/3 of all validators weighted by deposited coins", and likewise for other fractions and percentages). In these examples, "PREPARE" and "COMMIT" should be understood as simply referring to two types of messages that validators can send.</p>
+<ol>
+<li>If <code>MESSAGES</code> contains messages of the form <code>["COMMIT", HASH1, view]</code> and <code>["COMMIT", HASH2, view]</code> for the same <code>view</code> but differing <code>HASH1</code> and <code>HASH2</code> signed by the same validator, then that validator is slashed.</li>
+<li>If <code>MESSAGES</code> contains a message of the form <code>["COMMIT", HASH, view1]</code>, then UNLESS either view1 = -1 or there also exist messages of the form <code>["PREPARE", HASH, view1, view2]</code> for some specific <code>view2</code>, where <code>view2 &lt; view1</code>, signed by 2/3 of all validators, then the validator that made the COMMIT is slashed.</li>
+</ol>
+<p>There are two important desiderata for a suitable set of slashing conditions to have:</p>
+<ul>
+<li><strong>Accountable safety</strong> - if conflicting <code>HASH1</code> and <code>HASH2</code> (ie. <code>HASH1</code> and <code>HASH2</code> are different, and neither is a descendant of the other) are finalized, then at least 1/3 of all validators must have violated some slashing condition.</li>
+<li><strong>Plausible liveness</strong> - unless at least 1/3 of all validators have violated some slashing condition, there exists a set of messages that 2/3 of validators can produce that finalize some value.</li>
+</ul>
+<p>If we have a set of slashing conditions that satisfies both properties, then we can incentivize participants to send messages, and start benefiting from economic finality.</p>
+<h3 id="what-is-economic-finality-in-general">What is "economic finality" in general?<a class="headerlink" href="#what-is-economic-finality-in-general" title="Permanent link">&para;</a></h3>
+<p>Economic finality is the idea that once a block is finalized, or more generally once enough messages of certain types have been signed, then the only way that at any point in the future the canonical history will contain a conflicting block is if a large number of people are willing to burn very large amounts of money. If a node sees that this condition has been met for a given block, then they have a very economically strong assurance that that block will always be part of the canonical history that everyone agrees on.</p>
+<p>There are two "flavors" of economic finality:</p>
+<ol>
+<li>A block can be economically finalized if a sufficient number of validators have signed cryptoeconomic claims of the form "I agree to lose X in all histories where block B is not included". This gives clients assurance that either (i) B is part of the canonical chain, or (ii) validators lost a large amount of money in order to trick them into thinking that this is the case.</li>
+<li>A block can be economically finalized if a sufficient number of validators have signed messages expressing support for block B, and there is a mathematical proof that <em>if some B' != B is also finalized under the same definition</em> then validators lose a large amount of money. If clients see this, and also validate the chain, and validity plus finality is a sufficient condition for precedence in the canonical fork choice rule, then they get an assurance that either (i) B is part of the canonical chain, or (ii) validators lost a large amount of money in making a conflicting chain that was also finalized.</li>
+</ol>
+<p>The two approaches to finality inherit from the two solutions to the nothing at stake problem: finality by penalizing incorrectness, and finality by penalizing equivocation. The main benefit of the first approach is that it is more light-client friendly and is simpler to reason about, and the main benefits of the second approach are that (i) it's easier to see that honest validators will not be punished, and (ii) griefing factors are more favorable to honest validators.</p>
+<p>Casper follows the second flavor, though it is possible that an on-chain mechanism will be added where validators can voluntarily opt-in to signing finality messages of the first flavor, thereby enabling much more efficient light clients.</p>
+<h3 id="so-how-does-this-relate-to-byzantine-fault-tolerance-theory">So how does this relate to Byzantine fault tolerance theory?<a class="headerlink" href="#so-how-does-this-relate-to-byzantine-fault-tolerance-theory" title="Permanent link">&para;</a></h3>
+<p>Traditional byzantine fault tolerance theory posits similar safety and liveness desiderata, except with some differences. First of all, traditional byzantine fault tolerance theory simply requires that safety is achieved if 2/3 of validators are <em>honest</em>. This is a strictly easier model to work in; traditional fault tolerance tries to prove "if mechanism M has a safety failure, then at least 1/3 of nodes are faulty", whereas our model tries to prove "if mechanism M has a safety failure, then at least 1/3 of nodes are faulty, <em>and you know which ones, even if you were offline at the time the failure took place</em>". From a liveness perspective, our model is the easier one, as we do not demand a proof that the network <em>will</em> come to consensus, we just demand a proof that it does not get <em>stuck</em>.</p>
+<p>Fortunately, we can show the additional accountability requirement is not a particularly difficult one; in fact, with the right "protocol armor", we can convert <em>any</em> traditional partially synchronous or asynchronous Byzantine fault-tolerant algorithm into an accountable algorithm. The proof of this basically boils down to the fact that faults can be exhaustively categorized into a few classes, and each one of these classes is either accountable (ie. if you commit that type of fault you can get caught, so we can make a slashing condition for it) or indistinguishable from latency (note that even the fault of sending messages too early is indistinguishable from latency, as one can model it by speeding up everyone's clocks and assigning the messages that <em>weren't</em> sent too early a higher latency).</p>
+<h3 id="what-is-weak-subjectivity">What is "weak subjectivity"?<a class="headerlink" href="#what-is-weak-subjectivity" title="Permanent link">&para;</a></h3>
+<p>It is important to note that the mechanism of using deposits to ensure there is "something at stake" does lead to one change in the security model. Suppose that deposits are locked for four months, and can later be withdrawn. Suppose that an attempted 51% attack happens that reverts 10 days worth of transactions. The blocks created by the attackers can simply be imported into the main chain as proof-of-malfeasance (or "dunkles") and the validators can be punished. However, suppose that such an attack happens after six months. Then, even though the blocks can certainly be re-imported, by that time the malfeasant validators will be able to withdraw their deposits on the main chain, and so they cannot be punished.</p>
+<p>To solve this problem, we introduce a "revert limit" - a rule that nodes must simply refuse to revert further back in time than the deposit length (ie. in our example, four months). Note that this rule is different from every other consensus rule in the protocol, in that it means that nodes may come to different conclusions depending on when they saw certain messages. The time that a node saw a given message may be different between different nodes; hence we consider this rule "subjective" (alternatively, one well-versed in Byzantine fault tolerance theory may view it as a kind of synchrony assumption).</p>
+<p>However, the "subjectivity" here is very weak: in order for a node to get on the "wrong" chain, they must receive the original message four months later than they otherwise would have. This is only possible in two cases:</p>
+<ol>
+<li>When a node connects to the blockchain for the first time.</li>
+<li>If a node has been offline for more than four months.</li>
+</ol>
+<p>We can solve (1) by making it the user's responsibility to authenticate the latest state out of band. They can do this by asking their friends, block explorers, businesses that they interact with, etc. for a recent block hash in the chain that they see as the canonical one. In practice, such a block hash may well simply come as part of the software they use to verify the blockchain; an attacker that can corrupt the checkpoint in the software can arguably just as easily corrupt the software itself, and no amount of pure cryptoeconomic verification can solve that problem.</p>
+<p>Note that all of this is a problem only in the very limited case where a majority of previous stakeholders collude to attack the network and create an alternate chain; most of the time we expect there will only be one canonical chain to choose from.</p>
+<p>Also, note that weak subjectivity assumptions exist in proof of work chains as well if the chain does any hard forks. Bitcoin has previously pulled off a hard fork with 2 months lead time through <a href="https://bitcoin.org/en/release/v0.8.1">bitcoind 0.8.1</a>, which fixed a database issue that made certain kinds of large blocks invalid and thereby allowed clients to process blocks that bitcoind 0.7 could not process, and so users had to download a new version of the software with 2 months' notice. This is itself a kind of weak subjectivity assumption, as users had to "log on" within that two-month period to download the update to stay on the correct chain.</p>
+<p>Additionally, the social authentication can if needed even be automated in several ways. One is to bake it into natural user workflow: a <a href="https://github.com/bitcoin/bips/blob/master/bip-0070.mediawiki">BIP 70</a>-style payment request could include a recent block hash, and the user's client software would make sure that they are on the same chain as the vendor before approving a payment (or for that matter, any on-chain interaction). The other is to use Jeff Coleman's <a href="https://www.youtube.com/watch?v=phXohYF0xGo">universal hash time</a>. If UHT is used, then a successful attack chain would need to be generated secretly <em>at the same time</em> as the legitimate chain was being built, requiring a majority of validators to secretly collude for that long.</p>
+<h3 id="does-weak-subjectivity-mean-that-a-proof-of-stake-chain-must-be-anchored-into-a-proof-of-work-chain-to-be-secure">Does weak subjectivity mean that a proof of stake chain must be "anchored" into a proof of work chain to be secure?<a class="headerlink" href="#does-weak-subjectivity-mean-that-a-proof-of-stake-chain-must-be-anchored-into-a-proof-of-work-chain-to-be-secure" title="Permanent link">&para;</a></h3>
+<p>In short, no.</p>
+<h3 id="elaborate">Elaborate?<a class="headerlink" href="#elaborate" title="Permanent link">&para;</a></h3>
+<p>Weak subjectivity by itself is a rather small addition to the security assumptions in a blockchain in practice, and definitely does not necessitate some proof-of-work-based outside source of truth to supplement it. To see why, consider the kind of situation where weak subjectivity by itself would compromise a blockchain's security. In such a world, powerful corporate or nation state actors would have the ability to somehow convince an entire community that block hash B was the block hash of block XXXYYY when most of them saw at the time and have stored in their own computers that the block hash of block XXXYYY was A, but for some reason such powerful actors <strong>would not</strong> have the ability to trick users into accepting a different location from where they download their client software.</p>
+<p>Furthermore, the "anchoring" that advocates of such a scheme describe is not even all that secure. All anchoring proves is that a given block hash was <em>produced</em> at time T' &lt; T; it does not prove that it was <em>published</em> at that time. Hence, a PoS chain anchored into a PoW chain could simply be attacked by a majority coalition that produces both chains in parallel, anchors both, publishes one, and then four months later publishes the other one.</p>
+<p>One could get around this by embedding a fully-functional "light client" of the PoS chain into the PoW chain, which would reject the double-anchoring, but this would require the PoW chain to be feature-rich enough <em>to be able</em> to implement such a client - a property which most actually existing proof of work chains do not possess.</p>
+<h3 id="can-one-economically-penalize-censorship-in-proof-of-stake">Can one economically penalize censorship in proof of stake?<a class="headerlink" href="#can-one-economically-penalize-censorship-in-proof-of-stake" title="Permanent link">&para;</a></h3>
+<p>Unlike reverts, censorship is much more difficult to prove. The blockchain itself cannot directly tell the difference between "user A tried to send transaction X but it was unfairly censored", "user A tried to send transaction X but it never got in because the transaction fee was insufficient" and "user A never tried to send transaction X at all". However, there are a number of techniques that can be used to mitigate censorship issues.</p>
+<p>The first is censorship resistance by halting problem. In the weaker version of this scheme, the protocol is designed to be Turing-complete in such a way that a validator cannot even tell whether or not a given transaction will lead to an undesired action without spending a large amount of processing power executing the transaction, and thus opening itself up to denial-of-service attacks. This is what <a href="http://hackingdistributed.com/2016/07/05/eth-is-more-resilient-to-censorship/">prevented the DAO soft fork</a>.</p>
+<p>In the stronger version of the scheme, transactions can trigger guaranteed effects at some point in the near to mid-term future. Hence, a user could send multiple transactions which interact with each other and with predicted third-party information to lead to some future event, but the validators cannot possibly tell that this is going to happen until the transactions are already included (and economically finalized) and it is far too late to stop them; even if all future transactions are excluded, the event that validators wish to halt would still take place. Note that in this scheme, validators could still try to prevent <strong>all</strong> transactions, or perhaps all transactions that do not come packaged with some formal proof that they do not lead to anything undesired, but this would entail forbidding a very wide class of transactions to the point of essentially breaking the entire system, which would cause validators to lose value as the price of the cryptocurrency in which their deposits are denominated would drop.</p>
+<p>The second, <a href="https://www.reddit.com/r/Bitcoin/comments/4j7pfj/adam_backs_clever_mechanism_to_prevent_miners/d34t9xa">described by Adam Back here</a>, is to require transactions to be <a href="https://www.gwern.net/Self-decrypting%20files">timelock-encrypted</a>. Hence, validators will include the transactions without knowing the contents, and only later could the contents automatically be revealed, by which point once again it would be far too late to un-include the transactions. If validators were sufficiently malicious, however, they could simply only agree to include transactions that come with a cryptographic proof (eg. ZK-SNARK) of what the decrypted version is; this would force users to download new client software, but an adversary could conveniently provide such client software for easy download, and in a game-theoretic model users would have the incentive to play along.</p>
+<p>Perhaps the best that can be said in a proof-of-stake context is that users could also install a software update that includes a hard fork that deletes the malicious validators and this is not that much harder than installing a software update to make their transactions "censorship-friendly". Hence, all in all this scheme is also moderately effective, though it does come at the cost of slowing interaction with the blockchain down (note that the scheme must be mandatory to be effective; otherwise malicious validators could much more easily simply filter encrypted transactions without filtering the quicker unencrypted transactions).</p>
+<p>A third alternative is to include censorship detection in the fork choice rule. The idea is simple. Nodes watch the network for transactions, and if they see a transaction that has a sufficiently high fee for a sufficient amount of time, then they assign a lower "score" to blockchains that do not include this transaction. If all nodes follow this strategy, then eventually a minority chain would automatically coalesce that includes the transactions, and all honest online nodes would follow it. The main weakness of such a scheme is that offline nodes would still follow the majority branch, and if the censorship is temporary and they log back on after the censorship ends then they would end up on a different branch from online nodes. Hence, this scheme should be viewed more as a tool to facilitate automated emergency coordination on a hard fork than something that would play an active role in day-to-day fork choice.</p>
+<h3 id="how-does-validator-selection-work-and-what-is-stake-grinding">How does validator selection work, and what is stake grinding?<a class="headerlink" href="#how-does-validator-selection-work-and-what-is-stake-grinding" title="Permanent link">&para;</a></h3>
+<p>In any chain-based proof of stake algorithm, there is a need for some mechanism which randomly selects which validator out of the currently active validator set can make the next block. For example, if the currently active validator set consists of Alice with 40 ether, Bob with 30 ether, Charlie with 20 ether and David with 10 ether, then you want there to be a 40% chance that Alice will be the next block creator, 30% chance that Bob will be, etc (in practice, you want to randomly select not just one validator, but rather an infinite sequence of validators, so that if Alice doesn't show up there is someone who can replace her after some time, but this doesn't change the fundamental problem). In non-chain-based algorithms randomness is also often needed for different reasons.</p>
+<p>"Stake grinding" is a class of attack where a validator performs some computation or takes some other step to try to bias the randomness in their own favor. For example:</p>
+<ol>
+<li>In <a href="https://bitcointalk.org/index.php?topic=131901.0">Peercoin</a>, a validator could "grind" through many combinations of parameters and find favorable parameters that would increase the probability of their coins generating a valid block.</li>
+<li>In one now-defunct implementation, the randomness for block N+1 was dependent on the signature of block N. This allowed a validator to repeatedly produce new signatures until they found one that allowed them to get the next block, thereby seizing control of the system forever.</li>
+<li>In NXT, the randomness for block N+1 is dependent on the validator that creates block N. This allows a validator to manipulate the randomness by simply skipping an opportunity to create a block. This carries an opportunity cost equal to the block reward, but sometimes the new random seed would give the validator an above-average number of blocks over the next few dozen blocks. See <a href="http://vitalik.ca/files/randomness.html">here</a> for a more detailed analysis.</li>
+</ol>
+<p>(1) and (2) are easy to solve; the general approach is to require validators to deposit their coins well in advance, and not to use information that can be easily manipulated as source data for the randomness. There are several main strategies for solving problems like (3). The first is to use schemes based on <a href="https://en.wikipedia.org/wiki/Secret_sharing">secret sharing</a> or <a href="https://eprint.iacr.org/2002/081.pdf">deterministic threshold signatures</a> and have validators collaboratively generate the random value. These schemes are robust against all manipulation unless a majority of validators collude (in some cases though, depending on the implementation, between 33-50% of validators can interfere in the operation, leading to the protocol having a 67% liveness assumption).</p>
+<p>The second is to use cryptoeconomic schemes where validators commit to information (ie. publish <code>sha3(x)</code>) well in advance, and then must publish <code>x</code> in the block; <code>x</code> is then added into the randomness pool. There are two theoretical attack vectors against this:</p>
+<ol>
+<li>Manipulate <code>x</code> at commitment time. This is impractical because the randomness result would take many actors' values into account, and if even one of them is honest then the output will be a uniform distribution. A uniform distribution XORed together with arbitrarily many arbitrarily biased distributions still gives a uniform distribution.</li>
+<li>Selectively avoid publishing blocks. However, this attack costs one block reward of opportunity cost, and because the scheme prevents anyone from seeing any future validators except for the next, it almost never provides more than one block reward worth of revenue. The only exception is the case where, if a validator skips, the next validator in line AND the first child of that validator will both be the same validator; if these situations are a grave concern then we can punish skipping further via an explicit skipping penalty.</li>
+</ol>
+<p>The third is to use <a href="https://arxiv.org/pdf/1406.5694.pdf">Iddo Bentov's "majority beacon"</a>, which generates a random number by taking the bit-majority of the previous N random numbers generated through some other beacon (ie. the first bit of the result is 1 if the majority of the first bits in the source numbers is 1 and otherwise it's 0, the second bit of the result is 1 if the majority of the second bits in the source numbers is 1 and otherwise it's 0, etc). This gives a cost-of-exploitation of <code>~C * sqrt(N)</code> where <code>C</code> is the cost of exploitation of the underlying beacons. Hence, all in all, many known solutions to stake grinding exist; the problem is more like <a href="https://en.wikipedia.org/wiki/Differential_cryptanalysis">differential cryptanalysis</a> than <a href="https://en.wikipedia.org/wiki/Halting_problem">the halting problem</a> - an annoyance that proof of stake designers eventually understood and now know how to overcome, not a fundamental and inescapable flaw.</p>
+<h3 id="what-would-the-equivalent-of-a-51-attack-against-casper-look-like">What would the equivalent of a 51% attack against Casper look like?<a class="headerlink" href="#what-would-the-equivalent-of-a-51-attack-against-casper-look-like" title="Permanent link">&para;</a></h3>
+<p>The most basic form of "51% attack" is a simple <strong>finality reversion</strong>: validators that already finalized block A then finalize some competing block A', thereby breaking the blockchain's finality guarantee. In this case, there now exist two incompatible finalized histories, creating a split of the blockchain, that full nodes would be willing to accept, and so it is up to the community to coordinate out of band to focus on one of the branches and ignore the other(s).</p>
+<p>This coordination could take place on social media, through private channels between block explorer providers, businesses and exchanges, various online discussion forms, and the like. The principle according to which the decision would be made is "whichever one was finalized <em>first</em> is the real one". Another alternative is to rely on "market consensus": both branches would be briefly being traded on exchanges for a very short period of time, until network effects rapidly make one branch much more valuable with the others. In this case, the "first finalized chain wins" principle would be a Schelling point for what the market would choose. It's very possible that a combination of both approaches will get used in practice.</p>
+<p>Once there is consensus on which chain is real, users (ie. validators and light and full node operators) would be able to manually insert the winning block hash into their client software through a special option in the interface, and their nodes would then ignore all other chains. No matter which chain wins, there exists evidence that can immediately be used to destroy at least 1/3 of the validators' deposits.</p>
+<p>Another kind of attack is <strong>liveness denial</strong>: instead of trying to revert blocks, a cartel of &gt;=34% of validators could simply refuse to finalize any more blocks. In this case, blocks would never finalize. Casper uses a hybrid chain/BFT-style consensus, and so the blockchain would still grow, but it would have a much lower level of security. If no blocks are finalized for some long period of time (eg. 1 day), then there are several options:</p>
+<ol>
+<li>The protocol can include an automatic feature to rotate the validator set. Blocks under the new validator set would finalize, but clients would get an indication that the new finalized blocks are in some sense suspect, as it's very possible that the old validator set will resume operating and finalize some other blocks. Clients could then manually override this warning once it's clear that the old validator set is not coming back online. There would be a protocol rule that under such an event all old validators that did not try to participate in the consensus process take a large penalty to their deposits.</li>
+<li>A hard fork is used to add in new validators and delete the attackers' balances.</li>
+</ol>
+<p>In case (2), the fork would once again be coordinated via social consensus and possibly via market consensus (ie. the branch with the old and new validator set briefly both being traded on exchanges). In the latter case, there is a strong argument that the market would want to choose the branch where "the good guys win", as such a chain has validators that have demonstrated their goodwill (or at least, their alignment with the interest of the users) and so is a more useful chain for application developers.</p>
+<p>Note that there is a spectrum of response strategies here between social coordination and in-protocol automation, and it is generally considered desirable to push as far toward automated resolution as possible so as to minimize the risk of simultaneous 51% attacks and attacks on the social layer (and market consensus tools such as exchanges). One can imagine an implementation of (1) where nodes automatically accept a switch to a new validator set if they do not see a new block being committed for a long enough time, which would reduce the need for social coordination but at the cost of requiring those nodes that do not wish to rely on social coordination to remain constantly online. In either case, a solution can be designed where attackers take a large hit to their deposits.</p>
+<p>A more insidious kind of attack is a <strong>censorship attack</strong>, where &gt;= 34% of validators refuse to finalize blocks that contain certain kinds of transactions that they do not like, but otherwise the blockchain keeps going and blocks keep getting finalized. This could range from a mild censorship attack which only censors to interfere with a few specific applications (eg. selectively censoring transactions in something like Raiden or the lightning network is a fairly easy way for a cartel to steal money) to an attack that blocks all transactions.</p>
+<p>There are two sub-cases. The first is where the attacker has 34-67% of the stake. Here, we can program validators to refuse to finalize or build on blocks that they subjectively believe are clearly censoring transactions, which turns this kind of attack into a more standard liveness attack. The more dangerous case is where the attacker has more than 67% of the stake. Here, the attacker can freely block any transactions they wish to block and refuse to build on any blocks that do contain such transactions.</p>
+<p>There are two lines of defense. First, because Ethereum is Turing-complete it is <a href="http://hackingdistributed.com/2016/07/05/eth-is-more-resilient-to-censorship/">naturally somewhat resistant to censorship</a> as censoring transactions that have a certain effect is in some ways similar to solving the halting problem. Because there is a gas limit, it is not literally impossible, though the "easy" ways to do it do open up denial-of-service attack vulnerabilities.</p>
+<p>This resistance <a href="https://pdaian.com/blog/on-soft-fork-security/">is not perfect</a>, and there are ways to improve it. The most interesting approach is to add in-protocol features where transactions can automatically schedule future events, as it would be extremely difficult to try to foresee what the result of executing scheduled events and the events resulting from those scheduled events would be ahead of time. Validators could then use obfuscated sequences of scheduled events to deposit their ether, and dilute the attacker to below 33%.</p>
+<p>Second, one can introduce the notion of an "active fork choice rule", where part of the process for determining whether or not a given chain is valid is trying to interact with it and verifying that it is not trying to censor you. The most effective way to do this would be for nodes to repeatedly send a transaction to schedule depositing their ether and then cancel the deposit at the last moment. If nodes detect censorship, they could then follow through with the deposit, and so temporarily join the validator pool en masse, diluting the attacker to below 33%. If the validator cartel censors their attempts to deposit, then nodes running this "active fork choice rule" would not recognize the chain as valid; this would collapse the censorship attack into a liveness denial attack, at which point it can be resolved through the same means as other liveness denial attacks.</p>
+<h3 id="that-sounds-like-a-lot-of-reliance-on-out-of-band-social-coordination-is-that-not-dangerous">That sounds like a lot of reliance on out-of-band social coordination; is that not dangerous?<a class="headerlink" href="#that-sounds-like-a-lot-of-reliance-on-out-of-band-social-coordination-is-that-not-dangerous" title="Permanent link">&para;</a></h3>
+<p>Attacks against Casper are extremely expensive; as we will see below, attacks against Casper cost as much, if not more, than the cost of buying enough mining power in a proof of work chain to permanently 51% attack it over and over again to the point of uselessness. Hence, the recovery techniques described above will only be used in very extreme circumstances; in fact, advocates of proof of work also generally express willingness to use social coordination in similar circumstances by, for example, <a href="https://news.bitcoin.com/bitcoin-developers-changing-proof-work-algorithm/">changing the proof of work algorithm</a>. Hence, it is not even clear that the need for social coordination in proof of stake is larger than it is in proof of work.</p>
+<p>In reality, we expect the amount of social coordination required to be near-zero, as attackers will realize that it is not in their benefit to burn such large amounts of money to simply take a blockchain offline for one or two days.</p>
+<h3 id="doesnt-mc-mr-mean-that-all-consensus-algorithms-with-a-given-security-level-are-equally-efficient-or-in-other-words-equally-wasteful">Doesn't MC =&gt; MR mean that all consensus algorithms with a given security level are equally efficient (or in other words, equally wasteful)?<a class="headerlink" href="#doesnt-mc-mr-mean-that-all-consensus-algorithms-with-a-given-security-level-are-equally-efficient-or-in-other-words-equally-wasteful" title="Permanent link">&para;</a></h3>
+<p>This is an argument that many have raised, perhaps best explained by <a href="http://www.truthcoin.info/blog/pow-cheapest/">Paul Sztorc in this article</a>. Essentially, if you create a way for people to earn $100, then people will be willing to spend anywhere up to $99.9 (including the cost of their own labor) in order to get it; marginal cost approaches marginal revenue. Hence, the theory goes, any algorithm with a given block reward will be equally "wasteful" in terms of the quantity of socially unproductive activity that is carried out in order to try to get the reward.</p>
+<p>There are three flaws with this:</p>
+<ol>
+<li>It's not enough to simply say that marginal cost approaches marginal revenue; one must also posit a plausible mechanism by which someone can actually expend that cost. For example, if tomorrow I announce that every day from then on I will give $100 to a randomly selected one of a given list of ten people (using my laptop's /dev/urandom as randomness), then there is simply no way for anyone to send $99 to try to get at that randomness. Either they are not in the list of ten, in which case they have no chance no matter what they do, or they are in the list of ten, in which case they don't have any reasonable way to manipulate my randomness so they're stuck with getting the expected-value $10 per day.</li>
+<li>MC =&gt; MR does NOT imply total cost approaches total revenue. For example, suppose that there is an algorithm which pseudorandomly selects 1000 validators out of some very large set (each validator getting a reward of $1), you have 10% of the stake so on average you get 100, and at a cost of $1 you can force the randomness to reset (and you can repeat this an unlimited number of times). Due to the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>, the standard deviation of your reward is $10, and based on <a href="http://math.stackexchange.com/questions/89030/expectation-of-the-maximum-of-gaussian-random-variables">other known results in math</a> the expected maximum of N random samples is slightly under <code>M + S * sqrt(2 * log(N))</code> where <code>M</code> is the mean and <code>S</code> is the standard deviation. Hence the reward for making additional trials (ie. increasing N) drops off sharply, eg. with 0 re-trials your expected reward is $100, with one re-trial it's $105.5, with two it's $108.5, with three it's $110.3, with four it's $111.6, with five it's $112.6 and with six it's $113.5. Hence, after five retrials it stops being worth it. As a result, an economically motivated attacker with ten percent of stake will inefficiently spend $5 to get an additional revenue of $13, though the total revenue is $113. If the exploitable mechanisms only expose small opportunities, the economic loss will be small; it is decidedly NOT the case that a single drop of exploitability brings the entire flood of PoW-level economic waste rushing back in. This point will also be very relevant in our below discussion on capital lockup costs.</li>
+<li>Proof of stake can be secured with much lower total rewards than proof of work.</li>
+</ol>
+<h3 id="what-about-capital-lockup-costs">What about capital lockup costs?<a class="headerlink" href="#what-about-capital-lockup-costs" title="Permanent link">&para;</a></h3>
+<p>Locking up X ether in a deposit is not free; it entails a sacrifice of optionality for the ether holder. Right now, if I have 1000 ether, I can do whatever I want with it; if I lock it up in a deposit, then it's stuck there for months, and I do not have, for example, the insurance utility of the money being there to pay for sudden unexpected expenses. I also lose some freedom to change my token allocations away from ether within that timeframe; I could simulate selling ether by shorting an amount equivalent to the deposit on an exchange, but this itself carries costs including exchange fees and paying interest. Some might argue: isn't this capital lockup inefficiency really just a highly indirect way of achieving the exact same level of economic inefficiency as exists in proof of work? The answer is no, for both reasons (2) and (3) above.</p>
+<p>Let us start with (3) first. Consider a model where proof of stake deposits are infinite-term, ASICs last forever, ASIC technology is fixed (ie. no Moore's law) and electricity costs are zero. Let's say the equilibrium interest rate is 5% per annum. In a proof of work blockchain, I can take $1000, convert it into a miner, and the miner will pay me $50 in rewards per year forever. In a proof of stake blockchain, I would buy $1000 of coins, deposit them (ie. losing them forever), and get $50 in rewards per year forever. So far, the situation looks completely symmetrical (technically, even here, in the proof of stake case my destruction of coins isn't fully socially destructive as it makes others' coins worth more, but we can leave that aside for the moment). The cost of a "Maginot-line" 51% attack (ie. buying up more hardware than the rest of the network) increases by $1000 in both cases.</p>
+<p>Now, let's perform the following changes to our model in turn:</p>
+<ol>
+<li>Moore's law exists, ASICs depreciate by 50% every 2.772 years (that's a continuously-compounded 25% per annum; picked to make the numbers simpler). If I want to retain the same "pay once, get money forever" behavior, I can do so: I would put $1000 into a fund, where $167 would go into an ASIC and the remaining $833 would go into investments at 5% interest; the $41.67 dividends per year would be just enough to keep renewing the ASIC hardware (assuming technological development is fully continuous, once again to make the math simpler). Rewards would go down to $8.33 per year; hence, 83.3% of miners will drop out until the system comes back into equilibrium with me earning $50 per year, and so the Maginot-line cost of an attack on PoW given the same rewards drops by a factor of 6.</li>
+<li>Electricity plus maintenance makes up 1/3 of mining costs. We estimate the 1/3 from recent mining statistics: one of Bitfury's new data centers consumes <a href="http://www.coindesk.com/bitfury-details-100-million-georgia-data-center/">0.06 joules per gigahash</a>, or 60 J/TH or 0.000017 kWh/TH, and if we assume the entire Bitcoin network has similar efficiencies we get 27.9 kWh per second given <a href="http://bitcoinwatch.com/">1.67 million TH/s total Bitcoin hashpower</a>. Electricity in China costs <a href="http://www.statista.com/statistics/477995/global-prices-of-electricity-by-select-country/">$0.11 per kWh</a>, so that's about $3 per second, or $260,000 per day. Bitcoin block rewards plus fees are $600 per BTC * 13 BTC per block * 144 blocks per day = $1.12m per day. Thus electricity itself would make up 23% of costs, and we can back-of-the-envelope estimate maintenance at 10% to give a clean 1/3 ongoing costs, 2/3 fixed costs split. This means that out of your $1000 fund, only $111 would go into the ASIC, $55 would go into paying ongoing costs, and $833 would go into hardware investments; hence the Maginot-line cost of attack is 9x lower than in our original setting.</li>
+<li>Deposits are temporary, not permanent. Sure, if I voluntarily keep staking forever, then this changes nothing. However, I regain some of the optionality that I had before; I could quit within a medium timeframe (say, 4 months) at any time. This means that I would be willing to put more than $1000 of ether in for the $50 per year gain; perhaps in equilibrium it would be something like $3000. Hence, the cost of the Maginot line attack on PoS <em>increases</em> by a factor of three, and so on net PoS gives 27x more security than PoW for the same cost.</li>
+</ol>
+<p>The above included a large amount of simplified modeling, however it serves to show how multiple factors stack up heavily in favor of PoS in such a way that PoS gets <em>more</em> bang for its buck in terms of security. The meta-argument for why this <a href="http://lesswrong.com/lw/kpj/multiple_factor_explanations_should_not_appear/">perhaps suspiciously multifactorial argument</a> leans so heavily in favor of PoS is simple: in PoW, we are working directly with the laws of physics. In PoS, we are able to design the protocol in such a way that it has the precise properties that we want - in short, we can <em>optimize the laws of physics in our favor</em>. The "hidden trapdoor" that gives us (3) is the change in the security model, specifically the introduction of weak subjectivity.</p>
+<p>Now, we can talk about the marginal/total distinction. In the case of capital lockup costs, this is very important. For example, consider a case where you have $100,000 of ether. You probably intend to hold a large portion of it for a long time; hence, locking up even $50,000 of the ether should be nearly free. Locking up $80,000 would be slightly more inconvenient, but $20,000 of breathing room still gives you a large space to maneuver. Locking up $90,000 is more problematic, $99,000 is very problematic, and locking up all $100,000 is absurd, as it means you would not even have a single bit of ether left to pay basic transaction fees. Hence, your marginal costs increase quickly. We can show the difference between this state of affairs and the state of affairs in proof of work as follows:</p>
+<p><img alt="" src="https://blog.ethereum.org/wp-content/uploads/2014/07/liquidity.png" /></p>
+<p>Hence, the <i>total</i> cost of proof of stake is potentially much lower than the marginal cost of depositing 1 more ETH into the system multiplied by the amount of ether currently deposited.</p>
+<p>Note that this component of the argument unfortunately does not fully translate into reduction of the "safe level of issuance". It does help us because it shows that we can get substantial proof of stake participation even if we keep issuance very low; however, it also means that a large portion of the gains will simply be borne by validators as economic surplus.</p>
+<h3 id="will-exchanges-in-proof-of-stake-pose-a-similar-centralization-risk-to-pools-in-proof-of-work">Will exchanges in proof of stake pose a similar centralization risk to pools in proof of work?<a class="headerlink" href="#will-exchanges-in-proof-of-stake-pose-a-similar-centralization-risk-to-pools-in-proof-of-work" title="Permanent link">&para;</a></h3>
+<p>From a centralization perspective, in both <a href="https://blockchain.info/pools">Bitcoin</a> and <a href="https://etherscan.io/stats/miner?range=7&amp;blocktype=blocks">Ethereum</a> it's the case that roughly three pools are needed to coordinate on a 51% attack (4 in Bitcoin, 3 in Ethereum at the time of this writing). In PoS, if we assume 30% participation including all exchanges, then <a href="https://etherscan.io/accounts">three exchanges</a> would be enough to make a 51% attack; if participation goes up to 40% then the required number goes up to eight. However, exchanges will not be able to participate with all of their ether; the reason is that they need to accomodate withdrawals.</p>
+<p>Additionally, pooling in PoS is discouraged because it has a much higher trust requirement - a proof of stake pool can pretend to be hacked, destroy its participants' deposits and claim a reward for it. On the other hand, the ability to earn interest on one's coins without oneself running a node, even if trust is required, is something that many may find attractive; all in all, the centralization balance is an empirical question for which the answer is unclear until the system is actually running for a substantial period of time. With sharding, we expect pooling incentives to reduce further, as (i) there is even less concern about variance, and (ii) in a sharded model, transaction verification load is proportional to the amount of capital that one puts in, and so there are no direct infrastructure savings from pooling.</p>
+<p>A final point is that centralization is less harmful in proof of stake than in proof of work, as there are much cheaper ways to recover from successful 51% attacks; one does not need to switch to a new mining algorithm.</p>
+<h3 id="can-proof-of-stake-be-used-in-privateconsortium-chains">Can proof of stake be used in private/consortium chains?<a class="headerlink" href="#can-proof-of-stake-be-used-in-privateconsortium-chains" title="Permanent link">&para;</a></h3>
+<p>Generally, yes; any proof of stake algorithm can be used as a consensus algorithm in private/consortium chain settings. The only change is that the way the validator set is selected would be different: it would start off as a set of trusted users that everyone agrees on, and then it would be up to the validator set to vote on adding in new validators.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                联盟链发展
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Sharding-FAQ/" title="分片区块链" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                分片区块链
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1988 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>链条纤维 - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                链条纤维
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Research/Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Problems/" title="杂项" class="md-tabs__link md-tabs__link--active">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        链条纤维
+      </label>
+    
+    <a href="./" title="链条纤维" class="md-nav__link md-nav__link--active">
+      链条纤维
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="历史" class="md-nav__link">
+    历史
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概述" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原理图" class="md-nav__link">
+    原理图
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="交易人" class="md-nav__link">
+    交易人
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="交易人: 做交易" class="md-nav__link">
+    交易人: 做交易
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="排序器" class="md-nav__link">
+    排序器
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-transaction" title="排序器: validate transaction" class="md-nav__link">
+    排序器: validate transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce-comprehensive-merkle-proof-and-post-state-root" title="排序器: produce Comprehensive Merkle Proof and Post State Root" class="md-nav__link">
+    排序器: produce Comprehensive Merkle Proof and Post State Root
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collate-into-x-fiber-block" title="排序器: collate into X-fiber Block" class="md-nav__link">
+    排序器: collate into X-fiber Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="验证器" class="md-nav__link">
+    验证器
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-placed-in-pos-consensus-master-block" title="验证器: all placed in PoS-consensus master block" class="md-nav__link">
+    验证器: all placed in PoS-consensus master block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-selection-chosen-to-audit-txpsrcmp-contents-availability" title="验证器: random selection chosen to audit TX/PSR/CMP contents &amp; availability" class="md-nav__link">
+    验证器: random selection chosen to audit TX/PSR/CMP contents &amp; availability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="渔夫" class="md-nav__link">
+    渔夫
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x" title="渔夫: 搜索无效或不可用的X光纤模块" class="md-nav__link">
+    渔夫: 搜索无效或不可用的X光纤模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="渔夫挑战:" class="md-nav__link">
+    渔夫挑战:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="其它差异" class="md-nav__link">
+    其它差异
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="注释" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="历史" class="md-nav__link">
+    历史
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概述" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原理图" class="md-nav__link">
+    原理图
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="交易人" class="md-nav__link">
+    交易人
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="交易人: 做交易" class="md-nav__link">
+    交易人: 做交易
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="排序器" class="md-nav__link">
+    排序器
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-transaction" title="排序器: validate transaction" class="md-nav__link">
+    排序器: validate transaction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce-comprehensive-merkle-proof-and-post-state-root" title="排序器: produce Comprehensive Merkle Proof and Post State Root" class="md-nav__link">
+    排序器: produce Comprehensive Merkle Proof and Post State Root
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collate-into-x-fiber-block" title="排序器: collate into X-fiber Block" class="md-nav__link">
+    排序器: collate into X-fiber Block
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="验证器" class="md-nav__link">
+    验证器
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#all-placed-in-pos-consensus-master-block" title="验证器: all placed in PoS-consensus master block" class="md-nav__link">
+    验证器: all placed in PoS-consensus master block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#random-selection-chosen-to-audit-txpsrcmp-contents-availability" title="验证器: random selection chosen to audit TX/PSR/CMP contents &amp; availability" class="md-nav__link">
+    验证器: random selection chosen to audit TX/PSR/CMP contents &amp; availability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="渔夫" class="md-nav__link">
+    渔夫
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x" title="渔夫: 搜索无效或不可用的X光纤模块" class="md-nav__link">
+    渔夫: 搜索无效或不可用的X光纤模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="渔夫挑战:" class="md-nav__link">
+    渔夫挑战:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="其它差异" class="md-nav__link">
+    其它差异
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="注释" class="md-nav__link">
+    注释
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chain-fibers-redux">区块链可伸缩性: Chain-Fibers Redux<a class="headerlink" href="#chain-fibers-redux" title="Permanent link">&para;</a></h1>
+<p><em>This article describes a scalability proposal made by Gavin Wood in 2015. Many of the principles described here have been a key inspiration for subsequent "<a href="https://github.com/ethereum/wiki/wiki/Sharding-FAQ">sharding</a>" proposals.</em></p>
+<h2 id="_1">历史<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>I came up with the first seed of this idea while chatting to Janislav Malahov in Berlin in Spring 2014. Unfortunately, the original article I wrote was lost along with my laptop when it was stolen in Vienna. After chatting over the principles with Vitalik more recently, we made a number of alterations and formalisations, mainly to the validation and the sub-state cutting mechanisms. What follows is a fairly complete picture of one particular possible plan for block chain scalability in a later version of Ethereum.</p>
+<h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>The basic idea of Chain-Fibers is unchanged from a year ago; split the state-space up into strata and have separate transaction collators specialising in one or a number of state sub-spaces. Transactions requiring interactions from many a subspace would be accordingly more expensive (since collators would have to maintain presence on multiple chains) and take longer to execute (since there is a lesser chance that any given block would contain a superset of the transaction's subspaces). Validity of a transaction is verifiable in isolation through the provision of comprehensive Merkle proofs to its inputs alongside it in the block in which it is included.</p>
+<p>The subtleties lie in precisely what governs the division of subspaces (my original proposal included the automated splitting, merging and rotation of subspace-divisions in order to best deliver internal coherency), how security is maintained within comparatively worthless subspaces and how this can play well with Proof-of-Stake (the original was based upon a master PoW chain, feeding off an idea put forward by Max Kaye in early 2014 to disassociate block chain archival from transition semantics).</p>
+<p>Basic idea is to have a number of chains (e.g. N), each detailing the state-transitions for only a strata of the entire system state (i.e. a state subspace). Following from programming terminology, these might be termed "fibers". Accounts thus belong to a subspace and as such a single fiber; the fiber to which they belong can be determined simply from the first log2(N) bits of the address. N can increase or decrease, and is a value maintained within the housekeeping information on the "Master Chain".</p>
+<p>The Master Chain is maintained by a set of bonded Validators V, with the number of validators proportional to N. A random selection of validators validate each block produced, and validators ultimately vote to form consensus over the Master Chain. Each block of the Master Chain maintains a reference to the header of each fiber.</p>
+<p>Transaction collators produce blocks (accepting fees from transactors), and pay Validators some of the fees collected to include the hash of their block in the main chain. Blocks are produced across a particular "home set" of fibers; this is basically just the set of fibers of which they maintain the State Trie. Their blocks may involve transactions over one or many of these fibers, though none outside their "home set".</p>
+<p>"Fishermen" is a term given to freelance checkers. Since block validation and availability are both important, and since it is possible that sets of validators may be contractually bribed, it is important to have a mechanism to involve additional rational individuals in acting as "whistle-blowers" to avoid bogging the other validators needlessly checking all blocks. The fishermen basically pay to attempt to convince a quorum of validators that a previously validated block is invalid (or unavailable, which we assume is equivalent). If a fisherman demonstrates a validator (or, more likely, set of validators) acted in a dishonourable fashion, then they get to claim all of their bonds. To avoid DoSing the validators with spurious challenges, a fee is payable.</p>
+<h2 id="_3">原理图<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>Sorry for the not-quite ASCII-art. I'm not quite as 1337 at Inkscape as Vitalik.</p>
+<div class="codehilite"><pre><span></span>Transactors        ==TX+FEE==&gt;  Collators                     ==BLOCK+FEE==&gt;  Validators
+make transaction                 validate transaction,                         random selection chosen to audit
+                                produce Comprehensive Merkle                    TX/PSR/CMP contents &amp; availability,
+                                  Proof and Post State Root,                  all placed in PoS-consensus master block
+                                collate into X-fiber Block
+
+                                Fishermen                 ==CHALLENGE+FEE==&gt;  Validators
+                                search for invalid or                         a selection adjudicate challenge
+                                  unavailable X-fiber blocks
+</pre></div>
+
+<h2 id="_4">交易人<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>Transactors are pretty much exactly the same as in Ethereum 1.0 - they are the users of the system.</p>
+<h3 id="_5">交易人: 做交易<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Transactors make a transaction much like they do in the existing Ethereum system. One or two minor differences - addresses can be used as a distance metric; those sharing the same number of initial bits are considered "closer", which means a greater certainty into the future that they will continue to be contained in the same state subspace. Contracts are naturally created in the same state subspace as the creator.</p>
+<p>Transactions, like Collators, operate over a number of fibers; perhaps one perhaps all, probably somewhere in between. Submission to collators may be directed through fiber sub-network overlays.</p>
+<p>Submission and payment to the collators happens much as existing transaction submission to miners happens in Ethereum 1.0.</p>
+<h2 id="_6">排序器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Collators maintain presence on at least two peer sub-network overlays; the Validators overlay, and one or more fiber overlays. The fiber overlays may provide directed transaction propogation. Collators "collate" on a set of fibers. They maintain a full fiber-chain for each fiber they collate over, and can accept all transactions that involve any combination of their fiber set. The greater this combination, then the greater their "transaction net", but the greater their overall disk/memory footprint.</p>
+<h3 id="validate-transaction">排序器: validate transaction<a class="headerlink" href="#validate-transaction" title="Permanent link">&para;</a></h3>
+<p>On receipt of a transaction, they go through the usual Ethereum 1.0 rites of checking payment is enough, initial balances &amp;c. Once basic validation is done, they attempt to execute it, throwing it out if it touches any fiber that is not part of collator's fiber set.</p>
+<h3 id="produce-comprehensive-merkle-proof-and-post-state-root">排序器: produce Comprehensive Merkle Proof and Post State Root<a class="headerlink" href="#produce-comprehensive-merkle-proof-and-post-state-root" title="Permanent link">&para;</a></h3>
+<p>Collators provide each post-state-root (as is found in the transaction receipt of Ethereum 1.0) and append to the block Merkle proofs and associated hints (e.g. contract code) for all inputs (balance, nonce, state, code) from all subspaces that are required for the evaluation of each transaction from a previously known post-state-root.</p>
+<p>This allows an auditor to, without anything other than the previous post-state-root for each fiber, determine the validity of the block.</p>
+<h3 id="collate-into-x-fiber-block">排序器: collate into X-fiber Block<a class="headerlink" href="#collate-into-x-fiber-block" title="Permanent link">&para;</a></h3>
+<p>A Cross Fiber Block is created from the total information collated. This includes transactions, transaction receipts (post-state-roots), Comprehensive Merkle-Proofs and associated hash-hints. This block does not include any consensus-specific information such as timestamping, uncles &amp;c.</p>
+<h2 id="_7">验证器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Validators (who might be better named auditors) are bonded particpants, chosen regularly from the highest bidders, who take a small fee for the ultimate maintenence of the network. Their job, as a whole, is to form a judiciary and ultimate authority over the validity and transaction contents of the chain. We generally assume that they are mostly benevolent and cannot all be bribed. Being bonded, validators may also be called to audit and stake their bond on an opinion over validity or information-availability.</p>
+<h3 id="all-placed-in-pos-consensus-master-block">验证器: all placed in PoS-consensus master block<a class="headerlink" href="#all-placed-in-pos-consensus-master-block" title="Permanent link">&para;</a></h3>
+<p>They maintain signing control over the Master Chain. The Master Chain (MC) encodes all PoS/consensus stuff like timestamping and includes its own little state root for recording validator's bond balances, ongoing challenges, fiber block header-hashes and any other housekeeping information.</p>
+<p>Each master block (MB), a set of collated X-Fiber Blocks (XBs) are taken; these must be non-overlapping, so that each fiber belongs to only a single XB.</p>
+<h3 id="random-selection-chosen-to-audit-txpsrcmp-contents-availability">验证器: random selection chosen to audit TX/PSR/CMP contents &amp; availability<a class="headerlink" href="#random-selection-chosen-to-audit-txpsrcmp-contents-availability" title="Permanent link">&para;</a></h3>
+<p>For each MB we have a number of XSBs referenced from the MB's Trie. Each fiber is assigned a randomly selected set of validators, and the validators must review whatever XB contains their assigned fiber. Validation includes attaining the XB, finding the previous PSRs for each of the fibers (placed in the MB) and checking that the proofs in its CMP, cover all required inputs to the transactions collated within and that the PSR is indeed the final state root when all are executed.</p>
+<p>The block is considered valid iff all assigned validators sign it. Signing it is considered an assertion that the block contents are both valid and available for a probabilistically long "challenge period" in which a Fisherman may challenge. Any challenge to the block's validity which is ultimately upheld by a full consensus of a randomly selected set of validators (ultimately ending with a majority vote, should it be doggedly contested) will mean the instant loss of the bond.</p>
+<h2 id="_8">渔夫<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Fishermen (who might be called bounty hunters) are the freelance error-checkers of the system. They watch the validators in the hope that they can find wrong-doing. To help guarantee presence, payouts are designed to be huge. The costs of challenging are small but not insignificant.</p>
+<h3 id="x">渔夫: 搜索无效或不可用的X光纤模块<a class="headerlink" href="#x" title="Permanent link">&para;</a></h3>
+<p>They check the X-fiber blocks looking for validity errors and/or inavailability of data. When they find an invalid block or unavailable data, they launch a challenge (for a small fee, paid to validators) in the hope that a sufficiently large portion of validators will concur. If they succeed and validators ultimately uphold the challenge, then they receive the bonds of all validators who had previously asserted validity/availability of the information.</p>
+<h3 id="_9">渔夫挑战:<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Fisherman finds an invalid/unavailable block not yet outside its "challenge period" (10-30 blocks); pays a fee, submits a challenge transaction into the master chain;</li>
+<li>A randomly selected set of validators (e.g. of order e.g. sqrt(N)) ++ any validators that self-select (through doubling their bond), check the block that was challenged; each votes Y or N to the block's validity;</li>
+<li>If N, the validator receives a small payment Pn.</li>
+<li>If Y, the validator stakes their bond, though receives a larger payment Py (perhaps Py = 2Pn).</li>
+<li>The outcome of the challenge (probably accumulated into the following block) is:</li>
+<li>If more than 66% of validators vote Y (valid), then the challenge ends. The Fisherman loses their fee, but may reinitiate a challenge.</li>
+<li>If at least one validator votes Y (valid), then the challenge continues with a second, larger set of randomly selected validators. All bonds are staked.</li>
+<li>If all validators vote N (invalid), then the block is recorded as invalid and the Fishermen receives the bond of all validators that have asserted the blocks validity. This is a very large payoff.</li>
+<li>NOTE: If the set includes all validators, then it's a simple majority-carries rule.</li>
+</ol>
+<h2 id="_10">其它差异<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All addresses are contained in a lookup table unique to each state subspace; this means they can be referenced through a small number of bits and avoid large amounts of wasted entropy in the RLP for proofs &amp;c.</li>
+</ul>
+<h2 id="_11">注释<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Once a block is out of the challenge period, it is considered unassailable. If it does turn out to be bad, then it must be fixed in the same way as a protocol upgrade. As such it is likely that validators and other large stakeholder would act as Fishermen to protect their investment.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Problems/" title="加密货币的难题" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                加密货币的难题
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Glossary/" title="词汇表" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                词汇表
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

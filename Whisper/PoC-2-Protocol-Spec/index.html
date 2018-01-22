@@ -1,0 +1,1872 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>PoC-2 白皮书 - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                PoC-2 白皮书
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Research/Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../" title="私语" class="md-tabs__link md-tabs__link--active">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        PoC-2 白皮书
+      </label>
+    
+    <a href="./" title="PoC-2 白皮书" class="md-nav__link md-nav__link--active">
+      PoC-2 白皮书
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-whisper-is-and-is-not" title="What Whisper Is (and Is Not)" class="md-nav__link">
+    What Whisper Is (and Is Not)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitch-black-darkness" title="Pitch-Black Darkness" class="md-nav__link">
+    Pitch-Black Darkness
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-and-lack-thereof" title="Routing and Lack Thereof" class="md-nav__link">
+    Routing and Lack Thereof
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-protocol-elements" title="Basic Protocol Elements" class="md-nav__link">
+    Basic Protocol Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#envelopes" title="Envelopes" class="md-nav__link">
+    Envelopes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics" title="Topics" class="md-nav__link">
+    Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages" title="Messages" class="md-nav__link">
+    Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-operation" title="Basic Operation" class="md-nav__link">
+    Basic Operation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-authoring-messages" title="Inserting (Authoring) Messages" class="md-nav__link">
+    Inserting (Authoring) Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-masking-and-advertising" title="Topic Masking and Advertising" class="md-nav__link">
+    Topic Masking and Advertising
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coming-changes" title="Coming changes" class="md-nav__link">
+    Coming changes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-whisper-is-and-is-not" title="What Whisper Is (and Is Not)" class="md-nav__link">
+    What Whisper Is (and Is Not)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitch-black-darkness" title="Pitch-Black Darkness" class="md-nav__link">
+    Pitch-Black Darkness
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-and-lack-thereof" title="Routing and Lack Thereof" class="md-nav__link">
+    Routing and Lack Thereof
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-protocol-elements" title="Basic Protocol Elements" class="md-nav__link">
+    Basic Protocol Elements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#envelopes" title="Envelopes" class="md-nav__link">
+    Envelopes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topics" title="Topics" class="md-nav__link">
+    Topics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages" title="Messages" class="md-nav__link">
+    Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-operation" title="Basic Operation" class="md-nav__link">
+    Basic Operation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inserting-authoring-messages" title="Inserting (Authoring) Messages" class="md-nav__link">
+    Inserting (Authoring) Messages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topic-masking-and-advertising" title="Topic Masking and Advertising" class="md-nav__link">
+    Topic Masking and Advertising
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coming-changes" title="Coming changes" class="md-nav__link">
+    Coming changes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="poc-2">PoC-2 有线协议<a class="headerlink" href="#poc-2" title="Permanent link">&para;</a></h1>
+<p>This page, in addition to the Whisper Wire Specification, details the full Whisper protocol for the first proof-of-concept and sets the vision for the final design. It evolve alongside the Whisper protocol as the prototype is refined. From it you should be able to develop compliant Whisper implementations. This document is intended to give only the base specification. Many of the aspects leading to an implementation of Whisper are game theoretic and best not prescribed in the specification, but rather left to individual implementation teams to determine for themselves.</p>
+<h2 id="what-whisper-is-and-is-not">What Whisper Is (and Is Not)<a class="headerlink" href="#what-whisper-is-and-is-not" title="Permanent link">&para;</a></h2>
+<p>Whisper combines aspects of both DHTs and datagram messaging systems (e.g. UDP). As such it may be likened and compared to both, not dissimilar to the matter/energy duality (apologies to physicists for the blatant abuse of a fundamental and beautiful natural principle).</p>
+<p>Whisper is a pure identity-based messaging system. Whisper provides a low-level (non-application-specific) but easily-accessible API without being based upon or prejudiced by the low-level hardware attributes and characteristics, particularly the notion of singular endpoints.</p>
+<p>Alternatively, Whisper may be likened to a DHT with a per-entry configurable TTL and conventions for the signing and encryption of values. In this sense, Whisper provides the ability to have multiply-indexable, non-unique entries (i.e. the same entry having multiple keys, some or all of which may be the same as other entries).</p>
+<p>As such, Whisper is not a typical communications system. It is not designed to replace or substitute TCP/IP, UDP, HTTP or any other traditional protocols; it is not designed to provide a connection oriented system, nor for simply delivering data betwixt a pair of specific network endpoints; it does not have a primary goal of maximising bandwidth or minimising latency (though as with any transmission system, these are concerns).</p>
+<p>Whisper is a new protocol designed expressly for a new paradigm of application development. It is designed from the ground up for easy and efficient multi-casting and broadcasting. Similarly, low-level partially-asynchronous communications is an important goal. Low-value traffic reduction or retardation is another goal (which might also be likened to the quest for QoS). It is designed to be a building block in next generation ÐApps which require large-scale many-to-many data-discovery, signal negotiation and modest transmissions with an absolute minimum of fuss and the expectation that one has a very reasonable assurance of complete privacy.</p>
+<h2 id="pitch-black-darkness">Pitch-Black Darkness<a class="headerlink" href="#pitch-black-darkness" title="Permanent link">&para;</a></h2>
+<p>Whisper operates around the notion of being user-configurable with regard to how much information it leaks concerning the ÐApp content and ultimately, the user activities. To understand information leakage, it is important to distinguish between mere encryption, and <em>darkness</em>. Many protocols, both those designed around p2p and more traditional client/server models provide a level of encryption. For some, encryption forms an intrinsic part of the protocol and, applied alone, delivers its primary requirement. While decentralising and encrypting is a great start on building a legitimately "post-Snowden" Web, it is not the end.</p>
+<p>Even with encrypted communications, well-funded attackers are still able to compromise ones privacy, often quite easily. Bulk metadata collection becomes the new battleground, and is at once dismissed as a privacy concern by authorities yet trumpeted as the Next Big Thing by big-data outfits. In the case of a simple client/server model, metadata betrays with which hosts one communicates - this is often plenty enough to compromise privacy given that content is, in many cases, largely determinable from the host.</p>
+<p>With decentralised communications systems, e.g. a basic non-routed but encrypted VoIP call or Telehash communication, a network packet-sniffing attacker may not be able to determine the specific content of a transmission, but with the help of ISP IP address logs they would be able to determine to whom one communicated, when and how often. For certain types of applications in various jurisdictions, this is enough to be a concerning lack of privacy.</p>
+<p>Even with encryption and packet forwarding through a third relay node, there is still ample room for a determined bulk transmissions-collector to execute statistical attacks on timing and bandwidth, effectively using their knowledge of certain network invariants and the fact that only a finite amount of actors are involved (i.e. that nodes tend to forward messages between the same two peers with minimal latency and that there aren't all that many pairs of nodes that are trying to communicate via the same relay). There are ways to mitigate this attack vector, such as using multiple third-party relays and switching between them randomly or to use very strict framing, however both are imperfect and can lead to substantial inefficiencies.</p>
+<p>A truly dark system is one that is utterly uncompromising in information leakage from metadata. At its most secure mode of operation, Whisper can (at a considerable cost of bandwidth and latency) deliver 100% dark operation. Even better, this applies not only for metadata collection from inter-peer conduits (i.e. backbone dragnet devices), but even against a much more arduous "100% - 2" attack; i.e. where every node in the network were compromised (though functional) save a pair running ÐApps for people that wanted to communicate without anybody else knowing.</p>
+<h2 id="routing-and-lack-thereof">Routing and Lack Thereof<a class="headerlink" href="#routing-and-lack-thereof" title="Permanent link">&para;</a></h2>
+<p>Fundamentally, at least with the present state of computer science, all systems present a trade off between the efficiency of deterministic (and thus supposedly optimal) routing and darkness (or, put another way, routing privacy). One of Whisper's differences is in providing a user-configurable trade-off between ones routing privacy and ones routing efficiency.</p>
+<p>At its most dark, Whisper nodes are entirely reactive - they receive and record pieces of data and forward them trying to maximise the utility of information transmission to the peers. These pieces of information include what is known as a <em>topic</em>, which may be viewed both as a secure-probabilistic routing endpoint and/or a DHT multi-key.</p>
+<p>However, Whisper is also designed to be able to route probabilistically using two methods, both giving away minimal routing information and both being exceptionally resilient to statistical attacks from large-scale metadata collection.</p>
+<p>The first builds on the functionality of the ÐΞV-p2p backend. This backend provides the ability of Whisper to rate peers and, over time, probabilistically alter (or <em>steer</em>) its set of peers to those which tend to deliver useful (on-topic, timely, required for ones ÐApps to function) information. Ultimately, as the network evolves and the peer-set is steered, the number of hops between this peer and any others that tend to be good conduits of useful information (be they the emitters or simply the well-positioned hubs) will tend to 0.</p>
+<p>Peer steering also provides the incentive for nodes to provide useful information to peers. The fear of being identified as an under-performing peer and thus being rotated out in favour of other nodes gives all nodes incentive to cooperate and share the most useful information. Useful in this case means provably difficult to author (use of a proof-of-work function helps here); a low time-to-live; and well-corresponding to any provided information on what might be useful (read on for more).</p>
+<p>The second is more dynamic. Nodes are informed by their ÐApps over what sort of topics are useful. Nodes are then allowed to advertise to each peer describing these topics. Topics may be described, using masks or Bloom filters, and thus in an incomplete manner, to reduce the amount of information leaked and make passive statistical attacks arbitrarily difficult to execute. The determination of the amount of information to give to peers is both made through an explicit setting from the user and through topic/traffic modelling: "Given the information coming from this peer and my models of information distribution made from total traffic, am I receiving the amount of useful valuable information that I would expect to receive? If so, narrowing it down with additional description information to the peer may be warranted."</p>
+<p>These settings can even be configured per-peer (more trusted/longer-lasting peers may be afforded greater amounts of information), and per-ÐApp (those ÐApps that may be more sensitive could be afforded less advertising than others). We can also make use of proof-of-work algorithms to minimise the changes of both DoS attacks and 'everything-but' attacks (where a peer is flooded with almost-useful information prompting it to give away more about its true requirements than it would do otherwise).</p>
+<p>Through combining and reducing the Blooms/masks, weaker Nth-level information can be provided to peers about their peers' interests, forming a probabilistic topic-reception vortex around nodes, the "topic-space" gravity-well getting weaker and less certain the farther away with the network hop distance from any interested peers.</p>
+<h2 id="basic-protocol-elements">Basic Protocol Elements<a class="headerlink" href="#basic-protocol-elements" title="Permanent link">&para;</a></h2>
+<h2 id="envelopes">Envelopes<a class="headerlink" href="#envelopes" title="Permanent link">&para;</a></h2>
+<p>There are two key concepts in Whisper: <em>Envelopes</em> and <em>Messages</em>. Envelopes may be considered items should Whisper be considered a DHT. Should Whisper be considered a datagram messaging system then envelopes become the packet format which house the potentially encrypted datagrams. Envelopes are necessarily comprehensible by any node (i.e. they themselves are unencrypted).</p>
+<p>They contain information to the entry/datagram such as the original time to live (<em>TTL</em>), the absolute time for <em>expiry</em> and, importantly, the <em>topics</em>. Topics are a set of indexes to this item, recorded in order to help an interested party ("recipient") find it or have it routed to them. They might be likened to binary tags or keywords. Envelopes additionally contain a nonce allowing the original insertion node ("sender") to prove that some arbitrary amount of work was done in its composition. Finally, envelopes contain a message-<em>data</em> field; this stores the actual payload, together with some information and potentially a signature; together this forms a message. This field may be encrypted.</p>
+<p>Envelopes are transmitted as RLP-encoded structures. The precise definition is given by:</p>
+<p>[<code>expiry</code>: <code>P</code>, <code>ttl</code>: <code>P</code>, [<code>topic0</code>: <code>B_4</code>, <code>topic1</code>: <code>B_4</code>, ...], <code>data</code>: <code>B</code>, <code>nonce</code>: <code>P</code>]</p>
+<p>Here, <code>ttl</code> is given in seconds, <code>expiry</code> is the Unix time of the intended expiry date/time for the envelope. Following this point in time the envelope should no longer be transmitted (or stored, unless there is some extenuating circumstance). Prior to this point in time less the <code>ttl</code> (i.e. the implied insertion time), the envelope is considered utterly invalid and should be dropped immediately and the transmitting peer punished.</p>
+<p><code>nonce</code> is an arbitrary value. We say the work proved through the value of the SHA3 of the concatenation of the nonce and the SHA3 of the RLP of the packet save the nonce (i.e. just a 4-item RLP list), each of the components as a fixed-length 256-bit hash. When this final hash is interpreted as a BE-encoded value, the smaller it is, the higher the work proved. This is used later to judge a peer.</p>
+<h2 id="topics">Topics<a class="headerlink" href="#topics" title="Permanent link">&para;</a></h2>
+<p>Topics are cryptographically secure, probabilistic partial-classifications of the message. Each topic in the set (order is unimportant) is determined as the first (left) 4 bytes of the SHA3-256 hash of some arbitrary data given by the original author of the message. These might e.g. correspond to "twitter" hash-tags or an intended recipient's public key hashed with some session nonce or application-identity.</p>
+<p>Four bytes was chosen to minimise space should a large number of topics be mentioned while still keeping a sufficiently large space to avoid large-scale topic-collision (though it may yet be reviewed and possibly made dynamic in later revisions of the protocol).</p>
+<h2 id="messages">Messages<a class="headerlink" href="#messages" title="Permanent link">&para;</a></h2>
+<p>A message is formed as the concatenation of a single byte for flags (at present only a single flag is used), followed by any additional data (as stipulated by the flags) and finally the actual payload. This series of bytes is what forms the <code>data</code> item of the envelope and is always encrypted.</p>
+<p>In the present protocol version, no explicit authentication token is given to indicate that the data field is encrypted; any would-be readers of the message must know ahead of time, through the choice of topic that they have specifically filtered for, that the message is encrypted with a particular key. This is likely to be altered in a further PoC to include a MAC.</p>
+<p>Any determination that the message is indeed from a particular sender is left for a higher-level to address. This is noted through the Javascript API allowing the <code>to</code> parameter to be passed only at the point of specifying the filter. Since the signature is a part of the message and not outside in the envelope, those unable to decrypt the message data are also unable to access any signature.</p>
+<ul>
+<li><code>flags</code>: 1 byte</li>
+<li>(<code>signature</code>: 65 bytes)</li>
+<li><code>payload</code>: not fixed</li>
+</ul>
+<p>Bit 0 of the flags determines whether the signature exists. All other bits are not yet given a purpose and should be set randomly. A message is invalid if bit 0 is set but the total data is less than 66 bytes (since this wouldn't allow it to contain a signature).</p>
+<p>Payloads are encrypted in one of two ways. If the message has a specific recipient, then by using ECIES with the specific recipient's SECP-256k1 public key. If the message has no recipient, then by AES-256 with a randomly generated key. This key is then XORed with each of the <em>full</em> topics to form a salted topic. Each salted topic is stored prior to the encrypted data <em>in the same order as the corresponding topics are in the envelope header</em>.</p>
+<p>As a recipient, payloads are decrypted in one of two ways. Through use of topics, it should be known whether the envelope is encrypted to a specific recipient (in which case use the private key to decrypt) or to a general multicast audience. In the latter case, we assume that at least one topic is known (since otherwise, the envelope could not be properly "identified"). In this case, we match the known <em>full</em> topic to one of the abridged topics in the envelope, determine the index and de-salt the according salted-key at the beginning of the data segment in order to retrieve the final key.</p>
+<p>Encryption using the full topic with "routing" using the abridged topic ensures that nodes which are merely transiently storing the message and have no interest in the contents (thus have access only to routing information via the abridged topics) have no intrinsic ability to read the content of the message.</p>
+<p>The signature, if provided, is the SHA3-256 hash of the unencrypted payload signed using ECDSA with the insertion-identity's secret key.</p>
+<p>The signature portion is formed as the concatenation of the <em>r</em>, <em>s</em> and <em>v</em> parameters of the SECP-256k1 ECDSA signature, in that order. <code>v</code> is non-normalised and should be either 27 or 28. <code>r</code> and <code>s</code> are both big-endian encoded, fixed-width 32-byte unsigned.</p>
+<p>The payload is otherwise unformatted binary data.</p>
+<p>In the Javascript API, the distinction between envelopes and messages is blurred. This is because DApps should know nothing about envelopes whose message cannot be inspected; the fact that nodes pass envelopes around regardless of their ability to decode the message (or indeed their interest in it at all) is an important component in Whisper's dark communications strategy.</p>
+<h2 id="basic-operation">Basic Operation<a class="headerlink" href="#basic-operation" title="Permanent link">&para;</a></h2>
+<p>Nodes are expected to receive and send envelopes continuously, as per the <a href="https://github.com/ethereum/wiki/wiki/Whisper-Wire-Protocol">protocol specification</a>. They should maintain a map of envelopes, indexed by expiry time, and prune accordingly. They should also efficiently deliver messages to the front-end API through maintaining mappings between topics and envelopes.</p>
+<p>When a node's envelope memory becomes exhausted, a node may drop envelopes it considers unimportant or unlikely to please its peers. Nodes should consider peers good that pass them envelopes with low TTLs and high proofs-of-work. Nodes should consider peers bad that pass then expired envelopes or, worse, those that have an implied insertion time prior to the present.</p>
+<p>Nodes should always keep messages that its ÐApps have created. Though not in PoC-1, later editions of this protocol may allow ÐApps to mark messages as being "archived" and these should be stored and made available for additional time.</p>
+<p>Nodes should retain a set of per-ÐApp topics it is interested in.</p>
+<h2 id="inserting-authoring-messages">Inserting (Authoring) Messages<a class="headerlink" href="#inserting-authoring-messages" title="Permanent link">&para;</a></h2>
+<p>To insert a message, little more is needed than to place the envelope containing it in the node's envelope set that it maintains; the node should, according to its normal heuristics retransmit the envelope in due course. Composing an envelope from a basic payload, possible identities for authoring and access, a number of topics, a time-to-live and some parameters concerning work-proving targets is done through a few steps:</p>
+<ul>
+<li>Compose <code>data</code> through concatenating the relevant flag byte, a signature of the payload if the user specified a valid author identity, and the user-given payload.</li>
+<li>Encrypt the data if an access ("destination") identity's public key is given by the user.</li>
+<li>Compose <code>topics</code> from the first 4 bytes of the SHA3 of each topic.</li>
+<li>Set user-given attribute <code>ttl</code>.</li>
+<li>Set the <code>expiry</code> as the present Unix time plus the time-to-live.</li>
+<li>Set the <code>nonce</code> as that which provides the most work proved as per the previous definition, after some fixed amount of time of cycling through candidates or after a candidate surpasses some boundary; either should be given by the user.</li>
+</ul>
+<h2 id="topic-masking-and-advertising">Topic Masking and Advertising<a class="headerlink" href="#topic-masking-and-advertising" title="Permanent link">&para;</a></h2>
+<p>Nodes can advertise their topics of interest to each other. For that purpose they use a special type of Whisper message (TopicFilterPacket). The size of Bloom Filter they send to each other must be 64 bytes. Subsequently the rating system will be introduced -- peers sending useful messages will be rated higher then those sending random messages.</p>
+<p>A message matches the bloom filter, if any one of the topics in this message, converted to the Whisper bloom hash, will match the bloom filter.</p>
+<p>Whisper bloom function accepts AbridgedTopic as a parameter (size: 4 bytes), and produces a 64-byte hash, where three bits (at the most) are set to one, and the rest are set to zeros, according to the following algorithm:</p>
+<ol>
+<li>
+<p>Set all the bits in the resulting 64-byte hash to zero.</p>
+</li>
+<li>
+<p>We take 9 bits form the AbridgedTopic, and convert to integer value (range: 0 - 511).</p>
+</li>
+<li>
+<p>This value defines the index of the bit in the resulting 512-bit hash, which should be set to one.</p>
+</li>
+<li>
+<p>Repeat steps 1 &amp; 2 for the second and third bit to be set in the resulting hash.</p>
+</li>
+</ol>
+<p>Thus, in order to produce the bloom, we use 27 bits out of 32 in the AbridgedTopic. For more details, please see the implementation of the function: TopicBloomFilterBase<N>::bloom() [libwhisper/BloomFilter.h].</p>
+<h2 id="coming-changes">Coming changes<a class="headerlink" href="#coming-changes" title="Permanent link">&para;</a></h2>
+<p>Also being considered for is support for plausible deniability through the use of session keys and a formalisation of the multicast mechanism.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                PoC-2 有线协议
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../Misc/Problems/" title="加密货币的难题" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                加密货币的难题
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

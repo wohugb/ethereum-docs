@@ -1,0 +1,1985 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>使用Meteor - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                使用Meteor
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Safety/" title="ÐApp开发" class="md-tabs__link md-tabs__link--active">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Research/Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        使用Meteor
+      </label>
+    
+    <a href="./" title="使用Meteor" class="md-nav__link md-nav__link--active">
+      使用Meteor
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faq" title="FAQ" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isnt-meteor-a-full-stack-framework-how-does-that-fit-into-app-development" title="Isn't Meteor a full stack framework, how does that fit into Ðapp development" class="md-nav__link">
+    Isn't Meteor a full stack framework, how does that fit into Ðapp development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-host-my-app-on-a-server" title="Do I need to host my Ðapp on a server?" class="md-nav__link">
+    Do I need to host my Ðapp on a server?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-app" title="Create your Ðapp" class="md-nav__link">
+    Create your Ðapp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-your-app" title="Start your Ðapp" class="md-nav__link">
+    Start your Ðapp
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-short-excursion-into-meteors-folder-structure" title="A short excursion into Meteors folder structure" class="md-nav__link">
+    A short excursion into Meteors folder structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-your-app" title="Connect your Ðapp" class="md-nav__link">
+    Connect your Ðapp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-your-app" title="Run your Ðapp" class="md-nav__link">
+    Run your Ðapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-app-styles" title="Add Ðapp styles" class="md-nav__link">
+    Add Ðapp styles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ethereum-packages" title="Using ethereum packages" class="md-nav__link">
+    Using ethereum packages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" title="Example usage" class="md-nav__link">
+    Example usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-code-structure" title="Ðapp code structure" class="md-nav__link">
+    Ðapp code structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundle-your-app" title="Bundle your Ðapp" class="md-nav__link">
+    Bundle your Ðapp
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#faq" title="FAQ" class="md-nav__link">
+    FAQ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isnt-meteor-a-full-stack-framework-how-does-that-fit-into-app-development" title="Isn't Meteor a full stack framework, how does that fit into Ðapp development" class="md-nav__link">
+    Isn't Meteor a full stack framework, how does that fit into Ðapp development
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-host-my-app-on-a-server" title="Do I need to host my Ðapp on a server?" class="md-nav__link">
+    Do I need to host my Ðapp on a server?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-your-app" title="Create your Ðapp" class="md-nav__link">
+    Create your Ðapp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-your-app" title="Start your Ðapp" class="md-nav__link">
+    Start your Ðapp
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-short-excursion-into-meteors-folder-structure" title="A short excursion into Meteors folder structure" class="md-nav__link">
+    A short excursion into Meteors folder structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-your-app" title="Connect your Ðapp" class="md-nav__link">
+    Connect your Ðapp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-your-app" title="Run your Ðapp" class="md-nav__link">
+    Run your Ðapp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-app-styles" title="Add Ðapp styles" class="md-nav__link">
+    Add Ðapp styles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-ethereum-packages" title="Using ethereum packages" class="md-nav__link">
+    Using ethereum packages
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-usage" title="Example usage" class="md-nav__link">
+    Example usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-code-structure" title="Ðapp code structure" class="md-nav__link">
+    Ðapp code structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundle-your-app" title="Bundle your Ðapp" class="md-nav__link">
+    Bundle your Ðapp
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>使用Meteor</h1>
+                
+                <p>This tutorial will show you how to setup a Meteor app to be used as a Ðapp and probably answer a few questions on why Meteor should be used.</p>
+<ol>
+<li><a href="#create-your-%C3%90app">Create your Ðapp</a></li>
+<li><a href="#start-your-%C3%90app">Start your Ðapp</a></li>
+<li><a href="#connect-your-%C3%90app">Connect your Ðapp</a></li>
+<li><a href="#run-your-%C3%90app">Run your Ðapp</a></li>
+<li><a href="#add-%C3%90app-styles">Add Ðapp styles</a></li>
+<li><a href="#using-ethereumelements">Using ethereum:elements</a></li>
+<li><a href="#%C3%90app-code-structure">Ðapp code structure</a></li>
+<li><a href="#bundle-your-%C3%90app">Bundle your Ðapp</a></li>
+</ol>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h3 id="isnt-meteor-a-full-stack-framework-how-does-that-fit-into-app-development">Isn't Meteor a full stack framework, how does that fit into Ðapp development<a class="headerlink" href="#isnt-meteor-a-full-stack-framework-how-does-that-fit-into-app-development" title="Permanent link">&para;</a></h3>
+<p>True, Meteor is a full stack framework and its main improvement is realtime web applications, but Meteor is also the first framework (i know of), which fully embraced <em>s</em>ingle <em>p</em>age <em>a</em>pp (SPA) development and provided all necessary tools.</p>
+<p>5 reasons why Meteor is a perfect fit:</p>
+<ol>
+<li>Its purely written in JS and has all the tools a SPA needs (Templating engine, Model, on-the-fly compiling, bundling)</li>
+<li>You get a development environment, which has live reload, CSS injection and support for many pre-compilers (LESS, Coffeescript, etc) out of the box</li>
+<li>You can get all frontend code as single <code>index.html</code> with one <code>js</code> and <code>css</code> file plus your assets, using <a href="https://github.com/frozeman/meteor-build-client">meteor-build-client</a>. You can then host it everywhere or simple run the <code>index.html</code> itself or distribute it later on <em>swarm</em>.</li>
+<li>It embraces full reactivity, which make building consistent interface much easier (similar to angular.js <code>$scope</code> or binding)</li>
+<li>It has a great model called Minimongo, which gives you a mongoDB like interface for a reactive in-memory database, which can also be <a href="https://atmospherejs.com/frozeman/persistent-minimongo">auto-persisted to localstorage</a> or <a href="https://atmospherejs.com/frozeman/persistent-minimongo2">indexedDB</a></li>
+</ol>
+<h3 id="do-i-need-to-host-my-app-on-a-server">Do I need to host my Ðapp on a server?<a class="headerlink" href="#do-i-need-to-host-my-app-on-a-server" title="Permanent link">&para;</a></h3>
+<p>No, using <a href="https://github.com/frozeman/meteor-build-client">meteor-build-client</a> you can get all the static assets of your Ðapp to run without a server, though if you use a router like <a href="https://atmospherejs.com/iron/router">iron-</a> or <a href="https://atmospherejs.com/meteorhacks/flow-router">flow-router</a>, you need to use hash (<code>index.html#!/mypath</code>) routes instead of clean HTML5 pushstate routes.</p>
+<hr />
+<h2 id="create-your-app">Create your Ðapp<a class="headerlink" href="#create-your-app" title="Permanent link">&para;</a></h2>
+<p>Install Meteor if don't have already:</p>
+<div class="codehilite"><pre><span></span>$ curl https://install.meteor.com/ <span class="p">|</span> sh
+</pre></div>
+
+<p>Then create an app:
+<div class="codehilite"><pre><span></span>$ meteor create myDapp
+$ <span class="nb">cd</span> myDapp
+</pre></div></p>
+<p>Next add the web3 package:
+<div class="codehilite"><pre><span></span>$ meteor add ethereum:web3
+</pre></div></p>
+<p>I recommend also to add the following packages:</p>
+<ul>
+<li><a href="https://atmospherejs.com/ethereum/dapp-styles">ethereum:dapp-styles</a> - The LESS/CSS framework which gives your dapp a nice Mist-consistent look.</li>
+<li><a href="https://atmospherejs.com/ethereum/tools">ethereum:tools</a> - This package gives you the <code>EthTools</code> object with a set of formatting an conversion functions and template helpers for ether.</li>
+<li><a href="https://atmospherejs.com/ethereum/elements">ethereum:elements</a> - A set of interface elements specifically made for ethereum.</li>
+<li><a href="https://atmospherejs.com/ethereum/accounts">ethereum:accounts</a> - Gives you the reactive <code>EthAccounts</code> collection with all current available ethereum accounts, where balances will be automatically updated.</li>
+<li><a href="https://atmospherejs.com/ethereum/blocks">ethereum:blocks</a> - Gives you the reactive <code>EthBlocks</code> collection with the latest 50 blocks. To get the lastest block use <code>EthBlocks.latest</code> (It will also have the latest default gasPrice)</li>
+<li><a href="https://atmospherejs.com/frozeman/template-var">frozeman:template-var</a> - Gives you the <code>TemplateVar</code> object, that allows you to set reactive variables, which are template instance specific. See the <a href="https://atmospherejs.com/frozeman/template-var">readme</a> for more.</li>
+<li><a href="https://atmospherejs.com/frozeman/persistent-minimongo2">frozeman:persistent-minimongo2</a> - Allows you to auto persist your minimongo collection in local storage</li>
+</ul>
+<h2 id="start-your-app">Start your Ðapp<a class="headerlink" href="#start-your-app" title="Permanent link">&para;</a></h2>
+<h3 id="a-short-excursion-into-meteors-folder-structure">A short excursion into Meteors folder structure<a class="headerlink" href="#a-short-excursion-into-meteors-folder-structure" title="Permanent link">&para;</a></h3>
+<p>Meteor doesn't force you to have a specific folder structure, though some folders have specific meaning and will be treated differently when bundling/running your application.</p>
+<p>Folders with specific treatment
+- <code>client</code> - files in a folder called <code>client</code> will only be loaded by the client part of your app and as we are building a Ðapp, that's where most of our files go.
+- <code>lib</code> - files in folders called <code>lib</code> will load before other files in the same folder. This is an ideal place your init files, libraries, or ethereum specific files.
+- <code>public</code> - a folder called <code>public</code> contains assets meteor will make available on the root of your webserver (or later bundled Ðapp)
+- There are a few more specific folders like <code>server</code>, <code>tests</code>, <code>packages</code>, etc. If you want to get to know them take a look at the <a href="http://docs.meteor.com/#/full/structuringyourapp">Meteor docs</a></p>
+<p>So to build a Ðapp we ideally create the following folder structure in our <code>myDapp</code> folder:</p>
+<div class="codehilite"><pre><span></span>- myDapp
+   - client
+      - lib
+      - myDapp.html
+      - myDapp.js
+      - myDapp.css
+   - public
+</pre></div>
+
+<p><strong>Note</strong> The community provides also Meteor Ðapp Boilerplates like this one from Nick Dodson: https://github.com/SilentCicero/meteor-dapp-boilerplate</p>
+<h3 id="connect-your-app">Connect your Ðapp<a class="headerlink" href="#connect-your-app" title="Permanent link">&para;</a></h3>
+<p>To connect our dapp we need to start <code>geth</code> with the right CORS headers in another terminal:</p>
+<div class="codehilite"><pre><span></span>$ geth --rpc --rpccorsdomain <span class="s2">&quot;http://localhost:3000&quot;</span>
+</pre></div>
+
+<p>We also need to set the provider. Ideally we create a file in our lib folder called <code>init.js</code> and add the following line:</p>
+<div class="codehilite"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">web3</span> <span class="o">===</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span>
+    <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">HttpProvider</span><span class="p">(</span><span class="s1">&#39;http://localhost:8545&#39;</span><span class="p">));</span>
+</pre></div>
+
+<h3 id="run-your-app">Run your Ðapp<a class="headerlink" href="#run-your-app" title="Permanent link">&para;</a></h3>
+<p>Now we can run our Ðapp by simply running:</p>
+<div class="codehilite"><pre><span></span>$ meteor
+</pre></div>
+
+<p>If we go to <code>http://localhost:3000</code>, we should see a website appear and if we open the browser console we can use the web3 object to query the geth node:</p>
+<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span>
+<span class="p">[</span><span class="s1">&#39;0xfff2b43a7433ddf50bb82227ed519cd6b142d382&#39;</span><span class="p">]</span>
+</pre></div>
+
+<h2 id="add-app-styles">Add Ðapp styles<a class="headerlink" href="#add-app-styles" title="Permanent link">&para;</a></h2>
+<p>If you want your Ðapp to nicely fit later into Mist and have follow the official look use the <a href="https://atmospherejs.com/ethereum/dapp-styles">dapp-styles css css/less framework</a>.</p>
+<p><em>Note that they are under heavy development and the class names and elements may change.</em></p>
+<p>To add it simple add the following packages to your Ðapp:</p>
+<div class="codehilite"><pre><span></span>$ meteor add less
+$ meteor add ethereum:dapp-styles
+</pre></div>
+
+<p>Now rename you <code>myDapp.css</code> to <code>myDapp.less</code> and add the following line inside:</p>
+<div class="codehilite"><pre><span></span><span class="o">//</span> <span class="nt">libs</span>
+<span class="p">@</span><span class="k">import</span> <span class="s1">&#39;{ethereum:dapp-styles}/dapp-styles.less&#39;</span><span class="p">;</span>
+</pre></div>
+
+<p>Now you can use all dapp-styles classes and also overwrite all variables of the framework. You can find them <a href="https://github.com/ethereum/dapp-styles/blob/master/constants.import.less">in the repo</a>. Overwrite them by copying them to your <code>myDapp.less</code> file and set different values.</p>
+<h2 id="using-ethereum-packages">Using ethereum packages<a class="headerlink" href="#using-ethereum-packages" title="Permanent link">&para;</a></h2>
+<p>To make your life as a Ðapp developer easier we provide some packages that help you build Ðapps faster.</p>
+<p>If you add the recommended packages above you should have the <a href="https://atmospherejs.com/ethereum/tools">ethereum:tools</a>, <a href="https://atmospherejs.com/ethereum/accounts">ethereum:accounts</a> and <a href="https://atmospherejs.com/ethereum/blocks">ethereum:blocks</a> packages available.</p>
+<p>These 3 packages give you the <code>EthTools</code>, <code>EthAccounts</code> and <code>Ethblocks</code> objects, which give you formatter functions,  a collection with the accounts from <code>web3.eth.accounts</code> (with auto updated balance) and a collection of the last 50 blocks.</p>
+<p>Most of these functions are reactive so they should make building interfaces a breeze.</p>
+<h3 id="example-usage">Example usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h3>
+<p>If you look into you <code>myDapp.html</code> you will find the <code>hello</code> template.
+Just add a helper called <code>{{currentBlock}}</code> some where between the <code>&lt;template name="hello"&gt;..&lt;/template&gt;</code> tags.</p>
+<p>Now open the <code>myDapp.js</code> and add after the <code>counter() {..}</code> the <code>currentBlock</code> helper:
+<div class="codehilite"><pre><span></span><span class="nx">Template</span><span class="p">.</span><span class="nx">elements</span><span class="p">.</span><span class="nx">helpers</span><span class="p">({</span>
+    <span class="nx">counter</span><span class="p">()</span> <span class="p">{</span>
+      <span class="p">...</span>
+    <span class="p">},</span>
+    <span class="nx">currentBlock</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">EthBlocks</span><span class="p">.</span><span class="nx">latest</span><span class="p">.</span><span class="nx">number</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+</pre></div></p>
+<p>Then initialize EthBlocks by adding <code>EthBlocks.init();</code> after <code>this.counter = new ReactiveVar(0);</code></p>
+<p>If you now check your Ðapp in the browser you should see the latest block number, which will increase once you mine.</p>
+<p><em>For more examples please checkout the packages readmes and the <a href="http://ethereum-elements.meteor.com">demo</a> (<a href="https://github.com/frozeman/meteor-ethereum-elements-demo">source</a>) for more.</em></p>
+<h2 id="app-code-structure">Ðapp code structure<a class="headerlink" href="#app-code-structure" title="Permanent link">&para;</a></h2>
+<p><em>This tutorial won't go into building apps with Meteor. For this please refer to the <a href="https://www.meteor.com/tutorials/blaze/creating-an-app">Meteor's tutorials</a>, <a href="https://www.meteor.com/tools/resources">A list of good resources</a>, <a href="https://www.eventedmind.com">EventMinded</a> (payed tutorials) or books like <a href="https://www.packtpub.com/web-development/building-single-page-web-apps-meteor">Building Single-page Web Apps with Meteor</a> or <a href="http://discovermeteor.com">Discover Meteor</a>.</em></p>
+<p>TODO
+Short:
+- put ethereum related stuff into <code>client/lib/ethereum/somefile.js</code>
+- use <code>myCollection.observe({added: func, changed: func, removed: func})</code> to communicate to ethereum, keep ethereum logic out of your app as much as possible. This way you just write and read from your reactive collections and the observe functions will handle the rest (e.g. sendTransactions)
+- Filters etc will add logs etc to your collections. So you keep all the callback mess out of your app logic.</p>
+<p>For an example see the <a href="https://github.com/ethereum/meteor-dapp-wallet">Ethereum-Wallet</a>.</p>
+<h2 id="bundle-your-app">Bundle your Ðapp<a class="headerlink" href="#bundle-your-app" title="Permanent link">&para;</a></h2>
+<p>To bundle your Ðapp into a local standalone file use <a href="https://github.com/frozeman/meteor-build-client">meteor-build-client</a>:</p>
+<div class="codehilite"><pre><span></span>$ npm install -g meteor-build-client
+$ <span class="nb">cd</span> myDapp
+$ meteor-build-client ../build --path <span class="s2">&quot;&quot;</span>
+</pre></div>
+
+<p>This will put your Ðapps static files into the build folder, above your <code>myDapp</code> folder.</p>
+<p>The last option <code>--path</code> will make the linking of all files relative, allowing you to start the app by simply clicking the <code>build/index.html</code>.</p>
+<p>Be aware that when running your app on the <code>file://</code> protocol, you won't be able to use client side routing, due to web security. Later in mist you will be able to use client side routing, as dapps are served over the <code>eth://</code> protocol.</p>
+<p>In the future you will be able to simply upload your Ðapp on swarm.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Standardized_Contract_APIs/" title="标准化合约接口" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                标准化合约接口
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Tutorial/" title="开发指南" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                开发指南
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

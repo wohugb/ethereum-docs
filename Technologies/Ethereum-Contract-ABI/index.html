@@ -1,0 +1,2096 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>合同ABI - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                合同ABI
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Research/Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Patricia-Tree/" title="以太坊技术" class="md-tabs__link md-tabs__link--active">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        合同ABI
+      </label>
+    
+    <a href="./" title="合同ABI" class="md-nav__link md-nav__link--active">
+      合同ABI
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-design" title="Basic design" class="md-nav__link">
+    Basic design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-selector" title="Function Selector" class="md-nav__link">
+    Function Selector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argument-encoding" title="Argument Encoding" class="md-nav__link">
+    Argument Encoding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-specification-of-the-encoding" title="Formal Specification of the Encoding" class="md-nav__link">
+    Formal Specification of the Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-selector-and-argument-encoding" title="Function Selector and Argument Encoding" class="md-nav__link">
+    Function Selector and Argument Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of-dynamic-types" title="Use of Dynamic Types" class="md-nav__link">
+    Use of Dynamic Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-design" title="Basic design" class="md-nav__link">
+    Basic design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-selector" title="Function Selector" class="md-nav__link">
+    Function Selector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argument-encoding" title="Argument Encoding" class="md-nav__link">
+    Argument Encoding
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" title="Types" class="md-nav__link">
+    Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-specification-of-the-encoding" title="Formal Specification of the Encoding" class="md-nav__link">
+    Formal Specification of the Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-selector-and-argument-encoding" title="Function Selector and Argument Encoding" class="md-nav__link">
+    Function Selector and Argument Encoding
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" title="Examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of-dynamic-types" title="Use of Dynamic Types" class="md-nav__link">
+    Use of Dynamic Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
+<h2 id="basic-design">Basic design<a class="headerlink" href="#basic-design" title="Permanent link">&para;</a></h2>
+<p>We assume the Application Binary Interface (ABI) is strongly typed, known at compilation time and static. No introspection mechanism will be provided. We assert that all contracts will have the interface definitions of any contracts they call available at compile-time.</p>
+<p>This specification does not address contracts whose interface is dynamic or otherwise known only at run-time. Should these cases become important they can be adequately handled as facilities built within the Ethereum ecosystem.</p>
+<h2 id="function-selector">Function Selector<a class="headerlink" href="#function-selector" title="Permanent link">&para;</a></h2>
+<p>The first four bytes of the call data for a function call specifies the function to be called. It is the
+first (left, high-order in big-endian) four bytes of the Keccak (SHA-3) hash of the signature of the function. The signature is defined as the canonical expression of the basic prototype, i.e.
+the function name with the parenthesised list of parameter types. Parameter types are split by a single comma - no spaces are used.</p>
+<h2 id="argument-encoding">Argument Encoding<a class="headerlink" href="#argument-encoding" title="Permanent link">&para;</a></h2>
+<p>Starting from the fifth byte, the encoded arguments follow. This encoding is also used in other places, e.g. the return values and also event arguments are encoded in the same way, without the four bytes specifying the function.</p>
+<h3 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<p>The following elementary types exist:
+- <code>uint&lt;M&gt;</code>: unsigned integer type of <code>M</code> bits, <code>0 &lt; M &lt;= 256</code>, <code>M % 8 == 0</code>. e.g. <code>uint32</code>, <code>uint8</code>, <code>uint256</code>.
+- <code>int&lt;M&gt;</code>: two's complement signed integer type of <code>M</code> bits, <code>0 &lt; M &lt;= 256</code>, <code>M % 8 == 0</code>.
+- <code>address</code>: equivalent to <code>uint160</code>, except for the assumed interpretation and language typing.
+- <code>uint</code>, <code>int</code>: synonyms for <code>uint256</code>, <code>int256</code> respectively (not to be used for computing the function selector).
+- <code>bool</code>: equivalent to <code>uint8</code> restricted to the values 0 and 1
+- <code>fixed&lt;M&gt;x&lt;N&gt;</code>: signed fixed-point decimal number of <code>M</code> bits, <code>0 &lt; M &lt;= 256</code>, <code>M % 8 ==0</code>, and <code>0 &lt; N &lt;= 80</code>, which denotes the value <code>v</code> as <code>v / (10 ** N)</code>.
+- <code>ufixed&lt;M&gt;x&lt;N&gt;</code>: unsigned variant of <code>fixed&lt;M&gt;x&lt;N&gt;</code>.
+- <code>fixed</code>, <code>ufixed</code>: synonyms for <code>fixed128x19</code>, <code>ufixed128x19</code> respectively (not to be used for computing the function selector).
+- <code>bytes&lt;M&gt;</code>: binary type of <code>M</code> bytes, <code>0 &lt; M &lt;= 32</code>.
+- <code>function</code>: equivalent to <code>bytes24</code>: an address, followed by a function selector</p>
+<p>The following (fixed-size) array type exists:
+- <code>&lt;type&gt;[M]</code>: a fixed-length array of the given fixed-length type.</p>
+<p>The following non-fixed-size types exist:
+- <code>bytes</code>: dynamic sized byte sequence.
+- <code>string</code>: dynamic sized unicode string assumed to be UTF-8 encoded.
+- <code>&lt;type&gt;[]</code>: a variable-length array of the given fixed-length type.</p>
+<h3 id="formal-specification-of-the-encoding">Formal Specification of the Encoding<a class="headerlink" href="#formal-specification-of-the-encoding" title="Permanent link">&para;</a></h3>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<p>We will now formally specify the encoding, such that it will have the following
+properties, which are especially useful if some arguments are nested arrays:</p>
+<p><strong>Properties:</strong></p>
+<ol>
+<li>
+<p>The number of reads necessary to access a value is at most the depth of the
+value inside the argument array structure, i.e. four reads are needed to
+retrieve <code>a_i[k][l][r]</code>. In a previous version of the ABI, the number of reads scaled
+linearly with the total number of dynamic parameters in the worst case.</p>
+</li>
+<li>
+<p>The data of a variable or array element is not interleaved with other data
+and it is relocatable, i.e. it only uses relative "addresses"</p>
+</li>
+</ol>
+<p>We distinguish static and dynamic types. Static types are encoded in-place and dynamic types are encoded at a separately allocated location after the current block.</p>
+<p><strong>Definition:</strong> The following types are called "dynamic":
+<em> <code>bytes</code>
+</em> <code>string</code>
+<em> <code>T[]</code> for any <code>T</code>
+</em> <code>T[k]</code> for any dynamic <code>T</code> and any <code>k &gt; 0</code></p>
+<p>All other types are called "static".</p>
+<p><strong>Definition:</strong> <code>len(a)</code> is the number of bytes in a binary string <code>a</code>.
+The type of <code>len(a)</code> is assumed to be <code>uint256</code>.</p>
+<p>We define <code>enc</code>, the actual encoding, as a mapping of values of the ABI types to binary strings such
+that <code>len(enc(X))</code> depends on the value of <code>X</code> if and only if the type of <code>X</code>
+is dynamic.</p>
+<p><strong>Definition:</strong> For any ABI value <code>X</code>, we recursively define <code>enc(X)</code>, depending
+on the type of <code>X</code> being</p>
+<ul>
+<li><code>T[k]</code> for any <code>T</code> and <code>k</code>:</li>
+</ul>
+<p><code>enc(X) = head(X[0]) ... head(X[k-1]) tail(X[0]) ... tail(X[k-1])</code></p>
+<p>where <code>head</code> and <code>tail</code> are defined for <code>X[i]</code> being of a static type as
+    <code>head(X[i]) = enc(X[i])</code> and <code>tail(X[i]) = ""</code> (the empty string)
+  and as
+    <code>head(X[i]) = enc(len(head(X[0]) ... head(X[k-1]) tail(X[0]) ... tail(X[i-1])))</code>
+    <code>tail(X[i]) = enc(X[i])</code>
+  otherwise.</p>
+<p>Note that in the dynamic case, <code>head(X[i])</code> is well-defined since the lengths of
+  the head parts only depend on the types and not the values. Its value is the offset
+  of the beginning of <code>tail(X[i])</code> relative to the start of <code>enc(X)</code>.</p>
+<ul>
+<li><code>T[]</code> where <code>X</code> has <code>k</code> elements (<code>k</code> is assumed to be of type <code>uint256</code>):</li>
+</ul>
+<p><code>enc(X) = enc(k) enc([X[1], ..., X[k]])</code></p>
+<p>i.e. it is encoded as if it were an array of static size <code>k</code>, prefixed with
+  the number of elements.</p>
+<ul>
+<li><code>bytes</code>, of length <code>k</code> (which is assumed to be of type <code>uint256</code>):</li>
+</ul>
+<p><code>enc(X) = enc(k) pad_right(X)</code>, i.e. the number of bytes is encoded as a
+    <code>uint256</code> followed by the actual value of <code>X</code> as a byte sequence, followed by
+    the minimum number of zero-bytes such that <code>len(enc(X))</code> is a multiple of 32.</p>
+<ul>
+<li><code>string</code>:</li>
+</ul>
+<p><code>enc(X) = enc(enc_utf8(X))</code>, i.e. <code>X</code> is utf-8 encoded and this value is interpreted as of <code>bytes</code> type and encoded further. Note that the length used in this subsequent encoding is the number of bytes of the utf-8 encoded string, not its number of characters.</p>
+<ul>
+<li><code>uint&lt;M&gt;</code>: <code>enc(X)</code> is the big-endian encoding of <code>X</code>, padded on the higher-order (left) side with zero-bytes such that the length is a multiple of 32 bytes.</li>
+<li><code>address</code>: as in the <code>uint160</code> case</li>
+<li><code>int&lt;M&gt;</code>: <code>enc(X)</code> is the big-endian two's complement encoding of <code>X</code>, padded on the higher-order (left) side with <code>0xff</code> for negative <code>X</code> and with zero bytes for positive <code>X</code> such that the length is a multiple of 32 bytes.</li>
+<li><code>bool</code>: as in the <code>uint8</code> case, where <code>1</code> is used for <code>true</code> and <code>0</code> for <code>false</code></li>
+<li><code>fixed&lt;M&gt;x&lt;N&gt;</code>: <code>enc(X)</code> is <code>enc(X * 2**N)</code> where <code>X * 2**N</code> is interpreted as a <code>int256</code>.</li>
+<li><code>fixed</code>: as in the <code>fixed128x19</code> case</li>
+<li><code>ufixed&lt;M&gt;x&lt;N&gt;</code>: <code>enc(X)</code> is <code>enc(X * 2**N)</code> where <code>X * 2**N</code> is interpreted as a <code>uint256</code>.</li>
+<li><code>ufixed</code>: as in the <code>ufixed128x19</code> case</li>
+<li><code>bytes&lt;M&gt;</code>: <code>enc(X)</code> is the sequence of bytes in <code>X</code> padded with zero-bytes to a length of 32.</li>
+</ul>
+<p>Note that for any <code>X</code>, <code>len(enc(X))</code> is a multiple of 32.</p>
+<h2 id="function-selector-and-argument-encoding">Function Selector and Argument Encoding<a class="headerlink" href="#function-selector-and-argument-encoding" title="Permanent link">&para;</a></h2>
+<p>All in all, a call to the function <code>f</code> with parameters <code>a_1, ..., a_n</code> is encoded as</p>
+<p><code>function_selector(f) enc([a_1, ..., a_n])</code></p>
+<p>and the return values <code>v_1, ..., v_k</code> of <code>f</code> are encoded as</p>
+<p><code>enc([v_1, ..., v_k])</code></p>
+<p>where the types of <code>[a_1, ..., a_n]</code> and <code>[v_1, ..., v_k]</code> are assumed to be
+fixed-size arrays of length <code>n</code> and <code>k</code>, respectively. Note that strictly,
+<code>[a_1, ..., a_n]</code> can be an "array" with elements of different types, but the
+encoding is still well-defined as the assumed common type <code>T</code> (above) is not
+actually used.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<p>Given the contract:</p>
+<div class="codehilite"><pre><span></span><span class="nx">contract</span> <span class="nx">Foo</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">fixed</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="nx">xy</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="kd">function</span> <span class="nx">baz</span><span class="p">(</span><span class="nx">uint32</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">bool</span> <span class="nx">y</span><span class="p">)</span> <span class="nx">returns</span> <span class="p">(</span><span class="nx">bool</span> <span class="nx">r</span><span class="p">)</span> <span class="p">{</span> <span class="nx">r</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">32</span> <span class="o">||</span> <span class="nx">y</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">function</span> <span class="nx">sam</span><span class="p">(</span><span class="nx">bytes</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">bool</span> <span class="nx">z</span><span class="p">,</span> <span class="nx">uint</span><span class="p">[]</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Thus for our <code>Foo</code> example if we wanted to call <code>baz</code> with the parameters <code>69</code> and <code>true</code>, we would pass 68 bytes total, which can be broken down into:</p>
+<ul>
+<li><code>0xcdcd77c0</code>: the Method ID. This is derived as the first 4 bytes of the Keccak hash of the ASCII form of the signature <code>baz(uint32,bool)</code>.</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000045</code>: the first parameter, a uint32 value <code>69</code> padded to 32 bytes</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000001</code>: the second parameter - boolean <code>true</code>, padded to 32 bytes</li>
+</ul>
+<p>In total:
+<div class="codehilite"><pre><span></span>0xcdcd77c000000000000000000000000000000000000000000000000000000000000000450000000000000000000000000000000000000000000000000000000000000001
+</pre></div>
+It returns a single <code>bool</code>. If, for example, it were to return <code>false</code>, its output would be the single byte array <code>0x0000000000000000000000000000000000000000000000000000000000000000</code>, a single bool.</p>
+<p>If we wanted to call <code>bar</code> with the argument <code>[2.125, 8.5]</code>, we would pass 68 bytes total, broken down into:
+- <code>0xab55044d</code>: the Method ID. This is derived from the signature <code>bar(fixed128x19[2])</code>. Note that <code>fixed</code> is replaced with its canonical representation <code>fixed128x19</code>.
+- <code>0x0000000000000000000000000000000220000000000000000000000000000000</code>: the first part of the first parameter, a fixed128x19 value <code>2.125</code>.
+- <code>0x0000000000000000000000000000000880000000000000000000000000000000</code>: the second part of the first parameter, a fixed128x19 value <code>8.5</code>.</p>
+<p>In total:
+<div class="codehilite"><pre><span></span>0xab55044d00000000000000000000000000000002200000000000000000000000000000000000000000000000000000000000000880000000000000000000000000000000
+</pre></div></p>
+<p>If we wanted to call <code>sam</code> with the arguments <code>"dave"</code>, <code>true</code> and <code>[1,2,3]</code>, we would pass 292 bytes total, broken down into:
+- <code>0xa5643bf2</code>: the Method ID. This is derived from the signature <code>sam(bytes,bool,uint256[])</code>. Note that <code>uint</code> is replaced with its canonical representation <code>uint256</code>.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000060</code>: the location of the data part of the first parameter (dynamic type), measured in bytes from the start of the arguments block. In this case, <code>0x60</code>.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000001</code>: the second parameter: boolean true.
+- <code>0x00000000000000000000000000000000000000000000000000000000000000a0</code>: the location of the data part of the third parameter (dynamic type), measured in bytes. In this case, <code>0xa0</code>.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000004</code>: the data part of the first argument, it starts with the length of the byte array in elements, in this case, 4.
+- <code>0x6461766500000000000000000000000000000000000000000000000000000000</code>: the contents of the first argument: the UTF-8 (equal to ASCII in this case) encoding of <code>"dave"</code>, padded on the right to 32 bytes.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000003</code>: the data part of the third argument, it starts with the length of the array in elements, in this case, 3.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000001</code>: the first entry of the third parameter.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000002</code>: the second entry of the third parameter.
+- <code>0x0000000000000000000000000000000000000000000000000000000000000003</code>: the third entry of the third parameter.</p>
+<p>In total:
+<div class="codehilite"><pre><span></span>0xa5643bf20000000000000000000000000000000000000000000000000000000000000060000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000464617665000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000003
+</pre></div></p>
+<h3 id="use-of-dynamic-types">Use of Dynamic Types<a class="headerlink" href="#use-of-dynamic-types" title="Permanent link">&para;</a></h3>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<p>A call to a function with the signature <code>f(uint,uint32[],bytes10,bytes)</code> with values <code>(0x123, [0x456, 0x789], "1234567890", "Hello, world!")</code> is encoded in the following way:</p>
+<p>We take the first four bytes of <code>sha3("f(uint256,uint32[],bytes10,bytes)")</code>, i.e. <code>0x8be65246</code>.
+Then we encode the head parts of all four arguments. For the static types <code>uint256</code> and <code>bytes10</code>, these are directly the values we want to pass, whereas for the dynamic types <code>uint32[]</code> and <code>bytes</code>, we use the offset in bytes to the start of their data area, measured from the start of the value encoding (i.e. not counting the first four bytes containing the hash of the function signature). These are:</p>
+<ul>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000123</code> (<code>0x123</code> padded to 32 bytes)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000080</code> (offset to start of data part of second parameter, 4*32 bytes, exactly the size of the head part)</li>
+<li><code>0x3132333435363738393000000000000000000000000000000000000000000000</code> (<code>"1234567890"</code> padded to 32 bytes on the right)</li>
+<li><code>0x00000000000000000000000000000000000000000000000000000000000000e0</code> (offset to start of data part of fourth parameter = offset to start of data part of first dynamic parameter + size of data part of first dynamic parameter = 4*32 + 3*32 (see below))</li>
+</ul>
+<p>After this, the data part of the first dynamic argument, <code>[0x456, 0x789]</code> follows:</p>
+<ul>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000002</code> (number of elements of the array, 2)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000456</code> (first element)</li>
+<li><code>0x0000000000000000000000000000000000000000000000000000000000000789</code> (second element)</li>
+</ul>
+<p>Finally, we encode the data part of the second dynamic argument, <code>"Hello, world!"</code>:</p>
+<ul>
+<li><code>0x000000000000000000000000000000000000000000000000000000000000000d</code> (number of elements (bytes in this case): 13)</li>
+<li><code>0x48656c6c6f2c20776f726c642100000000000000000000000000000000000000</code> (<code>"Hello, world!"</code> padded to 32 bytes on the right)</li>
+</ul>
+<p>All together, the encoding is (newline after function selector and each 32-bytes for clarity):</p>
+<div class="codehilite"><pre><span></span>0x8be65246
+0000000000000000000000000000000000000000000000000000000000000123
+0000000000000000000000000000000000000000000000000000000000000080
+3132333435363738393000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000e0
+0000000000000000000000000000000000000000000000000000000000000002
+0000000000000000000000000000000000000000000000000000000000000456
+0000000000000000000000000000000000000000000000000000000000000789
+000000000000000000000000000000000000000000000000000000000000000d
+48656c6c6f2c20776f726c642100000000000000000000000000000000000000
+</pre></div>
+
+<h1 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h1>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<p>Events are an abstraction of the Ethereum logging/event-watching protocol. Log entries provide the contract's address, a series of up to four topics and some arbitrary length binary data. Events leverage the existing function ABI in order to interpret this (together with an interface spec) as a properly typed structure.</p>
+<p>Given an event name and series of event parameters, we split them into two sub-series: those which are indexed and those which are not. Those which are indexed, which may number up to 3, are used alongside the Keccak hash of the event signature to form the topics of the log entry. Those which are not indexed form the byte array of the event.</p>
+<p>In effect, a log entry using this ABI is described as:</p>
+<ul>
+<li><code>address</code>: the address of the contract (intrinsically provided by Ethereum);</li>
+<li><code>topics[0]</code>: <code>keccak(EVENT_NAME+"("+EVENT_ARGS.map(canonical_type_of).join(",")+")")</code> (<code>canonical_type_of</code> is a function that simply returns the canonical type of a given argument, e.g. for <code>uint indexed foo</code>, it would return <code>uint256</code>). If the event is declared as <code>anonymous</code> the <code>topics[0]</code> is not generated;</li>
+<li><code>topics[n]</code>: <code>EVENT_INDEXED_ARGS[n - 1]</code> (<code>EVENT_INDEXED_ARGS</code> is the series of <code>EVENT_ARGS</code> that are indexed);</li>
+<li><code>data</code>: <code>abi_serialise(EVENT_NON_INDEXED_ARGS)</code> (<code>EVENT_NON_INDEXED_ARGS</code> is the series of <code>EVENT_ARGS</code> that are not indexed, <code>abi_serialise</code> is the ABI serialisation function used for returning a series of typed values from a function, as described above).</li>
+</ul>
+<h1 id="json">JSON<a class="headerlink" href="#json" title="Permanent link">&para;</a></h1>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<p>The JSON format for a contract's interface is given by an array of function and/or event descriptions. A function description is a JSON object with the fields:</p>
+<ul>
+<li><code>type</code>: <code>"function"</code>, <code>"constructor"</code>, or <code>"fallback"</code> (the <a href="http://solidity.readthedocs.io/en/develop/contracts.html#fallback-function">unnamed "default" function</a>);</li>
+<li><code>name</code>: the name of the function;</li>
+<li><code>inputs</code>: an array of objects, each of which contains:</li>
+<li><code>name</code>: the name of the parameter;</li>
+<li><code>type</code>: the canonical type of the parameter.</li>
+<li><code>outputs</code>: an array of objects similar to <code>inputs</code>, can be omitted if function doesn't return anything;</li>
+<li><code>constant</code>: <code>true</code> if function is <a href="http://solidity.readthedocs.io/en/develop/contracts.html#constant-functions">specified to not modify blockchain state</a>;</li>
+<li><code>payable</code>: <code>true</code> if function accepts ether, defaults to <code>false</code>.</li>
+</ul>
+<p><code>type</code> can be omitted, defaulting to <code>"function"</code>.</p>
+<p>Constructor and fallback function never have <code>name</code> or <code>outputs</code>. Fallback function doesn't have <code>inputs</code> either.</p>
+<p>Sending non-zero ether to non-payable function will throw. Don't do it.</p>
+<p>An event description is a JSON object with fairly similar fields:</p>
+<ul>
+<li><code>type</code>: always <code>"event"</code></li>
+<li><code>name</code>: the name of the event;</li>
+<li><code>inputs</code>: an array of objects, each of which contains:</li>
+<li><code>name</code>: the name of the parameter;</li>
+<li><code>type</code>: the canonical type of the parameter.</li>
+<li><code>indexed</code>: <code>true</code> if the field is part of the log's topics, <code>false</code> if it one of the log's data segment.</li>
+<li><code>anonymous</code>: <code>true</code> if the event was declared as <code>anonymous</code>.</li>
+</ul>
+<p>For example,</p>
+<div class="codehilite"><pre><span></span><span class="nx">contract</span> <span class="nx">Test</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nx">Test</span><span class="p">(){</span> <span class="nx">b</span> <span class="o">=</span> <span class="mh">0x12345678901234567890123456789012</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nx">event</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">uint</span> <span class="nx">indexed</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">bytes32</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="nx">event</span> <span class="nx">Event2</span><span class="p">(</span><span class="nx">uint</span> <span class="nx">indexed</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">bytes32</span> <span class="nx">b</span><span class="p">);</span>
+  <span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">uint</span> <span class="nx">a</span><span class="p">)</span> <span class="p">{</span> <span class="nx">Event</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span> <span class="p">}</span>
+  <span class="nx">bytes32</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>would result in the JSON:</p>
+<div class="codehilite"><pre><span></span><span class="p">[{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">},{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Event&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">},{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Event2&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+<span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">}]</span>
+</pre></div>
+
+<h1 id="example-javascript-usage">Example Javascript Usage<a class="headerlink" href="#example-javascript-usage" title="Permanent link">&para;</a></h1>
+<p>This specification is now maintained as part of the <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html">Solidity documentation</a>.</p>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">Test</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">contract</span><span class="p">(</span>
+<span class="p">[{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">},{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Event&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;event&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">},{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;bytes32&quot;</span><span class="p">,</span><span class="s2">&quot;indexed&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Event2&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;function&quot;</span><span class="p">,</span>
+<span class="s2">&quot;inputs&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="s2">&quot;uint256&quot;</span><span class="p">}],</span>
+<span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span>
+<span class="s2">&quot;outputs&quot;</span><span class="o">:</span> <span class="p">[]</span>
+<span class="p">}]);</span>
+<span class="kd">var</span> <span class="nx">theTest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Test</span><span class="p">(</span><span class="nx">addrTest</span><span class="p">);</span>
+
+<span class="c1">// examples of usage:</span>
+<span class="c1">// every log entry (&quot;event&quot;) coming from theTest (i.e. Event &amp; Event2):</span>
+<span class="kd">var</span> <span class="nx">f0</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">theTest</span><span class="p">);</span>
+<span class="c1">// just log entries (&quot;events&quot;) of type &quot;Event&quot; coming from theTest:</span>
+<span class="kd">var</span> <span class="nx">f1</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">);</span>
+<span class="c1">// also written as</span>
+<span class="kd">var</span> <span class="nx">f1</span> <span class="o">=</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">();</span>
+<span class="c1">// just log entries (&quot;events&quot;) of type &quot;Event&quot; and &quot;Event2&quot; coming from theTest:</span>
+<span class="kd">var</span> <span class="nx">f2</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">([</span><span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">Event2</span><span class="p">]);</span>
+<span class="c1">// just log entries (&quot;events&quot;) of type &quot;Event&quot; coming from theTest with indexed parameter &#39;a&#39; equal to 69:</span>
+<span class="kd">var</span> <span class="nx">f3</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">69</span><span class="p">});</span>
+<span class="c1">// also written as</span>
+<span class="kd">var</span> <span class="nx">f3</span> <span class="o">=</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">69</span><span class="p">});</span>
+<span class="c1">// just log entries (&quot;events&quot;) of type &quot;Event&quot; coming from theTest with indexed parameter &#39;a&#39; equal to 69 or 42:</span>
+<span class="kd">var</span> <span class="nx">f4</span> <span class="o">=</span> <span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mi">42</span><span class="p">]});</span>
+<span class="c1">// also written as</span>
+<span class="kd">var</span> <span class="nx">f4</span> <span class="o">=</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mi">42</span><span class="p">]});</span>
+
+<span class="c1">// options may also be supplied as a second parameter with `earliest`, `latest`, `offset` and `max`, as defined for `eth.filter`.</span>
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;max&#39;</span><span class="o">:</span> <span class="mi">100</span> <span class="p">};</span>
+<span class="kd">var</span> <span class="nx">f4</span> <span class="o">=</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">Event</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mi">42</span><span class="p">]},</span> <span class="nx">options</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">trigger</span><span class="p">;</span>
+<span class="nx">f4</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">trigger</span><span class="p">);</span>
+
+<span class="c1">// call foo to make an Event:</span>
+<span class="nx">theTest</span><span class="p">.</span><span class="nx">foo</span><span class="p">(</span><span class="mi">69</span><span class="p">);</span>
+
+<span class="c1">// would call trigger like:</span>
+<span class="c1">//trigger(theTest.Event, {&#39;a&#39;: 69, &#39;b&#39;: &#39;0x12345678901234567890123456789012&#39;}, n);</span>
+<span class="c1">// where n is the block number that the event triggered in.</span>
+</pre></div>
+
+<p>Implementation:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// e.g. f4 would be similar to:</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">filter</span><span class="p">({</span><span class="s1">&#39;max&#39;</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;address&#39;</span><span class="o">:</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span> <span class="s1">&#39;topics&#39;</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="mi">69</span><span class="p">,</span> <span class="mi">42</span><span class="p">]</span> <span class="p">]});</span>
+<span class="c1">// except that the resultant data would need to be converted from the basic log entry format like:</span>
+<span class="p">{</span>
+  <span class="s1">&#39;address&#39;</span><span class="o">:</span> <span class="nx">theTest</span><span class="p">.</span><span class="nx">address</span><span class="p">,</span>
+  <span class="s1">&#39;topics&#39;</span><span class="o">:</span> <span class="p">[</span><span class="nx">web3</span><span class="p">.</span><span class="nx">sha3</span><span class="p">(</span><span class="s2">&quot;Event(uint256,bytes32)&quot;</span><span class="p">),</span> <span class="mh">0x00</span><span class="p">...</span><span class="mi">0045</span> <span class="cm">/* 69 in hex format */</span><span class="p">],</span>
+  <span class="s1">&#39;data&#39;</span><span class="o">:</span> <span class="s1">&#39;0x12345678901234567890123456789012&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;number&#39;</span><span class="o">:</span> <span class="nx">n</span>
+<span class="p">}</span>
+<span class="c1">// into data good for the trigger, specifically the three fields:</span>
+  <span class="nx">Test</span><span class="p">.</span><span class="nx">Event</span> <span class="c1">// derivable from the first topic</span>
+  <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">69</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="s1">&#39;0x12345678901234567890123456789012&#39;</span><span class="p">}</span> <span class="c1">// derivable from the &#39;indexed&#39; bool in the interface, the later &#39;topics&#39; and the &#39;data&#39;</span>
+  <span class="nx">n</span> <span class="c1">// from the &#39;number&#39;</span>
+</pre></div>
+
+<p>Event result:
+<div class="codehilite"><pre><span></span><span class="p">[</span> <span class="p">{</span>
+  <span class="s1">&#39;event&#39;</span><span class="o">:</span> <span class="nx">Test</span><span class="p">.</span><span class="nx">Event</span><span class="p">,</span>
+  <span class="s1">&#39;args&#39;</span><span class="o">:</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="o">:</span> <span class="mi">69</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="o">:</span> <span class="s1">&#39;0x12345678901234567890123456789012&#39;</span><span class="p">},</span>
+  <span class="s1">&#39;number&#39;</span><span class="o">:</span> <span class="nx">n</span>
+  <span class="p">},</span>
+  <span class="p">{</span> <span class="p">...</span>
+  <span class="p">}</span> <span class="p">...</span>
+<span class="p">]</span>
+</pre></div></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                NatSpec格式
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Bad-Block-Reporting/" title="坏块报告" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                坏块报告
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

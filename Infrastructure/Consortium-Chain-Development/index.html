@@ -1,0 +1,2111 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>联盟链发展 - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                联盟链发展
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Chain-Spec-Format/" title="基础设施" class="md-tabs__link md-tabs__link--active">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Research/Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        联盟链发展
+      </label>
+    
+    <a href="./" title="联盟链发展" class="md-nav__link md-nav__link--active">
+      联盟链发展
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-codebase" title="Choosing a codebase" class="md-nav__link">
+    Choosing a codebase
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-config-file" title="The config file" class="md-nav__link">
+    The config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus" title="Consensus" class="md-nav__link">
+    Consensus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstraction" title="Abstraction" class="md-nav__link">
+    Abstraction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p-networking" title="P2P networking" class="md-nav__link">
+    P2P networking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-preserving-protocols" title="Privacy-preserving protocols" class="md-nav__link">
+    Privacy-preserving protocols
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis" title="APIs" class="md-nav__link">
+    APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interfaces" title="User interfaces" class="md-nav__link">
+    User interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficiency-improvements" title="Efficiency improvements" class="md-nav__link">
+    Efficiency improvements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-optimization-and-precompiled-contracts" title="Virtual machine optimization and precompiled contracts" class="md-nav__link">
+    Virtual machine optimization and precompiled contracts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denial-of-service-attacks-and-security" title="Denial-of-service attacks and Security" class="md-nav__link">
+    Denial-of-service attacks and Security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-merkle-tree" title="The Merkle Tree" class="md-nav__link">
+    The Merkle Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-parallelizability" title="Transaction Parallelizability" class="md-nav__link">
+    Transaction Parallelizability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smart-contract-safety" title="Smart Contract Safety" class="md-nav__link">
+    Smart Contract Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-channels" title="State channels" class="md-nav__link">
+    State channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privileged-accounts" title="Privileged Accounts" class="md-nav__link">
+    Privileged Accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-consensus-set" title="Changing the Consensus Set" class="md-nav__link">
+    Changing the Consensus Set
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Research/Sharding-FAQ/" title="分片区块链" class="md-nav__link">
+      分片区块链
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-codebase" title="Choosing a codebase" class="md-nav__link">
+    Choosing a codebase
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-config-file" title="The config file" class="md-nav__link">
+    The config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consensus" title="Consensus" class="md-nav__link">
+    Consensus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstraction" title="Abstraction" class="md-nav__link">
+    Abstraction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p2p-networking" title="P2P networking" class="md-nav__link">
+    P2P networking
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-preserving-protocols" title="Privacy-preserving protocols" class="md-nav__link">
+    Privacy-preserving protocols
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apis" title="APIs" class="md-nav__link">
+    APIs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interfaces" title="User interfaces" class="md-nav__link">
+    User interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficiency-improvements" title="Efficiency improvements" class="md-nav__link">
+    Efficiency improvements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-machine-optimization-and-precompiled-contracts" title="Virtual machine optimization and precompiled contracts" class="md-nav__link">
+    Virtual machine optimization and precompiled contracts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#denial-of-service-attacks-and-security" title="Denial-of-service attacks and Security" class="md-nav__link">
+    Denial-of-service attacks and Security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-merkle-tree" title="The Merkle Tree" class="md-nav__link">
+    The Merkle Tree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-parallelizability" title="Transaction Parallelizability" class="md-nav__link">
+    Transaction Parallelizability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smart-contract-safety" title="Smart Contract Safety" class="md-nav__link">
+    Smart Contract Safety
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-channels" title="State channels" class="md-nav__link">
+    State channels
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privileged-accounts" title="Privileged Accounts" class="md-nav__link">
+    Privileged Accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-consensus-set" title="Changing the Consensus Set" class="md-nav__link">
+    Changing the Consensus Set
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">联盟链发展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="choosing-a-codebase">Choosing a codebase<a class="headerlink" href="#choosing-a-codebase" title="Permanent link">&para;</a></h2>
+<p>There are currently 8 implementations of the Ethereum protocol:</p>
+<ul>
+<li>Go <a href="http://github.com/ethereum/go-ethereum">http://github.com/ethereum/go-ethereum</a></li>
+<li>C++ <a href="http://github.com/ethereum/cpp-ethereum">http://github.com/ethereum/cpp-ethereum</a></li>
+<li>Python <a href="http://github.com/ethereum/pyethereum">http://github.com/ethereum/pyethereum</a></li>
+<li>Javascript <a href="http://github.com/ethereum/ethereumjs-lib">http://github.com/ethereum/ethereumjs-lib</a></li>
+<li>Java <a href="https://github.com/ethereum/ethereumj">https://github.com/ethereum/ethereumj</a></li>
+<li>Haskell <a href="https://github.com/jamshidh/ethereumH">https://github.com/jamshidh/ethereumH</a></li>
+<li>Rust (Parity) <a href="https://github.com/ethcore/parity">https://github.com/ethcore/parity</a></li>
+<li>Ruby <a href="https://github.com/janx/ruby-ethereum">https://github.com/janx/ruby-ethereum</a></li>
+</ul>
+<p>These implementations differ in:</p>
+<ul>
+<li>License (GPL, LGPL, MIT, Apache)</li>
+<li>Performance</li>
+<li>Feature-completeness</li>
+<li>Modularity</li>
+<li>Ease of modification</li>
+<li>Ease of integration into other systems</li>
+</ul>
+<p>For enterprise use cases, performance is likely to be highly important. There have been some efforts at benchmarking Ethereum clients, see:</p>
+<p><a href="https://github.com/ethereum/wiki/wiki/Benchmarks">https://github.com/ethereum/wiki/wiki/Benchmarks</a></p>
+<p>However, a comprehensive set of benchmarks on all clients likely to be performant (C++, Go, Haskell, Java, Parity) would be a very useful task. Regarding licensing, Go is LGPL licensed, C++ is GPL licensed but there is an effort (with outcome still uncertain) to relicense it to Apache, Java is MIT, and Parity is GPL.</p>
+<h2 id="the-config-file">The config file<a class="headerlink" href="#the-config-file" title="Permanent link">&para;</a></h2>
+<p>There is an informal standard for a configuration file that Ethereum nodes must support, which describes the network parameters. The goal is to allow nodes to easily connect to test networks, private networks, and in the long term specify alternative networks with different properties, including consensus algorithms, P2P networking protocols, initial state, and protocol rules. The standard is described here:</p>
+<p><a href="https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format">https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format</a></p>
+<p>An enterprise ethereum version should respect a superset of the standard, so that a node started with the right config settings would act as an Ethereum public chain node (but with more APIs and other features useful for enterprise purposes), but a node started with different settings would participate in a given consortium-chain network using PBFT, or a test network that uses a different virtual machine, or a network that incorporates new scalability features sooner than the public chain, etc.</p>
+<h2 id="consensus">Consensus<a class="headerlink" href="#consensus" title="Permanent link">&para;</a></h2>
+<p>Currently, the Ethereum clients support proof of work consensus. There is a desire to modularize the consensus algorithm in such a way that it will be possible to also use proof of stake (Casper), as well as private chain-specific consensus algorithms, with likely initial targets being PBFT and DPOS (essentially a round robin consensus algorithm). The first step is to determine exactly what the "interface" for a consensus algorithm "class" should look like.</p>
+<p>A possible sketch of the interface is as follows:</p>
+<ul>
+<li><code>submitTransaction(tx)</code>: submit a transaction to a participating node. The node will attempt to include it in a block, or vote for it, or perform the equivalent operation in the consensus algorithm.</li>
+<li><code>sendMessage(msg, node_id)</code>: send a message to another node.</li>
+<li><code>broadcastMessage(msg)</code>: broadcast a message.</li>
+<li><code>getMostRecent(conf_level)</code>: get the most recent block that satisfies a given confirmation level. In proof of work or DPOS, <code>conf_level</code> would represent the number of confirmations, so it would return the nth last block in the chain; in PBFT confirmation is binary (ie. final confirmation is instant) so it always returns the most recent confirmed block.</li>
+</ul>
+<p>Note that public chain consensus also requires an incentivization model, ie. a way to reward consensus participants who perform well and possibly penalize participants who perform badly. We abstract this by providing two options:</p>
+<ol>
+<li>A function <code>finalize</code> that gets automatically called after processing every transaction in a block, which makes modifications to the state and may use the block as input.</li>
+<li>A function <code>initialize</code> that gets automatically called before processing every transaction in a block, which makes modifications to the state and may use the block as input.</li>
+</ol>
+<p>Note that either <code>finalize</code> or <code>initialize</code> may simply consist of a call to some standard contract with the block header as data; the Ethereum public chain plans to move to such an approach in the long term. In consortium chains, there is no need to use these functions for incentivization; however, they may be useful for other purposes (eg. to automatically run scheduled operations). Hence, because the utility of these operations is not strictly related to consensus incentivization, they should not be viewed as part of the consensus interface; rather, they should be viewed as transaction processing rules.</p>
+<p>In a private chain context, there are several consensus algorithms that make the most sense:</p>
+<ul>
+<li><strong>Proof of authority</strong> - essentially, one client with one particular private key makes all of the blocks</li>
+<li><strong>PBFT</strong> (or some other traditional byzantine-fault-tolerant consensus algorithm)</li>
+<li><strong>DPOS</strong> (or some other chain-based limited-validator consensus algorithm)</li>
+<li><strong>Casper</strong> (Ethereum's <a href="https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ">proof of stake</a> candidate) with a fixed validator set</li>
+</ul>
+<p>PBFT and DPOS (taken purely as a consensus algorithm, not including the ability of some class of token holders to vote on delegates) each have their own advantages and disadvantages. Specifically:</p>
+<ul>
+<li>PBFT has academically robust formal proofs for various properties (safety, liveness, etc) under a partially synchronous network model assuming at least 67% of nodes are online and honest</li>
+<li>PBFT has instant finality - once a transaction is confirmed once, reverts are impossible. DPOS consensus is probabilistic much like proof of work (in fact, slightly worse, as attackers can see if they have the ability to revert short-range forks ahead of time), and so while a notion of "de-facto finality" is possible, it takes several minutes to reach</li>
+<li>DPOS can support an unlimited number of nodes, whereas PBFT becomes very inefficient above about 30 nodes because every node has to send messages to and receive messages from every other node during every round. DPOS does this because each round consists only of one randomly selected validator making a block</li>
+<li>DPOS is conceptually simpler to understand and implement and intuitively see why it converges</li>
+<li>In a synchronous network model, DPOS can survive up to 49% Byzantine faults, higher than the 33% of PBFT; additionally, DPOS can survive even more faults if they consist of nodes going offline rather than trying to attack the network</li>
+</ul>
+<p>Casper is intended as a <em>cryptoeconomic</em> algorithm where anyone can become a validator by depositing money. However, it can be repurposed for permissioned contexts by simply specifying a fixed validator set. This approach is worth exploring once Casper is implemented across major Ethereum clients.</p>
+<p>Proof of authority may be required in some cases where particular safety properties are required and Ethereum's technologies are used more to provide deterministic and verifiable execution and auditing properties rather than decentralization in the traditional sense. Hence, it makes sense to implement all three and give each user the choice of which one to use for any given application.</p>
+<p><strong>Note</strong>: there is a common misconception that different algorithms have widely different transaction processing capacities, eg. DPOS can process 100 tx/sec while PBFT can process 1000 tx/sec, etc. Whereas in the case of future sharded blockchains this may be true, in the context of blockchains where every node processes every transaction this is not the case; the same amount of computational effort is required to process each transaction regardless of what consensus algorithm is used, although there may be small differences because some algorithms require recomputing transactions in the case of short-range forks, some can more safely allow transaction processing to be run a larger percentage of the time, etc. Differences in performance between chains are usually almost entirely due to differences in the protocols and the implementations, not the consensus algorithm (with the important exception that public-chain capacities tend to be much lower due to their additional economic restrictions, smaller node sizes and centralization concerns).</p>
+<h2 id="abstraction">Abstraction<a class="headerlink" href="#abstraction" title="Permanent link">&para;</a></h2>
+<p>In Ethereum protocol development, one of the major overriding philosophies is the notion of abstraction: that the protocol itself should be as simple as possible, and as much as possible should be implemented in contract code instead of through hard protocol rules. Targets for abstraction include:</p>
+<ul>
+<li>Account security (see <a href="https://github.com/ethereum/EIPs/issues/86">https://github.com/ethereum/EIPs/issues/86</a>)</li>
+<li>The transaction state transition function (ie. the rules by which a transaction is processed)</li>
+<li>Ether (ie. make ether into a <a href="https://github.com/ethereum/EIPs/issues/20">ERC 20 token</a> just like the others)</li>
+<li>Logs / events</li>
+</ul>
+<p>The purpose of abstraction is the following:</p>
+<ul>
+<li>Lower attack surface and lower core code complexity</li>
+<li>The ability to more easily hardfork the public chain protocol to different protocol rules, as it can be done simply by swapping out contract code</li>
+<li>The ability to more easily swap out different rulesets on a test network or private implementation</li>
+<li>The ability to switch between different rules on a per-application or per-user level (eg. some users want their accounts secured by ECDSA, some prefer Lamport for quantum-proofness, and in some private chain use cases industry or national standards require the use of specific forms of cryptography; the goal of EIP 86 is to support all of this)</li>
+</ul>
+<p>EES may want to implement some of these abstraction features ahead of schedule.</p>
+<h2 id="p2p-networking">P2P networking<a class="headerlink" href="#p2p-networking" title="Permanent link">&para;</a></h2>
+<p>Ethereum's current P2P network is a Kademlia architecture, and details are described here:</p>
+<ul>
+<li><a href="https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol">https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol</a></li>
+<li><a href="https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer">https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer</a></li>
+</ul>
+<p>A private chain may want to either use the same networking code (but with a different network ID set in the config file), or use an alternative type of network; the most likely alternative is a design where every node connects directly to every other node (quite feasible and likely optimal in networks with under ~20 nodes). Additionally there is the choice of customizing the connection that is made at the network or even lower level (eg. should all nodes be in the same subnet? If they are physically close to each other would fiber optic connections be optimal?); many of the details of this are largely outside the scope of the EES codebase, but the codebase should make sure that it works well under many common expected configurations.</p>
+<h2 id="privacy-preserving-protocols">Privacy-preserving protocols<a class="headerlink" href="#privacy-preserving-protocols" title="Permanent link">&para;</a></h2>
+<p>See <a href="https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/">https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/</a> for a much more detailed description of the available approaches.</p>
+<h2 id="apis">APIs<a class="headerlink" href="#apis" title="Permanent link">&para;</a></h2>
+<p>Currently, the Ethereum codebase supports a basic set of APIs for querying the blockchain, querying contract state, filtering logs, sending transactions, etc. The primary way of making more complex queries (eg. returning the balance of a particular account in a particular token issued on the blockchain, returning the ask price of an offer on a blockchain-based order book, etc) is through the concept of "virtual transactions". Essentially, the idea is that a client can pretend to execute a transaction locally, which would call a function of a contract that returns a value. The API would then (possibly synchronously) return the value.</p>
+<p>However, there may be more high-level APIs that are required, particularly around use cases that require not just accessing the current state but also accessing previous state, getting information about transactions, and more advanced forms of blockchain analytics; additionally, there is room for APIs that are compatible with API formats that users are already comfortable with and expect.</p>
+<p>A particular class of APIs that is likely to be very useful is the ability to make SQL and similar queries to the blockchain. There are a few existing projects in this direction, see:</p>
+<ul>
+<li><a href="https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/">https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/</a></li>
+<li><a href="https://github.com/jamshidh/ethereum-data-sql">https://github.com/jamshidh/ethereum-data-sql</a></li>
+</ul>
+<p>However, much more work likely remains in making these systems maximally efficient and broadly applicable to many use cases.</p>
+<h2 id="user-interfaces">User interfaces<a class="headerlink" href="#user-interfaces" title="Permanent link">&para;</a></h2>
+<p>User interfaces in Ethereum are a broad category, including:</p>
+<ul>
+<li>The Mist browser, as well as applications written in HTML/Javascript that can be used either inside of Mist or through a user's regular browser</li>
+<li>Block explorers such as <a href="http://etherchain.org">etherchain</a>, <a href="http://etherscan.io">etherscan</a> and <a href="http://live.ether.camp">ether.camp</a>. Note that unlike similar tools for many other blockchains, which focus purely on currency balances and transactions, Ethereum block explorers tend to be highly advanced and general, offering views into contract state, functions, internal transactions, etc; for example, here is a ether.camp's view of the DAO:</li>
+<li>The geth command line interface (the same as the web3 Javascript API).</li>
+</ul>
+<h2 id="efficiency-improvements">Efficiency improvements<a class="headerlink" href="#efficiency-improvements" title="Permanent link">&para;</a></h2>
+<p>The process of verifying a block in Ethereum currently contains the following particularly computationally intensive operations:</p>
+<ul>
+<li>Verifying the transaction signatures</li>
+<li>Running the EVM instance(s) triggered by transaction execution</li>
+<li>Updating the Merkle tree, including computing the new intermediate hashes</li>
+<li>Updating the database</li>
+</ul>
+<p>Some benchmarks have been made that show that a single ethereum node is capable of around 1000-2000 transactions per second, and a small consortium network is capable of a few hundred transactions per second, given current software. These limits arise due to a combination of (1) bandwidth limitations, and (2) computational limitations.</p>
+<p>In a single transaction, we can expect:</p>
+<ul>
+<li>1 elliptic curve signature verification (or more precisely, public key recovery)</li>
+<li>3-10 state updates (minimum 3, corresponding to sender ether deduction, recipient ether increase and miner ether fee payment; state-changing contract calls will have more), corresponding to 3-10 updates to the Merkle tree, requiring ~15-100 rounds of serialization, hashing, etc</li>
+<li>A corresponding ~15-100 updates to the underlying database</li>
+<li>In a contract call, at least one round of VM execution, but possibly more. An informal survey of recent Ethereum transactions showed that among gas-consuming transactions the median gas consumption was ~50,000 gas and the average was ~100,000.</li>
+</ul>
+<h2 id="virtual-machine-optimization-and-precompiled-contracts">Virtual machine optimization and precompiled contracts<a class="headerlink" href="#virtual-machine-optimization-and-precompiled-contracts" title="Permanent link">&para;</a></h2>
+<p>The Ethereum Virtual Machine is a unique architecture that is optimized for the following properties:</p>
+<ul>
+<li>Small attack surface, assumes that all code running inside of it is untrusted</li>
+<li>Small code size (eg. the 4 kb of "boilerplate" that the default gcc creates for C++ code is acceptable on a single user's hard drive, but completely unacceptable when the code needs to sit on a blockchain; EVM code is often under 100 bytes)</li>
+<li>Fully deterministic (note that due to metering with gas, even timeouts are deterministic; most other smart contract frameworks that try to use existing virtual machines completely fail to accomplish this)</li>
+<li>Very fast to start a new VM instance up and shut an instance down, as we expect 1-10 EVM instances to be created and destroyed <strong>per transaction</strong>. Note that most of these instances may well run less than 100 computational steps; hence, being "lightweight" is crucial.</li>
+<li>Reduced complexity - in those cases where users are going to implement an alternative mechanism in contract code regardless (eg. multisig, ring signatures, on-chain tokens), the "privileged" in-protocol mechanism only serves to duplicate effort and get in the way, whereas abstraction would allow you to use the alternative mechanism to <em>replace</em> the default mechanism.</li>
+<li>Having multiple fully compatible implementations (there are ~50000 test cases at <a href="https://github.com/ethereum/tests">https://github.com/ethereum/tests</a> which all 8 VM implementations in the 8 Ethereum clients pass)</li>
+</ul>
+<blockquote>
+<b>Important note</b>: "gas" and "ether" are NOT the same thing. Gas is a mechanism that allows computation inside the EVM to be deterministically metered, ie. for contracts to deterministically restrict calls to some fixed number of computational steps. Ether is a way of paying transaction fees, which are expected to be proportional to gas consumption. The Bitcoin analog of ether is BTC, the Bitcoin analog of gas is the number of bytes that a transaction takes up in a block; in Ethereum, measuring bytes alone is not enough as you also need to measure computation, hence the concept of gas. On a private chain, you do not need to use ether to pay for gas; you can come up with alternate rulesets, including for example simply requiring every transaction to have a maximum gas limit of 1 million.
+</blockquote>
+
+<p>Note that the original EVM was <strong>not</strong> designed for high-performance computation. When the EVM 1.0 spec was created, most ideas for what can be done inside of blockchain scripting were under 50 lines of code, consisting of "if...then" logic and basic arithmetic, and in this environment one can make a strong case that even 100x inefficiency in EVM execution will not make a significant difference to total transaction processing times because the bulk of transaction processing load appears in the form of verifying elliptic curve signatures (which requires looping through elliptic curve additions over 1000 times, where each addition itself contains many 256-bit operations).</p>
+<p>However, more recently we have realized that there is a very large demand for high-performance computation in the EVM particularly in order to implement more complex cryptography (eg. ring signatures, partially homomorphic encryption, other kinds of elliptic curves, lamport signatures); hence, we have realized that our current work on the EVM has been insufficient. We currently have two approaches that we are pursuing in parallel toward solving this:</p>
+<ul>
+<li>A possible new virtual machine based on WebAssembly (see <a href="https://github.com/ethereum/evm2.0-design">https://github.com/ethereum/evm2.0-design</a>)</li>
+<li>EVM improvements</li>
+<li>Precompiled contracts</li>
+</ul>
+<p>The WebAssembly plan is to develop a "trans-compiler" that takes WebAssembly code and convert it into WebAssembly code that keeps track of its own "gas consumption" at every branch point, and automatically stops if the remaining gas goes below zero. WebAssembly was chosen because the design requirements are in many cases similar to Ethereum, eg. users will be running untrusted WebAssembly code in their browsers, code sizes also need to be small as code is downloaded in real time, and there are already multiple implementations and a goal of compatibility between them. However, WebAssembly lacks a notion of gas counting, and the trans-compiler will fix that problem while allowing the use of an unmodified WebAssembly implementation to do the actual execution. It will also ban floating point numbers and other sources of potential nondeterminism. Note that it is not guaranteed that WebAsssembly will become the main public chain VM, but it may make sense to develop it further and make it a candidate for private chain use.</p>
+<p>The leading EVM improvement proposal is to add a set of 256 64-bit registers, plus opcodes specialized to dealing with those registers. This allows operations that only require 64-bit precision to be processed with near-native speed. If this proposal is implemented, then it could potentially be merged with the WebAssembly route, by making a two-way compiler between the upgraded EVM and WASM and thus making WASM be one of the implementations of this upgraded EVM.</p>
+<p>A "precompiled contract" is an operation that is implemented in native code, and which can be accessed by calling a contract at a prespecified address. Current precompiles include:</p>
+<ul>
+<li>Elliptic curve signature public key hash recovery (address <code>0x000....0001</code>)</li>
+<li>SHA256 (address <code>0x000....0002</code>)</li>
+<li>RIPEMD160 (address <code>0x000....0002</code>)</li>
+</ul>
+<p>In many industry use cases, there is the goal of either integrating existing libraries for financial computation (eg. <a href="http://www.opengamma.com/">OpenGamma</a>), or different forms of cryptography in order to comply with industry or national standards, or accelerating complex business logic (eg. order books) that is required to run at very high speed. Applications that do so may wish to specify their own precompiles. We recommend that private-chain precompiles take addresses in the range <code>0x000....000400</code> to <code>0x000....0fffff</code> (ie. 1024 to 1048575) to avoid collisions with possible future public chain features.</p>
+<h2 id="denial-of-service-attacks-and-security">Denial-of-service attacks and Security<a class="headerlink" href="#denial-of-service-attacks-and-security" title="Permanent link">&para;</a></h2>
+<p>In September and October 2016 there has been a series of denial-of-service attacks against various Ethereum implementations and the Ethereum protocol. A large portion of them exploited a "quadratic memory consumption" vulnerability in the Go implementation, where the client inefficiently copied a potentially large amount of cached state every time a call was made, leading to either very slow processing or an outright halt due to the client running out of memory. Additionally, a large number of attacks arose because opcodes that read the state (eg. EXTCODECOPY, BALANCE, CALL) were incorrectly priced too low, and because a design flaw in the SUICIDE opcode presented a way to very cheaply bloat the state with a large number of empty accounts. These issues were resolved in a hard fork on Oct 17.</p>
+<p>As of the time of this writing, the main remaining denial-of-service issue is that the client makes O(log(n)) database reads in order to read a state entry, and when the state is too large to fit into memory (which is the case after the state increased greatly due to previous attacks that are no longer possible) this makes processing state-reading opcodes slow.</p>
+<p>There are two ways to resolve this issue. One is to implement a cache that allows state entries to be read in O(1) database reads (likely a single database read in an optimal implementation); this resolves the problem but still leaves a low limit for transaction processing capacity. A single SSD read takes <a href="http://www.thessdreview.com/featured/ssd-throughput-latency-iopsexplained/">100 microseconds</a>; hence a leveldb read may take 200-400 microseconds, creating a cap of ~2500 reads per second, or ~500 transactions per second. The requirement for an offline node to be able to synchronize decreases this further. Writes take up to 10x longer due to the need to update the state tree (which adds O(log(n)) overhead), but this can be done in a background process. Hence, storing state in an SSD makes it difficult to process more than ~100 tx/sec effectively.</p>
+<p>The other approach is to implement measures to ensure that the total size of the state remains small enough to fit into memory. In a public chain, this entails either charging "rent" for accounts (see <a href="https://github.com/ethereum/EIPs/issues/87">here</a>, <a href="https://github.com/ethereum/EIPs/issues/35">here</a>, <a href="https://github.com/ethereum/EIPs/issues/88">here</a> and <a href="http://vitalik.ca/files/storage_rent.html">here</a> for proposals); in a consortium chain, this simply entails having a good garbage collection strategy and if needed adding more RAM to validator nodes.</p>
+<h2 id="the-merkle-tree">The Merkle Tree<a class="headerlink" href="#the-merkle-tree" title="Permanent link">&para;</a></h2>
+<p>The Merkle tree (also sometimes called "Merkle Patricia tree", "Patricia trie", "Merkle Patricia trie" or "trie") is an important part of the Ethereum protocol and provides a large amount of value particularly in the public chain. The function of the tree (see <a href="https://github.com/ethereum/wiki/wiki/Patricia-Tree">here</a> for details, and <a href="https://blog.ethereum.org/2015/11/15/merkling-in-ethereum/">here</a> and <a href="https://easythereentropy.wordpress.com/2014/06/04/understanding-the-ethereum-trie/">here</a> for more detailed explanations) is to provide a cryptographically authenticated data structure that stores the entire state (ie. account balances, contract storage, nonces, etc); every 32-byte root hash maps uniquely (assuming cryptographic security of SHA3) to a particular state which may be gigabytes in size.</p>
+<p>This allows for the following benefits:</p>
+<ul>
+<li><strong>Secure fast syncing</strong>: new clients joining the network do not need to process every transaction from the genesis block to the present moment in order to download the state. Instead, they can simply download the block headers, verify the proof of work (or potentially proof of stake or signatures from PBFT participants), find a recent finalized block, and from the root hash contained in that block download the entire current state and authenticate it by checking that every hash in the trie matches up.</li>
+<li><strong>Light client support</strong>: a client that does not have enough computational power, storage or bandwidth to download and process even the entire current state may simply keep track of block headers and use the consensus algorithm to authenticate block headers, and then download and verify "branches" of the Merkle tree just in time when the client needs to get some particular piece of state data.</li>
+<li><strong>Independent light verifiability</strong>: a block creator can come up with a "proof", consisting of a block together with the portion of the state data that is accessed or modified during that block, that any client even without any other data can use to verify that the block was created and the transactions were executed correctly.</li>
+</ul>
+<p>Although no one has yet come up with such a product at the time of this writing, one can imagine a centralized service running its business logic single-node private chain that uses the independent light verifiability feature of the Merkle tree in order to provide its users with very strong auditability and authenticity guarantees. For example, an exchange may commit to providing an API that allows any user to download the Merkle branches corresponding to their account data at any time, and also publish the root hash of its internal state after every operation. If a user sees their balance unexpectedly decreased and wants to be sure that there was no malfeasance, they can use a binary search algorithm to determine after which operation their balance was reduced, and then download a proof-of-execution for that operation and verify that the operation was legitimate. Hence, Merkle trees have benefits in many consortium and private chain applications as well as the public chain.</p>
+<p>However, the Merkle tree also comes with its efficiency cost; hence, in those applications that do not require it, an optimal solution may be to simply get rid of the Merkle tree, and instead store the state in the database directly, so three state changes would correspond to three database operations. That said, it is important not to jump to this conclusion too quickly, as there are several ways to optimize the Merkle tree without removing it entirely. This includes:</p>
+<ul>
+<li>Allowing the storage of unlimited-size values in the state, instead of just 32-byte values (see <a href="https://github.com/ethereum/EIPs/issues/97">EIP 97</a>). In cases where a contract very often needs to store many values at the same time (eg. a blockchain-based order book storing buy currency, sell currency, price, quantity, seller), this may improve efficiency by as much as 2x.</li>
+<li>Removing the storage of intermediate root hashes after every transaction, instead doing it after every block. This (1) allows for the cache to be used more, so if many transactions in a block modify a single account only a single Merkle tree update needs to be done for that account for the entire block, (2) allows the Merkle tree to be updated using a more efficient algorithm (eg. see in <a href="https://github.com/ethereum/wiki/wiki/Benchmarks">the benchmarks</a> the Go client, which has this optimization, needs 28.5 milliseconds instead of 45.7 to update when the number of intermediate root hash calculations is reduced by 40%), (3) allows the Merkle tree to be updated using a more parallelizable algorithm, and (4) potentially opens the door to some heuristic parallel transaction execution optimizations.</li>
+<li>Changing the serialization algorithm or the trie algorithm (eg. making it a binary trie instead of hexary as it is now)</li>
+<li>Software-level improvements</li>
+</ul>
+<p>The optimal strategy is to pursue three paths (namely, adding an option to instantiate an ethereum chain without a Merkle tree, exploring protocol hardforking options to make the Merkle tree more efficient, and exploring software-level improvements to the code) in parallel.</p>
+<h2 id="transaction-parallelizability">Transaction Parallelizability<a class="headerlink" href="#transaction-parallelizability" title="Permanent link">&para;</a></h2>
+<p>One common criticism (see <a href="http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/">http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/</a>) of the current Ethereum model is that because it is so open-ended in the effects that transactions can have, verifying transactions in parallel is difficult. Once intermediate state root computation is removed, one heuristic strategy that can be employed works as follows:</p>
+<ol>
+<li>Select the next <code>k</code> transactions, <code>t[1] ... t[k]</code>, that need to be processed. Process them all in parallel threads on top of the current state (giving each one a separate cache if it reads data that it already wrote), and during execution keep track of the set of addresses that each thread read and the set of addresses that each thread wrote to.</li>
+<li>Let <code>(i, j)</code> be the earliest collision (ranked by <code>j</code>) where (i) <code>i &lt; j</code>, (ii) <code>t[j]</code> read something that transaction <code>t[i]</code> wrote.</li>
+<li>Apply the state updates from <code>t[1] ... t[j-1]</code> inclusive. Go back to step 1, starting from <code>t[j]</code> as the first transaction.</li>
+</ol>
+<p>This may achieve substantial speedups in the general case, but that is not guaranteed; additionally, relying on the scheme may make your application vulnerable to denial-of-service attacks where the attacker sends a large number of deliberately unparallelizable transactions in order to prevent any parallel execution from taking place - in the worst case, performance will be no better than the single-threaded case. The Merkle tree changes detailed above will dditionally allow for the parallelization of Merkle tree calculations, and elliptic curve signature verifications are precomputed in existing clients and can be parallelized already, but this is currently as far as we can go.</p>
+<p>The long-term roadmap for Ethereum 2.0 and 3.0 is to implement the concept of "sharding", where the state is broken up into many pieces and each piece is stored by a portion of nodes, and transactions affecting different parts of the state are processed by different nodes in parallel. Part of this roadmap is allowing transactions to statically declare an address range within which they are able to make synchronous operations, so that processing these transactions without holding the entire state is actually feasible. Calls going outside the stated address range would return an <code>OUT_OF_RANGE</code> error, similar to <code>OUT_OF_GAS</code> errors in effect.</p>
+<p>Public blockchain sharding is a complicated technical challenge, as on top of the usual problems involving database sharding there are also cryptoeconomic challenges, as the particular form of distributed computing that a public blockchain is has the unique property that each node does not trust any other node, and so another node simply <em>saying</em> that it processed and verified a given set of transactions is not sufficient. However, in the case of private and consortium chains, going this far is not required; instead, it suffices only to implement the part of the sharding roadmap that has to do with transaction parallelizability (ie. transactions specifying address ranges), and then achieve scalability by requiring each node in the network to simply add more CPU cores and more bandwidth.</p>
+<p>One challenge with this kind of sharding is that there will be many operations in many applications that need to be cross-shard, ie. have an effect that is dispersed across the state such that a single transaction with a narrow address range cannot cover it. The solution for these cases is an asynchronous programming language, allowing operations to be split up into multiple phases. For example, a coin transfer from shard A to shard B would consist of the following steps:</p>
+<ol>
+<li>Destroy X coins on shard A, in a transaction that also specifies the destination shard and address; the consensus mechanism generates a receipt proving that this operation was confirmed.</li>
+<li>Submit this receipt into a contract in shard B, which then generates X new coins on shard B. It then saves a record into the storage of shard B stating that the receipt was consumed, preventing it from being used to generate new coins a second time.</li>
+</ol>
+<p>See <a href="https://docs.google.com/presentation/d/1CjD0W4l4-CwHKUvfF5Vlps76fKLEC6pIwu1a_kC_YRQ/edit?ts=575e81ff#slide=id.p">this presentation</a> (<a href="https://www.youtube.com/watch?v=-QIt3mKLIYU">video</a>) for more details on how this would be done.</p>
+<p>An important higher-level task is to actually create the programming language that would make it easy to implement these kinds of asynchronous cross-shard operations. Note that a lot of this work would simultaneously lay the groundwork for a programming language that compiles down into applications that exist across multiple blockchains.</p>
+<h2 id="smart-contract-safety">Smart Contract Safety<a class="headerlink" href="#smart-contract-safety" title="Permanent link">&para;</a></h2>
+<p>An important aspect of smart contract programming that touches public and consortium chain smart contracts alike is safety, including both protection against benign developer mistakes, and against malicious exploits included by the author of a contract in order to attempt to cheat users. A compiled list of contract programming mistakes on the public Ethereum blockchain can be found here:</p>
+<p><a href="https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/">https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/</a></p>
+<p>An older paper from security researcher Andrew Miller can be found here:</p>
+<p><a href="https://eprint.iacr.org/2015/460.pdf">https://eprint.iacr.org/2015/460.pdf</a></p>
+<p>The Ethereum wiki doc on safe contract programming techniques can be found here:</p>
+<p><a href="https://github.com/ethereum/wiki/wiki/Safety">https://github.com/ethereum/wiki/wiki/Safety</a></p>
+<p>The first link also includes possible incremental improvements that can be taken to the EVM as well as Ethereum development environments in order to minimize the risk of such attacks. Additionally, since the DAO incident in June 2016 there has been a number of proposed EIPs in order to facilitate safer contract development: <a href="https://github.com/ethereum/EIPs/issues/114">EIP 114</a>, <a href="https://github.com/ethereum/EIPs/issues/116">116</a>, <a href="https://github.com/ethereum/EIPs/issues/117">117</a>, <a href="https://github.com/ethereum/EIPs/issues/118">118</a> and <a href="https://github.com/ethereum/EIPs/issues/119">119</a>. It is likely not wise for the consortium chain development community to implement safety-focused EIPs ahead of the public chain ecosystem, as we do not want to confuse developers by having one set of safe contract programming practices for the consortium chain ecosystem and one for the public chain ecosystem (except where absolutely unavoidable, eg. on the public chain, game-theoretic issues are much more inescapable).</p>
+<p>Aside from low-level improvements, there are also higher-level tools that can be built in order to improve the safety of the contract programming ecosystem. These fall into two major categories:</p>
+<ol>
+<li>New programming languages (using Solidity, Serpent, LLL or EVM as a compile target)</li>
+<li>Formal verification, symbolic execution or other static analysis tools for either new programming languages or existing programming languages</li>
+</ol>
+<p>Note that one must be careful about how these tools are integrated with the underlying environment; for example, pure functional languages are often cited as a solution to Ethereum contract programming challenges, but if we look at the specific case of the DAO theft we can see that it arose due to a "re-entrancy" hack where a contract called an untrusted contract which then called the original contract, and even if you try to implement a purely functional language over the current EVM, you will run into the challenge that if you need to call another contract it is extremely difficult to be sure that the child contract will not make some "impure" state-changing operations unless an EVM-level opcode such as <code>STATIC_CALL</code> is implemented.</p>
+<p>In general, it is not likely that there will be a single magic technology that solves all smart contract safety issues; rather, we will see a combination of incremental approaches including new languages, better analysis tools, better development tools, better standards and best practices and changes to the underlying EVM. Better standards and best practices should be integrated into development tools in order to make them easier for programmers to adapt to; a large part of the value of blockchain technology is in reducing barriers to entry in building high-trust systems, and if the previous barriers to entry are only replaced with a requirement of years of specialized developer education then the potential of the technology is arguably significantly reduced.</p>
+<h2 id="state-channels">State channels<a class="headerlink" href="#state-channels" title="Permanent link">&para;</a></h2>
+<p>State channels are a popular short-term scalability, privacy and latency solution for blockchain technologies. Some information on state channels can be found here:</p>
+<ul>
+<li><a href="http://www.arcturnus.com/ethereum-lightning-network-and-beyond/">http://www.arcturnus.com/ethereum-lightning-network-and-beyond/</a></li>
+<li><a href="http://www.jeffcoleman.ca/state-channels/">http://www.jeffcoleman.ca/state-channels/</a></li>
+<li><a href="http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648">http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648</a></li>
+</ul>
+<p>Some implementations include:</p>
+<ul>
+<li><a href="https://github.com/AnnaIsAWang/LedgerLabsCoops2016">https://github.com/AnnaIsAWang/LedgerLabsCoops2016</a></li>
+<li><a href="http://raiden.network">http://raiden.network</a></li>
+</ul>
+<h2 id="privileged-accounts">Privileged Accounts<a class="headerlink" href="#privileged-accounts" title="Permanent link">&para;</a></h2>
+<p>Many consortium chain applications require some node (eg. a regulator) to have special privileges. Possible privileges include:</p>
+<ul>
+<li>The ability to freeze balances</li>
+<li>The ability to stop execution of a smart contract</li>
+<li>The ability to change the code of a smart contract</li>
+<li>The ability to see plaintext state information that is only seen in encrypted form by most participants (eg. balances, contract terms)</li>
+</ul>
+<p>In some cases, these privileges are best implemented in layers on top of the base protocol; for example, in a chain where the issuing of new smart contracts is heavily restricted (or even where there is only one contract for the entire chain), one can implement such features into the code of the contracts themselves. In the case of privacy-preserving solutions, giving regulators the ability to view plaintext state can only be done in layers on top because the privacy-preserving solutions themselves will be built through layers on top.</p>
+<p>In other cases, these privileges are best implemented via changes to the underlying protocol. The simplest way to do this is to introduce some new opcodes, eg. <code>0xed = SSTORE_EXT</code> (set storage of external account), <code>0xee = WITHDRAW</code> (drain ETH from another account), <code>0xef = SET_CODE</code> (set code of another account), and give only one address the priviledge of using these opcodes (eg. address 254). Such a "privileged address" is a feature that is likely to be implemented in Ethereum in the future as part of the abstraction roadmap (in the public chain, only system-level contracts such as a hypothetical contract that would implement the contract creation function would have access to this priviledged address, so it will not be usable as a "backdoor" by any organizations or individuals, but in private and consortium chains it can be dual-purposed as a priviledge mechanism).</p>
+<h2 id="changing-the-consensus-set">Changing the Consensus Set<a class="headerlink" href="#changing-the-consensus-set" title="Permanent link">&para;</a></h2>
+<p>Once a consortium chain is launched, there will inevitably be reasons to change the set of consensus participants after the fact. This includes:</p>
+<ul>
+<li>Induction of new members into the consortium</li>
+<li>Removal of new members of the consortium</li>
+<li>Change of the private keys used by one or more members of the consortium</li>
+</ul>
+<p>There are several approaches to handling this:</p>
+<ul>
+<li>Have the consensus set be fixed in the config file, and make every consensus set change a hard fork</li>
+<li>Store the consensus set in a contract, where the contract itself encodes rules for updating the consensus set</li>
+<li>Use a secure external mechanism to store the consensus set (eg. the Ethereum public blockchain)</li>
+</ul>
+<p>A consensus abstraction should be able to cover all three modes if needed. If either (i) the consensus set is stored in an in-chain contract and the consensus algorithm does not provide instant finality (eg. DPOS), or (ii) the consensus set is stored in an external mechanism, then it is prudent to have a delay between when a consensus set change is made and when the change becomes active. The approach currently taken by the Casper proof of stake protocol planned for the public chain is to split blockchain time into 12-hour "epochs", and use the validator set defined at the start of the previous epoch (ie. a time which is always between 12 and 24 hours in the past) as the consensus set for the current block.</p>
+<p>The reason why you may want to use an external mechanism is to provide greater security assurances for frequently-offline nodes. Specifically, especially if the consensus set is small there is a risk that, over some period of time, a majority of historical keys will be compromised, and if an attacker obtains these keys they will be able to create an alternate chain and trick long-offline nodes that this chain is legitimate. Using an external mechanism to store consensus participants makes it much more difficult for this to happen; though this approach may not be appropriate for all applications and in many cases the consortium itself may be sufficiently large that a 50% historical key compromise is very unlikely.</p>
+<p>Note that a well-designed setup could even tolerate short-term failures of the external mechanism by using a consensus algorithm that can tolerate small divergences in perceived consensus mechanism; this would also require restricting the rate at which consensus participants could change and having a rule that if the mechanism is unavailable then the most recent available consensus set should be used (though this is highly theoretical).</p>
+<p>See also: <a href="https://medium.com/@VitalikButerin/safety-under-dynamic-validator-sets-ef0c3bbdf9f6">this article</a>, which shows one way that a Byzantine-fault-tolerant consensus algorithm can maintain safety properties during validator transitions.</p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Licensing/" title="许可" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                许可
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../Research/Proof-of-Stake-FAQ/" title="权益证明" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                权益证明
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

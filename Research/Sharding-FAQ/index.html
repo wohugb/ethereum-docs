@@ -1,0 +1,2432 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="以太坊中文文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-2.2.5">
+    
+    
+      
+        <title>分片区块链 - 以太坊文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.bcabdff3.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.792431c1.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    
+    
+    
+      <body data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="以太坊文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                以太坊文档
+              </span>
+              <span class="md-header-nav__topic">
+                分片区块链
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="前言" class="md-tabs__link">
+        前言
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Basics/introduction/" title="基础" class="md-tabs__link">
+          基础
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Client/cpp-ethereum/" title="客户端" class="md-tabs__link">
+          客户端
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Dapps/Safety/" title="ÐApp开发" class="md-tabs__link">
+          ÐApp开发
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Infrastructure/Chain-Spec-Format/" title="基础设施" class="md-tabs__link">
+          基础设施
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Proof-of-Stake-FAQ/" title="研究" class="md-tabs__link md-tabs__link--active">
+          研究
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../D3VTechnologies/RLP/" title="ÐΞV技术" class="md-tabs__link">
+          ÐΞV技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Technologies/Patricia-Tree/" title="以太坊技术" class="md-tabs__link">
+          以太坊技术
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../EthashDashimoto/" title="挖矿算法" class="md-tabs__link">
+          挖矿算法
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Whisper/" title="私语" class="md-tabs__link">
+          私语
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../Misc/Problems/" title="杂项" class="md-tabs__link">
+          杂项
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    以太坊文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wohugb/ethereum-docs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wohugb/ethereum-docs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="前言" class="md-nav__link">
+      前言
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../home/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/introduction/" title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Getting-Ether/" title="获取以太币" class="md-nav__link">
+      获取以太币
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/dapps/" title="无心应用" class="md-nav__link">
+      无心应用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/White-Paper/" title="白皮书" class="md-nav__link">
+      白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Design-Rationale/" title="设计原理" class="md-nav__link">
+      设计原理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Yellow-Paper/" title="黄皮书" class="md-nav__link">
+      黄皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/FAQ/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Basics/Releases/" title="发布" class="md-nav__link">
+      发布
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      客户端
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        客户端
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/cpp-ethereum/" title="cpp-ethereum (C++)" class="md-nav__link">
+      cpp-ethereum (C++)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/ethereumj/" title="ethereumj (Java)" class="md-nav__link">
+      ethereumj (Java)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/go-ethereum/" title="Geth (Go)" class="md-nav__link">
+      Geth (Go)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/parity/" title="Parity (Rust)" class="md-nav__link">
+      Parity (Rust)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Client/pyethapp/" title="pyethapp (Python)" class="md-nav__link">
+      pyethapp (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      ÐApp开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        ÐApp开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Safety/" title="安全技术" class="md-nav__link">
+      安全技术
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Resources/" title="开发资源" class="md-nav__link">
+      开发资源
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JavaScript-API/" title="JS API" class="md-nav__link">
+      JS API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/JSON-RPC/" title="JSON RPC API" class="md-nav__link">
+      JSON RPC API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity/" title="Solidity" class="md-nav__link">
+      Solidity
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Features/" title="Solidity 特色" class="md-nav__link">
+      Solidity 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Solidity-Collections/" title="Solidity 合集" class="md-nav__link">
+      Solidity 合集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/solidity-cheatsheet/" title="Solidity 备忘单" class="md-nav__link">
+      Solidity 备忘单
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Useful-Ðapp-Patterns/" title="有用的Ðapp模式" class="md-nav__link">
+      有用的Ðapp模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Standardized_Contract_APIs/" title="标准化合约接口" class="md-nav__link">
+      标准化合约接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Using-Meteor/" title="使用Meteor" class="md-nav__link">
+      使用Meteor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Tutorial/" title="开发指南" class="md-nav__link">
+      开发指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-IDE/" title="Mix 指南" class="md-nav__link">
+      Mix 指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Mix-Features/" title="Mix 特色" class="md-nav__link">
+      Mix 特色
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/viper/" title="Viper" class="md-nav__link">
+      Viper
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/Serpent/" title="Serpent" class="md-nav__link">
+      Serpent
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/LLL/" title="LLL" class="md-nav__link">
+      LLL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Dapps/mutan/" title="Mutan" class="md-nav__link">
+      Mutan
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      基础设施
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        基础设施
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Chain-Spec-Format/" title="链规格格式" class="md-nav__link">
+      链规格格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Inter-exchange-Client-Address-Protocol/" title="互换客户端地址协议" class="md-nav__link">
+      互换客户端地址协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/URL-Hint-Protocol/" title="网址提示协议" class="md-nav__link">
+      网址提示协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/NatSpec-Determination/" title="国家规定的确定" class="md-nav__link">
+      国家规定的确定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Network-Status/" title="网络状态" class="md-nav__link">
+      网络状态
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Raspberry-Pi-instructions/" title="树莓派" class="md-nav__link">
+      树莓派
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Exchange-Integration/" title="交易一体化" class="md-nav__link">
+      交易一体化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Mining/" title="矿业" class="md-nav__link">
+      矿业
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Licensing/" title="许可" class="md-nav__link">
+      许可
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Infrastructure/Consortium-Chain-Development/" title="联盟链发展" class="md-nav__link">
+      联盟链发展
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      研究
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        研究
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Proof-of-Stake-FAQ/" title="权益证明" class="md-nav__link">
+      权益证明
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        分片区块链
+      </label>
+    
+    <a href="./" title="分片区块链" class="md-nav__link md-nav__link--active">
+      分片区块链
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-trivial-but-flawed-ways-of-solving-the-problem" title="What are some trivial but flawed ways of solving the problem?" class="md-nav__link">
+    What are some trivial but flawed ways of solving the problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it" title="This sounds like there’s some kind of scalability trilemma at play. What is this trilemma and can we break through it?" class="md-nav__link">
+    This sounds like there’s some kind of scalability trilemma at play. What is this trilemma and can we break through it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-people-claim-that-because-of-metcalfes-law-the-market-cap-of-a-cryptocurrency-should-be-proportional-to-n2-and-not-n-do-they-have-a-point" title="Some people claim that because of Metcalfe’s law, the market cap of a cryptocurrency should be proportional to n\^2, and not n. Do they have a point?" class="md-nav__link">
+    Some people claim that because of Metcalfe’s law, the market cap of a cryptocurrency should be proportional to n\^2, and not n. Do they have a point?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not" title="Why not?" class="md-nav__link">
+    Why not?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-moderately-simple-but-only-partial-ways-of-solving-the-scalability-problem" title="What are some moderately simple but only partial ways of solving the scalability problem?" class="md-nav__link">
+    What are some moderately simple but only partial ways of solving the scalability problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-approaches-that-do-not-try-to-shard-anything" title="What about approaches that do not try to “shard” anything?" class="md-nav__link">
+    What about approaches that do not try to “shard” anything?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-plasma-fit-into-the-trilemma" title="How does Plasma fit into the trilemma?" class="md-nav__link">
+    How does Plasma fit into the trilemma?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-size-history-cryptoeconomics-oh-my-define-some-of-these-terms-before-we-move-further" title="State size, history, cryptoeconomics, oh my! Define some of these terms before we move further!" class="md-nav__link">
+    State size, history, cryptoeconomics, oh my! Define some of these terms before we move further!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-basic-idea-behind-sharding" title="What is the basic idea behind sharding?" class="md-nav__link">
+    What is the basic idea behind sharding?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-might-a-basic-design-of-a-sharded-blockchain-look-like" title="What might a basic design of a sharded blockchain look like?" class="md-nav__link">
+    What might a basic design of a sharded blockchain look like?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-challenges-here" title="What are the challenges here?" class="md-nav__link">
+    What are the challenges here?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#but-doesnt-the-cap-theorem-mean-that-fully-secure-distributed-systems-are-impossible-and-so-sharding-is-futile" title="But doesn't the CAP theorem mean that fully secure distributed systems are impossible, and so sharding is futile?" class="md-nav__link">
+    But doesn't the CAP theorem mean that fully secure distributed systems are impossible, and so sharding is futile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-facilitate-cross-shard-communication" title="How can we facilitate cross-shard communication?" class="md-nav__link">
+    How can we facilitate cross-shard communication?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-different-kinds-of-applications-fit-into-a-sharded-blockchain" title="How can different kinds of applications fit into a sharded blockchain?" class="md-nav__link">
+    How can different kinds of applications fit into a sharded blockchain?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-train-and-hotel-problem" title="What is the train-and-hotel problem?" class="md-nav__link">
+    What is the train-and-hotel problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-security-models-that-we-are-operating-under" title="What are the security models that we are operating under?" class="md-nav__link">
+    What are the security models that we are operating under?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-solve-the-single-shard-takeover-attack-in-an-uncoordinated-majority-model" title="How can we solve the single-shard takeover attack in an uncoordinated majority model?" class="md-nav__link">
+    How can we solve the single-shard takeover attack in an uncoordinated majority model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-actually-do-this-sampling-in-proof-of-work-and-in-proof-of-stake" title="How do you actually do this sampling in proof of work, and in proof of stake?" class="md-nav__link">
+    How do you actually do this sampling in proof of work, and in proof of stake?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-tradeoffs-in-making-sampling-more-or-less-frequent" title="What are the tradeoffs in making sampling more or less frequent?" class="md-nav__link">
+    What are the tradeoffs in making sampling more or less frequent?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-we-force-more-of-the-state-to-be-held-user-side-so-that-transactions-can-be-validated-without-requiring-validators-to-hold-all-state-data" title="Can we force more of the state to be held user-side so that transactions can be validated without requiring validators to hold all state data?" class="md-nav__link">
+    Can we force more of the state to be held user-side so that transactions can be validated without requiring validators to hold all state data?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-the-randomness-for-random-sampling-generated" title="How is the randomness for random sampling generated?" class="md-nav__link">
+    How is the randomness for random sampling generated?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-concerns-about-sharding-through-random-sampling-in-a-bribing-attacker-or-coordinated-choice-model" title="What are the concerns about sharding through random sampling in a bribing attacker or coordinated choice model?" class="md-nav__link">
+    What are the concerns about sharding through random sampling in a bribing attacker or coordinated choice model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-improve-on-this" title="How can we improve on this?" class="md-nav__link">
+    How can we improve on this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-data-availability-problem-and-how-can-we-use-erasure-codes-to-solve-it" title="What is the data availability problem, and how can we use erasure codes to solve it?" class="md-nav__link">
+    What is the data availability problem, and how can we use erasure codes to solve it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-we-remove-the-need-to-solve-data-availability-with-some-kind-of-fancy-cryptographic-accumulator-scheme" title="Can we remove the need to solve data availability with some kind of fancy cryptographic accumulator scheme." class="md-nav__link">
+    Can we remove the need to solve data availability with some kind of fancy cryptographic accumulator scheme.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-this-means-that-we-can-actually-create-scalable-sharded-blockchains-where-the-cost-of-making-anything-bad-happen-is-proportional-to-the-size-of-the-entire-validator-set" title="So this means that we can actually create scalable sharded blockchains where the cost of making anything bad happen is proportional to the size of the entire validator set?" class="md-nav__link">
+    So this means that we can actually create scalable sharded blockchains where the cost of making anything bad happen is proportional to the size of the entire validator set?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-walk-back-a-bit-do-we-actually-need-any-of-this-complexity-if-we-have-instant-shuffling-doesnt-instant-shuffling-basically-mean-that-each-shard-directly-pulls-validators-from-the-global-validator-pool-so-it-operates-just-like-a-blockchain-and-so-sharding-doesnt-actually-introduce-any-new-complexities" title="Let’s walk back a bit. Do we actually need any of this complexity if we have instant shuffling? Doesn’t instant shuffling basically mean that each shard directly pulls validators from the global validator pool so it operates just like a blockchain, and so sharding doesn’t actually introduce any new complexities?" class="md-nav__link">
+    Let’s walk back a bit. Do we actually need any of this complexity if we have instant shuffling? Doesn’t instant shuffling basically mean that each shard directly pulls validators from the global validator pool so it operates just like a blockchain, and so sharding doesn’t actually introduce any new complexities?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-mentioned-transparent-sharding-im-12-years-old-and-what-is-this" title="You mentioned transparent sharding. I’m 12 years old and what is this?" class="md-nav__link">
+    You mentioned transparent sharding. I’m 12 years old and what is this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-advantages-and-disadvantages-of-this" title="What are some advantages and disadvantages of this?" class="md-nav__link">
+    What are some advantages and disadvantages of this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-would-synchronous-cross-shard-messages-work" title="How would synchronous cross-shard messages work?" class="md-nav__link">
+    How would synchronous cross-shard messages work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-semi-asynchronous-messages" title="What about semi-asynchronous messages?" class="md-nav__link">
+    What about semi-asynchronous messages?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-guaranteed-cross-shard-calls" title="What are guaranteed cross-shard calls?" class="md-nav__link">
+    What are guaranteed cross-shard calls?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wait-but-what-if-an-attacker-sends-a-cross-shard-call-from-every-shard-into-shard-x-at-the-same-time-wouldnt-it-be-mathematically-impossible-to-include-all-of-these-calls-in-time" title="Wait, but what if an attacker sends a cross-shard call from every shard into shard X at the same time? Wouldn’t it be mathematically impossible to include all of these calls in time?" class="md-nav__link">
+    Wait, but what if an attacker sends a cross-shard call from every shard into shard X at the same time? Wouldn’t it be mathematically impossible to include all of these calls in time?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congealed-gas-this-sounds-interesting-for-not-just-cross-shard-operations-but-also-reliable-intra-shard-scheduling" title="Congealed gas? This sounds interesting for not just cross-shard operations, but also reliable intra-shard scheduling" class="md-nav__link">
+    Congealed gas? This sounds interesting for not just cross-shard operations, but also reliable intra-shard scheduling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-guaranteed-scheduling-both-intra-shard-and-cross-shard-help-against-majority-collusions-trying-to-censor-transactions" title="Does guaranteed scheduling, both intra-shard and cross-shard, help against majority collusions trying to censor transactions?" class="md-nav__link">
+    Does guaranteed scheduling, both intra-shard and cross-shard, help against majority collusions trying to censor transactions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#could-sharded-blockchains-do-a-better-job-of-dealing-with-network-partitions" title="Could sharded blockchains do a better job of dealing with network partitions?" class="md-nav__link">
+    Could sharded blockchains do a better job of dealing with network partitions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-unique-challenges-of-pushing-scaling-past-n-oc2" title="What are the unique challenges of pushing scaling past n = O(c\^2)?" class="md-nav__link">
+    What are the unique challenges of pushing scaling past n = O(c\^2)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footnotes" title="Footnotes" class="md-nav__link">
+    Footnotes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      ÐΞV技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        ÐΞV技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-nav__link">
+      RLP 编码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Node-discovery-protocol/" title="节点发现协议" class="md-nav__link">
+      节点发现协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Wire-Protocol/" title="ÐΞVp2p 有线协议" class="md-nav__link">
+      ÐΞVp2p 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/libp2p-Whitepaper/" title="ÐΞVp2p 白皮书" class="md-nav__link">
+      ÐΞVp2p 白皮书
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../D3VTechnologies/Web3-Secret-Storage-Definition/" title="Web3 秘密存储" class="md-nav__link">
+      Web3 秘密存储
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      以太坊技术
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        以太坊技术
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Patricia-Tree/" title="词树" class="md-nav__link">
+      词树
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Wire-Protocol/" title="有线协议" class="md-nav__link">
+      有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Light-client-protocol/" title="轻端协议" class="md-nav__link">
+      轻端协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Subtleties/" title="玄机" class="md-nav__link">
+      玄机
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Solidity/" title="固语言" class="md-nav__link">
+      固语言
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Natural-Specification-Format/" title="NatSpec格式" class="md-nav__link">
+      NatSpec格式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Ethereum-Contract-ABI/" title="合同ABI" class="md-nav__link">
+      合同ABI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Block-Reporting/" title="坏块报告" class="md-nav__link">
+      坏块报告
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Technologies/Bad-Chain-Canary/" title="坏链金丝雀" class="md-nav__link">
+      坏链金丝雀
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      挖矿算法
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        挖矿算法
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash/" title="Ethash" class="md-nav__link">
+      Ethash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-C-API/" title="Ethash C API" class="md-nav__link">
+      Ethash C API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../EthashDashimoto/Ethash-DAG/" title="Ethash DAG" class="md-nav__link">
+      Ethash DAG
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      私语
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        私语
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/" title="低语提议" class="md-nav__link">
+      低语提议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Overview/" title="耳语概述" class="md-nav__link">
+      耳语概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/Wire-Protocol/" title="PoC-1 有线协议" class="md-nav__link">
+      PoC-1 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Wire-Protocol/" title="PoC-2 有线协议" class="md-nav__link">
+      PoC-2 有线协议
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Whisper/PoC-2-Protocol-Spec/" title="PoC-2 白皮书" class="md-nav__link">
+      PoC-2 白皮书
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      杂项
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        杂项
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Problems/" title="加密货币的难题" class="md-nav__link">
+      加密货币的难题
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Chain-Fibers-Redux/" title="链条纤维" class="md-nav__link">
+      链条纤维
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Misc/Glossary/" title="词汇表" class="md-nav__link">
+      词汇表
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="介绍" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-trivial-but-flawed-ways-of-solving-the-problem" title="What are some trivial but flawed ways of solving the problem?" class="md-nav__link">
+    What are some trivial but flawed ways of solving the problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it" title="This sounds like there’s some kind of scalability trilemma at play. What is this trilemma and can we break through it?" class="md-nav__link">
+    This sounds like there’s some kind of scalability trilemma at play. What is this trilemma and can we break through it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-people-claim-that-because-of-metcalfes-law-the-market-cap-of-a-cryptocurrency-should-be-proportional-to-n2-and-not-n-do-they-have-a-point" title="Some people claim that because of Metcalfe’s law, the market cap of a cryptocurrency should be proportional to n\^2, and not n. Do they have a point?" class="md-nav__link">
+    Some people claim that because of Metcalfe’s law, the market cap of a cryptocurrency should be proportional to n\^2, and not n. Do they have a point?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not" title="Why not?" class="md-nav__link">
+    Why not?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-moderately-simple-but-only-partial-ways-of-solving-the-scalability-problem" title="What are some moderately simple but only partial ways of solving the scalability problem?" class="md-nav__link">
+    What are some moderately simple but only partial ways of solving the scalability problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-approaches-that-do-not-try-to-shard-anything" title="What about approaches that do not try to “shard” anything?" class="md-nav__link">
+    What about approaches that do not try to “shard” anything?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-plasma-fit-into-the-trilemma" title="How does Plasma fit into the trilemma?" class="md-nav__link">
+    How does Plasma fit into the trilemma?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-size-history-cryptoeconomics-oh-my-define-some-of-these-terms-before-we-move-further" title="State size, history, cryptoeconomics, oh my! Define some of these terms before we move further!" class="md-nav__link">
+    State size, history, cryptoeconomics, oh my! Define some of these terms before we move further!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-basic-idea-behind-sharding" title="What is the basic idea behind sharding?" class="md-nav__link">
+    What is the basic idea behind sharding?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-might-a-basic-design-of-a-sharded-blockchain-look-like" title="What might a basic design of a sharded blockchain look like?" class="md-nav__link">
+    What might a basic design of a sharded blockchain look like?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-challenges-here" title="What are the challenges here?" class="md-nav__link">
+    What are the challenges here?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#but-doesnt-the-cap-theorem-mean-that-fully-secure-distributed-systems-are-impossible-and-so-sharding-is-futile" title="But doesn't the CAP theorem mean that fully secure distributed systems are impossible, and so sharding is futile?" class="md-nav__link">
+    But doesn't the CAP theorem mean that fully secure distributed systems are impossible, and so sharding is futile?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-facilitate-cross-shard-communication" title="How can we facilitate cross-shard communication?" class="md-nav__link">
+    How can we facilitate cross-shard communication?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-different-kinds-of-applications-fit-into-a-sharded-blockchain" title="How can different kinds of applications fit into a sharded blockchain?" class="md-nav__link">
+    How can different kinds of applications fit into a sharded blockchain?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-train-and-hotel-problem" title="What is the train-and-hotel problem?" class="md-nav__link">
+    What is the train-and-hotel problem?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-security-models-that-we-are-operating-under" title="What are the security models that we are operating under?" class="md-nav__link">
+    What are the security models that we are operating under?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-solve-the-single-shard-takeover-attack-in-an-uncoordinated-majority-model" title="How can we solve the single-shard takeover attack in an uncoordinated majority model?" class="md-nav__link">
+    How can we solve the single-shard takeover attack in an uncoordinated majority model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-you-actually-do-this-sampling-in-proof-of-work-and-in-proof-of-stake" title="How do you actually do this sampling in proof of work, and in proof of stake?" class="md-nav__link">
+    How do you actually do this sampling in proof of work, and in proof of stake?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-tradeoffs-in-making-sampling-more-or-less-frequent" title="What are the tradeoffs in making sampling more or less frequent?" class="md-nav__link">
+    What are the tradeoffs in making sampling more or less frequent?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-we-force-more-of-the-state-to-be-held-user-side-so-that-transactions-can-be-validated-without-requiring-validators-to-hold-all-state-data" title="Can we force more of the state to be held user-side so that transactions can be validated without requiring validators to hold all state data?" class="md-nav__link">
+    Can we force more of the state to be held user-side so that transactions can be validated without requiring validators to hold all state data?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-is-the-randomness-for-random-sampling-generated" title="How is the randomness for random sampling generated?" class="md-nav__link">
+    How is the randomness for random sampling generated?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-concerns-about-sharding-through-random-sampling-in-a-bribing-attacker-or-coordinated-choice-model" title="What are the concerns about sharding through random sampling in a bribing attacker or coordinated choice model?" class="md-nav__link">
+    What are the concerns about sharding through random sampling in a bribing attacker or coordinated choice model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-can-we-improve-on-this" title="How can we improve on this?" class="md-nav__link">
+    How can we improve on this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-data-availability-problem-and-how-can-we-use-erasure-codes-to-solve-it" title="What is the data availability problem, and how can we use erasure codes to solve it?" class="md-nav__link">
+    What is the data availability problem, and how can we use erasure codes to solve it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-we-remove-the-need-to-solve-data-availability-with-some-kind-of-fancy-cryptographic-accumulator-scheme" title="Can we remove the need to solve data availability with some kind of fancy cryptographic accumulator scheme." class="md-nav__link">
+    Can we remove the need to solve data availability with some kind of fancy cryptographic accumulator scheme.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-this-means-that-we-can-actually-create-scalable-sharded-blockchains-where-the-cost-of-making-anything-bad-happen-is-proportional-to-the-size-of-the-entire-validator-set" title="So this means that we can actually create scalable sharded blockchains where the cost of making anything bad happen is proportional to the size of the entire validator set?" class="md-nav__link">
+    So this means that we can actually create scalable sharded blockchains where the cost of making anything bad happen is proportional to the size of the entire validator set?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-walk-back-a-bit-do-we-actually-need-any-of-this-complexity-if-we-have-instant-shuffling-doesnt-instant-shuffling-basically-mean-that-each-shard-directly-pulls-validators-from-the-global-validator-pool-so-it-operates-just-like-a-blockchain-and-so-sharding-doesnt-actually-introduce-any-new-complexities" title="Let’s walk back a bit. Do we actually need any of this complexity if we have instant shuffling? Doesn’t instant shuffling basically mean that each shard directly pulls validators from the global validator pool so it operates just like a blockchain, and so sharding doesn’t actually introduce any new complexities?" class="md-nav__link">
+    Let’s walk back a bit. Do we actually need any of this complexity if we have instant shuffling? Doesn’t instant shuffling basically mean that each shard directly pulls validators from the global validator pool so it operates just like a blockchain, and so sharding doesn’t actually introduce any new complexities?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-mentioned-transparent-sharding-im-12-years-old-and-what-is-this" title="You mentioned transparent sharding. I’m 12 years old and what is this?" class="md-nav__link">
+    You mentioned transparent sharding. I’m 12 years old and what is this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-some-advantages-and-disadvantages-of-this" title="What are some advantages and disadvantages of this?" class="md-nav__link">
+    What are some advantages and disadvantages of this?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-would-synchronous-cross-shard-messages-work" title="How would synchronous cross-shard messages work?" class="md-nav__link">
+    How would synchronous cross-shard messages work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-semi-asynchronous-messages" title="What about semi-asynchronous messages?" class="md-nav__link">
+    What about semi-asynchronous messages?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-guaranteed-cross-shard-calls" title="What are guaranteed cross-shard calls?" class="md-nav__link">
+    What are guaranteed cross-shard calls?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wait-but-what-if-an-attacker-sends-a-cross-shard-call-from-every-shard-into-shard-x-at-the-same-time-wouldnt-it-be-mathematically-impossible-to-include-all-of-these-calls-in-time" title="Wait, but what if an attacker sends a cross-shard call from every shard into shard X at the same time? Wouldn’t it be mathematically impossible to include all of these calls in time?" class="md-nav__link">
+    Wait, but what if an attacker sends a cross-shard call from every shard into shard X at the same time? Wouldn’t it be mathematically impossible to include all of these calls in time?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congealed-gas-this-sounds-interesting-for-not-just-cross-shard-operations-but-also-reliable-intra-shard-scheduling" title="Congealed gas? This sounds interesting for not just cross-shard operations, but also reliable intra-shard scheduling" class="md-nav__link">
+    Congealed gas? This sounds interesting for not just cross-shard operations, but also reliable intra-shard scheduling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-guaranteed-scheduling-both-intra-shard-and-cross-shard-help-against-majority-collusions-trying-to-censor-transactions" title="Does guaranteed scheduling, both intra-shard and cross-shard, help against majority collusions trying to censor transactions?" class="md-nav__link">
+    Does guaranteed scheduling, both intra-shard and cross-shard, help against majority collusions trying to censor transactions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#could-sharded-blockchains-do-a-better-job-of-dealing-with-network-partitions" title="Could sharded blockchains do a better job of dealing with network partitions?" class="md-nav__link">
+    Could sharded blockchains do a better job of dealing with network partitions?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-the-unique-challenges-of-pushing-scaling-past-n-oc2" title="What are the unique challenges of pushing scaling past n = O(c\^2)?" class="md-nav__link">
+    What are the unique challenges of pushing scaling past n = O(c\^2)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footnotes" title="Footnotes" class="md-nav__link">
+    Footnotes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">分片区块链<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Currently, in all blockchain protocols each node stores all states (account balances, contract code and storage, etc.) and processes all transactions. This provides a large amount of security, but greatly limits scalability: a blockchain cannot process more transactions than a single node can. In large part because of this, Bitcoin is limited to \~3-7 transactions per second, Ethereum to 7-15, etc. However, this poses a question: are there ways to create a new mechanism, where only small subset of nodes verifies each transaction? As long as there are sufficiently many nodes verifying each transaction that the system is still highly secure, but sufficiently few that the system can process many transactions in parallel, could we not use such a technique to greatly increase a blockchain's throughput?</p>
+<h2 id="what-are-some-trivial-but-flawed-ways-of-solving-the-problem">What are some trivial but flawed ways of solving the problem?<a class="headerlink" href="#what-are-some-trivial-but-flawed-ways-of-solving-the-problem" title="Permanent link">&para;</a></h2>
+<p>There are three main categories of “easy solutions”. The first is to simply give up on scaling individual blockchains, and instead assume that users will be using many different “altcoins”. This greatly increases throughput, but comes at a cost of security: an N-factor increase in throughput using this method necessarily comes with an N-factor decrease in security. Hence, it is arguably non-viable for more than small values of N.</p>
+<p>The second is to simply increase the block size limit. This can work and in some situations may well be the correct prescription, as block sizes may well be constrained more by politics than by realistic technical considerations. But regardless of one’s beliefs about any individual case such an approach inevitably has its limits: if one goes too far, then nodes running on consumer hardware will drop out, the network will start to rely exclusively on a very small number of supercomputers running the blockchain, which can lead to great centralization risk.</p>
+<p>The third is “merge mining”, a technique where there are many chains, but all chains share the same mining power (or, in proof of stake systems, stake). Currently, Namecoin gets a large portion of its security from the Bitcoin blockchain by doing this. If all miners participate, this theoretically can increase throughput by a factor of N without compromising security. However, this also has the problem that it increases the computational and storage load on each miner by a factor of N, and so in fact this solution is simply a stealthy form of block size increase.</p>
+<p>Even if this is deemed acceptable, there is still the defect that the chains are not truly "tied together"; only a small amount of economic incentive is required to convince the miners to abandon or compromise one specific chain. This possibility is in fact quite real, and there have been <a href="https://web.archive.org/web/20170331105910/https://bitcoin.stackexchange.com/questions/3472/what-is-the-story-behind-the-attack-on-coiledcoin">actual historical incidents</a> of merge-mined chains being attacked, as well as developers who have explicitly advocated using merge mining attacks as <a href="http://www.truthcoin.info/blog/contracts-oracles-sidechains/">a "governance" feature</a>, destroying chains that are not "profitable" to a given coalition.</p>
+<p>If only a few miners/mining pools participate in merge-mining each chain, then there is an imminent <a href="https://eprint.iacr.org/2017/791.pdf">risk of centralization</a>, while the security benefits of merge mining are also greatly reduced.</p>
+<h2 id="this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it">This sounds like there’s some kind of scalability trilemma at play. What is this trilemma and can we break through it?<a class="headerlink" href="#this-sounds-like-theres-some-kind-of-scalability-trilemma-at-play-what-is-this-trilemma-and-can-we-break-through-it" title="Permanent link">&para;</a></h2>
+<p>The trilemma claims that blockchain systems can only at most have two of the following three properties:</p>
+<ul>
+<li><strong>Decentralization</strong> (defined as the system being able to run in a scenario where each participant only has access to O(c) resources, ie. a regular laptop or small VPS)</li>
+<li><strong>Scalability</strong> (defined as being able to process O(n) > O(c) transactions)</li>
+<li><strong>Security</strong> (defined as being secure against attackers with up to O(n) resources)</li>
+</ul>
+<p>In the rest of this document, we’ll continue using <strong>c</strong> to refer to the size of computational resources (including computation, bandwidth and storage) available to each node, and <strong>n</strong> to refer to the size of the ecosystem in some abstract sense; we assume that transaction load, state size, and the market cap of a cryptocurrency are all proportional to <strong>n</strong>.</p>
+<h2 id="some-people-claim-that-because-of-metcalfes-law-the-market-cap-of-a-cryptocurrency-should-be-proportional-to-n2-and-not-n-do-they-have-a-point">Some people claim that because of Metcalfe’s law, the market cap of a cryptocurrency should be proportional to n\^2, and not n. Do they have a point?<a class="headerlink" href="#some-people-claim-that-because-of-metcalfes-law-the-market-cap-of-a-cryptocurrency-should-be-proportional-to-n2-and-not-n-do-they-have-a-point" title="Permanent link">&para;</a></h2>
+<p>No.</p>
+<h2 id="why-not">Why not?<a class="headerlink" href="#why-not" title="Permanent link">&para;</a></h2>
+<p>Metcalfe’s law claims that the value of a network is proportional to the square of the number of users (n^2), because if a network has n users then the network has value for each user, but then the value for each individual user is itself proportional to the number of users because if a network has n users that’s n-1 potential connections through the network that each individual user could benefit from.</p>
+<p>In practice, <a href="https://en.wikipedia.org/wiki/Metcalfe%27s_law">empirical research suggests</a> that the value of a network with n users is close to “n^2 proportionality for small values of n and (n × log n) proportionality for large values of n.” This makes sense because for small values, the argument holds true, but once a system gets bigger, two effects slow the growth down. First, growth in practice often happens in communities, and so in a medium-scale network the network often already provides most of the connections that each user cares about. Second, connections are often substitutes from each other, and you could argue that people only derive \~O(log(k)) value from having k connections – having 23 brands of deodorant to choose from is nice, but it’s not that much better than having 22 choices, whereas the difference between one choice and zero choices is very significant.</p>
+<p>Furthermore, even if the value of a cryptocurrency is proportional to O(k * log(k)) with k users, if we accept the above explanation as the reason why this is the case, then that also implies that transaction volume is also O(k * log(k)), as the log(k) value per user theoretically comes from that user exercising log(k) connections through the network, and state size should also in many cases grow with O(k * log(k)) as there are at least some kinds of state that are relationship-specific rather than user-specific. Hence, assuming n = O(k * log(k)) and basing everything off of <strong>n</strong> (size of the ecosystem) and <strong>c</strong> (a single node’s computing power) is a perfectly fine model for us to use.</p>
+<h2 id="what-are-some-moderately-simple-but-only-partial-ways-of-solving-the-scalability-problem">What are some moderately simple but only partial ways of solving the scalability problem?<a class="headerlink" href="#what-are-some-moderately-simple-but-only-partial-ways-of-solving-the-scalability-problem" title="Permanent link">&para;</a></h2>
+<p>Many sharding proposals (eg. <a href="https://www.comp.nus.edu.sg/~loiluu/papers/elastico.pdf">this early BFT sharding proposal from Loi Luu et al at NUS</a>, as well as <a href="http://www.deadalnix.me/2016/11/06/using-merklix-tree-to-shard-block-validation">this Merklix tree</a><sup><a href="#ftnt_ref1">1</a></sup> approach that has been suggested for Bitcoin) attempt to either only shard transaction processing or only shard state, without touching the other<sup><a href="#ftnt_ref2">2</a></sup>. These efforts are admirable and may lead to some gains in efficiency, but they run into the fundamental problem that they only solve one of the two bottlenecks. We want to be able to process 10,000+ transactions per second without either forcing every node to be a supercomputer or forcing every node to store a terabyte of state data, and this requires a comprehensive solution where the workloads of state storage, transaction processing and even transaction downloading and re-broadcasting are all spread out across nodes.</p>
+<p>Particularly, note that this requires changes at the P2P level, as a broadcast model is not scalable since it requires every node to download and re-broadcast O(n) data (every transaction that is being sent), whereas our decentralization criterion assumes that every node only has access to O(c) resources of all kinds.</p>
+<h2 id="what-about-approaches-that-do-not-try-to-shard-anything">What about approaches that do not try to “shard” anything?<a class="headerlink" href="#what-about-approaches-that-do-not-try-to-shard-anything" title="Permanent link">&para;</a></h2>
+<p><a href="http://hackingdistributed.com/2015/10/14/bitcoin-ng/">Bitcoin-NG</a> can increase scalability somewhat by means of an alternative blockchain design that makes it much safer for the network if nodes are spending large portions of their CPU time verifying blocks. In simple PoW blockchains, there are high centralization risks and the safety of consensus is weakened if capacity is increased to the point where more than about 5% of nodes’ CPU time is spent verifying blocks; Bitcoin-NG’s design alleviates this problem. However, this can only increase the scalability of transaction capacity by a constant factor of perhaps 5-50x<sup><a href="#ftnt_ref3">3</a>,<a href="#ftnt_ref4">4</a></sup>, and does not increase the scalability of state. That said, Bitcoin-NG-style approaches are not mutually exclusive with sharding, and the two can certainly be implemented at the same time.</p>
+<p>Channel-based strategies (lightning network, Raiden, etc) can scale transaction capacity by a constant factor but cannot scale state storage, and also come with their own unique sets of tradeoffs and limitations particularly involving denial-of-service attacks; on-chain scaling via sharding (plus other techniques) and off-chain scaling via channels are arguably both necessary and complementary.</p>
+<p>There exist approaches that use advanced cryptography, such as <a href="https://scalingbitcoin.org/papers/mimblewimble.txt">Mimblewimble</a> and strategies based on ZK-SNARKs, to solve one specific part of the scaling problem: initial full node synchronization. Instead of verifying the entire history from genesis, nodes could verify a cryptographic proof that the current state legitimately follows from the history. These approaches do solve a legitimate problem, although it is worth noting that one can rely on cryptoeconomics instead of pure cryptography to solve the same problem in a much simpler way - see Ethereum’s current implementations of <a href="https://github.com/ethereum/go-ethereum/pull/1889">fast syncing</a> and <a href="https://github.com/paritytech/parity/wiki/Warp-Sync">warp syncing</a>. Neither solution does anything to alleviate state size growth or the limits of online transaction processing.</p>
+<h2 id="how-does-plasma-fit-into-the-trilemma">How does Plasma fit into the trilemma?<a class="headerlink" href="#how-does-plasma-fit-into-the-trilemma" title="Permanent link">&para;</a></h2>
+<p>In the event of a large attack on Plasma subchains, all users of the Plasma subchains would need to withdraw back to the root chain. If Plasma has O(N) users, then this will require O(N) transactions, and so O(N / C) time to process all of the withdrawals. If withdrawal delays are fixed to some D (ie. the naive implementation), then as soon as N &gt; C * D, there will not be enough space in the blockchain to process all withdrawals in time, and so the system will be insecure; in this mode, Plasma should be viewed as increasing scalability only by a (possibly large) constant factor. If withdrawal delays are flexible, so they automatically extend if there are many withdrawals being made, then this means that as N increases further and further, the amount of time that an attacker can force everyone's funds to get locked up increases, and so the level of "security" of the system decreases further and further in a certain sense, as extended denial of access can be viewed as a security failure, albeit one milder than total loss of access. However, this is a different <em>direction</em> of tradeoff from other solutions, and arguably a much milder tradeoff, hence why Plasma subchains are nevertheless a large improvement on the status quo.</p>
+<h2 id="state-size-history-cryptoeconomics-oh-my-define-some-of-these-terms-before-we-move-further">State size, history, cryptoeconomics, oh my! Define some of these terms before we move further!<a class="headerlink" href="#state-size-history-cryptoeconomics-oh-my-define-some-of-these-terms-before-we-move-further" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>State</strong>: a set of information that represents the “current state” of a system; determining whether or not a transaction is valid, as well as the effect of a transaction, should in the simplest model depend only on state. Examples of state data include the UTXO set in bitcoin, balances + nonces + code + storage in ethereum, and domain name registry entries in Namecoin.</li>
+<li><strong>History</strong>: an ordered list of all transactions that have taken place since genesis. In a simple model, the present state should be a deterministic function of the genesis state and the history.</li>
+<li><strong>Transaction</strong>: an object that goes into the history. In practice, a transaction represents an operation that some user wants to make, and is cryptographically signed.</li>
+<li><strong>State transition function</strong>: a function that takes a state, applies a transaction and outputs a new state. The computation involved may involve adding and subtracting balances from accounts specified by the transaction, verifying digital signatures and running contract code.</li>
+<li><strong>Merkle tree</strong>: a cryptographic hash tree structure that can store a very large amount of data, where authenticating each individual piece of data only takes O(log(n)) space and time. See <a href="https://easythereentropy.wordpress.com/2014/06/04/understanding-the-ethereum-trie">here</a> for details. In Ethereum, the transaction set of each block, as well as the state, is kept in a Merkle tree, where the roots of the trees are committed to in a block.</li>
+<li><strong>Receipt</strong>: an object that represents an effect of a transaction that is not stored in the state, but which is still stored in a Merkle tree and committed to in a block so that its existence can later be efficiently proven even to a node that does not have all of the data. Logs in Ethereum are receipts; in sharded models, receipts are used to facilitate asynchronous cross-shard communication.</li>
+<li><strong>Light client</strong>: a way of interacting with a blockchain that only requires a very small amount (we’ll say O(1), though O(log(c)) may also be accurate in some cases) of computational resources, keeping track of only the block headers of the chain by default and acquiring any needed information about transactions, state or receipts by asking for and verifying Merkle proofs of the relevant data on an as-needed basis.</li>
+<li><strong>State root</strong>: the root hash of the Merkle tree representing the state<sup><a href="#ftnt_ref5">5</a></sup></li>
+</ul>
+<p><center><img src="https://github.com/vbuterin/diagrams/raw/master/scalability_faq/image02.png" width="450"></img><br> <small><i>The Ethereum state tree, and how the state root fits into the block structure</i></small></center></p>
+<h2 id="what-is-the-basic-idea-behind-sharding">What is the basic idea behind sharding?<a class="headerlink" href="#what-is-the-basic-idea-behind-sharding" title="Permanent link">&para;</a></h2>
+<p>We split the state up into K = O(n / c) partitions that we call “shards”. For example, a sharding scheme on Ethereum might put all addresses starting with 0x00 into one shard, all addresses starting with 0x01 into another shard, etc. In the simplest form of sharding, each shard also has its own transaction history, and the effect of transactions in some shard k are limited to the state of shard k. One simple example would be a multi-asset blockchain, where there are K shards and each shard stores the balances and processes the transactions associated with one particular asset. In more advanced forms of sharding, some form of cross-shard communication capability, where transactions on one shard can trigger events on other shards, is also included.</p>
+<h2 id="what-might-a-basic-design-of-a-sharded-blockchain-look-like">What might a basic design of a sharded blockchain look like?<a class="headerlink" href="#what-might-a-basic-design-of-a-sharded-blockchain-look-like" title="Permanent link">&para;</a></h2>
+<p>A simple approach is as follows. There exist nodes called <strong>collators</strong> that accept transactions on shard <code>k</code> (depending on the protocol, collators either choose which <code>k</code> or are randomly assigned some <code>k</code>) and create <strong>collations</strong>. A collation has a <strong>collation header</strong>, a short message of the form "This is a collation of transactions on shard <code>k</code>. It expects the previous state root of shard <code>k</code> to be 0x12bc57, the Merkle root of the transactions in this collation is 0x3f98ea, and the state root after processing these transactions should be 0x5d0cc1. Signed, collators #1, 2, 4, 5, 6, 8, 11, 13 ... 98, 99".</p>
+<p>A block must then contain a collation header for each shard. A block is valid if:</p>
+<ol>
+<li>The pre-state root given in each collation matches the current state root of the associated shard</li>
+<li>All transactions in all collations are valid</li>
+<li>The post-state root given in the collation matches the result of executing the transactions in the collation on top of the given pre-state</li>
+<li>The collation is signed by at least two thirds of the collators registered for that shard</li>
+</ol>
+<p>Note that there are now several "levels" of nodes that can exist in such a system:</p>
+<ul>
+<li><strong>Super-full node</strong> - processes all transactions in all collations and maintains the full state for all shards.</li>
+<li><strong>Top-level node</strong> - processes all top-level blocks, but does not process or try to download the transactions in each collation. Instead, it accepts it on faith that a collation is valid if two thirds of the collators in that shard say that it is valid.</li>
+<li><strong>Single-shard node</strong> - acts as a top-level node, but also processes all transactions and maintains the full state for some specific shard.</li>
+<li><strong>Light node</strong> - downloads and verifies the block headers of the top-level blocks only; does not process any collation headers or transactions unless it needs to read some specific entry in the state of some specific shard, in which case it downloads the Merkle branch to the most recent collation header for that shard and from there downloads the Merkle proof of the desired value in the state.</li>
+</ul>
+<h2 id="what-are-the-challenges-here">What are the challenges here?<a class="headerlink" href="#what-are-the-challenges-here" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Cross shard communication</strong> - the above design supports no cross-shard communication. How do we add cross-shard communication safely?</li>
+<li><strong>Single-shard takeover attacks</strong> - what if an attacker takes over the majority of the collators in one single shard, either to prevent any collations from getting enough signatures or, worse, to submit collations that are invalid?</li>
+<li><strong>Fraud detection</strong> - if an invalid collation does get made, how can nodes (including light nodes) be reliably informed of this so that they can verify the fraud and reject the collation if it is truly fraudulent?</li>
+<li><strong>The data availability problem</strong> - as a subset of fraud detection, what about the specific case where data is missing from a collation?</li>
+<li><strong>Superquadratic sharding</strong> - in the special case where n &gt; c^2, in the simple design given above there would be more than O(c) collation headers, and so an ordinary node would not be able to process even just the top-level blocks. Hence, more than two levels of indirection between transactions and top-level block headers are required (ie. we need "shards of shards"). What is the simplest and best way to do this?</li>
+</ul>
+<p>However, the effect of a transaction may depend on <i>events that earlier took place in other shards</i>; a canonical example is transfer of money, where money can be moved from shard i to shard j by first creating a “debit” transaction that destroys coins in shard i, and then creating a “credit” transaction that creates coins in shard j, pointing to a receipt created by the debit transaction as proof that the credit is legitimate.</p>
+<h2 id="but-doesnt-the-cap-theorem-mean-that-fully-secure-distributed-systems-are-impossible-and-so-sharding-is-futile">But doesn't the CAP theorem mean that fully secure distributed systems are impossible, and so sharding is futile?<a class="headerlink" href="#but-doesnt-the-cap-theorem-mean-that-fully-secure-distributed-systems-are-impossible-and-so-sharding-is-futile" title="Permanent link">&para;</a></h2>
+<p>The CAP theorem is a result that has to do with <em>distributed consensus</em>; a simple statement is: "in the cases that a network partition takes place, you have to choose either consistency or availability, you cannot have both". The intuitive argument is simple: if the network splits in half, and in one half I send a transaction "send my 10 coins to A" and in the other I send a transaction "send my 10 coins to B", then either the system is unavailable, as one or both transactions will not be processed, or it becomes inconsistent, as one half of the network will see the first transaction completed and the other half will see the second transaction completed. Note that the CAP theorem has nothing to do with scalability; it applies to any situation where multiple nodes need to agree on a value, regardless of the amount of data that they are agreeing on. All existing decentralized systems have found some compromise between availability and consistency; sharding does not make anything fundamentally harder in this respect.</p>
+<h2 id="how-can-we-facilitate-cross-shard-communication">How can we facilitate cross-shard communication?<a class="headerlink" href="#how-can-we-facilitate-cross-shard-communication" title="Permanent link">&para;</a></h2>
+<p>The easiest scenario to satisfy is one where there are very many applications that individually do not have too many users, and which only very occasionally and loosely interact with each other; in this case, applications can live on separate shards and use cross-shard communication via receipts to talk to each other.</p>
+<p>This typically involves breaking up each transaction into a "debit" and a "credit". For example, suppose that we have a transaction where account A on shard M wishes to send 100 coins to account B on shard N. The steps would looks as follows:</p>
+<ol>
+<li>Send a transaction on shard M which (i) deducts the balance of A by 100 coins, and (ii) creates a receipt. A receipt is an object which is not saved in the state directly, but where the fact that the receipt was generated can be verified via a Merkle proof.</li>
+<li>Wait for the first transaction to be included (sometimes waiting for finalization is required; this depends on the system).</li>
+<li>Send a transaction on shard N which includes the Merkle proof of the receipt from (1). This transaction also checks in the state of shard N to make sure that this receipt is "unspent"; if it is, then it increases the balance of B by 100 coins, and saves in the state that the receipt is spent.</li>
+<li>Optionally, the transaction in (3) also saves a receipt, which can then be used to perform further actions on shard M that are contingent on the original operation succeeding.</li>
+</ol>
+<p><img src="https://github.com/vbuterin/diagrams/raw/master/scalability_faq/image01.png" width="400"></img></p>
+<p>In more complex forms of sharding, transactions may in some cases have effects that spread out across several shards and may also synchronously ask for data from the state of multiple shards.</p>
+<h2 id="how-can-different-kinds-of-applications-fit-into-a-sharded-blockchain">How can different kinds of applications fit into a sharded blockchain?<a class="headerlink" href="#how-can-different-kinds-of-applications-fit-into-a-sharded-blockchain" title="Permanent link">&para;</a></h2>
+<p>Some applications require no cross-shard interaction at all; multi-asset blockchains, and blockchains with completely heterogeneous applications that require no interoperability, are the simplest cases. If applications do need to talk to each other, the challenge is much easier if the interaction can be made asynchronous - that is, if the interaction can be done in the form of the application on shard A generating a receipt, a transaction on shard B “consuming” the receipt and performing some action based on it, and possibly sending a “callback” to shard A containing some response. Generalizing this pattern is easy, and is not difficult to incorporate into a high-level programming language.</p>
+<p>However, note that the in-protocol mechanisms that would be used for asynchronous cross-shard communication would be different and have weaker functionality compared to the mechanisms that are available for intra-shard communication. Some of the functionality that is currently available in non-scalable blockchains would, in a scalable blockchain, only be available for intra-shard communication.<sup><a href="#ftnt_ref7">7</a></sup>.</p>
+<h2 id="what-is-the-train-and-hotel-problem">What is the train-and-hotel problem?<a class="headerlink" href="#what-is-the-train-and-hotel-problem" title="Permanent link">&para;</a></h2>
+<p>The following example is courtesy of Andrew Miller. Suppose that a user wants to purchase a train ticket and reserve a hotel, and wants to make sure that the operation is atomic - either both reservations succeed or neither do. If the train ticket and hotel booking applications are on the same shard, this is easy: create a transaction that attempts to make both reservations, and throws an exception and reverts everything unless both reservations succeed. If the two are on different shards, however, this is not so easy; even without cryptoeconomic / decentralization concerns, this is essentially the problem of <a href="https://en.wikipedia.org/wiki/Atomicity_(database_systems)">atomic database transactions</a>.</p>
+<p>With asynchronous messages only, the simplest solution is to first reserve the train, then reserve the hotel, then once both reservations succeed confirm both; the reservation mechanism would prevent anyone else from reserving (or at least would ensure that enough spots are open to allow all reservations to be confirmed) for some period of time. However, this means that the mechanism relies on an extra security assumptions: that cross-shard messages from one shard can get included in another shard within some fixed period of time.</p>
+<p>With cross-shard synchronous transactions, the problem is easier, but the challenge of creating a sharding solution capable of making cross-shard atomic synchronous transactions is itself decidedly nontrivial.</p>
+<p>If an individual application has more than O(c) usage, then that application would need to exist across multiple chains. The feasibility of doing this depends on the specifics of the application itself; some applications (eg. currencies) are easily parallelizable, whereas others (eg. certain kinds of market designs) cannot be parallelized and must be processed serially.</p>
+<p>There are properties of sharded blockchains that we know for a fact are impossible to achieve. <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl’s law</a> states that in any scenario where applications have any non-parallelizable component, once parallelization is easily available the non-parallelizable component quickly becomes the bottleneck. In a general computation platform like Ethereum, it is easy to come up with examples of non-parallelizable computation: a contract that keeps track of an internal value x and sets x = sha3(x, tx_data) upon receiving a transaction is a simple example. No sharding scheme can give individual applications of this form more than O(c) performance. Hence, it is likely that over time sharded blockchain protocols will get better and better at being able to handle a more and more diverse set of application types and application interactions, but a sharded architecture will always necessarily fall behind a single-shard architecture in at least some ways at scales exceeding O(c).</p>
+<h2 id="what-are-the-security-models-that-we-are-operating-under">What are the security models that we are operating under?<a class="headerlink" href="#what-are-the-security-models-that-we-are-operating-under" title="Permanent link">&para;</a></h2>
+<p>There are several competing models under which the safety of blockchain designs is evaluated:</p>
+<ul>
+<li><strong>Honest majority</strong> (or honest supermajority): we assume that there is some set of validators and up to ½ (or ⅓ or ¼) of those validators are controlled by an attacker, and the remaining validators honestly follow the protocol</li>
+<li><strong>Uncoordinated majority</strong>: we assume that all validators are rational in a game-theoretic sense (except the attacker, who is motivated to make the network fail in some way), but no more than some fraction (often between ¼ and ½) are capable of coordinating their actions.</li>
+<li><strong>Coordinated choice</strong>: we assume that all validators are controlled by the same actor, or are fully capable of coordinating on the economically optimal choice between themselves. We can talk about the <strong>cost to the coalition</strong> (or profit to the coalition) of achieving some undesirable outcome.</li>
+<li><strong>Bribing attacker model</strong>: we take the uncoordinated majority model, but instead of making the attacker be one of the participants, the attacker sits outside the protocol, and has the ability to bribe any participants to change their behavior. Attackers are modeled as having a <strong>budget</strong>, which is the maximum that they are willing to pay, and we can talk about their <strong>cost</strong>, the amount that they <em>end up paying</em> to disrupt the protocol equilibrium.</li>
+</ul>
+<p>Bitcoin proof of work with <a href="https://arxiv.org/abs/1311.0243">Eyal and Sirer’s selfish mining fix</a> is robust up to ½ under the honest majority assumption, and up to ¼ under the uncoordinated majority assumption. <a href="https://blog.ethereum.org/2014/03/28/schellingcoin-a-minimal-trust-universal-data-feed/">Schellingcoin</a> is robust up to ½ under the honest majority and uncoordinated majority assumptions, has ε (ie. slightly more than zero) cost of attack in a coordinated choice model, and has a P + ε budget requirement and ε cost in a bribing attacker model due to <a href="https://blog.ethereum.org/2015/01/28/p-epsilon-attack/">P + epsilon attacks</a>.</p>
+<p>Hybrid models also exist; for example, even in the coordinated choice and bribing attacker models, it is common to make an <strong>honest minority assumption</strong> that some portion (perhaps 1-15%) of validators will act altruistically regardless of incentives. We can also talk about coalitions consisting of between 50-99% of validators either trying to disrupt the protocol or harm other validators; for example, in proof of work, a 51%-sized coalition can double its revenue by refusing to include blocks from all other miners.</p>
+<p>The honest majority model is arguably highly unrealistic and has already been empirically disproven - see Bitcoin's <a href="https://www.reddit.com/r/Bitcoin/comments/3c305f/if_you_are_using_any_wallet_other_than_bitcoin/csrsrf9/">SPV mining fork</a> for a practical example. It proves too much: for example, an honest majority model would imply that honest miners are willing to voluntarily burn their own money if doing so punishes attackers in some way. The uncoordinated majority assumption may be realistic; there is also an intermediate model where the majority of nodes is honest but has a budget, so they shut down if they start to lose too much money.</p>
+<p>The bribing attacker model has in some cases been criticized as being unrealistically adversarial, although its proponents argue that if a protocol is designed with the bribing attacker model in mind then it should be able to massively reduce the cost of consensus, as 51% attacks become an event that could be recovered from. We will evaluate sharding in the context of both uncoordinated majority and bribing attacker models.</p>
+<h2 id="how-can-we-solve-the-single-shard-takeover-attack-in-an-uncoordinated-majority-model">How can we solve the single-shard takeover attack in an uncoordinated majority model?<a class="headerlink" href="#how-can-we-solve-the-single-shard-takeover-attack-in-an-uncoordinated-majority-model" title="Permanent link">&para;</a></h2>
+<p>In short, random sampling. Each shard is assigned a certain number of collators (eg. 150), and the collators that approve blocks on each shard are taken from the sample for that shard. Samples can be reshuffled either semi-frequently (eg. once every 12 hours) or maximally frequently (ie. there is no real independent sampling process, collators are randomly selected for each shard from a global pool every block).</p>
+<p>The result is that even though only a few nodes are verifying and creating blocks on each shard at any given time, the level of security is in fact not much lower, in an honest/uncoordinated majority model, than what it would be if every single node was verifying and creating blocks. The reason is simple statistics: if you assume a ⅔ honest supermajority on the global set, and if the size of the sample is 150, then with 99.999% probability the honest majority condition will be satisfied on the sample. If you assume a ¾ honest supermajority on the global set, then that probability increases to 99.999999998% (see <a href="https://en.wikipedia.org/wiki/Binomial_distribution">here</a> for calculation details).</p>
+<p>Hence, at least in the honest / uncoordinated majority setting, we have:</p>
+<ul>
+<li><strong>Decentralization</strong> (each node stores only O(c) data, as it’s a light client in O(c) shards and so stores O(1) * O(c) = O(c) data worth of block headers, as well as O(c) data corresponding to the full state and recent history of one or several shards that it is assigned to at the present time)</li>
+<li><strong>Scalability</strong> (with O(c) shards, each shard having O(c) capacity, the maximum capacity is n = O(c\^2))</li>
+<li><strong>Security</strong> (attackers need to control at least ⅓ of the entire O(n)-sized validator pool in order to stand a chance of taking over the network).</li>
+</ul>
+<p>In the Zamfir model (or alternatively, in the “very very adaptive adversary” model), things are not so easy, but we will get to this later. Note that because of the imperfections of sampling, the security threshold does decrease from ½ to ⅓, but this is still a surprisingly low loss of security for what may be a 100-1000x gain in scalability with no loss of decentralization.</p>
+<h2 id="how-do-you-actually-do-this-sampling-in-proof-of-work-and-in-proof-of-stake">How do you actually do this sampling in proof of work, and in proof of stake?<a class="headerlink" href="#how-do-you-actually-do-this-sampling-in-proof-of-work-and-in-proof-of-stake" title="Permanent link">&para;</a></h2>
+<p>In proof of stake, it is easy. There already is an “active validator set” that is kept track of in the state, and one can simply sample from this set directly. Either an in-protocol algorithm runs and chooses 150 validators for each shard, or each validator independently runs an algorithm that uses a common source of randomness to (provably) determine which shard they are at any given time. Note that it is very important that the sampling assignment is “compulsory”; validators do not have a choice of what shard they go into. If validators could choose, then attackers with small total stake could concentrate their stake onto one shard and attack it, thereby eliminating the system’s security.</p>
+<p>In proof of work, it is more difficult, as with “direct” proof of work schemes one cannot prevent miners from applying their work to a given shard. It may be possible to use <a href="https://www.microsoft.com/en-us/research/publication/permacoin-repurposing-bitcoin-work-for-data-preservation/">proof-of-file-access forms</a> of proof of work to lock individual miners to individual shards, but it is hard to ensure that miners cannot quickly download or generate data that can be used for other shards and thus circumvent such a mechanism. The best known approach is through a technique invented by Dominic Williams called “puzzle towers”, where miners first perform proof of work on a common chain, which then inducts them into a proof of stake-style validator pool, and the validator pool is then sampled just as in the proof-of-stake case.</p>
+<p>One possible intermediate route might look as follows. Miners can spend a large (O(c)-sized) amount of work to create a new “cryptographic identity”. The precise value of the proof of work solution then chooses which shard they have to make their next block on. They can then spend an O(1)-sized amount of work to create a block on that shard, and the value of that proof of work solution determines which shard they can work on next, and so on<sup><a href="#ftnt_ref8">8</a></sup>. Note that all of these approaches make proof of work “stateful” in some way; the necessity of this is fundamental.</p>
+<h2 id="what-are-the-tradeoffs-in-making-sampling-more-or-less-frequent">What are the tradeoffs in making sampling more or less frequent?<a class="headerlink" href="#what-are-the-tradeoffs-in-making-sampling-more-or-less-frequent" title="Permanent link">&para;</a></h2>
+<p>Selection frequency affects just how adaptive adversaries can be for the protocol to still be secure against them; for example, if you believe that an adaptive attack (eg. dishonest validators who discover that they are part of the same sample banding together and colluding) can happen in 6 hours but not less, then you would be okay with a sampling time of 4 hours but not 12 hours. This is an argument in favor of making sampling happen as quickly as possible.</p>
+<p>The main challenge with sampling taking place every block is that reshuffling carries a very high amount of overhead. Specifically, verifying a block on a shard requires knowing the state of that shard, and so every time validators are reshuffled, validators need to download the entire state for the new shard(s) that they are in. This requires both a strong state size control policy (ie. economically ensuring that the size of the state does not grow too large, whether by deleting old accounts, restricting the rate of creating new accounts or a combination of the two) and a fairly long reshuffling time to work well.</p>
+<p>Currently, the Parity client can download and verify a full Ethereum state snapshot via “warp-sync” in \~3 minutes; if we increase by 20x to compensate for increased usage (10 tx/sec instead of the current 0.5 tx/sec) (we’ll assume future state size control policies and “dust” accumulated from longer-term usage roughly cancel out) , we get \~60 minute state sync time, suggesting that sync periods of 12-24 hours but not less are safe.</p>
+<p>There are two possible paths to overcoming this challenge.</p>
+<h2 id="can-we-force-more-of-the-state-to-be-held-user-side-so-that-transactions-can-be-validated-without-requiring-validators-to-hold-all-state-data">Can we force more of the state to be held user-side so that transactions can be validated without requiring validators to hold all state data?<a class="headerlink" href="#can-we-force-more-of-the-state-to-be-held-user-side-so-that-transactions-can-be-validated-without-requiring-validators-to-hold-all-state-data" title="Permanent link">&para;</a></h2>
+<p>The techniques here tend to involve requiring users to store state data and provide Merkle proofs along with every transaction that they send. A transaction would be sent along with a Merkle proof-of-correct-execution, and this proof would allow a node that only has the state root to calculate the new state root. This proof-of-correct-execution would consist of the subset of objects in the trie that would need to be traversed to access and verify the state information that the transaction must verify; because Merkle proofs are O(log(n)) sized, the proof for a transaction that accesses a constant number of objects would also be O(log(n)) sized.</p>
+<p><img src="https://github.com/vbuterin/diagrams/raw/master/scalability_faq/image03.png" width="450"></img><br> <small><i>The subset of objects in a Merkle tree that would need to be provided in a Merkle proof of a transaction that accesses several state objects</i></small></p>
+<p>Implementing this scheme in its pure form has two flaws. First, it introduces O(log(n)) overhead, although one could argue that this O(log(n)) overhead is not as bad as it seems because it ensures that the validator can always simply keep state data in memory and thus it never needs to deal with the overhead of accessing the hard drive<sup><a href="#ftnt_ref9">9</a></sup>. Second, it can easily be applied if the addresses that are accessed by a transaction are static, but is more difficult to apply if the addresses in question are dynamic - that is, if the transaction execution has code of the form <code>read(f(read(x)))</code> where the address of some state read depends on the execution result of some other state read. In this case, the address that the transaction sender thinks the transaction will be reading at the time that they send the transaction may well differ from the address that is actually read when the transaction is included in a block, and so the Merkle proof may be insufficient<sup><a href="#ftnt_ref10">10</a></sup>.</p>
+<p>A compromise approach is to allow transaction senders to send a proof that incorporates the most likely possibilities for what data would be accessed; if the proof is sufficient, then the transaction will be accepted, and if the state unexpectedly changes and the proof is insufficient then either the sender must resend or some helper node in the network resends the transaction adding the correct proof. Developers would then be free to make transactions that have dynamic behavior, but the more dynamic the behavior gets the less likely transactions would be to actually get included into blocks.</p>
+<p>Note that validators’ transaction inclusion strategies under this approach would need to be complicated, as they may spend millions of gas processing a transaction only to realize that the last step accesses some state entry that they do not have. One possible compromise is for validators to have a strategy that accepts only (i) transactions with very low gas costs, eg. \&lt;100k, and (ii) transactions that statically specify a set of contracts that they are allowed to access, and contain proofs for the entire state of those contracts. Note that this only applies when transactions are initially broadcasted; once a transaction is included into a block, the order of execution is fixed, and so only the minimal Merkle proof corresponding to the state that actually needs to be accessed can be provided.</p>
+<p>If validators are not reshuffled immediately, there is one further opportunity to increase efficiency. We can expect validators to store data from proofs of transactions that have already been processed, so that that data does not need to be sent again; if k transactions are sent within one reshuffling period, then this decreases the average size of a Merkle proof from log(n) to log(n) - log(k).</p>
+<h2 id="how-is-the-randomness-for-random-sampling-generated">How is the randomness for random sampling generated?<a class="headerlink" href="#how-is-the-randomness-for-random-sampling-generated" title="Permanent link">&para;</a></h2>
+<p>First of all, it is important to note that even if random number generation is heavily exploitable, this is not a fatal flaw for the protocol; rather, it simply means that there is a medium to high centralization incentive. The reason is that because the randomness is picking fairly large samples, it is difficult to bias the randomness by more than a certain amount.</p>
+<p>The simplest way to show this is through the <a href="https://en.wikipedia.org/wiki/Binomial_distribution">binomial distribution</a>, as described above; if one wishes to avoid a sample of size N being more than 50% corrupted by an attacker, and an attacker has p% of the global stake pool, the chance of the attacker being able to get such a majority during one round is:</p>
+<p><img src="https://github.com/vbuterin/diagrams/raw/master/scalability_faq/image00.gif"></img></p>
+<p>Here’s a table for what this probability would look like in practice for various values of N and p:</p>
+<table> <tr><td>    </td><td> N = 50     </td><td> N = 100    </td><td> N = 150    </td><td> N = 250    </td> </tr><tr> <td> p = 0.4    </td><td> 0.0978     </td><td> 0.0271     </td><td> 0.0082     </td><td> 0.0009     </td> </tr><tr> <td> p = 0.33   </td><td> 0.0108     </td><td> 0.0004     </td><td> 1.83 * 10-5   </td><td> 3.98 * 10-8   </td> </tr><tr> <td> p = 0.25   </td><td> 0.0001     </td><td> 6.63 * 10<sup>-8</sup>   </td><td> 4.11 * 10<sup>-11</sup>  </td><td> 1.81 * 10-17  </td>< </tr><tr> <td> p = 0.2    </td><td> 2.09 * 10<sup>-6</sup>   </td><td> 2.14 * 10<sup>-11</sup>  </td><td> 2.50 * 10<sup>-16</sup>  </td><td> 3.96 * 10<sup>-26</sup>  </td> </tr></table>
+
+<p>Hence, for N &gt;= 150, the chance that any given random seed will lead to a sample favoring the attacker is very small indeed<sup><a href="#ftnt_ref11">11</a>,<a href="#ftnt_ref12">12</a></sup>. What this means from the perspective of security of randomness is that the attacker needs to have a very large amount of freedom in choosing the random values order to break the sampling process outright. Most vulnerabilities in proof-of-stake randomness do not allow the attacker to simply choose a seed; at worst, they give the attacker many chances to select the most favorable seed out of many pseudorandomly generated options. If one is very worried about this, one can simply set N to a greater value, and add a moderately hard key-derivation function to the process of computing the randomness, so that it takes more than 2<sup>100</sup> computational steps to find a way to bias the randomness sufficiently.</p>
+<p>Now, let’s look at the risk of attacks being made that try to influence the randomness more marginally, for purposes of profit rather than outright takeover.  For example, suppose that there is an algorithm which pseudorandomly selects 1000 validators out of some very large set (each validator getting a reward of $1), an attacker has 10% of the stake so the attacker’s average “honest” revenue 100, and at a cost of $1 the attacker can manipulate the randomness to “re-roll the dice” (and the attacker can do this an unlimited number of times).</p>
+<p>Due to the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">central limit theorem</a>, the standard deviation of the number of samples, and based <a href="http://math.stackexchange.com/questions/89030/expectation-of-the-maximum-of-gaussian-random-variables">on other known results in math</a> the expected maximum of N random samples is slightly under M + S * sqrt(2 * log(N)) where M is the mean and S is the standard deviation. Hence the reward for manipulating the randomness and effectively re-rolling the dice (ie. increasing N) drops off sharply, eg. with 0 re-trials your expected reward is $100, with one re-trial it's $105.5, with two it's $108.5, with three it's $110.3, with four it's $111.6, with five it's $112.6 and with six it's $113.5. Hence, after five retrials it stops being worth it. As a result, an economically motivated attacker with ten percent of stake will (socially wastefully) spend $5 to get an additional revenue of $13, for a net surplus of $8.</p>
+<p>However, this kind of logic assumes that one single round of re-rolling the dice is expensive. Many older proof of stake algorithms have a “stake grinding” vulnerability where re-rolling the dice simply means making a computation locally on one’s computer; algorithms with this vulnerability are certainly unacceptable in a sharding context. Newer algorithms (see the “validator selection” section in the <a href="https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ">proof of stake FAQ</a>) have the property that re-rolling the dice can only be done by voluntarily giving up one’s spot in the block creation process, which entails giving up rewards and fees. The best way to mitigate the impact of marginal economically motivated attacks on sample selection is to find ways to increase this cost. One method to increase the cost by a factor of sqrt(N) from N rounds of voting is the <a href="https://arxiv.org/pdf/1406.5694.pdf">majority-bit method devised by Iddo Bentov</a>; the Mauve Paper’s sharding algorithm expects to use this approach.</p>
+<p>Another form of random number generation that is not exploitable by minority coalitions is the deterministic threshold signature approach most researched and advocated by Dominic Williams. The strategy here is to use a <a href="https://eprint.iacr.org/2002/081.pdf">deterministic threshold signature</a> to generate the random seed from which samples are selected. Deterministic threshold signatures have the property that the value is guaranteed to be the same regardless of which of a given set of participants provides their data to the algorithm, provided that at least ⅔ of participants do participate honestly. This approach is more obviously not economically exploitable and fully resistant to all forms of stake-grinding, but it has several weaknesses:</p>
+<ul>
+<li><strong>It relies on more complex cryptography</strong> (specifically, elliptic curves and pairings). Other approaches rely on nothing but the random-oracle assumption for common hash algorithms.</li>
+<li><strong>It fails when many validators are offline</strong>. A desired goal for public blockchains is to be able to survive very large portions of the network simultaneously disappearing, as long as a majority of the remaining nodes is honest; deterministic threshold signature schemes at this point cannot provide this property.</li>
+<li><strong>It’s not secure in a Zamfir model</strong> where more than ⅔ of validators are colluding. The other approaches described in the proof of stake FAQ above still make it expensive to manipulate the randomness, as data from all validators is mixed into the seed and making any manipulation requires either universal collusion or excluding other validators outright.</li>
+</ul>
+<p>One might argue that the deterministic threshold signature approach works better in consistency-favoring contexts and other approaches work better in availability-favoring contexts.</p>
+<h2 id="what-are-the-concerns-about-sharding-through-random-sampling-in-a-bribing-attacker-or-coordinated-choice-model">What are the concerns about sharding through random sampling in a bribing attacker or coordinated choice model?<a class="headerlink" href="#what-are-the-concerns-about-sharding-through-random-sampling-in-a-bribing-attacker-or-coordinated-choice-model" title="Permanent link">&para;</a></h2>
+<p>In a bribing attacker or coordinated choice model, the fact that validators are randomly sampled doesn’t matter: whatever the sample is, either the attacker can bribe the great majority of the sample to do as the attacker pleases, or the attacker controls a majority of the sample directly and can direct the sample to perform arbitrary actions at low cost (O(c) cost, to be precise).</p>
+<p>At that point, the attacker has the ability to conduct 51% attacks against that sample. The threat is further magnified because there is a risk of cross-shard contagion: if the attacker corrupts the state of a shard, the attacker can then start to send unlimited quantities of funds out to other shards and perform other cross-shard mischief. All in all, security in the bribing attacker or coordinated choice model is not much better than that of simply creating O(c) altcoins.</p>
+<h2 id="how-can-we-improve-on-this">How can we improve on this?<a class="headerlink" href="#how-can-we-improve-on-this" title="Permanent link">&para;</a></h2>
+<p>Basically, by comprehensively solving the problem of fraud detection.</p>
+<p>One major category of solution to this problem is the use of challenge-response mechanisms. Challenge-response mechanisms generally rely on a principle of escalation: fact X (eg. "collation #17293 in shard #54 is valid") is initially accepted as true if at least k validators sign a claim (backed by a deposit) that it is. However, if this happens, there is some challenge period during which 2k validators can sign a claim stating that it is false. If this happens, 4k validators can sign a claim stating that the claim is in fact true, and so forth until one side either gives up or most validators have signed claims, at which point every validator and client themselves checks whether or not X is true. If X is ruled true, everyone who made a claim saying so is rewarded and everyone who made a contradictory claim is penalized, and vice versa.</p>
+<p>Looking at this mechanism, you can prove that malicious actors lose an amount of money proportional to the number of actors that they forced to look at the given piece of data. Forcing <em>all</em> users to look at the data requires a large portion of validators to sign a claim which is false, which can be used to penalize all of them, so the cost of forcing all users to look at a piece of data is O(n); this prevents the challenge-response mechanism from being used as a denial-of-service vector.</p>
+<h2 id="what-is-the-data-availability-problem-and-how-can-we-use-erasure-codes-to-solve-it">What is the data availability problem, and how can we use erasure codes to solve it?<a class="headerlink" href="#what-is-the-data-availability-problem-and-how-can-we-use-erasure-codes-to-solve-it" title="Permanent link">&para;</a></h2>
+<p>See https://github.com/ethereum/research/wiki/A-note-on-data-availability-and-erasure-coding</p>
+<h2 id="can-we-remove-the-need-to-solve-data-availability-with-some-kind-of-fancy-cryptographic-accumulator-scheme">Can we remove the need to solve data availability with some kind of fancy cryptographic accumulator scheme.<a class="headerlink" href="#can-we-remove-the-need-to-solve-data-availability-with-some-kind-of-fancy-cryptographic-accumulator-scheme" title="Permanent link">&para;</a></h2>
+<p>No. Suppose there is a scheme where there exists an object S representing the state (S could possibly be a hash) possibly as well as auxiliary information ("witnesses") held by individual users that can prove the presence of existing state objects (eg. S is a Merkle root, the witnesses are the branches, though other constructions like RSA accumulators do exist). There exists an updating protocol where some data is broadcasted, and this data changes S to change the contents of the state, and also possibly changes witnesses.</p>
+<p>Suppose some user has the witnesses for a set of N objects in the state, and M of the objects are updated. After receiving the update information, the user can check the new status of all N objects, and thereby see which M were updated. Hence, the update information itself encoded at least ~M * log(N) bits of information. Hence, the update information that everyone needs for receive to implement the effect of M transactions must necessarily be of size O(M). <a href="#ftnt_ref14">14</a></p>
+<h2 id="so-this-means-that-we-can-actually-create-scalable-sharded-blockchains-where-the-cost-of-making-anything-bad-happen-is-proportional-to-the-size-of-the-entire-validator-set">So this means that we can actually create scalable sharded blockchains where the cost of making anything bad happen is proportional to the size of the entire validator set?<a class="headerlink" href="#so-this-means-that-we-can-actually-create-scalable-sharded-blockchains-where-the-cost-of-making-anything-bad-happen-is-proportional-to-the-size-of-the-entire-validator-set" title="Permanent link">&para;</a></h2>
+<p>There is one trivial attack by which an attacker can always burn O(c) capital to temporarily reduce the quality of a shard: spam it by sending transactions with high transaction fees, forcing legitimate users to outbid you to get in. This attack is unavoidable; you could compensate with flexible gas limits, and you could even try “transparent sharding” schemes that try to automatically re-allocate nodes to shards based on usage, but if some particular application is non-parallelizable, Amdahl’s law guarantees that there is nothing you can do. The attack that is opened up here (reminder: it only works in the Zamfir model, not honest/uncoordinated majority) is arguably not substantially worse than the transaction spam attack. Hence, we've reached the known limit for the security of a single shard, and there is no value in trying to go further.</p>
+<h2 id="lets-walk-back-a-bit-do-we-actually-need-any-of-this-complexity-if-we-have-instant-shuffling-doesnt-instant-shuffling-basically-mean-that-each-shard-directly-pulls-validators-from-the-global-validator-pool-so-it-operates-just-like-a-blockchain-and-so-sharding-doesnt-actually-introduce-any-new-complexities">Let’s walk back a bit. Do we actually need any of this complexity if we have instant shuffling? Doesn’t instant shuffling basically mean that each shard directly pulls validators from the global validator pool so it operates just like a blockchain, and so sharding doesn’t actually introduce any new complexities?<a class="headerlink" href="#lets-walk-back-a-bit-do-we-actually-need-any-of-this-complexity-if-we-have-instant-shuffling-doesnt-instant-shuffling-basically-mean-that-each-shard-directly-pulls-validators-from-the-global-validator-pool-so-it-operates-just-like-a-blockchain-and-so-sharding-doesnt-actually-introduce-any-new-complexities" title="Permanent link">&para;</a></h2>
+<p>Kind of. First of all, it’s worth noting that proof of work and simple proof of stake, even without sharding, both have very low security in a bribing attacker model; a block is only truly “finalized” in the economic sense after O(n) time (as if only a few blocks have passed, then the economic cost of replacing the chain is simply the cost of starting a double-spend from before the block in question). Casper solves this problem by adding its finality mechanism, so that the economic security margin immediately increases to the maximum. In a sharded chain, if we want economic finality then we need to come up with a chain of reasoning for why a validator would be willing to make a very strong claim on a chain based solely on a random sample, when the validator itself is convinced that the bribing attacker and coordinated choice models may be true and so the random sample could potentially be corrupted.</p>
+<h2 id="you-mentioned-transparent-sharding-im-12-years-old-and-what-is-this">You mentioned transparent sharding. I’m 12 years old and what is this?<a class="headerlink" href="#you-mentioned-transparent-sharding-im-12-years-old-and-what-is-this" title="Permanent link">&para;</a></h2>
+<p>Basically, we do not expose the concept of “shards” directly to developers, and do not permanently assign state objects to specific shards. Instead, the protocol has an ongoing built-in load-balancing process that shifts objects around between shards. If a shard gets too big or consumes too much gas it can be split in half; if two shards get too small and talk to each other very often they can be combined together; if all shards get too small one shard can be deleted and its contents moved to various other shards, etc.</p>
+<p>Imagine if Donald Trump realized that people travel between New York and London a lot, but there’s an ocean in the way, so he could just take out his scissors, cut out the ocean, glue the US east coast and Western Europe together and put the Atlantic beside the South Pole - it’s kind of like that.</p>
+<h2 id="what-are-some-advantages-and-disadvantages-of-this">What are some advantages and disadvantages of this?<a class="headerlink" href="#what-are-some-advantages-and-disadvantages-of-this" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Developers no longer need to think about shards</li>
+<li>There’s the possibility for shards to adjust manually to changes in gas prices, rather than relying on market mechanics to increase gas prices in some shards more than others</li>
+<li>There is no longer a notion of reliable co-placement: if two contracts are put into the same shard so that they can interact with each other, shard changes may well end up separating them</li>
+<li>More protocol complexity</li>
+</ul>
+<p>The co-placement problem can be mitigated by introducing a notion of “sequential domains”, where contracts may specify that they exist in the same sequential domain, in which case synchronous communication between them will always be possible. In this model a shard can be viewed as a set of sequential domains that are validated together, and where sequential domains can be rebalanced between shards if the protocol determines that it is efficient to do so.</p>
+<h2 id="how-would-synchronous-cross-shard-messages-work">How would synchronous cross-shard messages work?<a class="headerlink" href="#how-would-synchronous-cross-shard-messages-work" title="Permanent link">&para;</a></h2>
+<p>The process becomes much easier if you view the transaction history as being already settled, and are simply trying to calculate the state transition function. There are several approaches; one fairly simple approach can be described as follows:</p>
+<ul>
+<li>A transaction may specify a set of shards that it can operate in</li>
+<li>In order for the transaction to be effective, it must be included at the same block height in all of these shards.</li>
+<li>Transactions within a block must be put in order of their hash (this ensures a canonical order of execution)</li>
+</ul>
+<p>A client on shard X, if it sees a transaction with shards (X, Y), requests a Merkle proof from shard Y verifying (i) the presence of that transaction on shard Y, and (ii) what the pre-state on shard Y is for those bits of data that the transaction will need to access. It then executes the transaction and commits to the execution result. Note that this process may be highly inefficient if there are many transactions with many different “block pairings” in each block; for this reason, it may be optimal to simply require blocks to specify sister shards, and then calculation can be done more efficiently at a per-block level. This is the basis for how such a scheme could work; one could imagine more complex designs. However, when making a new design, it’s always important to make sure that low-cost denial of service attacks cannot arbitrarily slow state calculation down.</p>
+<h2 id="what-about-semi-asynchronous-messages">What about semi-asynchronous messages?<a class="headerlink" href="#what-about-semi-asynchronous-messages" title="Permanent link">&para;</a></h2>
+<p>Vlad Zamfir created a scheme by which asynchronous messages could still solve the “book a train and hotel” problem. This works as follows. The state keeps track of all operations that have been recently made, as well as the graph of which operations were triggered by any given operation (including cross-shard operations). If an operation is reverted, then a receipt is created which can then be used to revert any effect of that operation on other shards; those reverts may then trigger their own reverts and so forth. The argument is that if one biases the system so that revert messages can propagate twice as fast as other kinds of messages, then a complex cross-shard transaction that finishes executing in K rounds can be fully reverted in another K rounds.</p>
+<p>The overhead that this scheme would introduce has arguably not been sufficiently studied; there may be worst-case scenarios that trigger quadratic execution vulnerabilities. It is clear that if transactions have effects that are more isolated from each other, the overhead of this mechanism is lower; perhaps isolated executions can be incentivized via favorable gas cost rules. All in all, this is one of the more promising research directions for advanced sharding.</p>
+<h2 id="what-are-guaranteed-cross-shard-calls">What are guaranteed cross-shard calls?<a class="headerlink" href="#what-are-guaranteed-cross-shard-calls" title="Permanent link">&para;</a></h2>
+<p>One of the challenges in sharding is that when a call is made, there is by default no hard protocol-provided guarantee that any asynchronous operations created by that call will be made within any particular timeframe, or even made at all; rather, it is up to some party to send a transaction in the destination shard triggering the receipt. This is okay for many applications, but in some cases it may be problematic for several reasons:</p>
+<ul>
+<li>There may be no single party that is clearly incentivized to trigger a given receipt. If the sending of a transaction benefits many parties, then there could be <strong>tragedy-of-the-commons effects</strong> where the parties try to wait longer until someone else sends the transaction (ie. play "chicken"), or simply decide that sending the transaction is not worth the transaction fees for them individually.</li>
+<li><strong>Gas prices across shards may be volatile</strong>, and in some cases performing the first half of an operation compels the user to “follow through” on it, but the user may have to end up following through at a much higher gas price. This may be exacerbated by DoS attacks and related forms of <strong>griefing</strong>.</li>
+<li>Some applications rely on there being an upper bound on the “latency” of cross-shard messages (eg. the train-and-hotel example). Lacking hard guarantees, such applications would have to have <strong>inefficiently large safety margins</strong>.</li>
+</ul>
+<p>One could try to come up with a system where asynchronous messages made in some shard automatically trigger effects in their destination shard after some number of blocks. However, this requires every client on each shard to actively inspect all other shards in the process of calculating the state transition function, which is arguably a source of inefficiency. The best known compromise approach is this: when a receipt from shard A at height <code>height_a</code> is included in shard B at height <code>height_b</code>, if the difference in block heights exceeds <code>MAX_HEIGHT</code>, then all validators in shard B that created blocks from <code>height_a + MAX_HEIGHT + 1</code> to <code>height_b - 1</code> are penalized, and this penalty increases exponentially. A portion of these penalties is given to the validator that finally includes the block as a reward. This keeps the state transition function simple, while still strongly incentivizing the correct behavior.</p>
+<h2 id="wait-but-what-if-an-attacker-sends-a-cross-shard-call-from-every-shard-into-shard-x-at-the-same-time-wouldnt-it-be-mathematically-impossible-to-include-all-of-these-calls-in-time">Wait, but what if an attacker sends a cross-shard call from every shard into shard X at the same time? Wouldn’t it be mathematically impossible to include all of these calls in time?<a class="headerlink" href="#wait-but-what-if-an-attacker-sends-a-cross-shard-call-from-every-shard-into-shard-x-at-the-same-time-wouldnt-it-be-mathematically-impossible-to-include-all-of-these-calls-in-time" title="Permanent link">&para;</a></h2>
+<p>Correct; this is a problem. Here is a proposed solution. In order to make a cross-shard call from shard A to shard B, the caller must pre-purchase “congealed shard B gas” (this is done via a transaction in shard B, and recorded in shard B). Congealed shard B gas has a fast demurrage rate: once ordered, it loses 1/k of its remaining potency every block. A transaction on shard A can then send the congealed shard B gas along with the receipt that it creates, and it can be used on shard B for free. Shard B blocks allocate extra gas space specifically for these kinds of transactions. Note that because of the demurrage rules, there can be at most GAS_LIMIT * k worth of congealed gas for a given shard available at any time, which can certainly be filled within k blocks (in fact, even faster due to demurrage, but we may need this slack space due to malicious validators). In case too many validators maliciously fail to include receipts, we can make the penalties fairer by exempting validators who fill up the “receipt space” of their blocks with as many receipts as possible, starting with the oldest ones.</p>
+<p>Under this pre-purchase mechanism, a user that wants to perform a cross-shard operation would first pre-purchase gas for all shards that the operation would go into, over-purchasing to take into account the demurrage. If the operation would create a receipt that triggers an operation that consumes 100000 gas in shard B, the user would pre-buy 100000 * e (ie. 271818) shard-B congealed gas. If that operation would in turn spend 100000 gas in shard C (ie. two levels of indirection), the user would need to pre-buy 100000 * e\^2 (ie. 738906) shard-C congealed gas. Notice how once the purchases are confirmed, and the user starts the main operation, the user can be confident that they will be insulated from changes in the gas price market, unless validators voluntarily lose large quantities of money from receipt non-inclusion penalties.</p>
+<h2 id="congealed-gas-this-sounds-interesting-for-not-just-cross-shard-operations-but-also-reliable-intra-shard-scheduling">Congealed gas? This sounds interesting for not just cross-shard operations, but also reliable intra-shard scheduling<a class="headerlink" href="#congealed-gas-this-sounds-interesting-for-not-just-cross-shard-operations-but-also-reliable-intra-shard-scheduling" title="Permanent link">&para;</a></h2>
+<p>Indeed; you could buy congealed shard A gas inside of shard A, and send a guaranteed cross-shard call from shard A to itself. Though note that this scheme would only support scheduling at very short time intervals, and the scheduling would not be exact to the block; it would only be guaranteed to happen within some period of time.</p>
+<h2 id="does-guaranteed-scheduling-both-intra-shard-and-cross-shard-help-against-majority-collusions-trying-to-censor-transactions">Does guaranteed scheduling, both intra-shard and cross-shard, help against majority collusions trying to censor transactions?<a class="headerlink" href="#does-guaranteed-scheduling-both-intra-shard-and-cross-shard-help-against-majority-collusions-trying-to-censor-transactions" title="Permanent link">&para;</a></h2>
+<p>Yes. If a user fails to get a transaction in because colluding validators are filtering the transaction and not accepting any blocks that include it, then the user could send a series of messages which trigger a chain of guaranteed scheduled messages, the last of which reconstructs the transaction inside of the EVM and executes it. Preventing such circumvention techniques is practically impossible without shutting down the guaranteed scheduling feature outright and greatly restricting the entire protocol, and so malicious validators would not be able to do it easily.</p>
+<h2 id="could-sharded-blockchains-do-a-better-job-of-dealing-with-network-partitions">Could sharded blockchains do a better job of dealing with network partitions?<a class="headerlink" href="#could-sharded-blockchains-do-a-better-job-of-dealing-with-network-partitions" title="Permanent link">&para;</a></h2>
+<p>The schemes described in this document would offer no improvement over non-sharded blockchains; realistically, every shard would end up with some nodes on both sides of the partition. There have been calls (eg. from <a href="https://www.youtube.com/watch?v=cU-n_m-snxQ">IPFS’s Juan Benet</a>) for building scalable networks with the specific goal that networks can split up into shards as needed and thus continue operating as much as possible under network partition conditions, but there are nontrivial cryptoeconomic challenges in making this work well.</p>
+<p>One major challenge is that if we want to have location-based sharding so that geographic network partitions minimally hinder intra-shard cohesion (with the side effect of having very low intra-shard latencies and hence very fast intra-shard block times), then we need to have a way for validators to choose which shards they are participating in. This is dangerous, because it allows for much larger classes of attacks in the honest/uncoordinated majority model, and hence cheaper attacks with higher griefing factors in the Zamfir model. Sharding for geographic partition safety and sharding via random sampling for efficiency are two fundamentally different things.</p>
+<p>Second, more thinking would need to go into how applications are organized. A likely model in a sharded blockchain as described above is for each “app” to be on some shard (at least for small-scale apps); however, if we want the apps themselves to be partition-resistant, then it means that all apps would need to be cross-shard to some extent.</p>
+<p>One possible route to solving this is to create a platform that offers both kinds of shards - some shards would be higher-security “global” shards that are randomly sampled, and other shards would be lower-security “local” shards that could have properties such as ultra-fast block times and cheaper transaction fees. Very low-security shards could even be used for data-publishing and messaging.</p>
+<h2 id="what-are-the-unique-challenges-of-pushing-scaling-past-n-oc2">What are the unique challenges of pushing scaling past n = O(c\^2)?<a class="headerlink" href="#what-are-the-unique-challenges-of-pushing-scaling-past-n-oc2" title="Permanent link">&para;</a></h2>
+<p>There are several considerations. First, the algorithm would need to be converted from a two-layer algorithm to a stackable n-layer algorithm; this is possible, but is complex. Second, n / c (ie. the ratio between the total computation load of the network and the capacity of one node) is a value that happens to be close to two constants: first, if measured in blocks, a timespan of several hours, which is an acceptable “maximum security confirmation time”, and second, the ratio between rewards and deposits (an early computation suggests a 32 ETH deposit size and a 0.05 ETH block reward for Casper). The latter has the consequence that if rewards and penalties on a shard are escalated to be on the scale of validator deposits, the cost of continuing an attack on a shard will be O(n) in size.</p>
+<p>Going above c\^2 would likely entail further weakening the kinds of security guarantees that a system can provide, and allowing attackers to attack individual shards in certain ways for extended periods of time at medium cost, although it should still be possible to prevent invalid state from being finalized and to prevent finalized state from being reverted unless attackers are willing to pay an O(n) cost. However, the rewards are large - a super-quadratically sharded blockchain could be used as a general-purpose tool for nearly all decentralized applications, and could sustain transaction fees that makes its use virtually free.</p>
+<h2 id="footnotes">Footnotes<a class="headerlink" href="#footnotes" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><a name="ftnt_ref1"></a> Merklix tree == Merkle Patricia tree</p>
+</li>
+<li>
+<p><a name="ftnt_ref2"></a> Later proposals from the NUS group do manage to shard state; they do this via the receipt and state-compacting techniques that I describe in later sections in this document.</p>
+</li>
+<li>
+<p><a name="ftnt_ref3"></a> There are reasons to be conservative here. Particularly, note that if an attacker comes up with worst-case transactions whose ratio between processing time and block space expenditure (bytes, gas, etc) is much higher than usual, then the system will experience very low performance, and so a safety factor is necessary to account for this possibility. In traditional blockchains, the fact that block processing only takes \~1-5% of block time has the primary role of protecting against centralization risk but serves double duty of protecting against denial of service risk. In the specific case of Bitcoin, its current worst-case <a href="https://bitcoin.org/en/bitcoin-core/capacity-increases-faq#size-bump">known quadratic execution vulnerability</a> arguably limits any scaling at present to \~5-10x, and in the case of Ethereum, while all known vulnerabilities are being or have been removed after the denial-of-service attacks, there is still a risk of further discrepancies particularly on a smaller scale. In Bitcoin NG, the need for the former is removed, but the need for the latter is still there.</p>
+</li>
+<li>
+<p><a name="ftnt_ref4"></a> A further reason to be cautious is that increased state size corresponds to reduced throughput, as nodes will find it harder and harder to keep state data in RAM and so need more and more disk accesses, and databases, which often have an O(log(n)) access time, will take longer and longer to access. This was an important lesson from the last Ethereum denial-of-service attack, which bloated the state by \~10 GB by creating empty accounts and thereby indirectly slowed processing down by forcing further state accesses to hit disk instead of RAM.</p>
+</li>
+<li>
+<p><a name="ftnt_ref5"></a> In sharded blockchains, there may not necessarily be in-lockstep consensus on a single global state, and so the protocol never asks nodes to try to compute a global state root; in fact, in the protocols presented in later sections, each shard has its own state, and for each shard there is a mechanism for committing to the state root for that shard, which represents that shard’s state</p>
+</li>
+<li>
+<p><a name="ftnt_ref6"></a> #MEGA</p>
+</li>
+<li>
+<p><a name="ftnt_ref7"></a> If a non-scalable blockchain upgrades into a scalable blockchain, the author’s recommended path is that the old chain’s state should simply become a single shard in the new chain.</p>
+</li>
+<li>
+<p><a name="ftnt_ref8"></a> For this to be secure, some further conditions must be satisfied; particularly, the proof of work must be non-outsourceable in order to prevent the attacker from determining which <i>other miners' identities</i> are available for some given shard and mining on top of those.</p>
+</li>
+<li>
+<p><a name="ftnt_ref9"></a> Recent Ethereum denial-of-service attacks have proven that hard drive access is a primary bottleneck to blockchain scalability.</p>
+</li>
+<li>
+<p><a name="ftnt_ref10"></a> You could ask: well why don’t validators fetch Merkle proofs just-in-time? Answer: because doing so is a \~100-1000ms roundtrip, and executing an entire complex transaction within that time could be prohibitive.</p>
+</li>
+<li>
+<p><a name="ftnt_ref11"></a>  One hybrid solution that combines the normal-case efficiency of small samples with the greater robustness of larger samples is a multi-layered sampling scheme: have a consensus between 50 nodes that requires 80% agreement to move forward, and then only if that consensus fails to be reached then fall back to a 250-node sample. N = 50 with an 80% threshold has only a 8.92 * 10-9 failure rate even against attackers with p = 0.4, so this does not harm security at all under an honest or uncoordinated majority model.</p>
+</li>
+<li>
+<p><a name="ftnt_ref12"></a> The probabilities given are for one single shard; however, the random seed affects O(c) shards and the attacker could potentially take over any one of them. If we want to look at O(c) shards simultaneously, then there are two cases. First, if the grinding process is computationally bounded, then this fact does not change the calculus at all, as even though there are now O(c) chances of success per round, checking success takes O(c) times as much work. Second, if the grinding process is economically bounded, then this indeed calls for somewhat higher safety factors (increasing N by 10-20 should be sufficient) although it’s important to note that the goal of an attacker in a profit-motivated manipulation attack is to increase their participation across all shards in any case, and so that is the case that we are already investigating.</p>
+</li>
+<li>
+<p><a name="ftnt_ref13"></a> See <a href="https://github.com/polkadot-io/polkadotpaper/raw/master/PolkaDotPaper.pdf">Ethcore’s Polkadotpaper</a> for further description of how their “fishermen” concept works.</p>
+</li>
+<li>
+<p><a name="ftnt_ref14"></a> Thanks to Justin Drake for pointing me to cryptographic accumulators, as well as <a href="https://eprint.iacr.org/2009/612.pdf">this paper</a> that gives the argument for the impossibility of sublinear batching. See also this thread: https://ethresear.ch/t/accumulators-scalability-of-utxo-blockchains-and-data-availability/176</p>
+</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Proof-of-Stake-FAQ/" title="权益证明" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                权益证明
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../D3VTechnologies/RLP/" title="RLP 编码" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                RLP 编码
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            版权 &copy; 2018 -  wohugb.github.io
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.6cdc17f0.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              <script src="../../assets/javascripts/lunr/lunr.zh.js"></script>
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"0.17.2",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
