@@ -49,83 +49,84 @@ markdown_extensions:
   - pymdownx.details
 
 pages:
-  - 概述: index.md
+  - 前言: index.md
+  - 概述: home.md
   - 基础:
-    - 介绍: Ethereum-introduction.md
-    - Getting Ether: Getting-Ether.md
-    - Uses / decentralized apps / dapps: Decentralized-apps-(dapps).md
-
-  #   - Ethereum Whitepaper: Ethereum-White-Paper.md
-  #   - Design Rationale: Design-Rationale.md
-  #   - Ethereum Yellow Paper: paper.md
-  #   - FAQ: FAQ.md
-  #   - Releases: Releases.md
-  # - Ethereum Clients:
-  #   - cpp-ethereum (C++.md: cpp-ethereum.md
-  #   - ethereumj (Java.md: ethereumj.md
-  #   - Geth (Go.md: go-ethereum.md
-  #   - Parity (Rust.md: parity.md
-  #   - pyethapp (Python.md: pyethapp.md
-  # - ÐApp Development:
-  #   - Safety: Safety.md
-  #   - ÐApp Developer Resources: Dapp-Developer-Resources.md
-  #   - JavaScript API: JavaScript-API.md
-  #   - JSON RPC API: JSON-RPC.md
-  #   - Solidity: solidity.md
-  #   - Solidity Features: Solidity-Features.md
-  #   - Solidity Collections: Solidity-Collections.md
-  #   - Solidity Cheat-sheet: solidity-cheatsheet.md
-  #   - Useful Ðapp Patterns: Useful-Ðapp-Patterns.md
-  #   - Standardized Contract APIs: Standardized_Contract_APIs.md
-  #   - ÐApp using Meteor: Dapp-using-Meteor.md
-  #   - Ethereum development tutorial: Ethereum-Development-Tutorial.md
-  #   - Mix Tutorial: Mix:-The-DApp-IDE.md
-  #   - Mix Features: Mix-Features.md
-  #   - Viper: viper.md
-  #   - Serpent: Serpent.md
-  #   - LLL: cpp-ethereum/LLL.md
-  #   - Mutan: mutan.md
-  # - Infrastructure:
-  #   - Chain Spec Format: Ethereum-Chain-Spec-Format.md
-  #   - Inter-exchange Client Address Protocol: ICAP:-Inter-exchange-Client-Address-Protocol.md
-  #   - URL Hint Protocol: URL-Hint-Protocol.md
-  #   - NatSpec Determination: NatSpec-Determination.md
-  #   - Network Status: Network-Status.md
-  #   - Raspberry Pi: Raspberry-Pi-instructions.md
-  #   - Exchange Integration: Exchange-Integration.md
-  #   - Mining: Mining.md
-  #   - Licensing: Licensing.md
-  #   - Consortium Chain Development: Consortium-Chain-Development.md
-  # - Research:
-  #   - Proof of Stake FAQ: Proof-of-Stake-FAQ.md
-  #   - Sharding FAQ: Sharding-FAQ.md
-  # - ÐΞV Technologies:
-  #   - RLP Encoding: RLP.md
-  #   - Node Discovery Protocol: Node-discovery-protocol.md
-  #   - ÐΞVp2p Wire Protocol: Wire-Protocol.md
-  #   - ÐΞVp2p Whitepaper: libp2p-Whitepaper.md (WiP.md
-  #   - Web3 Secret Storage: Web3-Secret-Storage-Definition.md
-  # - Ethereum Technologies:
-  #   - Patricia Tree: Patricia-Tree.md
-  #   - Wire protocol: Ethereum-Wire-Protocol.md
-  #   - Light client protocol: Light-client-protocol.md
-  #   - Subtleties: Subtleties.md
-  #   - Solidity Documentation: Solidity.md
-  #   - NatSpec Format: Ethereum-Natural-Specification-Format.md
-  #   - Contract ABI: Ethereum-Contract-ABI.md
-  #   - Bad Block Reporting: Bad-Block-Reporting.md
-  #   - Bad Chain Canary: Bad-Chain-Canary.md
-  # - Ethash/Dashimoto:
-  #   - Ethash: Ethash.md
-  #   - Ethash C API: Ethash-C-API.md
-  #   - Ethash DAG: Ethash-DAG.md
-  # - Whisper:
-  #   - Whisper Proposal: Whisper.md
-  #   - Whisper Overview: Whisper-Overview.md
-  #   - PoC-1 Wire protocol: Whisper-Wire-Protocol.md
-  #   - PoC-2 Wire protocol: Whisper-PoC-2-Wire-Protocol.md
-  #   - PoC-2 Whitepaper: Whisper-PoC-2-Protocol-Spec.md
-  # - Misc:
-  #   - Hard Problems of Cryptocurrency: Problems.md
-  #   - Chain Fibers: Chain-Fibers-Redux.md
-  #   - Glossary: Glossary.md
+    - 介绍: Basics/introduction.md
+    - 获取以太币: Basics/Getting-Ether.md
+    - 无心应用: Basics/dapps.md
+    - 白皮书: Basics/White-Paper.md
+    - 设计原理: Basics/Design-Rationale.md
+    - 黄皮书: Basics/Yellow-Paper.md
+    - FAQ: Basics/FAQ.md
+    - 发布: Basics/Releases.md
+  - 客户端:
+    - cpp-ethereum (C++): Client/cpp-ethereum.md
+    - ethereumj (Java): Client/ethereumj.md
+    - Geth (Go): Client/go-ethereum.md
+    - Parity (Rust): Client/parity.md
+    - pyethapp (Python): Client/pyethapp.md
+  - ÐApp开发:
+    - 安全技术: Dapps/Safety.md
+    - 开发资源: Dapps/Resources.md
+    - JS API: Dapps/JavaScript-API.md
+    - JSON RPC API: Dapps/JSON-RPC.md
+    - Solidity: Dapps/solidity.md
+    - Solidity 特色: Dapps/Solidity-Features.md
+    - Solidity 合集: Dapps/Solidity-Collections.md
+    - Solidity 备忘单: Dapps/solidity-cheatsheet.md
+    - 有用的Ðapp模式: Dapps/Useful-Ðapp-Patterns.md
+    - 标准化合约接口: Dapps/Standardized_Contract_APIs.md
+    - 使用Meteor: Dapps/Using-Meteor.md
+    - 开发指南: Dapps/Tutorial.md
+    - Mix 指南: Dapps/Mix-IDE.md
+    - Mix 特色: Dapps/Mix-Features.md
+    - Viper: Dapps/viper.md
+    - Serpent: Dapps/Serpent.md
+    - LLL: Dapps/LLL.md
+    - Mutan: Dapps/mutan.md
+  - 基础设施:
+    - 链规格格式: Infrastructure/Chain-Spec-Format.md
+    - 互换客户端地址协议: Infrastructure/Inter-exchange-Client-Address-Protocol.md
+    - 网址提示协议: Infrastructure/URL-Hint-Protocol.md
+    - 国家规定的确定: Infrastructure/NatSpec-Determination.md
+    - 网络状态: Infrastructure/Network-Status.md
+    - 树莓派: Infrastructure/Raspberry-Pi-instructions.md
+    - 交易一体化: Infrastructure/Exchange-Integration.md
+    - 矿业: Infrastructure/Mining.md
+    - 许可: Infrastructure/Licensing.md
+    - 联盟链发展: Infrastructure/Consortium-Chain-Development.md
+  - 研究:
+    - 权益证明: Research/Proof-of-Stake-FAQ.md
+    - 分片区块链: Research/Sharding-FAQ.md
+  - ÐΞV技术:
+    - RLP 编码: D3VTechnologies/RLP.md
+    - 节点发现协议: D3VTechnologies/Node-discovery-protocol.md
+    - ÐΞVp2p 有线协议: D3VTechnologies/Wire-Protocol.md
+    - ÐΞVp2p 白皮书: D3VTechnologies/libp2p-Whitepaper.md
+    - Web3 秘密存储: D3VTechnologies/Web3-Secret-Storage-Definition.md
+  - 以太坊技术:
+    - 词树: Technologies/Patricia-Tree.md
+    - 有线协议: Technologies/Ethereum-Wire-Protocol.md
+    - 轻端协议: Technologies/Light-client-protocol.md
+    - 玄机: Technologies/Subtleties.md
+    - 固语言: Technologies/Solidity.md
+    - NatSpec格式: Technologies/Ethereum-Natural-Specification-Format.md
+    - 合同ABI: Technologies/Ethereum-Contract-ABI.md
+    - 坏块报告: Technologies/Bad-Block-Reporting.md
+    - 坏链金丝雀: Technologies/Bad-Chain-Canary.md
+  - 挖矿算法:
+    - 概述: EthashDashimoto/index.md
+    - Ethash: EthashDashimoto/Ethash.md
+    - Ethash C API: EthashDashimoto/Ethash-C-API.md
+    - Ethash DAG: EthashDashimoto/Ethash-DAG.md
+  - 私语:
+    - 低语提议: Whisper/index.md
+    - 耳语概述: Whisper/Overview.md
+    - PoC-1 有线协议: Whisper/Wire-Protocol.md
+    - PoC-2 有线协议: Whisper/PoC-2-Wire-Protocol.md
+    - PoC-2 白皮书: Whisper/PoC-2-Protocol-Spec.md
+  - 杂项:
+    - 加密货币的难题: Misc/Problems.md
+    - 链条纤维: Misc/Chain-Fibers-Redux.md
+    - 词汇表: Misc/Glossary.md
