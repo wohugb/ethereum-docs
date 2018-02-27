@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/home/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,49 +21,49 @@
         
     <url>
      <loc>/Basics/introduction/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Basics/Getting-Ether/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Basics/dapps/</loc>
-     <lastmod>2018-01-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/Basics/White-Paper/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Basics/Design-Rationale/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Basics/Yellow-Paper/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/Yellow-Paper/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Basics/FAQ/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Basics/Releases/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Basics/Wishlist/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -72,32 +72,84 @@
     
         
     <url>
-     <loc>/Client/cpp-ethereum/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/White-Paper/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Client/ethereumj/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/White-Paper/history/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Client/go-ethereum/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/White-Paper/Ethereum/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Client/parity/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/White-Paper/Applications/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/Client/pyethapp/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <loc>/White-Paper/Miscellanea-And-Concerns/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/White-Paper/Conclusion/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/White-Paper/Notes-and-Further-Reading/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/Clients/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Clients/go-ethereum/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Clients/parity/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Clients/pyethapp/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Clients/cpp-ethereum/</loc>
+     <lastmod>2018-02-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Clients/ethereumj/</loc>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -107,109 +159,109 @@
         
     <url>
      <loc>/Dapps/Safety/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Resources/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/JavaScript-API/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/JSON-RPC/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/solidity/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Solidity-Features/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Solidity-Collections/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/solidity-cheatsheet/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Useful-Ðapp-Patterns/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Standardized_Contract_APIs/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Using-Meteor/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Tutorial/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Mix-IDE/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Mix-Features/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/viper/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/Serpent/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/LLL/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Dapps/mutan/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -219,61 +271,61 @@
         
     <url>
      <loc>/Infrastructure/Chain-Spec-Format/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Inter-exchange-Client-Address-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/URL-Hint-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/NatSpec-Determination/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Network-Status/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Raspberry-Pi-instructions/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Exchange-Integration/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Mining/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Licensing/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Infrastructure/Consortium-Chain-Development/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -283,13 +335,13 @@
         
     <url>
      <loc>/Research/Proof-of-Stake-FAQ/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Research/Sharding-FAQ/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -299,31 +351,31 @@
         
     <url>
      <loc>/D3VTechnologies/RLP/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/D3VTechnologies/Node-discovery-protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/D3VTechnologies/Wire-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/D3VTechnologies/libp2p-Whitepaper/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/D3VTechnologies/Web3-Secret-Storage-Definition/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -333,55 +385,55 @@
         
     <url>
      <loc>/Technologies/Patricia-Tree/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Ethereum-Wire-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Light-client-protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Subtleties/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Solidity/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Ethereum-Natural-Specification-Format/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Ethereum-Contract-ABI/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Bad-Block-Reporting/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Technologies/Bad-Chain-Canary/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -391,25 +443,25 @@
         
     <url>
      <loc>/EthashDashimoto/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/EthashDashimoto/Ethash/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/EthashDashimoto/Ethash-C-API/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/EthashDashimoto/Ethash-DAG/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -419,31 +471,31 @@
         
     <url>
      <loc>/Whisper/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Whisper/Overview/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Whisper/Wire-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Whisper/PoC-2-Wire-Protocol/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Whisper/PoC-2-Protocol-Spec/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -453,19 +505,19 @@
         
     <url>
      <loc>/Misc/Problems/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Misc/Chain-Fibers-Redux/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/Misc/Glossary/</loc>
-     <lastmod>2018-01-23</lastmod>
+     <lastmod>2018-02-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
