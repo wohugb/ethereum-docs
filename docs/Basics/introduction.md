@@ -3,116 +3,262 @@
 ![Ethereum Homestead gold ingots](https://sustergy.files.wordpress.com/2017/05/ethereum-homestead-background-17.jpg?w=1000)
 
 !!! note ""
-    Note that due to the lightning-fast pace of development in the Ethereum space with core development and dapps continually being launched, certain parts of this article may be outdated. You can help by keeping it up to date!
+    请注意，由于以太坊的发展速度太快，随着核心开发和无心应用不断推出, 本文的某些部分可能已经过时, 你可以帮助我们保持最新版本！
 
 ## 关于
 
-[Ethereum](https://www.ethereum.org/)是一个[无心](https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274)区块链平台用来"构建无阻碍应用", while Ether is the cryptocurrency used on this platform. Ethereum has been described in several ways, such as (the first and third resources are more general introductions, while the second is a technical introduction, although all are outdated.
-Another introduction is available [here](https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/), but again, it is outdated. Despite being outdated, Ethereum has maintained backwards compatibility thus far up till January 1 2018, so the info is still relevant.):
+[以太坊][Ethereum]是一个[无心][decentralized]区块链平台，用于“构建无阻碍的应用”，而Ether是这个平台上使用的加密货币。
+以太坊已经有几种形式的描述，比如(第一和第三种资源是更一般的介绍，第二种是技术性介绍，而第二种是最新的。另外一个介绍可以在[这里][old-docs]找到，但是它已经过时了。尽管有些信息已经过时，但直到2018年1月1日，以太坊仍然保持向后兼容性，所以信息仍然是相关的.):
 
-- Next-Generation Smart Contract and 无心应用平台"—[Ethereum White Paper](https://github.com/ethereum/wiki/wiki/White-Paper)
-- "A secure decentralised generalised transaction ledger" and a generalised "transactional singleton machine with shared-state". 也被描述为 [crypto-law—Ethereum Yellow Paper](https://github.com/Ethereum-community/yellowpaper/blob/master/Paper.pdf)
-- 开源 "可编程的块链"— [Ethdocs](http://ethdocs.org/en/latest/introduction/what-is-ethereum.html)
+[Ethereum]: https://www.ethereum.org/
+[decentralized]:https://medium.com/@VitalikButerin/the-meaning-of-decentralization-a0c92b76a274
+[old-docs]: https://bitsonblocks.net/2016/10/02/a-gentle-introduction-to-ethereum/
 
-Let's briefly breakdown what those terms mean.
+- 下一代智能合约和无心应用平台 — [以太坊白皮书][White-Paper]
+- 一个安全分散的广义交易分类账目和一个广义的具有共享状态的事务性单例机器，也被描述为[加密法以太坊黄皮书][Yellow-Paper]
+- 开源"可编程的块链"— [Ethdocs][Ethdocs]
 
-**无心** technology uses [peer-to-peer computer networks](https://en.wikipedia.org/wiki/Peer-to-peer) (there's a picture below), and are not subject to the whims of a central authority such as a government or server administrator (like Google or Facebook) which can help to achieve better decision making for public good. **Blockchain** means that the currency is built and secured by adding and verifying blocks of transactions to blocks made previously, thus forming a "chain". Blocks added to the chain become harder and harder to crack over time, as they are verified by more nodes in the blockchain peer-to-peer network. Blockchain technology has been referred to as the **Web 3.0**. The world wide web (retroactively the Web 1.0) consisted of websites publishing content and users passively reading/viewing it. The Web 2.0 used user interaction, such as forums (with upvoting and commenting), reaction buttons (e.g. the Facebook reactions: likes 👍, love ❤️ , laughter 😆, wow 😲, sad 😢, angry 😠), sharing (republishing), however these interactions have no direct economic effect on the host website; users do not share in the value generated from the website. The Web 3.0 is starting to be defined as the movement away from centralization of computation power in servers which provide services to clients (known as the <a href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model" target="_blank" rel="noopener">client-server network model</a>) to peer-to-peer networks and blockchains, and <a href="https://github.com/DemocracyEarth/paper/blob/master/README.mediawiki" target="_blank" rel="noopener">from centralisation of authority and sovereignty from nation-states and corporations to the networked individual</a>.
+[White-Paper]: https://github.com/ethereum/wiki/wiki/White-Paper
+[Yellow-Paper]: https://github.com/Ethereum-community/yellowpaper/blob/master/Paper.pdf
+[Ethdocs]: http://ethdocs.org/en/latest/introduction/what-is-ethereum.html
+
+让我们简单地分析下这些术语的含义
+
+**无心**技术采用[点对点计算机网络][p2p]下面有一张照片, 并不受中央机构如政府或服务器管理员（如谷歌或Facebook）的意愿的影响，这可以帮助公众更好地做出决策。
+[p2p]: https://en.wikipedia.org/wiki/Peer-to-peer
+
+**区块链**意味着通过添加和验证之前创建的块的交易块来构建和保护货币, 从而形成“连”. 随着时间的推移，添加到链中的块变得越来越难以破解，因为它们被区块链对等网络中的更多节点所验证。
+
+**Web3.0**是区块链技术:
+
+- *Web 1.0*由发布内容的网站和被动地阅读/查看它的用户组成。
+- *Web 2.0*使用用户交互功能, 如论坛（带投票和评论）, 交互按钮 (例如Facebook的交互: 喜欢👍,爱❤️,笑😆,哇😲,悲伤😢,愤怒😠), 分享（重新发布）, 但是这些互动对主站没有直接的经济影响,用户也不会从网站分的产生的收益.
+- *Web 3.0*开始被定义为远离集中计算能力的服务器(被称为[客户端-服务器网络模型][cs])向为客户端提供服务的对等网络和区块链, [从权力集中以及来自国家和公司的集权化到网络化的个人][DemocracyEarth].
+
+[cs]: https://en.wikipedia.org/wiki/Client%E2%80%93server_model
+[DemocracyEarth]: https://github.com/DemocracyEarth/paper/blob/master/README.mediawiki
 
 ![server-based-network](https://sustergy.files.wordpress.com/2017/05/200px-server-based-network-svg.png)
 ![p2p-network](https://sustergy.files.wordpress.com/2017/05/200px-p2p-network-svg.png)
 
-**Cryptocurrency** refers to a a digital currency that secures transactions with cryptographic code, which is solved through hardware computational power (known as mining or proof of work) or other less energy-intensive ways such as proof-of-stake. (There are more details on that below.)
+**加密货币**是指一种数字货币，通过硬件计算能力(被称为采矿或工作证明)或其他能源密集度较低的方法（如证据保证）来解决加密代码的交易.(下面有更多的细节)
 
-Zero knowledge proofs like <a href="https://crypto.stackexchange.com/questions/19884/what-are-snarks" target="_blank" rel="noopener">ZK SNARKs</a> can also be used to make cryptocurrency transactions more private 🕵️ or secret 🤐 (which is different to being secure 🔒), thus negating the need to run 应用s on a permissioned private network like the [Ethereum Enterprise Alliance](https://entethalliance.org/). Ethereum uses [precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128](https://github.com/ethereum/EIPs/pull/213), for [pairing checks](https://github.com/ethereum/EIPs/pull/212), which permit [zk-SNARKs](https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/), also see [here](https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6), [as implemented](https://github.com/ethereum/EIPs#finalized-eips-standards-that-have-been-adopted) in the [Byzantium hard fork](https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/). There is also the Zerocoin protocol which is demonstrated by <a href="https://zcoin.io/" target="_blank" rel="nofollow noopener noreferrer">Zcoin</a> (which plans to integrate Ethereum).
+像[ZK SNARK][ZK SNARKs]这样的零知识证明也可以用来使加密货币交易更私密或秘密(这与安全不同), 从而否定了在[以太坊企业联盟][entethalliance]等许可的私有网络上运行应用程序的需求.
+以太坊在[椭圆曲线alt_bn128][pull-213]上使用预编译的合约进行加法和标量乘法运算, [配对检查][pull-212], 允许[zk-SNARKs][byzantium], 也可以看[这里][zk-snarks-under-the-hood], 如在[拜占庭难分叉][byzantium]实施.
+Zcoin也展示了Zerocoin协议 (计划整合以太坊).
+
+[ZK SNARKs]: https://crypto.stackexchange.com/questions/19884/what-are-snarks
+[entethalliance]: https://entethalliance.org/
+[pull-213]: https://github.com/ethereum/EIPs/pull/213
+[pull-212]: https://github.com/ethereum/EIPs/pull/212
+[zk-snarks-under-the-hood]: https://medium.com/@VitalikButerin/zk-snarks-under-the-hood-b33151a013f6
+[finalized-eips-standards-that-have-been-adopted]: https://github.com/ethereum/EIPs#finalized-eips-standards-that-have-been-adopted
+[byzantium]: https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/
 
 ## 使用
 
-The platform part of Ethereum makes it much more useful than just a cryptocurrency. With it, you can create any 无心 应用 (known as a dapp, which works over a peer-to- peer network rather than a centralized client-server network 💻🕸️), so the functionality is only limited by what programs could potentially do and not do, and by consequence, what programmers develop, 👨‍💻 but it can theoretically be used for any economic or governance activity.
+以太坊的平台部分比单纯的加密货币更有用。
+有了它，你可以创建任何分散的应用程序(被称为dapp，它通过对等网络而不是集中的客户端-服务器网络工作)，所以功能只受限于程序可能做什么和不做什么，结果是程序员开发什么，但理论上它可以用于任何经济或治理活动。
 
-### 无心应用列表
+### 无心应用
 
-点击[这里](https://github.com/Ethereum-community/Ethereum-introduction/wiki/Decentralised-apps-(dapps))，查看无心应用列表.
+点击[这里][2])，查看无心应用列表.
 
 ### 市场分析
 
-As of the 9th of January 2018, [the market capitalisation of Ethereum is $118.5 billion USD](https://cryptolization.com/ethereum) (refer to the link for the latest figure), and [it has been in circulation possibly since 30 July 2015](https://github.com/jamesray1/homestead-guide/blob/32d2fa4ccfa3d45f8493a673a08247450d55fea0/source/introduction/the-homestead-release.rst#milestones-of-the-ethereum-development-roadmap), with the [first transaction using Ethereum on 8 August 2015](https://www.etherchain.org/account/0x5abfec25f74cd88437631a7731906932776356f9). Compare this with the next largest and the current largest cryptocurrency, [Bitcoin, with a market cap of $253.0 billion USD](https://cryptolization.com/ethereum), where [it has been in circulation since January 2009](http://www.newyorker.com/reporting/2011/10/10/111010fa_fact_davis). Technically, Ethereum has had a much faster growth rate, while more importantly for long term investment (I do not encourage speculation as that only causes volatility as has been seen) the fundamentals are much better than Bitcoin. While it is true that Bitcoin has more of a market and currency, e.g. in terms of more entities that will accept it as a form of payment, the creator of this wiki expects that time will change that (indeed the <a href="https://seekingalpha.com/article/4077679-ethereum-blasts-20-billion-market-cap-half-bitcoin" target="_blank" rel="noopener">market cap of Ethereum recently surpassed half that of Bitcoin, around May 2017</a>). Also, [the number of transactions of Ethereum surpassed that of several cryptocurrencies combined on 22 Nov 2017](https://www.reddit.com/r/ethereum/comments/7est9k/ethereum_is_now_processing_more_transactions_a/). However, note [this retort](https://www.reddit.com/r/ethereum/comments/7est9k/ethereum_is_now_processing_more_transactions_a/dq7a31u/).
+截至2018年1月9日，以太坊的市值为[1185亿美元][mk1]，自[二零一五年七月三十日][mk2]起可能已开始流通，而[二零一五年八月八日][mk3]首笔交易使用以太坊。
+将其与当前最大的，最大的加密货币比特币相比较，它的市值为[2530亿美元][mk1]，自[2009年1月份][mk4]开始流通。
+从技术上讲，以太坊的增长速度要快得多，而对于长期投资来说更重要的是（我不鼓励这种只会引起波动的猜测），基本面比比特币要好得多。
+虽然比特币确实有更多的市场和货币，例如,在更多的实体将接受它作为一种付款方式，这个wiki的创建者预计，时间会改变这一点 (事实上，在2017年5月左右，以太坊的市值最近已经超过了比特币的[一半][mk5]).
+另外，以太坊的交易数量也超过了[2017年11月22日][mk6]的几个加密货币。
+不过，请注意这个[反驳][mk7].
 
-## 议题
+[mk1]: https://cryptolization.com/ethereum
+[mk2]: https://github.com/jamesray1/homestead-guide/blob/32d2fa4ccfa3d45f8493a673a08247450d55fea0/source/introduction/the-homestead-release.rst#milestones-of-the-ethereum-development-roadmap
+[mk3]: https://www.etherchain.org/account/0x5abfec25f74cd88437631a7731906932776356f9
+[mk4]: http://www.newyorker.com/reporting/2011/10/10/111010fa_fact_davis
+[mk5]: https://seekingalpha.com/article/4077679-ethereum-blasts-20-billion-market-cap-half-bitcoin
+[mk6]: https://www.reddit.com/r/ethereum/comments/7est9k/ethereum_is_now_processing_more_transactions_a/
+[mk7]: https://www.reddit.com/r/ethereum/comments/7est9k/ethereum_is_now_processing_more_transactions_a/dq7a31u/
 
-There also several issues with Ethereum, such as not being scalable enough, not being full 无心, energy consumption with mining and quantum computing attacks. With its [large storage database](https://www.reddit.com/r/ethtrader/comments/7axn5g/ethereum_blockchain_sizewe_have_a_problem/) (I have to provide a [Reddit link](https://www.reddit.com/r/ethtrader/comments/7axn5g/ethereum_blockchain_sizewe_have_a_problem/) as a source as the [original link](https://etherscan.io/chart/chaindatasizefull) doesn't have the graph any more, while [Wayback doesn't render it either](https://web.archive.org/web/20171211015955/https://etherscan.io/chart/chaindatasizefull)), mining and architecture requiring to run a full node to mine or validate transactions, it is not 无心 enough. More (outdated but still applicable) info on that is e.g. [here](https://ethereum.stackexchange.com/questions/143/what-are-the-ethereum-disk-space-needs#826), as well as [here](https://github.com/ethereum/go-ethereum#full-node-on-the-main-ethereum-network).
+## 问题
+
+以太坊也存在一些问题，比如不能充分扩展，没有完全分散的能源消耗，以及采矿和量子计算攻击。
+凭借其庞大的存储[数据库][i1]，挖掘和架构需要运行一个完整的节点来挖掘或验证交易，它不是足够分散。
+更多（过时，但仍然适用）的信息，在[这里][i2]，以及在[这里][i3]。
+
+[i1]: https://www.reddit.com/r/ethtrader/comments/7axn5g/ethereum_blockchain_sizewe_have_a_problem
+[i2]: https://ethereum.stackexchange.com/questions/143/what-are-the-ethereum-disk-space-needs#826
+[i3]: https://github.com/ethereum/go-ethereum#full-node-on-the-main-ethereum-network
 
 ### 可扩展性
 
-Ethereum will need to scale to process far more transactions per second (to become a "<a href="https://www.youtube.com/watch?v=j23HnORQXvs" target="_blank" rel="noopener">world computer</a>") than Visa, Mastercard and American Express combined (which process on the order of [tens of thousands of transactions per second](https://usa.visa.com/run-your-business/small-business-tools/retail.html) [in the link, CTRL+F 24,000]), while Ethereum 1.0, the current version as of December 30 2017, processed [a record of 1103523 transactions on Friday, December 22, 2017, or 12.77 transactions per second](https://web.archive.org/web/20171230005127/https://etherscan.io/chart/tx).
+以太坊将需要扩大规模(成为“[世界电脑][s1]”)以处理比Visa([每秒处理数以万计的事务][s2][链接中CTRL + F 24,000])，万事达卡和美国运通的每秒处理更多的交易，而截至2017年12月30日的当前版本Ethereum 1.0在2017年12月22日星期五[处理了1103523笔交易的记录][s3]，即每秒12.77比交易。
 
-Note that [Ripple claims that it's Consensus Ledger can process a thousand transactions per second](https://ripple.com/dev-blog/ripple-consensus-ledger-can-sustain-1000-transactions-per-second/), while it could process more with payment channels. "Although payment channels achieve practically infinite scalability by decoupling payment from settlement, they do so without incurring the risk typically associated with delayed settlement." Further note that Ripple achieves this by trading off on decentralization, through a [distributed network of validators or distributed servers](https://ripple.com/build/xrp-ledger-consensus-process/), while it has been described as a [federation protocol](https://wiki.ripple.com/Federation_protocol).
+[s1]: https://www.youtube.com/watch?v=j23HnORQXvs
+[s2]: https://usa.visa.com/run-your-business/small-business-tools/retail.html
+[s3]: https://web.archive.org/web/20171230005127/https://etherscan.io/chart/tx
 
-There are even more scalable blockchains that use a delegated proof of stake (DPOS) consensus protocol, such as Bitshares and Steem. [Bitshares can apparently process 100,000 TPS](https://bitshares.org/technology/industrial-performance-and-scalability/).
+请注意，[Ripple][s4]声称“共识分类帐”可以每秒处理一千笔交易，而通过付款渠道可以处理更多交易。
+虽然支付渠道通过将支付与结算分开来实现实际上无限的可扩展性，但是它们这样做不会产生通常与延迟结算相关的风险。
+进一步指出，Ripple通过权力下放（[通过分布式验证器或分布式服务器网络][s5]）来实现这一点，而它被描述为[联邦协议][s6]。
 
-More generally, in order to have faster payments or higher transaction throughput, you need to reduce the number of validators (miners are a kind of validator that perform energy intensive computational work, finding a random nonce or sequence number in a large set of numbers) in the consensus protocol, or reduce the other (i.e. for faster payments you can reduce transaction throughput or reduce validators, while for higher transaction throughput you can reduce validators or have payments take longer to finalize). This is [a trade-off triangle](https://twitter.com/VladZamfir/status/932319930363494400). You could potentially have one blockchain with [heterogeneous sharding](https://twitter.com/VladZamfir/status/932320997021171712), with different shards with a different degree of balance between these properties. Ethereum is working on [sharding](https://github.com/ethereum/sharding/blob/develop/docs/doc.md), which includes using [stateless clients](https://github.com/ethereum/sharding/blob/develop/docs/doc.md#stateless-clients) (while more on that is [here](https://ethresear.ch/t/the-stateless-client-concept/172/14)).
+[s4]: https://ripple.com/dev-blog/ripple-consensus-ledger-can-sustain-1000-transactions-per-second/
+[s5]: https://ripple.com/build/xrp-ledger-consensus-process/
+[s6]: https://wiki.ripple.com/Federation_protocol
 
-If you increase scalability in an instant via some blockchain or shard, while keeping latency constant (or reducing it) you need to reduce decentralization, which reduces the number of points of attack needed to compromise the whole network, i.e. reducing decentralization reduces security.
+还有更多可扩展的区块链使用委托证明（DPOS）共识协议，如Bitshares和Steem。
+Bitshares显然可以处理[100,000 TPS][s6]。
 
-### 工作量证明 / 权益证明 / 其它证明方法
+[s6]: https://bitshares.org/technology/industrial-performance-and-scalability
 
-The mining process to crack cryptographic code (specifically to discover the nonce, a very large number, for each block by trial and error) requires a lot of computation power. Nevertheless, I'm guessing that the computation power should be less when you consider the <strong>energy consumption</strong> of incumbent financial systems. (Think of extracting and processing resources to make coins and notes, minting and printing, energy consumption of banks and tiers of related energy consumption in the life cycle of fiat money.) Still, developers of some cryptocurrencies such as Ethereum are transitioning to (as is the case for Ethereum), or already using, a different way of maintaining and creating blocks, known as proof of stake. For more information, you can see this Proof of Stake Wikipedia article <a href="https://en.wikipedia.org/wiki/Proof-of-stake" target="_blank" rel="nofollow noopener noreferrer">here</a> (although note the header warning about the article potentially not being verifiable or neutral due to relying heavily on sources too closely associated to the subject). The tricky part is in getting proof methods to work better than proof of work, as outlined <a href="https://en.wikipedia.org/wiki/Proof-of-stake" target="_blank" rel="noopener">here</a> in the criticism section of the PoS Wiki.
+更一般地说，为了更快的支付或更高的交易吞吐量，您需要减少共识协议中的验证者数量，或者减少另一个。
+这是一个[折衷的三角形][s7]。
+你可能有一个异构[分片的区块链][s8]，不同的[分片][s9]在这些属性之间有不同程度的平衡。
+以太坊正在研究分片，其中包括使用[无状态客户端][s10],而更多的是在[这里][s11]。
 
-### 量子计算机攻击
+[s7]: https://twitter.com/VladZamfir/status/932319930363494400
+[s8]: https://twitter.com/VladZamfir/status/932320997021171712
+[s9]: https://github.com/ethereum/sharding/blob/develop/docs/doc.md
+[s10]: https://github.com/ethereum/sharding/blob/develop/docs/doc.md#stateless-clients
+[s11]: https://ethresear.ch/t/the-stateless-client-concept/172/14
 
-If quantum computing becomes more performant Ethereum's cryptographic signature scheme, Elliptic Curve Digital Signature Algorithm (ECDSA), would be insecure. However, there are solutions for this that will be implemented soon in the [Constantinople release](https://github.com/ethereum/wiki/wiki/Releases) with [EIP 86: Abstraction of transaction origin and signature, which has "**Custom cryptography**: users can upgrade to ed25519 signatures, Lamport hash ladder signatures or whatever other scheme they want on their own terms; they do not need to stick with ECDSA." Lamport signatures could be used in a quantum resistant algorithm](https://github.com/ethereum/EIPs/pull/208). More info on that is e.g. [here](https://ethereum.stackexchange.com/a/13577/95840)), [here](https://blog.ethereum.org/2015/12/24/understanding-serenity-part-i-abstraction/), and [here](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial).
+如果通过某个区块链或分片瞬间提高可伸缩性, 同时保持等待时间不变，则需要减少分散, 这减少了危害整个网络所需的攻击点的数量, 即减少分散化会降低安全性.
 
-### 没有任何科技产品可以成为万灵药
+### 合约
 
-For the continual improvement of humanity, there needs to be balance in life between things that benefit us materially and things that benefit us on higher levels, particularly spiritually. There is a risk that technology can make some people better off, and others worse off. So there needs to be consideration for how technology can be implemented to maximise [utility](https://en.wikipedia.org/wiki/Utilitarianism).  One consideration of that is [here](https://medium.com/@RhysLindmark/co-evolving-the-phase-shift-to-cryptocapitalism-by-founding-the-ethereum-commons-co-op-f4771e5f0c83).
+***工作量证明/权益证明/其它证明方法***
+
+破解密码(特别是通过反复试验发现每个块的随机数非常大)的挖掘过程需要大量的计算能力。
+尽管如此，我猜测在考虑现有金融系统的能源消耗时，计算能力应该更小(考虑在法定货币的生命周期中提取和处理资源以制造硬币和钞票，铸造和印刷，银行的能源消耗和相关的能源消耗层次)。
+尽管如此，以太坊等一些加密货币的开发者正在过渡到或者已经在使用一种不同的维护和创建块的方式(就像以太坊一样)，
+欲了解更多信息，您可以在[这里][w1]看到这个权益维基百科证明文章(尽管请注意关于这篇文章的标题警告，由于严重依赖与主题关系过于密切的来源，因此这篇文章可能不是可验证的或中立的).
+棘手的部分是让证明方法比工作证明更好地工作，正如PoS Wiki的批评部分所[概述][w1]的那样。
+
+[w1]: https://en.wikipedia.org/wiki/Proof-of-stake
+
+### 量机攻击
+
+如果量子计算成为更高性能的以太坊的密码签名方案, 椭圆曲线数字签名算法(ECDSA), 将是不安全的。 然而，这些解决方案将在[君士坦丁堡发布][7]即将实施， 和 [EIP 86: 具有“**自定义加密**：用户可以升级到ed25519签名，Lamport哈希梯形图签名或者他们想要的其他任何计划，他们不需要坚持使用ECDSA”的交易来源和签名的抽象。 ,Lamport签名可以用于量子抗性算法][8].
+更多的信息就是,[这里][9], [这里][10], 和[这里][11].
+
+***没有任何科技产品可以成为万灵药***
+
+对于人性的不断改善，人生之间需要在生活上有所平衡，在物质上有利于我们，在精神上也要使我们受益,科技有可能使一些人变得更好，有些人变得更糟,所以需要考虑如何实现技术来最大化[效用][12].
+ 对此的一个考虑是[在这里][13].
 
 ### 缺陷
 
-Ethereum has had expensive bugs, such as [the DAO vulnerability (CTRL+F vulnerability)](https://en.wikipedia.org/wiki/The_DAO_(organization)); and Parity multisig library contract issues [1](https://paritytech.io/the-multi-sig-hack-a-postmortem/), [2](https://paritytech.io/security-alert/), [3](https://paritytech.io/security-update/), [4](https://paritytech.io/security-alert-2/), [5](https://paritytech.io/parity-technologies-multi-sig-wallet-issue-update/), [6](https://paritytech.io/a-postmortem-on-the-parity-multi-sig-library-self-destruct/), [7](https://paritytech.io/on-classes-of-stuck-ether-and-potential-solutions/). Also see [reclaiming of ether in common classes of stuck accounts](https://github.com/ethereum/EIPs/issues/156), which gives more examples such as sending to an empty address,
-e.g. [1](https://github.com/ethereum/EIPs/issues/156#issuecomment-2766829920) and [2](https://github.com/ethereum/EIPs/issues/156#issuecomment-307015852). Info about another bug is [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#addendum-2017-08-15).
+以太坊有昂贵的错误, 如[DAO漏洞(CTRL + F漏洞][14])]; 和Parity multisig库合同问题 [1][15], [2][16], [3][17], [4][18], [5][19], [6][20], [7][21].
+另请参阅[普通帐户中的以太回收][22], 这给出了更多的例子，如发送到一个空的地址，
+,例如下面有一张照片[23] and [2][24].
+关于另一个bug的信息是[这里][25].
 
-## 如何买卖以太币?
+## 以太币交易
 
-Refer to [here](https://github.com/ethereum/wiki/wiki/Getting-Ether).
+参考[这里][26].
 
 ## 开发
 
-Are you interested in learning to develop smart contracts with Ethereum, and maybe develop a really useful dapp and become a millionaire?
+你有兴趣学习与以太坊开发智能合约，也许开发一个真正有用的dapp并成为百万富翁？
 
-Check out the [Ethereum website](https://www.ethereum.org/)! Then, you can [read the Solidity docs](https://solidity.readthedocs.io/en/develop/).
+看看[以太坊网站][27]! 然后，您可以[阅读Solidity文档][28].
 
-If you want to help contribute to core development, there is also:
-* the [Yellow Paper](https://github.com/ethereum/yellowpaper/pull/376) (make sure that you read the [EIPs](https://github.com/ethereum/EIPs) too since as of Dec 8 it is not up-to-date with the last commit on August 8, while the Constantinople EIPs were implemented in October). Instead I recommend ;
-* Learn Python first, e.g. with [Learn Python the Hard Way](https://www.learnpythonthehardway.org/) (I learnt using this, it's pretty good), [Codecademy](https://www.codecademy.com/learn/learn-python), [Pydocs](https://docs.python.org/3/), [Coursera](https://www.coursera.org/courses?languages=en&query=learn+python), etc. Knowing Python is useful for [pyethereum](https://github.com/ethereum/pyethereum), which is being used as an Ethereum client, to implement Serenity and sharding, as well as [vyper](https://github.com/ethereum/Vyper), an experimental, secure smart contract programming language;
-* [LLL](https://media.consensys.net/an-introduction-to-lll-for-ethereum-smart-contract-development-e26e38ea6c23) (also see [here](https://github.com/ethereum/solidity/tree/develop/liblll) and [here](https://github.com/ethereum/solidity/tree/develop/lllc));
-* [JULIA](https://solidity.readthedocs.io/en/develop/julia.html), an intermediate language for different Ethereum virtual machines;
-* clients such as [Geth](https://github.com/ethereum/go-ethereum), [Parity](https://github.com/paritytech/parity) which is under [Parity Tech](https://github.com/paritytech) a separate organization to the Ethereum Foundation, [C++ Ethereum](https://github.com/ethereum/cpp-ethereum), [Pyethereum](https://github.com/ethereum/pyethereum);
-* [Serenity](https://github.com/ethereum/pyethereum/tree/serenity);
-* [sharding](https://github.com/ethereum/sharding/blob/develop/docs/doc.md);
-* [research](https://github.com/ethereum/research) such as stateless clients, sharding, scalability improvements, Casper and more;
-* [EWasM](https://github.com/ewasm);
-* if you're interested in testing, see the documentation [here](https://ethereum-tests.readthedocs.io/en/latest/), as well as [the Github tests repo](https://github.com/ethereum/tests), [a Gist here (it is outdated)](https://gist.github.com/Souptacular/fd197b1fac7c6d2660b0bef27a33ed40#lll-and-evm-stack-resources),  and [Gitter here](https://gitter.im/ethereum/tests) ; and
-* [many other repositories](https://github.com/ethereum).
+- [黄皮书][29](请确保您阅读EIPs，因为从12月8日起，它不会与8月8日的最后一次提交保持同步，而君士坦丁堡的[EIPs][30]则是在10月份实施的).相反，我建议 ;
+- 先学习Python，例如,学习[Python的难题][31])(我学会了使用它，这是相当不错的)，[Codecademy][32]，[Pydocs][33], [Coursera][34]等。了解Python对于用作[pyethereum][35]客户端的pyethereum来说是非常有用的，它可以实现Serenity和Sharding，以及[vyper][36]这个实验性的，安全的智能合约编程语言;
+- [LLL][37](也看[这里][38]和[这里][39]);
+- [JULIA][40], 一个用于不同以太坊虚拟机的中间语言;
+- 客户端，如[Geth][41]，[Parity Tech][42] [Parity][43]下的一个单独的组织，以太坊基金会，[C++以太坊][44]，[Pyethereum][35];
+- [Serenity][45];
+- [sharding][46];
+- [research][47] 如无状态客户端，分片，可扩展性改进，Casper等;
+- [EWasM][48];
+- 如果您对测试感兴趣，请参阅文档[此处][49], 以及[Github测试回购][50], [这里有一个精华（已经过时了）][51],和[网格在这里][52];和
+- [许多其他存储库][53].
 
 ## 结束语
 
-Ether certainly seems like a good investment, and a good alternative to using fiat currencies, as well as an enabler for otherwise uneconomical business, due to lower transaction costs. It's more 无心 nature than central banks has advantages for trade from a local to global scale. With governance 应用s and systems on top Ethereum, it is even possible to do away with the hindering borders surmounted by nation-states. By doing away with these borders, society can be more open, inclusive and equitable.
+以太当然似乎是一个很好的投资, 也是使用法定货币的好选择， 同时也是一个不经济的业务的推动者, 由于交易成本较低.
+这比中央银行在地方和全球范围内的贸易优势更具无心性。 有了以太坊上的治理应用和系统, 甚至有可能消除民族国家所跨越的阻碍边界。 通过消除这些边界，社会可以更加开放， 包容和公平。
 
-However, all technology can only help mankind and the world to a certain extent. What is more important is for each and every person to become increasingly blissful. Each person must go within and enter a stillness of body and mind, which is when that bliss starts to manifest, and practice balanced living. Practicing certain techniques such as those given by Self-Realization Fellowship, such as daily Kriya yoga meditation, developing unconditional love that starts in the heart, keeping the mind at the point between the eyebrows, and moral living, helps each person manifest that bliss within, and from there, express that bliss outwardly at all times.
+但是，一切技术只能在一定程度上帮助人类和世界。 更重要的是每一个人都变得越来越幸福。 每个人都必须走进去，进入一种身心的平静， 这是幸福开始显现的时候， 并实行平衡的生活。 练习某些技巧，例如自我实现团契给予的技巧， 如每日克里亚瑜伽冥想，发展无条件的爱，开始在心里， 保持头脑之间的眉毛之间的点， 和道德生活， 帮助每个人体现出内心的幸福， 从那里， 随时向外表示幸福。
 
 ## 延伸阅读
 
-* [Another introduction](https://github.com/jamesray1/Ethereum-introduction/wiki/Ethereum-introduction)
-* [MyEtherWallet knowledge base (good for issues with wallets)](https://myetherwallet.github.io/knowledge-base/)
-* [An introduction (Frontier first release, outdated)](https://ethereum.gitbooks.io/frontier-guide/content/ethereum.html)
-* [Here's another introduction, made in November 2017](https://medium.com/@Ethereum_AI/ethereum-introduction-what-exactly-is-it-why-care-how-to-invest-9a627ab04408)
-* [Ethereum community on Gitter](https://gitter.im/ethereum)
-* [Ethereum research forum](https://ethresear.ch/)
-* [Correct by construction Casper prototype](https://ethresear.ch/t/the-correct-by-construction-casper-paper-prototype-published-at-devcon-tear-it-apart/196)
-* [Casper the Friendly Finality Gadget](https://ethresear.ch/t/latest-casper-basics-tear-it-apart/151/57)
-* [The stateless client concept](https://ethresear.ch/t/the-stateless-client-concept/172)
-* [Ethereum 2 and alternative PoS implementations](https://ethresear.ch/t/ethereum-2-and-alternative-pos-implementations/190/7)
-* [Ethereum wiki](https://en.wikipedia.org/wiki/Ethereum)
-* [Ethereum and the hodlers that love them](https://www.reddit.com/r/ethtrader/comments/6jyn9y/ethereum_the_hodlors_that_love_them/)
-</ul>
+- [另一个介绍][54]
+- [MyEtherWallet知识库(适用于钱包问题)][55]
+- [介绍(Frontier首发，过时)][56]
+- [这是另一个介绍，在2017年11月][57]
+- [以太坊在Gitter上][58]
+- [以太坊研究论坛][59]
+- [正确的施工卡斯帕原型][60]
+- [正确的施工卡斯帕原型][61]
+- [无国籍客户的概念][62]
+- [以太坊2和替代PoS实施][63]
+- [以太坊维基][64]
+- [以太坊和爱他们的爱人][65]
 
-This article was originally created here in May 2017, and has been regularly updated since then: https://sustergy.wordpress.com/2017/05/18/why-buy-ether-and-how/. Feel free to send a donation to the initial author at jamesray.eth, or make edits to it yourself, or fork it!
+[这篇文章][66]最初是在2017年5月在这里创建的，从那以后一直定期更新.
+请随时向jamesray.eth的初始作者发送捐款， 或自己编辑它，或叉！
+
+[2]: https://github.com/Ethereum-community/Ethereum-introduction/wiki/Decentralised-apps-(dapps
+[7]: https://github.com/ethereum/wiki/wiki/Releases
+[8]: https://github.com/ethereum/EIPs/pull/208
+[9]: https://ethereum.stackexchange.com/a/13577/95840
+[10]: https://blog.ethereum.org/2015/12/24/understanding-serenity-part-i-abstraction/
+[11]: https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial
+[12]: https://en.wikipedia.org/wiki/Utilitarianism
+[13]: https://medium.com/@RhysLindmark/co-evolving-the-phase-shift-to-cryptocapitalism-by-founding-the-ethereum-commons-co-op-f4771e5f0c83
+[14]: https://en.wikipedia.org/wiki/The_DAO_(organization
+[15]: https://paritytech.io/the-multi-sig-hack-a-postmortem/
+[16]: https://paritytech.io/security-alert/
+[17]: https://paritytech.io/security-update/
+[18]: https://paritytech.io/security-alert-2/
+[19]: https://paritytech.io/parity-technologies-multi-sig-wallet-issue-update/
+[20]: https://paritytech.io/a-postmortem-on-the-parity-multi-sig-library-self-destruct/
+[21]: https://paritytech.io/on-classes-of-stuck-ether-and-potential-solutions/
+[22]: https://github.com/ethereum/EIPs/issues/156
+[23]: https://github.com/ethereum/EIPs/issues/156#issuecomment-2766829920
+[24]: https://github.com/ethereum/EIPs/issues/156#issuecomment-307015852
+[25]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-161.md#addendum-2017-08-15
+[26]: https://github.com/ethereum/wiki/wiki/Getting-Ether
+[27]: https://www.ethereum.org/
+[28]: https://solidity.readthedocs.io/en/develop/
+[29]: https://github.com/ethereum/yellowpaper/pull/376
+[30]: https://github.com/ethereum/EIPs
+[31](https://www.learnpythonthehardway.org/
+[32]: https://www.codecademy.com/learn/learn-python
+[33]: https://docs.python.org/3/
+[34]: https://www.coursera.org/courses?languages=en&query=learn+python
+[35]: https://github.com/ethereum/pyethereum
+[36]: https://github.com/ethereum/Vyper
+[37]: https://media.consensys.net/an-introduction-to-lll-for-ethereum-smart-contract-development-e26e38ea6c23
+[38]: https://github.com/ethereum/solidity/tree/develop/liblll
+[39]: https://github.com/ethereum/solidity/tree/develop/lllc
+[40]: https://solidity.readthedocs.io/en/develop/julia.html
+[41]: https://github.com/ethereum/go-ethereum
+[42]: https://github.com/paritytech
+[43]: https://github.com/paritytech/parity
+[44]: https://github.com/ethereum/cpp-ethereum
+[45]: https://github.com/ethereum/pyethereum/tree/serenity
+[46]: https://github.com/ethereum/sharding/blob/develop/docs/doc.md
+[47]: https://github.com/ethereum/research
+[48]: https://github.com/ewasm
+[49]: https://ethereum-tests.readthedocs.io/en/latest/
+[50]: https://github.com/ethereum/tests
+[51]: https://gist.github.com/Souptacular/fd197b1fac7c6d2660b0bef27a33ed40#lll-and-evm-stack-resources
+[52]: https://gitter.im/ethereum/tests
+[53]: https://github.com/ethereum
+[54]: https://github.com/jamesray1/Ethereum-introduction/wiki/Ethereum-introduction
+[55]: https://myetherwallet.github.io/knowledge-base/
+[56]: https://ethereum.gitbooks.io/frontier-guide/content/ethereum.html
+[57]: https://medium.com/@Ethereum_AI/ethereum-introduction-what-exactly-is-it-why-care-how-to-invest-9a627ab04408
+[58]: https://gitter.im/ethereum
+[59]: https://ethresear.ch/
+[60]: https://ethresear.ch/t/the-correct-by-construction-casper-paper-prototype-published-at-devcon-tear-it-apart/196
+[61]: https://ethresear.ch/t/latest-casper-basics-tear-it-apart/151/57
+[62]: https://ethresear.ch/t/the-stateless-client-concept/172
+[63]: https://ethresear.ch/t/ethereum-2-and-alternative-pos-implementations/190/7
+[64]: https://en.wikipedia.org/wiki/Ethereum
+[65]: https://www.reddit.com/r/ethtrader/comments/6jyn9y/ethereum_the_hodlors_that_love_them/
+[66]: https://sustergy.wordpress.com/2017/05/18/why-buy-ether-and-how/

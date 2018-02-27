@@ -1,52 +1,56 @@
-Send a JSONRPC request to `https://badblocks.ethdev.com`:
+发送JSONRPC请求到“https：// badblocks.ethdev.com”：
 
-Call `eth_badBlock(BADBLOCK)`, with `BADBLOCK` the object described below:
+调用`eth_badBlock（BADBLOCK）`，用`BADBLOCK`对象描述如下：
 
-## BADBLOCK Object Format
+## 坏块对象形成
 
-NOTE: All hex is lower-case.
+注意：所有的十六进制都是小写的。
 
-#### Types
-- `DATA`: freeform byte array as a string of hex, *no 0x prefix*.
-- `DATA_20`: like DATA, always of length 40.
-- `HEX`: string of hex-encoded big-endian integer, used for VM stack/memory/storage items, *no 0x prefix*, *no leading zeroes*.
-- `INT`: simple JS integer.
-- `BIGINT`: string of decimal-encoded integer, used for potentially bigints.
-- `TAG_ERROR`: described later.
-- `TAG_INST`: string of an EVM instruction mnemonic, uppercase e.g. `"PUSH4"` or `"STOP"`.
-- `VMTRACE`: described later.
+### 类型
 
-#### Type modifiers
-- `SOMETIMES`: field is omitted under certain circumstances.
-- `NONSTANDARD`: field may safely be omitted.
+- `DATA`: 自由格式字节数组作为十六进制字符串，*无0x前缀*。
+- `DATA_20`: 像DATA一样，长度总是40。
+- `HEX`: 用于VM堆栈/内存/存储项目的十六进制编码的big-endian整数字符串，* no 0x前缀*，*无前导零*。
+- `INT`: 简单的JS整数。
+- `BIGINT`: 十进制编码整数的字符串，用于可能的bigint。
+- `TAG_ERROR`: 如后所述。
+- `TAG_INST`: EVM指令助记符串，例如大写字母,`“PUSH4”`或`“STOP”`。
+- `VMTRACE`: 如后所述。
 
-#### BADBLOCKS object
+### 类型修饰符
+
+- `SOMETIMES`: 在某些情况下字段被忽略。
+- `NONSTANDARD`: 字段可以安全地省略。
+
+### 坏块对象
 
 ```json
-{
-	"block": DATA
-	"errortype": TAG_ERROR
-	"hints": { (all items OPTIONAL)
-		"receipts": [ DATA, ... ], OPTIONAL
-		"vmtrace": VMTRACE, OPTIONAL
-	}, OPTIONAL
-}
+  {
+    "block": DATA
+    "errortype": TAG_ERROR
+    "hints": { (all items OPTIONAL)
+      "receipts": [ DATA, ... ], OPTIONAL
+      "vmtrace": VMTRACE, OPTIONAL
+    }, OPTIONAL
+  }
 ```
 
-Where:
+哪里：
 
-`receipts` is simply the array of RLP-encoded receipts.
+`receipts` 仅仅是RLP编码收据的数组。
 
-`TAG_ERROR` is a string containing one of (specified roughly in order of ability to detect):
+`TAG_ERROR` 是一个包含其中一个的字符串（大致按照检测能力的顺序指定）：
 
-#### Generic:
+### 通用
+
 - `RLPError`: One of the following:
   - `BadRLP`: Generally invalid RLP (e.g. 0x8100).
   - `BadCast`: Given RLP is of an incorrect type (e.g. 0x00 being interpreted as an integer).
   - `OversizeRLP`: Additional bytes trailing an otherwise valid RLP fragment (e.g. 0x8000).
   - `UndersizeRLP`: Bytes missing from the end of an otherwise valid RLP fragment (e.g. 0x81).
 
-#### Block-specific:
+### 块专用
+
 - `InvalidBlock`: One of the following:
   - `InvalidBlockFormat`: Block format is wrong (!= array, != 3 items &c.).
   - `TooManyUncles`: More than 2 uncles mentioned.
@@ -56,7 +60,8 @@ Where:
   - `InvalidStateRoot`: State root mentioned is different to that calculated (i.e. reward application is incorrect).
   - `InvalidReceiptsRoot`: Receipts root mentioned is different to that calculated (i.e. appliaction of a transaction resulted in different logs, gas-used or state-root). "receipts" and "vmtrace" should be hinted.
 
-#### Block-header-specific
+### 块集管具体
+
 - `InvalidHeader`: One of the following:
   - `InvalidBlockHeaderItemCount`: Wrong item count in header.
   - `TooMuchGasUsed`: Header states gas used as bigger than gas limit.
@@ -68,7 +73,8 @@ Where:
   - `InvalidTimestamp`: Timestamp is not greater than parent's.
   - `InvalidLogBloom`: LogBloom is not equal to the bitwise-OR of all receipts' LogBlooms.
 
-#### Transaction-specific
+### 特定交易
+
 - `InvalidTransaction`: One of the following:
   - `OutOfGasIntrinsic`: GAS below amount required for any transaction.
   - `BlockGasLimitReached`: Too much gas being used for the transaction within this block.
@@ -77,34 +83,34 @@ Where:
   - `NotEnoughCash`: Balance of sender too low.
   - `InvalidNonce`: Transaction nonce is wrong.
 
-#### Uncle-specific
+### 大叔特有的
+
 - `InvalidUncle`: One of the following:
   - `UncleInChain`: Uncle has already been included in the current chain (either as a direct ancestor or one of its included uncles).
   - `UncleTooOld`: Uncle is older than the 6th generation uncle.
   - `UncleIsBrother`: Uncle is newer than the 1st generation uncle.
 
-
 and `VMTRACE` is the object:
 
 ```json
-[
-	{
-		"stack": [ HEX, ... ]
-		"memory": HEX, SOMETIMES
-		"sha3memory": DATA_32, SOMETIMES
-		"storage": { HEX: HEX }, SOMETIMES
-		"gas": BIGINT
-		"pc": BIGINT
-		"inst": INT
-		"depth": INT, OPTIONAL
-		"steps": INT
-		"address": DATA_20, SOMETIMES
-		"memexpand": BIGINT, NONSTANDARD
-		"gascost": BIGINT, NONSTANDARD
-		"instname": STRING, NONSTANDARD
-	},
-	...
-]
+  [
+    {
+      "stack": [ HEX, ... ]
+      "memory": HEX, SOMETIMES
+      "sha3memory": DATA_32, SOMETIMES
+      "storage": { HEX: HEX }, SOMETIMES
+      "gas": BIGINT
+      "pc": BIGINT
+      "inst": INT
+      "depth": INT, OPTIONAL
+      "steps": INT
+      "address": DATA_20, SOMETIMES
+      "memexpand": BIGINT, NONSTANDARD
+      "gascost": BIGINT, NONSTANDARD
+      "instname": STRING, NONSTANDARD
+    },
+    ...
+  ]
 ```
 
 - `stack`: The stack, prior to execution.

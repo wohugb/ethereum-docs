@@ -1,17 +1,17 @@
-# 联盟链发展
+# 联盟链开发
 
-## Choosing a codebase
+## 选择一个代码库
 
 There are currently 8 implementations of the Ethereum protocol:
 
-* Go [http://github.com/ethereum/go-ethereum](http://github.com/ethereum/go-ethereum)
-* C++ [http://github.com/ethereum/cpp-ethereum](http://github.com/ethereum/cpp-ethereum)
-* Python [http://github.com/ethereum/pyethereum](http://github.com/ethereum/pyethereum)
-* Javascript [http://github.com/ethereum/ethereumjs-lib](http://github.com/ethereum/ethereumjs-lib)
-* Java [https://github.com/ethereum/ethereumj](https://github.com/ethereum/ethereumj)
-* Haskell [https://github.com/jamshidh/ethereumH](https://github.com/jamshidh/ethereumH)
-* Rust (Parity) [https://github.com/ethcore/parity](https://github.com/ethcore/parity)
-* Ruby [https://github.com/janx/ruby-ethereum](https://github.com/janx/ruby-ethereum)
+* Go [go-ethereum][1]
+* C++ [cpp-ethereum][2]
+* Python [pyethereum][3]
+* Javascript [ethereumjs-lib][4]
+* Java [ethereumj][5]
+* Haskell [ethereumH][6]
+* Rust (Parity) [parity][7]
+* Ruby [ruby-ethereum][8]
 
 These implementations differ in:
 
@@ -24,19 +24,19 @@ These implementations differ in:
 
 For enterprise use cases, performance is likely to be highly important. There have been some efforts at benchmarking Ethereum clients, see:
 
-[https://github.com/ethereum/wiki/wiki/Benchmarks](https://github.com/ethereum/wiki/wiki/Benchmarks)
+[https://github.com/ethereum/wiki/wiki/Benchmarks][9]
 
 However, a comprehensive set of benchmarks on all clients likely to be performant (C++, Go, Haskell, Java, Parity) would be a very useful task. Regarding licensing, Go is LGPL licensed, C++ is GPL licensed but there is an effort (with outcome still uncertain) to relicense it to Apache, Java is MIT, and Parity is GPL.
 
-## The config file
+## 配置文件
 
 There is an informal standard for a configuration file that Ethereum nodes must support, which describes the network parameters. The goal is to allow nodes to easily connect to test networks, private networks, and in the long term specify alternative networks with different properties, including consensus algorithms, P2P networking protocols, initial state, and protocol rules. The standard is described here:
 
-[https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format](https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format)
+[https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format][10]
 
 An enterprise ethereum version should respect a superset of the standard, so that a node started with the right config settings would act as an Ethereum public chain node (but with more APIs and other features useful for enterprise purposes), but a node started with different settings would participate in a given consortium-chain network using PBFT, or a test network that uses a different virtual machine, or a network that incorporates new scalability features sooner than the public chain, etc.
 
-## Consensus
+## 共识
 
 Currently, the Ethereum clients support proof of work consensus. There is a desire to modularize the consensus algorithm in such a way that it will be possible to also use proof of stake (Casper), as well as private chain-specific consensus algorithms, with likely initial targets being PBFT and DPOS (essentially a round robin consensus algorithm). The first step is to determine exactly what the "interface" for a consensus algorithm "class" should look like.
 
@@ -59,7 +59,7 @@ In a private chain context, there are several consensus algorithms that make the
 * **Proof of authority** - essentially, one client with one particular private key makes all of the blocks
 * **PBFT** (or some other traditional byzantine-fault-tolerant consensus algorithm)
 * **DPOS** (or some other chain-based limited-validator consensus algorithm)
-* **Casper** (Ethereum's [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) candidate) with a fixed validator set
+* **Casper** (Ethereum's [proof of stake][11] candidate) with a fixed validator set
 
 PBFT and DPOS (taken purely as a consensus algorithm, not including the ability of some class of token holders to vote on delegates) each have their own advantages and disadvantages. Specifically:
 
@@ -75,13 +75,13 @@ Proof of authority may be required in some cases where particular safety propert
 
 **Note**: there is a common misconception that different algorithms have widely different transaction processing capacities, eg. DPOS can process 100 tx/sec while PBFT can process 1000 tx/sec, etc. Whereas in the case of future sharded blockchains this may be true, in the context of blockchains where every node processes every transaction this is not the case; the same amount of computational effort is required to process each transaction regardless of what consensus algorithm is used, although there may be small differences because some algorithms require recomputing transactions in the case of short-range forks, some can more safely allow transaction processing to be run a larger percentage of the time, etc. Differences in performance between chains are usually almost entirely due to differences in the protocols and the implementations, not the consensus algorithm (with the important exception that public-chain capacities tend to be much lower due to their additional economic restrictions, smaller node sizes and centralization concerns).
 
-## Abstraction
+## 抽象
 
 In Ethereum protocol development, one of the major overriding philosophies is the notion of abstraction: that the protocol itself should be as simple as possible, and as much as possible should be implemented in contract code instead of through hard protocol rules. Targets for abstraction include:
 
-* Account security (see [https://github.com/ethereum/EIPs/issues/86](https://github.com/ethereum/EIPs/issues/86))
+* Account security (see [https://github.com/ethereum/EIPs/issues/86][12])
 * The transaction state transition function (ie. the rules by which a transaction is processed)
-* Ether (ie. make ether into a [ERC 20 token](https://github.com/ethereum/EIPs/issues/20) just like the others)
+* Ether (ie. make ether into a [ERC 20 token][13] just like the others)
 * Logs / events
 
 The purpose of abstraction is the following:
@@ -93,18 +93,18 @@ The purpose of abstraction is the following:
 
 EES may want to implement some of these abstraction features ahead of schedule.
 
-## P2P networking
+## P2P 网络
 
 Ethereum's current P2P network is a Kademlia architecture, and details are described here:
 
-* [https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol](https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol)
-* [https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer](https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer)
+* [https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol][14]
+* [https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer][15]
 
 A private chain may want to either use the same networking code (but with a different network ID set in the config file), or use an alternative type of network; the most likely alternative is a design where every node connects directly to every other node (quite feasible and likely optimal in networks with under ~20 nodes). Additionally there is the choice of customizing the connection that is made at the network or even lower level (eg. should all nodes be in the same subnet? If they are physically close to each other would fiber optic connections be optimal?); many of the details of this are largely outside the scope of the EES codebase, but the codebase should make sure that it works well under many common expected configurations.
 
-## Privacy-preserving protocols
+## 隐私保护协议
 
-See [https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/](https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/) for a much more detailed description of the available approaches.
+See [https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/][16] for a much more detailed description of the available approaches.
 
 ## APIs
 
@@ -114,20 +114,20 @@ However, there may be more high-level APIs that are required, particularly aroun
 
 A particular class of APIs that is likely to be very useful is the ability to make SQL and similar queries to the blockchain. There are a few existing projects in this direction, see:
 
-* [https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/](https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/)
-* [https://github.com/jamshidh/ethereum-data-sql](https://github.com/jamshidh/ethereum-data-sql)
+* [https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/][17]
+* [https://github.com/jamshidh/ethereum-data-sql][18]
 
 However, much more work likely remains in making these systems maximally efficient and broadly applicable to many use cases.
 
-## User interfaces
+## 用户接口
 
 User interfaces in Ethereum are a broad category, including:
 
 * The Mist browser, as well as applications written in HTML/Javascript that can be used either inside of Mist or through a user's regular browser
-* Block explorers such as [etherchain](http://etherchain.org), [etherscan](http://etherscan.io) and [ether.camp](http://live.ether.camp). Note that unlike similar tools for many other blockchains, which focus purely on currency balances and transactions, Ethereum block explorers tend to be highly advanced and general, offering views into contract state, functions, internal transactions, etc; for example, here is a ether.camp's view of the DAO:
+* Block explorers such as [etherchain][19], [etherscan][20] and [ether.camp][21]. Note that unlike similar tools for many other blockchains, which focus purely on currency balances and transactions, Ethereum block explorers tend to be highly advanced and general, offering views into contract state, functions, internal transactions, etc; for example, here is a ether.camp's view of the DAO:
 * The geth command line interface (the same as the web3 Javascript API).
 
-## Efficiency improvements
+## 效率的提高
 
 The process of verifying a block in Ethereum currently contains the following particularly computationally intensive operations:
 
@@ -145,7 +145,7 @@ In a single transaction, we can expect:
 * A corresponding ~15-100 updates to the underlying database
 * In a contract call, at least one round of VM execution, but possibly more. An informal survey of recent Ethereum transactions showed that among gas-consuming transactions the median gas consumption was ~50,000 gas and the average was ~100,000.
 
-## Virtual machine optimization and precompiled contracts
+## 虚拟机优化和预编译合同
 
 The Ethereum Virtual Machine is a unique architecture that is optimized for the following properties:
 
@@ -154,7 +154,7 @@ The Ethereum Virtual Machine is a unique architecture that is optimized for the 
 * Fully deterministic (note that due to metering with gas, even timeouts are deterministic; most other smart contract frameworks that try to use existing virtual machines completely fail to accomplish this)
 * Very fast to start a new VM instance up and shut an instance down, as we expect 1-10 EVM instances to be created and destroyed **per transaction**. Note that most of these instances may well run less than 100 computational steps; hence, being "lightweight" is crucial.
 * Reduced complexity - in those cases where users are going to implement an alternative mechanism in contract code regardless (eg. multisig, ring signatures, on-chain tokens), the "privileged" in-protocol mechanism only serves to duplicate effort and get in the way, whereas abstraction would allow you to use the alternative mechanism to *replace* the default mechanism.
-* Having multiple fully compatible implementations (there are ~50000 test cases at [https://github.com/ethereum/tests](https://github.com/ethereum/tests) which all 8 VM implementations in the 8 Ethereum clients pass)
+* Having multiple fully compatible implementations (there are ~50000 test cases at [https://github.com/ethereum/tests][22] which all 8 VM implementations in the 8 Ethereum clients pass)
 
 <blockquote>
 <b>Important note</b>: "gas" and "ether" are NOT the same thing. Gas is a mechanism that allows computation inside the EVM to be deterministically metered, ie. for contracts to deterministically restrict calls to some fixed number of computational steps. Ether is a way of paying transaction fees, which are expected to be proportional to gas consumption. The Bitcoin analog of ether is BTC, the Bitcoin analog of gas is the number of bytes that a transaction takes up in a block; in Ethereum, measuring bytes alone is not enough as you also need to measure computation, hence the concept of gas. On a private chain, you do not need to use ether to pay for gas; you can come up with alternate rulesets, including for example simply requiring every transaction to have a maximum gas limit of 1 million.
@@ -164,7 +164,7 @@ Note that the original EVM was **not** designed for high-performance computation
 
 However, more recently we have realized that there is a very large demand for high-performance computation in the EVM particularly in order to implement more complex cryptography (eg. ring signatures, partially homomorphic encryption, other kinds of elliptic curves, lamport signatures); hence, we have realized that our current work on the EVM has been insufficient. We currently have two approaches that we are pursuing in parallel toward solving this:
 
-* A possible new virtual machine based on WebAssembly (see [https://github.com/ethereum/evm2.0-design](https://github.com/ethereum/evm2.0-design))
+* A possible new virtual machine based on WebAssembly (see [https://github.com/ethereum/evm2.0-design][23])
 * EVM improvements
 * Precompiled contracts
 
@@ -178,21 +178,21 @@ A "precompiled contract" is an operation that is implemented in native code, and
 * SHA256 (address `0x000....0002`)
 * RIPEMD160 (address `0x000....0002`)
 
-In many industry use cases, there is the goal of either integrating existing libraries for financial computation (eg. [OpenGamma](http://www.opengamma.com/)), or different forms of cryptography in order to comply with industry or national standards, or accelerating complex business logic (eg. order books) that is required to run at very high speed. Applications that do so may wish to specify their own precompiles. We recommend that private-chain precompiles take addresses in the range `0x000....000400` to `0x000....0fffff` (ie. 1024 to 1048575) to avoid collisions with possible future public chain features.
+In many industry use cases, there is the goal of either integrating existing libraries for financial computation (eg. [OpenGamma][24]), or different forms of cryptography in order to comply with industry or national standards, or accelerating complex business logic (eg. order books) that is required to run at very high speed. Applications that do so may wish to specify their own precompiles. We recommend that private-chain precompiles take addresses in the range `0x000....000400` to `0x000....0fffff` (ie. 1024 to 1048575) to avoid collisions with possible future public chain features.
 
-## Denial-of-service attacks and Security
+## 拒绝服务攻击和安全
 
 In September and October 2016 there has been a series of denial-of-service attacks against various Ethereum implementations and the Ethereum protocol. A large portion of them exploited a "quadratic memory consumption" vulnerability in the Go implementation, where the client inefficiently copied a potentially large amount of cached state every time a call was made, leading to either very slow processing or an outright halt due to the client running out of memory. Additionally, a large number of attacks arose because opcodes that read the state (eg. EXTCODECOPY, BALANCE, CALL) were incorrectly priced too low, and because a design flaw in the SUICIDE opcode presented a way to very cheaply bloat the state with a large number of empty accounts. These issues were resolved in a hard fork on Oct 17.
 
 As of the time of this writing, the main remaining denial-of-service issue is that the client makes O(log(n)) database reads in order to read a state entry, and when the state is too large to fit into memory (which is the case after the state increased greatly due to previous attacks that are no longer possible) this makes processing state-reading opcodes slow.
 
-There are two ways to resolve this issue. One is to implement a cache that allows state entries to be read in O(1) database reads (likely a single database read in an optimal implementation); this resolves the problem but still leaves a low limit for transaction processing capacity. A single SSD read takes [100 microseconds](http://www.thessdreview.com/featured/ssd-throughput-latency-iopsexplained/); hence a leveldb read may take 200-400 microseconds, creating a cap of ~2500 reads per second, or ~500 transactions per second. The requirement for an offline node to be able to synchronize decreases this further. Writes take up to 10x longer due to the need to update the state tree (which adds O(log(n)) overhead), but this can be done in a background process. Hence, storing state in an SSD makes it difficult to process more than ~100 tx/sec effectively.
+There are two ways to resolve this issue. One is to implement a cache that allows state entries to be read in O(1) database reads (likely a single database read in an optimal implementation); this resolves the problem but still leaves a low limit for transaction processing capacity. A single SSD read takes [100 microseconds][25]; hence a leveldb read may take 200-400 microseconds, creating a cap of ~2500 reads per second, or ~500 transactions per second. The requirement for an offline node to be able to synchronize decreases this further. Writes take up to 10x longer due to the need to update the state tree (which adds O(log(n)) overhead), but this can be done in a background process. Hence, storing state in an SSD makes it difficult to process more than ~100 tx/sec effectively.
 
-The other approach is to implement measures to ensure that the total size of the state remains small enough to fit into memory. In a public chain, this entails either charging "rent" for accounts (see [here](https://github.com/ethereum/EIPs/issues/87), [here](https://github.com/ethereum/EIPs/issues/35), [here](https://github.com/ethereum/EIPs/issues/88) and [here](http://vitalik.ca/files/storage_rent.html) for proposals); in a consortium chain, this simply entails having a good garbage collection strategy and if needed adding more RAM to validator nodes.
+The other approach is to implement measures to ensure that the total size of the state remains small enough to fit into memory. In a public chain, this entails either charging "rent" for accounts (see [here][26], [here][27], [here][28] and [here][29] for proposals); in a consortium chain, this simply entails having a good garbage collection strategy and if needed adding more RAM to validator nodes.
 
-## The Merkle Tree
+## Merkle 🌲
 
-The Merkle tree (also sometimes called "Merkle Patricia tree", "Patricia trie", "Merkle Patricia trie" or "trie") is an important part of the Ethereum protocol and provides a large amount of value particularly in the public chain. The function of the tree (see [here](https://github.com/ethereum/wiki/wiki/Patricia-Tree) for details, and [here](https://blog.ethereum.org/2015/11/15/merkling-in-ethereum/) and [here](https://easythereentropy.wordpress.com/2014/06/04/understanding-the-ethereum-trie/) for more detailed explanations) is to provide a cryptographically authenticated data structure that stores the entire state (ie. account balances, contract storage, nonces, etc); every 32-byte root hash maps uniquely (assuming cryptographic security of SHA3) to a particular state which may be gigabytes in size.
+The Merkle tree (also sometimes called "Merkle Patricia tree", "Patricia trie", "Merkle Patricia trie" or "trie") is an important part of the Ethereum protocol and provides a large amount of value particularly in the public chain. The function of the tree (see [here][30] for details, and [here][31] and [here][32] for more detailed explanations) is to provide a cryptographically authenticated data structure that stores the entire state (ie. account balances, contract storage, nonces, etc); every 32-byte root hash maps uniquely (assuming cryptographic security of SHA3) to a particular state which may be gigabytes in size.
 
 This allows for the following benefits:
 
@@ -204,16 +204,16 @@ Although no one has yet come up with such a product at the time of this writing,
 
 However, the Merkle tree also comes with its efficiency cost; hence, in those applications that do not require it, an optimal solution may be to simply get rid of the Merkle tree, and instead store the state in the database directly, so three state changes would correspond to three database operations. That said, it is important not to jump to this conclusion too quickly, as there are several ways to optimize the Merkle tree without removing it entirely. This includes:
 
-* Allowing the storage of unlimited-size values in the state, instead of just 32-byte values (see [EIP 97](https://github.com/ethereum/EIPs/issues/97)). In cases where a contract very often needs to store many values at the same time (eg. a blockchain-based order book storing buy currency, sell currency, price, quantity, seller), this may improve efficiency by as much as 2x.
-* Removing the storage of intermediate root hashes after every transaction, instead doing it after every block. This (1) allows for the cache to be used more, so if many transactions in a block modify a single account only a single Merkle tree update needs to be done for that account for the entire block, (2) allows the Merkle tree to be updated using a more efficient algorithm (eg. see in [the benchmarks](https://github.com/ethereum/wiki/wiki/Benchmarks) the Go client, which has this optimization, needs 28.5 milliseconds instead of 45.7 to update when the number of intermediate root hash calculations is reduced by 40%), (3) allows the Merkle tree to be updated using a more parallelizable algorithm, and (4) potentially opens the door to some heuristic parallel transaction execution optimizations.
+* Allowing the storage of unlimited-size values in the state, instead of just 32-byte values (see [EIP 97][33]). In cases where a contract very often needs to store many values at the same time (eg. a blockchain-based order book storing buy currency, sell currency, price, quantity, seller), this may improve efficiency by as much as 2x.
+* Removing the storage of intermediate root hashes after every transaction, instead doing it after every block. This (1) allows for the cache to be used more, so if many transactions in a block modify a single account only a single Merkle tree update needs to be done for that account for the entire block, (2) allows the Merkle tree to be updated using a more efficient algorithm (eg. see in [the benchmarks][9] the Go client, which has this optimization, needs 28.5 milliseconds instead of 45.7 to update when the number of intermediate root hash calculations is reduced by 40%), (3) allows the Merkle tree to be updated using a more parallelizable algorithm, and (4) potentially opens the door to some heuristic parallel transaction execution optimizations.
 * Changing the serialization algorithm or the trie algorithm (eg. making it a binary trie instead of hexary as it is now)
 * Software-level improvements
 
 The optimal strategy is to pursue three paths (namely, adding an option to instantiate an ethereum chain without a Merkle tree, exploring protocol hardforking options to make the Merkle tree more efficient, and exploring software-level improvements to the code) in parallel.
 
-## Transaction Parallelizability
+## 交易可平行性
 
-One common criticism (see [http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/](http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/)) of the current Ethereum model is that because it is so open-ended in the effects that transactions can have, verifying transactions in parallel is difficult. Once intermediate state root computation is removed, one heuristic strategy that can be employed works as follows:
+One common criticism (see [http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/][34]) of the current Ethereum model is that because it is so open-ended in the effects that transactions can have, verifying transactions in parallel is difficult. Once intermediate state root computation is removed, one heuristic strategy that can be employed works as follows:
 
 1. Select the next `k` transactions, `t[1] ... t[k]`, that need to be processed. Process them all in parallel threads on top of the current state (giving each one a separate cache if it reads data that it already wrote), and during execution keep track of the set of addresses that each thread read and the set of addresses that each thread wrote to.
 2. Let `(i, j)` be the earliest collision (ranked by `j`) where (i) `i < j`, (ii) `t[j]` read something that transaction `t[i]` wrote.
@@ -230,25 +230,25 @@ One challenge with this kind of sharding is that there will be many operations i
 1. Destroy X coins on shard A, in a transaction that also specifies the destination shard and address; the consensus mechanism generates a receipt proving that this operation was confirmed.
 2. Submit this receipt into a contract in shard B, which then generates X new coins on shard B. It then saves a record into the storage of shard B stating that the receipt was consumed, preventing it from being used to generate new coins a second time.
 
-See [this presentation](https://docs.google.com/presentation/d/1CjD0W4l4-CwHKUvfF5Vlps76fKLEC6pIwu1a_kC_YRQ/edit?ts=575e81ff#slide=id.p) ([video](https://www.youtube.com/watch?v=-QIt3mKLIYU)) for more details on how this would be done.
+See [this presentation][35] ([video][36]) for more details on how this would be done.
 
 An important higher-level task is to actually create the programming language that would make it easy to implement these kinds of asynchronous cross-shard operations. Note that a lot of this work would simultaneously lay the groundwork for a programming language that compiles down into applications that exist across multiple blockchains.
 
-## Smart Contract Safety
+## 智能安全合约
 
 An important aspect of smart contract programming that touches public and consortium chain smart contracts alike is safety, including both protection against benign developer mistakes, and against malicious exploits included by the author of a contract in order to attempt to cheat users. A compiled list of contract programming mistakes on the public Ethereum blockchain can be found here:
 
-[https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/](https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/)
+[https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/][37]
 
 An older paper from security researcher Andrew Miller can be found here:
 
-[https://eprint.iacr.org/2015/460.pdf](https://eprint.iacr.org/2015/460.pdf)
+[https://eprint.iacr.org/2015/460.pdf][38]
 
 The Ethereum wiki doc on safe contract programming techniques can be found here:
 
-[https://github.com/ethereum/wiki/wiki/Safety](https://github.com/ethereum/wiki/wiki/Safety)
+[https://github.com/ethereum/wiki/wiki/Safety][39]
 
-The first link also includes possible incremental improvements that can be taken to the EVM as well as Ethereum development environments in order to minimize the risk of such attacks. Additionally, since the DAO incident in June 2016 there has been a number of proposed EIPs in order to facilitate safer contract development: [EIP 114](https://github.com/ethereum/EIPs/issues/114), [116](https://github.com/ethereum/EIPs/issues/116), [117](https://github.com/ethereum/EIPs/issues/117), [118](https://github.com/ethereum/EIPs/issues/118) and [119](https://github.com/ethereum/EIPs/issues/119). It is likely not wise for the consortium chain development community to implement safety-focused EIPs ahead of the public chain ecosystem, as we do not want to confuse developers by having one set of safe contract programming practices for the consortium chain ecosystem and one for the public chain ecosystem (except where absolutely unavoidable, eg. on the public chain, game-theoretic issues are much more inescapable).
+The first link also includes possible incremental improvements that can be taken to the EVM as well as Ethereum development environments in order to minimize the risk of such attacks. Additionally, since the DAO incident in June 2016 there has been a number of proposed EIPs in order to facilitate safer contract development: [EIP 114][40], [116][41], [117][42], [118][43] and [119][44]. It is likely not wise for the consortium chain development community to implement safety-focused EIPs ahead of the public chain ecosystem, as we do not want to confuse developers by having one set of safe contract programming practices for the consortium chain ecosystem and one for the public chain ecosystem (except where absolutely unavoidable, eg. on the public chain, game-theoretic issues are much more inescapable).
 
 Aside from low-level improvements, there are also higher-level tools that can be built in order to improve the safety of the contract programming ecosystem. These fall into two major categories:
 
@@ -259,20 +259,20 @@ Note that one must be careful about how these tools are integrated with the unde
 
 In general, it is not likely that there will be a single magic technology that solves all smart contract safety issues; rather, we will see a combination of incremental approaches including new languages, better analysis tools, better development tools, better standards and best practices and changes to the underlying EVM. Better standards and best practices should be integrated into development tools in order to make them easier for programmers to adapt to; a large part of the value of blockchain technology is in reducing barriers to entry in building high-trust systems, and if the previous barriers to entry are only replaced with a requirement of years of specialized developer education then the potential of the technology is arguably significantly reduced.
 
-## State channels
+## 国家频道
 
 State channels are a popular short-term scalability, privacy and latency solution for blockchain technologies. Some information on state channels can be found here:
 
-* [http://www.arcturnus.com/ethereum-lightning-network-and-beyond/](http://www.arcturnus.com/ethereum-lightning-network-and-beyond/)
-* [http://www.jeffcoleman.ca/state-channels/](http://www.jeffcoleman.ca/state-channels/)
-* [http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648](http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648)
+* [http://www.arcturnus.com/ethereum-lightning-network-and-beyond/][45]
+* [http://www.jeffcoleman.ca/state-channels/][46]
+* [http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648][47]
 
 Some implementations include:
 
-* [https://github.com/AnnaIsAWang/LedgerLabsCoops2016](https://github.com/AnnaIsAWang/LedgerLabsCoops2016)
-* [http://raiden.network](http://raiden.network)
+* [https://github.com/AnnaIsAWang/LedgerLabsCoops2016][48]
+* [http://raiden.network][49]
 
-## Privileged Accounts
+## 特权帐户
 
 Many consortium chain applications require some node (eg. a regulator) to have special privileges. Possible privileges include:
 
@@ -285,7 +285,7 @@ In some cases, these privileges are best implemented in layers on top of the bas
 
 In other cases, these privileges are best implemented via changes to the underlying protocol. The simplest way to do this is to introduce some new opcodes, eg. `0xed = SSTORE_EXT` (set storage of external account), `0xee = WITHDRAW` (drain ETH from another account), `0xef = SET_CODE` (set code of another account), and give only one address the priviledge of using these opcodes (eg. address 254). Such a "privileged address" is a feature that is likely to be implemented in Ethereum in the future as part of the abstraction roadmap (in the public chain, only system-level contracts such as a hypothetical contract that would implement the contract creation function would have access to this priviledged address, so it will not be usable as a "backdoor" by any organizations or individuals, but in private and consortium chains it can be dual-purposed as a priviledge mechanism).
 
-## Changing the Consensus Set
+## 改变共识集
 
 Once a consortium chain is launched, there will inevitably be reasons to change the set of consensus participants after the fact. This includes:
 
@@ -305,4 +305,55 @@ The reason why you may want to use an external mechanism is to provide greater s
 
 Note that a well-designed setup could even tolerate short-term failures of the external mechanism by using a consensus algorithm that can tolerate small divergences in perceived consensus mechanism; this would also require restricting the rate at which consensus participants could change and having a rule that if the mechanism is unavailable then the most recent available consensus set should be used (though this is highly theoretical).
 
-See also: [this article](https://medium.com/@VitalikButerin/safety-under-dynamic-validator-sets-ef0c3bbdf9f6), which shows one way that a Byzantine-fault-tolerant consensus algorithm can maintain safety properties during validator transitions.
+See also: [this article][50], which shows one way that a Byzantine-fault-tolerant consensus algorithm can maintain safety properties during validator transitions.
+
+[1]: http://github.com/ethereum/go-ethereum
+[2]: http://github.com/ethereum/cpp-ethereum
+[3]: http://github.com/ethereum/pyethereum
+[4]: http://github.com/ethereum/ethereumjs-lib
+[5]: https://github.com/ethereum/ethereumj
+[6]: https://github.com/jamshidh/ethereumH
+[7]: https://github.com/ethcore/parity
+[8]: https://github.com/janx/ruby-ethereum
+[9]: https://github.com/ethereum/wiki/wiki/Benchmarks
+[10]: https://github.com/ethereum/wiki/wiki/Ethereum-Chain-Spec-Format
+[11]: https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ
+[12]: https://github.com/ethereum/EIPs/issues/86
+[13]: https://github.com/ethereum/EIPs/issues/20
+[14]: https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol
+[15]: https://github.com/ethereum/go-ethereum/wiki/Peer-to-Peer
+[16]: https://blog.ethereum.org/2016/01/15/privacy-on-the-blockchain/
+[17]: https://www.reddit.com/r/ethereum/comments/4gcsn2/introducing_etherquery_perform_sql_queries/
+[18]: https://github.com/jamshidh/ethereum-data-sql
+[19]: http://etherchain.org
+[20]: http://etherscan.io
+[21]: http://live.ether.camp
+[22]: https://github.com/ethereum/tests
+[23]: https://github.com/ethereum/evm2.0-design
+[24]: http://www.opengamma.com/
+[25]: http://www.thessdreview.com/featured/ssd-throughput-latency-iopsexplained/
+[26]: https://github.com/ethereum/EIPs/issues/87
+[27]: https://github.com/ethereum/EIPs/issues/35
+[28]: https://github.com/ethereum/EIPs/issues/88
+[29]: http://vitalik.ca/files/storage_rent.html
+[30]: https://github.com/ethereum/wiki/wiki/Patricia-Tree
+[31]: https://blog.ethereum.org/2015/11/15/merkling-in-ethereum/
+[32]: https://easythereentropy.wordpress.com/2014/06/04/understanding-the-ethereum-trie/
+[33]: https://github.com/ethereum/EIPs/issues/97
+[34]: http://www.multichain.com/blog/2015/11/smart-contracts-slow-blockchains/
+[35]: https://docs.google.com/presentation/d/1CjD0W4l4-CwHKUvfF5Vlps76fKLEC6pIwu1a_kC_YRQ/edit?ts=575e81ff#slide=id.p
+[36]: https://www.youtube.com/watch?v=-QIt3mKLIYU
+[37]: https://blog.ethereum.org/2016/06/19/thinking-smart-contract-security/
+[38]: https://eprint.iacr.org/2015/460.pdf
+[39]: https://github.com/ethereum/wiki/wiki/Safety
+[40]: https://github.com/ethereum/EIPs/issues/114
+[41]: https://github.com/ethereum/EIPs/issues/116
+[42]: https://github.com/ethereum/EIPs/issues/117
+[43]: https://github.com/ethereum/EIPs/issues/118
+[44]: https://github.com/ethereum/EIPs/issues/119
+[45]: http://www.arcturnus.com/ethereum-lightning-network-and-beyond/
+[46]: http://www.jeffcoleman.ca/state-channels/
+[47]: http://ethereum.stackexchange.com/questions/342/what-are-payment-channels-can-they-be-implemented-on-ethereum/1648
+[48]: https://github.com/AnnaIsAWang/LedgerLabsCoops2016
+[49]: http://raiden.network
+[50]: https://medium.com/@VitalikButerin/safety-under-dynamic-validator-sets-ef0c3bbdf9f6

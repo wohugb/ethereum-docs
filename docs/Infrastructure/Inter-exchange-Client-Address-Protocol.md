@@ -4,7 +4,7 @@ Transferring funds between third-party accounts, especially those of exchanges, 
 
 ## IBAN
 
-For a good overview of the IBAN system, please see [Wikipedia's IBAN article](https://en.wikipedia.org/wiki/International_Bank_Account_Number). An IBAN code consists of up to 34 case insensitive alpha-numeric characters. It contains three pieces of information:
+为了对IBAN系统有一个很好的概述， 请查看[维基IBAN文章][1]. An IBAN code consists of up to 34 case insensitive alpha-numeric characters. It contains three pieces of information:
 
 - The country code; a top-level identifier for the context of the following (ISO 3166-1 alpha-2);
 - The error-detection code; uses the *mod-97-10* checksumming protocol (ISO/IEC 7064:2003);
@@ -16,13 +16,13 @@ For the UK, the BBAN is composed of:
 - Sort-code (branch identifier within the institution), a 6-digit decimal number, e.g. `402702` would be the Lancaster branch of HSBC.
 - Account number (client identifier within the branch), an 8-digit decimal number.
 
-## Proposed Design
+## 提案
 
 Introduce a new IBAN country code: *XE*, formulated as the Ethereum *E* prefixed with the "extended" *X*, as used in non-jurisdictional currencies (e.g. XRP, XCP).
 
 There will be three BBAN possibilities for this code; *direct*, *basic* and *indirect*.
 
-#### Direct
+### 直接
 
 The BBAN for this code when direct will be 30 characters and will comprise one field:
 
@@ -30,13 +30,13 @@ The BBAN for this code when direct will be 30 characters and will comprise one f
 
 e.g. XE7338O073KYGTWWZN0F2WZ0R8PX5ZPPZS corresponds to the address `00c5496aee77c1ba1f0854206a26dda82a81d6d8`.
 
-#### Basic
+### 基础
 
 The same as the direct encoding, except that the code is 31 characters (making it non-compliant for IBAN) and composes the same, single, field:
 
 - Account identifier, 31 characters alphanumeric (< 161-bit). This will be interpreted as a big-endian encoded base-36 integer representing a 160-bit Ethereum address.
 
-#### Indirect
+### 间接
 
 The BBAN for this code when indirect will be 16 characters and will comprise three fields:
 
@@ -50,19 +50,19 @@ Including the four initial characters, this leads to a final client-account addr
 XE81ETHXREGGAVOFYORK
 ```
 
-Split into:
+分隔:
 
-- `XE` The country code for Ethereum;
-- `81` The checksum;
+- `XE` 以太坊国家代码;
+- `81` 校验码;
 - `ETH` The asset identifier within the client account - in this case, "ETH" is the only valid asset identifier, since Ethereum's base registry contract supports only this asset;
 - `XREG` The institution code for the account - in this case, Ethereum's base registry contract;
 - `GAVOFYORK` The client identifier within the institution - in this case, a direct payment with no additional data to whatever primary address is associated with the name "GAVOFYORK" in Ethereum's base registry contract;
 
-### Notes
+## 笔记
 
 Institution codes beginning with `X` are reserved for system use.
 
-### Other forms
+## 其他形式
 
 ### URI
 
@@ -78,15 +78,15 @@ A QR code may be generated directly from the URI using standard QR encodings. Fo
 
 ![QR code for iban:XE81ETHXREGGAVOFYORK](http://opensecrecy.com/qr-XE81ETHXREGGAVOFYORK.gif)
 
-## Transaction Semantics
+## 事务语义
 
 The mechanism for indirect asset transfer over three routing protocols are specified, all of which are specific to the Ethereum domain (country-code of `XE`). One is for currency transfers directly to an included address ("direct"), another is for clients with the system address found through a Registry-lookup system of the client-ID, denoted by asset class `ETH`, whereas the last is for transfers to an intermediary with associated data to specify client, denoted by asset class `XET` (the latter two are "indirect").
 
-### Direct
+### 直接
 
 If the IBAN code is 34 characters, it is a direct address; a direct transfer is made to the address which, when base-36 encoded gives exactly the data segment (the last 30 characters) of the IBAN code.
 
-### Indirect ETH Asset: Simple transfers
+### 间接 ETH 资产: 简单的转移
 
 Within the ETH asset code of Ethereum's country-code (XE), i.e. as long as the code begins with `XE**ETH` (where `**` is the valid checksum), then we can define the required transaction to be the deposit address given by a call to the *registry contract* denoted by the institution code. For institutions not beginning with `X`, this corresponds to the primary address associated with the *Ethereum standard name*:
 
@@ -96,18 +96,20 @@ The *Ethereum standard name* is simply the normal hierarchical lookup mechanism,
 
 We define a *registry contract* as a contract fulfilling the Registry interface as specified in the Ethereum standard interfaces document.
 
-**TODO**: JS code for specifying the transfer.
+**待办事项**: 用于指定传输的JS代码。
 
-### Indirect XET Asset: Institution transfers
+### 间接的XET资产:机构转移
 
 For the `XET` asset code within the Ethereum country code (i.e. while the code begins XE**XET), then we can derive the transaction that must be made through a lookup to the Ethereum `iban` registry contract. For a given institution, this contract specifies two values: the deposit call signature hash and the institution's Ethereum address.
 
 At present, only a single such deposit call is defined, which is:
 
-```
+```js
 function deposit(uint64 clientAccount)
 ```
 
 whose signature hash is `0x13765838`. The transaction to transfer the assets should be formed as an ether-laden call to the institution's Ethereum address using the `deposit` method as specified above, with the client account determined through the value of the big-endian, base-36 interpretation of the alpha-numeric *Institution client identifier*, literally using the value of the characters `0` to `9`, then evaluating 'A' (or 'a') as 10, 'B' (or 'b') as 11 and so forth.
 
-**TODO**: JS code for specifying the transfer.
+**待办事项**: 用于指定传输的JS代码。
+
+[1]: https://en.wikipedia.org/wiki/International_Bank_Account_Number

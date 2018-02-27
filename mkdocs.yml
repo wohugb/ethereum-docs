@@ -47,6 +47,20 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.tasklist
+  - pymdownx.magiclink:
+      hide_protocol: true
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
+      # provider
+      # user
+      # repo
+      # labels
+  - pymdownx.mark:
+      smart_mark: true
+  - pymdownx.progressbar:
+      level_class: true
 
 pages:
   - 前言: index.md
@@ -55,17 +69,26 @@ pages:
     - 介绍: Basics/introduction.md
     - 获取以太币: Basics/Getting-Ether.md
     - 无心应用: Basics/dapps.md
-    - 白皮书: Basics/White-Paper.md
     - 设计原理: Basics/Design-Rationale.md
-    - 黄皮书: Basics/Yellow-Paper.md
+    - 黄皮书: Yellow-Paper/index.md
     - FAQ: Basics/FAQ.md
     - 发布: Basics/Releases.md
+    - 愿望清单: Basics/Wishlist.md
+  - 白皮书:
+    - 概述: White-Paper/index.md
+    - 历史: White-Paper/history.md
+    - 以太坊: White-Paper/Ethereum.md
+    - 应用: White-Paper/Applications.md
+    - 杂项: White-Paper/Miscellanea-And-Concerns.md
+    - 结论: White-Paper/Conclusion.md
+    - 更多: White-Paper/Notes-and-Further-Reading.md
   - 客户端:
-    - cpp-ethereum (C++): Client/cpp-ethereum.md
-    - ethereumj (Java): Client/ethereumj.md
-    - Geth (Go): Client/go-ethereum.md
-    - Parity (Rust): Client/parity.md
-    - pyethapp (Python): Client/pyethapp.md
+    - 概述: Clients/index.md
+    - Geth (Go): Clients/go-ethereum.md
+    - Parity (Rust): Clients/parity.md
+    - pyethapp (Python): Clients/pyethapp.md
+    - cpp-ethereum (C++): Clients/cpp-ethereum.md
+    - ethereumj (Java): Clients/ethereumj.md
   - ÐApp开发:
     - 安全技术: Dapps/Safety.md
     - 开发资源: Dapps/Resources.md
@@ -86,16 +109,16 @@ pages:
     - LLL: Dapps/LLL.md
     - Mutan: Dapps/mutan.md
   - 基础设施:
-    - 链规格格式: Infrastructure/Chain-Spec-Format.md
-    - 互换客户端地址协议: Infrastructure/Inter-exchange-Client-Address-Protocol.md
+    - 链规范格式: Infrastructure/Chain-Spec-Format.md
+    - 地址互换协议: Infrastructure/Inter-exchange-Client-Address-Protocol.md
     - 网址提示协议: Infrastructure/URL-Hint-Protocol.md
-    - 国家规定的确定: Infrastructure/NatSpec-Determination.md
+    - 自然规格确认: Infrastructure/NatSpec-Determination.md
     - 网络状态: Infrastructure/Network-Status.md
     - 树莓派: Infrastructure/Raspberry-Pi-instructions.md
     - 交易一体化: Infrastructure/Exchange-Integration.md
-    - 矿业: Infrastructure/Mining.md
+    - 挖矿: Infrastructure/Mining.md
     - 许可: Infrastructure/Licensing.md
-    - 联盟链发展: Infrastructure/Consortium-Chain-Development.md
+    - 联盟链开发: Infrastructure/Consortium-Chain-Development.md
   - 研究:
     - 权益证明: Research/Proof-of-Stake-FAQ.md
     - 分片区块链: Research/Sharding-FAQ.md

@@ -1,30 +1,30 @@
 # 以太坊文档
 
-This is the community-maintained wiki covering all sorts of information on the next-generation peer-to-peer technology platform built by the Ethereum Foundation, including **Ethereum**, _the generalized blockchain for smart contract development_, as well as sister protocols like **Whisper**, _the private low-level datagram communication platform_, and Swarm.
+这是由社区维护的wiki，涵盖了以太坊基金会建立的下一代对等技术平台的各种信息, 包括**以太坊**, _智能合约开发的广义区块链_, 以及像** Whisper **的姐妹协议, _私有的低级数据报通信平台_, 和Swarm.
 
-Users signed in with GitHub can edit and add pages using the [browser](https://help.github.com/articles/editing-wiki-pages-via-the-online-interface) or [locally](https://help.github.com/articles/adding-and-editing-wiki-pages-locally).
+使用GitHub登录的用户可以使用[浏览器](https://help.github.com/articles/editing-wiki-pages-via-the-online-interface) 或[本地](https://help.github.com/articles/adding-and-editing-wiki-pages-locally)编辑和添加页面.
 
 ## 状态
 
-**发版 / 开发时间线 / 路标**  查看[这里](https://github.com/ethereum/wiki/wiki/Releases).
+**发版/开发时间线/路标**  查看[这里](https://github.com/ethereum/wiki/wiki/Releases).
 
 ## 入门
 
-To get the basic concepts of Ethereum visit the Ethereum homepage over at [http://ethereum.org](http://ethereum.org/). For another introduction targeted for end-users but also for (aspiring) developers and others, see [here](https://github.com/ethereum/wiki/wiki/Ethereum-introduction.md). If you want to get a deeper understanding, start by reading the [whitepaper](https://github.com/ethereum/wiki/wiki/White-Paper) and the [design rationale](https://github.com/ethereum/wiki/wiki/Design-Rationale). For a more formal review, read the [yellow paper](http://paper.gavwood.com/). If you are interested in developing smart contracts you can see [here](https://en.wikipedia.org/wiki/Ethereum#Programming_languages), as well as under dapp development in the sidebar.
+要了解以太坊的基本概念，请访问Ethereum主页[http://ethereum.org](http://ethereum.org/). 另一个针对最终用户的介绍也是针对（有抱负的）开发人员和其他人的，请参阅[这里](https://github.com/ethereum/wiki/wiki/Ethereum-introduction.md). 如果您想深入了解，请先阅读[白皮书](https://github.com/ethereum/wiki/wiki/White-Paper)和[设计原理](https://github.com/ethereum/wiki/wiki/Design-Rationale). 要进行更正式的审查，请阅读[黄皮书](http://paper.gavwood.com/). 如果您有兴趣开发智能合约，您可以在[这里]((https://en.wikipedia.org/wiki/Ethereum#Programming_languages))看到，也可以在侧边栏的dapp开发中看到。
 
-For getting started guides, see here:
+有关入门指南，请参阅此处：
 
-* https://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum-mist-wallet-772a3cc99af4 (using Mist)
-* https://www.ethereum.org/greeter (creating a contract)
-* https://omarmetwally.wordpress.com/2017/07/25/how-to-create-a-private-ethereum-network/ (setting up a private network)
+* [使用Mist](https://medium.com/@attores/step-by-step-guide-getting-started-with-ethereum-mist-wallet-772a3cc99af4)
+* [创造一个合约](https://www.ethereum.org/greeter)
+* [建立一个私人网络](https://omarmetwally.wordpress.com/2017/07/25/how-to-create-a-private-ethereum-network/)
 
 ## 不要迷路
 
-Check the [Glossary](https://github.com/ethereum/wiki/wiki/Glossary) and our [FAQ](https://github.com/ethereum/wiki/wiki/FAQ). There are separate wikis for information relevant to the [C++](https://github.com/ethereum/webthree-umbrella/wiki), [Go](https://github.com/ethereum/go-ethereum/wiki) and [Rust](https://github.com/paritytech/parity/wiki) implementations (Python and Javascript coming soon).
+查看[词汇表](https://github.com/ethereum/wiki/wiki/Glossary)和我们的[常问问题](https://github.com/ethereum/wiki/wiki/FAQ). 有关于[C ++](https://github.com/ethereum/webthree-umbrella/wiki)，[Go](https://github.com/ethereum/go-ethereum/wiki)和[Rust](https://github.com/paritytech/parity/wiki)实现（Python和Javascript即将推出）相关信息的单独维基。
 
 ## 下载
 
-Bleeding edge code can be cloned from the develop branch of their git repositories:
+出血边缘代码可以从他们的git仓库的开发分支克隆:
 
 * [go-ethereum](https://github.com/ethereum/go-ethereum)  (Go)
 * [parity](https://github.com/paritytech/parity) (Rust)

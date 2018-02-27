@@ -1,3 +1,4 @@
 # 黄皮书
 
-[PDF](https://ethereum.github.io/yellowpaper/paper.pdf)
+[PDF][1]
+[1]: https://ethereum.github.io/yellowpaper/paper.pdf

@@ -1,13 +1,37 @@
 # 版本发布
 
-While still valid, the substance behind Ethereum has changed, and will continue to, but will avoid making any disruptions to the operation of the network, while maintaining backwards compatibility. The [original development roadmap](https://blog.ethereum.org/2015/03/03/ethereum-launch-process/) that was laid out before Ethereum went live specified some of the following milestones:
+虽然仍然有效，但以太坊背后的实质已经改变, 并将继续, 但将避免对网络的运行造成任何干扰, 同时保持向后兼容性. 在以太坊上线之前制定的[原始发展路线图][1]指定了以下几个里程碑:
 
-* **Prerelease step 0: Olympic testnet** - launched May 2015 as announced [here](https://blog.ethereum.org/2015/05/09/olympic-frontier-pre-release/).  The [Olympic testnet](http://ethdocs.org/en/latest/introduction/olympic-testnet) phase saw a lot of major improvements, followed by Frontier which was launched immediately after.
-* **Release step One: Frontier**, launched 30 July 2015, starting from [block 1](https://etherscan.io/block/1). [Here](https://blog.ethereum.org/2015/07/27/final-steps/) is an Ethereum blog post just before the launch, [here](https://blog.ethereum.org/2015/05/02/the-end-of-the-beginning/) and [here](https://ethereum.gitbooks.io/frontier-guide/content/frontier.html) is a wiki. More details are [here](http://ethdocs.org/en/latest/introduction/history-of-ethereum.html#the-ethereum-frontier-launch).
-* **Release step 2.0: Homestead**, launched 14 March 2016 (Pi Day) at block number 1,150,000 as announced [here](https://blog.ethereum.org/2016/02/29/homestead-release/). For changes in the Homestead release, see [this EIP](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2.md). Homestead marked the exit from a beta product to a stable release.
-* **Release step 2.1: Spurious Dragon**, was released in Nov 2016. Spurious Dragon is aiming for [Dapp developers](https://github.com/ethereum/wiki/wiki/Dapp-Developer-Resources) as well as end users for limited categories of applications, and had a number of security enhancements.
-* **Release Step 3.0: Metropolis phase 1: Byzantium**, October 16 2017 as announced [here](https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/). Byzantium aims to introduce various privacy and functionality improvements. Details are [here](https://github.com/ethereum/EIPs#accepted-eips-planned-for-adoption-in-the-byzantium-metropolis-hard-fork). For the Byzantium Hard Fork, refer to [here](https://web.archive.org/web/20171026151615/https://github.com/ethereum/EIPs#accepted-eips-planned-for-adoption-in-the-byzantium-metropolis-hard-fork), which is an archive link showing the Byzantium EIPs. Also, refer to [here](https://github.com/ethereum/wiki/wiki/Byzantium-Hard-Fork-changes.md) for a quick summary of Byzantium EIPs.
-* **Release Step 3.1: Metropolis phase 2: Constantinople**, TBA, expected in 2018. Details on Metropolis are [here](https://github.com/ethereum/EIPs#deferred-eips-adoption-postponed-until-the-constantinople-metropolis-hard-fork). [This archive link lists the deferred Constantinople EIPs](https://web.archive.org/web/20180103233351/https://github.com/ethereum/EIPS#deferred-eips-adoption-postponed-until-the-constantinople-metropolis-hard-fork). This is an archive link in case the EIPs list is changed in a way that does not breakdown EIPs into different releases, as is the case up until now.
-* **Release Step Four: Serenity**, TBA. Serenity is meant to move from consensus through [Proof-of-Work](https://github.com/ethereum/wiki/wiki/Ethash) to [Proof-of-Stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ). Details are [here](https://blog.ethereum.org/2016/03/05/serenity-poc2/) and [here](https://blog.ethereum.org/2015/12/24/understanding-serenity-part-i-abstraction/), although the second post seems outdated as abstraction has moved forward to Constantinople.
-* For other changes, refer to the [the finalized list of EIPs](https://github.com/ethereum/EIPS#finalized-eips-standards-that-have-been-adopted).
-* Further releases will focus on massive scalability increases through sharding as well as virtual machine improvements and other features, as detailed [here](https://github.com/ethereum/wiki/wiki/Wishlist).
+* **预发布步骤0：奥运测试网** - 于2015年5月发布[已经发布][2].  于2015年5月发布[已经发布][2], 随后是Frontier，之后立即启动.
+* **释放第一步：边疆**, 2015年7月30日发布，从[区块1][4]开始，. [这里][5]是在发布之前的Ethereum博客文章, [这里][6]和[这里][7]是一个wiki。,更多细节是[这里][8].
+* **释放步骤2.0：家园**, 2016年3月14日发布（Pi Day），截止日期为[此处][9]. 有关Homestead版本的更改，请参见[本EIP][10]。 ,Homestead标志着从测试产品退出到稳定版本.
+* **释放步骤2.1：疯狂的龙**, 有关Homestead版本的更改，请参见[本EIP][10]。 ,Homestead标志着从测试产品退出到稳定版本.
+* **释放步骤3.0：大都会阶段1：拜占庭**, 2017年10月16日宣布[这里][12]。,拜占庭旨在引入各种隐私和功能改进。,细节是[这里][13]。,对于拜占庭硬叉，参考[这里][14]，这是一个存档链接，显示拜占庭EIPs。,另外，请参阅[这里][15]快速总结拜占庭EIPs.
+* **释放步骤3.1：大都会阶段2：君士坦丁堡**, 待定，预计在2018年。大都市的详情在[这里][16]。 ,[该档案链接列出了推迟的君士坦丁堡EIPs][17]。,这是一个存档链接，以防EIP列表以不会将EIP分解为不同版本的方式进行更改，直到现在.
+* **释放第四步：宁静**, TBA. 宁静意味着从[工作证明][pow]转向[权力证明][pos]。细节是[这里][18] 和[这里][19], 虽然第二个职位似乎已经过时，因为抽象已经移动到君士坦丁堡。
+* 有关其他更改，请参阅[最终确定的EIP列表][20].
+* 进一步发布的重点将放在通过分片以及虚拟机改进和其他功能提高可扩展性上, 详细[这里][21].
+
+[pow]: https://github.com/ethereum/wiki/wiki/Ethash
+[pos]: https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ
+[1]: https://blog.ethereum.org/2015/03/03/ethereum-launch-process/
+[2]: https://blog.ethereum.org/2015/05/09/olympic-frontier-pre-release/
+[3]: http://ethdocs.org/en/latest/introduction/olympic-testnet
+[4]: https://etherscan.io/block/1
+[5]: https://blog.ethereum.org/2015/07/27/final-steps/
+[6]: https://blog.ethereum.org/2015/05/02/the-end-of-the-beginning/
+[7]: https://ethereum.gitbooks.io/frontier-guide/content/frontier.html
+[8]: http://ethdocs.org/en/latest/introduction/history-of-ethereum.html#the-ethereum-frontier-launch
+[9]: https://blog.ethereum.org/2016/02/29/homestead-release/
+[10]: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2.md
+[11]: https://github.com/ethereum/wiki/wiki/Dapp-Developer-Resources
+[12]: https://blog.ethereum.org/2017/10/12/byzantium-hf-announcement/
+[13]: https://github.com/ethereum/EIPs#accepted-eips-planned-for-adoption-in-the-byzantium-metropolis-hard-fork
+[14]: https://web.archive.org/web/20171026151615/https://github.com/ethereum/EIPs#accepted-eips-planned-for-adoption-in-the-byzantium-metropolis-hard-fork
+[15]: https://github.com/ethereum/wiki/wiki/Byzantium-Hard-Fork-changes.md
+[16]: https://github.com/ethereum/EIPs#deferred-eips-adoption-postponed-until-the-constantinople-metropolis-hard-fork
+[17]: https://web.archive.org/web/20180103233351/https://github.com/ethereum/EIPS#deferred-eips-adoption-postponed-until-the-constantinople-metropolis-hard-fork
+[18]: https://blog.ethereum.org/2016/03/05/serenity-poc2/
+[19]: https://blog.ethereum.org/2015/12/24/understanding-serenity-part-i-abstraction/
+[20]: https://github.com/ethereum/EIPS#finalized-eips-standards-that-have-been-adopted
+[21]Wishlist.md
