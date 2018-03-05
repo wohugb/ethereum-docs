@@ -50,11 +50,11 @@
 
 ## 钱包
 
-如果你的钱包有问题, 交换或其他有关使用以太网加密货币或进行交易的事宜, 看到这个[MyEtherWallet知识库][40]. 它回答了许多常见问题，如:
+如果你的钱包有问题, 交易或其他有关使用以太网加密货币或进行交易的事宜, 看到这个[MyEtherWallet知识库][40]. 它回答了许多常见问题，如:
 
 * [交易没有显示出来，或者永远在等待着][41]
-* [ETH或代币发送到或从交换没有显示/交易说完成，但资金尚未显示][42]
-* [由于Slack / Reddit / Google广告上的网络钓鱼信息，网络钓鱼，黑客，盗窃和被盗资金][43]
+* [ETH或代币发送到或从交易没有显示/交易说完成，但资金尚未显示][42]
+* [由于Slack/Reddit/Google广告上的网络钓鱼信息，网络钓鱼，黑客，盗窃和被盗资金][43]
 
 ## 客户端
 
@@ -78,9 +78,9 @@
 ??? faq "如何安装开发版本?"
 
     + Homebrew
-        + [Homebrew Ethereum][52] ([@caktux][27])
+        + [Homebrew以太坊][52] ([@caktux][27])
     + 指南
-        + [eth / AlethZero OSX超级简易安装指南][53] ([@stephantual][54])
+        + [eth/AlethZero OSX超级简易安装指南][53] ([@stephantual][54])
         + [Go-Ethereum 简单的OSX编译指南][55] ([@stephantual][54])
         + [建立在Ubuntu上][56]
     + 构建
@@ -88,11 +88,11 @@
 
 ??? faq "如何从源代码安装客户端？"
 
-    + [Building eth/AlethZero (C++)][58]
-    + [Building Mist (Go)][59]
-    + [Installing Pyethereum (Python)][60]
-    + [Installing EthereumJ (Java)][61]
-    + [Installing Ethereumjs-lib (JavaScript for Browser and Node)][62]
+    + [构建 eth/AlethZero (C++)][58]
+    + [构建 Mist (Go)][59]
+    + [安装 Pyethereum (Python)][60]
+    + [安装 EthereumJ (Java)][61]
+    + [安装 Ethereumjs-lib (用于浏览器和节点的JavaScript)][62]
 
 ## 采矿
 
@@ -103,18 +103,18 @@
     + 处理交易
         + Disable "Debug" > "Force Mining"
         + Click "Mine"
-    + 强迫我的（谨慎使用，除非压力测试）
+    + 强制挖矿（谨慎使用，除非压力测试）
         + Enable "Debug" > "Force Mining"
         + Click "Mine"
 
     使用 eth 客户端
 
     ```
-    # 只有迫使我得到以太或压力测试
+    # 只有强制挖矿到以太或压力测试
     $ eth --force-mining --mining on [YOUR OPTIONS...]
     ```
 
-## 契约
+## 合约
 
 ??? faq "我在哪里可以了解合约开发？"
 
@@ -124,7 +124,7 @@
         + [Ethereum][64]
         + [EtherCasts][65]
 
-??? faq "我在哪里可以学习类Python语言Serpent？"
+??? faq "我在哪里可以学类Python语言Serpent？"
 
     + 说明
         + [蛇的语言][66]
@@ -135,7 +135,7 @@
     + 视频
         + [用Vitalik学习以太坊][69]
 
-??? faq "我哪里可以学校类Lisp语言 LLL?"
+??? faq "我哪里可以学类Lisp语言 LLL?"
 
     + 说明书
         + [LLL语言][70]
@@ -147,10 +147,10 @@
 ??? faq "我哪里可以学类JavaScript语言Solidity?"
 
     + 文档
-        + [固体文档][73]
+        + [Solidity文档][73]
 
     + 手册
-        + [契约书写的凝聚力][74]
+        + [合约书写的凝聚力][74]
 
 ??? faq "如何测试合约?"
 
@@ -160,14 +160,14 @@
 ??? faq "在哪里可以找到示例合约？"
 
     + 蛇
-        + [由Vitalik Buterin提供][67] ([@vbuterin][29])
-        + [By EtherCasts][76] ([@EtherCasts][76])
-        + [By Rob Myers][78] ([@robmyers][79])
-        + [By Tyler Florez][80] ([@qualiabyte][81])
+        + [作者Vitalik Buterin][67] ([@vbuterin][29])
+        + [作者EtherCasts][76] ([@EtherCasts][76])
+        + [作者罗伯迈尔斯][78] ([@robmyers][79])
+        + [作者泰勒Florez][80] ([@qualiabyte][81])
     + LLL
-        + [By Gavin Wood][71] ([@gavofyork][25])
-        + [By Dennis Mckinnon][82] ([@dennismckinnon][83])
-        + [By Doug A.][84] ([@dlle9][85])
+        + [作者加文伍德][71] ([@gavofyork][25])
+        + [作者丹尼斯麦金农][82] ([@dennismckinnon][83])
+        + [作者Doug A.][84] ([@dlle9][85])
 
 ## ÐApps
 
@@ -180,17 +180,17 @@
 
 ??? faq "我哪里可以学 ÐApp 开发?"
 
-    + [写你自己的货币][90] ([@maran][22])
+    + [发布自己的货币][90] ([@maran][22])
 
 ??? faq "我哪里可以找到 ÐApp 开发工具?"
 
     **官方**
 
-    + [eth / AlethZero GUI客户端（C ++）][91]
+    + [eth/AlethZero GUI客户端（C ++）][91]
     + [Eth命令行客户端（C ++）][92]
     + [LLLC编译器（C ++）][93]
     + [以太坊命令行客户端（Go）][94]
-    + [雾浏览器（Go）][20]
+    + [Mist浏览器（Go）][20]
     + [Pyeth命令行客户端（Python）][95]
     + [蛇编译器（Python）][66]
 
@@ -204,14 +204,14 @@
 ??? faq "我哪里可以找到ÐApps示例?"
 
     + [dapp-bin][100] ([@ethereum][9])
-    + [GavCoin][101] ([@gavofyork][25])
-    + [JeffCoin][102] ([@obscuren][21])
+    + [给币][101] ([@gavofyork][25])
+    + [杰夫币][102] ([@obscuren][21])
     + [让它下雨][103] ([@EtherCasts][76])
-    + [Chronos][104] ([@mquandalle][105])
-    + [Artworld-Ethereum][78] ([@robmyers][79])
-    + [CryptoCoinWatch][106] ([@EtherCasts][76])
-    + [Occam's Run][107] ([@d11e9][85])
-    + [TrustDavis][108] ([@EtherCasts][76])
+    + [克罗诺斯][104] ([@mquandalle][105])
+    + [艺术世界以太坊][78] ([@robmyers][79])
+    + [加密硬币手表][106] ([@EtherCasts][76])
+    + [奥卡姆运行][107] ([@d11e9][85])
+    + [信托戴维斯][108] ([@EtherCasts][76])
 
 ## IRC
 

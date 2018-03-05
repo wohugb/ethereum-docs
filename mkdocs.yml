@@ -67,7 +67,7 @@ pages:
   - 概述: home.md
   - 基础:
     - 介绍: Basics/introduction.md
-    - 获取以太币: Basics/Getting-Ether.md
+    - 获取以太: Basics/Getting-Ether.md
     - 无心应用: Basics/dapps.md
     - 设计原理: Basics/Design-Rationale.md
     - 黄皮书: Yellow-Paper/index.md
@@ -84,7 +84,10 @@ pages:
     - 更多: White-Paper/Notes-and-Further-Reading.md
   - 客户端:
     - 概述: Clients/index.md
-    - Geth (Go): Clients/go-ethereum.md
+    - Geth (Go): 
+      - 简介: Clients/go-ethereum.md
+      - 首页: Clients/geth/index.md
+      - 安装: Clients/geth/Building-Ethereum.md
     - Parity (Rust): Clients/parity.md
     - pyethapp (Python): Clients/pyethapp.md
     - cpp-ethereum (C++): Clients/cpp-ethereum.md
@@ -138,11 +141,12 @@ pages:
     - 合同ABI: Technologies/Ethereum-Contract-ABI.md
     - 坏块报告: Technologies/Bad-Block-Reporting.md
     - 坏链金丝雀: Technologies/Bad-Chain-Canary.md
-  - 挖矿算法:
-    - 概述: EthashDashimoto/index.md
-    - Ethash: EthashDashimoto/Ethash.md
-    - Ethash C API: EthashDashimoto/Ethash-C-API.md
-    - Ethash DAG: EthashDashimoto/Ethash-DAG.md
+  - 挖矿:
+    - 概述: Miner/index.md
+    - 挖矿: Miner/miner.md
+    - Ethash: Miner/Ethash.md
+    - Ethash C API: Miner/Ethash-C-API.md
+    - Ethash DAG: Miner/Ethash-DAG.md
   - 私语:
     - 低语提议: Whisper/index.md
     - 耳语概述: Whisper/Overview.md

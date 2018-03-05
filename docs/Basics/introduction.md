@@ -62,14 +62,14 @@ Zcoin也展示了Zerocoin协议 (计划整合以太坊).
 
 ### 无心应用
 
-点击[这里][2])，查看无心应用列表.
+点击[这里][2]，查看无心应用列表.
 
 ### 市场分析
 
 截至2018年1月9日，以太坊的市值为[1185亿美元][mk1]，自[二零一五年七月三十日][mk2]起可能已开始流通，而[二零一五年八月八日][mk3]首笔交易使用以太坊。
 将其与当前最大的，最大的加密货币比特币相比较，它的市值为[2530亿美元][mk1]，自[2009年1月份][mk4]开始流通。
 从技术上讲，以太坊的增长速度要快得多，而对于长期投资来说更重要的是（我不鼓励这种只会引起波动的猜测），基本面比比特币要好得多。
-虽然比特币确实有更多的市场和货币，例如,在更多的实体将接受它作为一种付款方式，这个wiki的创建者预计，时间会改变这一点 (事实上，在2017年5月左右，以太坊的市值最近已经超过了比特币的[一半][mk5]).
+虽然比特币确实有更多的市场和货币，例如更多的实体将接受它作为一种付款方式，这个wiki的创建者预计，时间会改变这一点 (事实上，在2017年5月左右，以太坊的市值最近已经超过了比特币的[一半][mk5]).
 另外，以太坊的交易数量也超过了[2017年11月22日][mk6]的几个加密货币。
 不过，请注意这个[反驳][mk7].
 
@@ -99,9 +99,9 @@ Zcoin也展示了Zerocoin协议 (计划整合以太坊).
 [s2]: https://usa.visa.com/run-your-business/small-business-tools/retail.html
 [s3]: https://web.archive.org/web/20171230005127/https://etherscan.io/chart/tx
 
-请注意，[Ripple][s4]声称“共识分类帐”可以每秒处理一千笔交易，而通过付款渠道可以处理更多交易。
-虽然支付渠道通过将支付与结算分开来实现实际上无限的可扩展性，但是它们这样做不会产生通常与延迟结算相关的风险。
-进一步指出，Ripple通过权力下放（[通过分布式验证器或分布式服务器网络][s5]）来实现这一点，而它被描述为[联邦协议][s6]。
+请注意，[Ripple][s4]声称，它可以每秒处理一千次交易，而它可以通过付款渠道处理更多交易。 
+虽然支付渠道通过将支付与结算分开来实现无限的可扩展性, 他们这样做不会产生通常与延迟结算相关的风险.
+进一步指出睿波币通过权力下放，通过分[布式验证器或分布式服务器网络](s5)实现这一目标，而它被描述为[联盟协议][s6]。
 
 [s4]: https://ripple.com/dev-blog/ripple-consensus-ledger-can-sustain-1000-transactions-per-second/
 [s5]: https://ripple.com/build/xrp-ledger-consensus-process/
@@ -149,10 +149,10 @@ Bitshares显然可以处理[100,000 TPS][s6]。
 
 ### 缺陷
 
-以太坊有昂贵的错误, 如[DAO漏洞(CTRL + F漏洞][14])]; 和Parity multisig库合同问题 [1][15], [2][16], [3][17], [4][18], [5][19], [6][20], [7][21].
-另请参阅[普通帐户中的以太回收][22], 这给出了更多的例子，如发送到一个空的地址，
-,例如下面有一张照片[23] and [2][24].
-关于另一个bug的信息是[这里][25].
+以太坊有很多昂贵的错误，例如[这里][bug1]和[这里][bug2]列出的错误。
+
+[bug1]: https://github.com/ethereum/wiki/wiki/Major-issues-resulting-in-lost-or-stuck-funds
+[bug2]: https://github.com/ethereum/wiki/wiki/Bugs
 
 ## 以太币交易
 
@@ -201,7 +201,7 @@ Bitshares显然可以处理[100,000 TPS][s6]。
 [这篇文章][66]最初是在2017年5月在这里创建的，从那以后一直定期更新.
 请随时向jamesray.eth的初始作者发送捐款， 或自己编辑它，或叉！
 
-[2]: https://github.com/Ethereum-community/Ethereum-introduction/wiki/Decentralised-apps-(dapps
+[2]: https://github.com/ethereum/wiki/wiki/Decentralized-apps-(dapps)
 [7]: https://github.com/ethereum/wiki/wiki/Releases
 [8]: https://github.com/ethereum/EIPs/pull/208
 [9]: https://ethereum.stackexchange.com/a/13577/95840
